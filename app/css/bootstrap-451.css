@@ -5,7 +5,8 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 body {
-  margin: 0;
+  margin-left: 10px;
+  margin-right: 10px
 }
 article,
 aside,
@@ -3121,7 +3122,7 @@ input[type="button"].btn-block {
 .navbar-fixed-bottom .dropdown .caret,
 .navbar-fixed-bottom .dropdown-mega .caret {
   border-top: 0;
-  border-bottom: 4px solid;
+  /*border-bottom: 4px solid;*/
   content: "";
 }
 .dropup .dropdown-menu,
@@ -3463,6 +3464,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .input-group-btn:last-child > .btn-group {
   margin-left: -1px;
 }
+
+/*Navbar*/
 .nav {
   margin-bottom: 0;
   padding-left: 0;
@@ -3660,9 +3663,13 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   border-top-right-radius: 0;
   border-top-left-radius: 0;
 }
+
+/* Adjust Navbar Margin and Border*/
 .navbar {
   position: relative;
   min-height: 60px;
+  /*margin-left: 50px;
+  margin-right: 50px;*/
   margin-bottom: 0;
   border: 1px solid transparent;
 }
@@ -6360,9 +6367,11 @@ button::-moz-focus-inner {
   animation-duration: 1s;
   -ms-animation-duration: 1s;
 }
+
+/* Change Back Left Arrow Color */
 .navbar .container .navbar-nav.pull-left li.fadeInLeft a i,
 .navbar .container-view .navbar-nav.pull-left li.fadeInLeft a i {
-  color: #154964;
+  color: #FFFFFF;
 }
 .navbar .container .navbar-nav.pull-left li a,
 .navbar .container-view .navbar-nav.pull-left li a {
@@ -6384,10 +6393,12 @@ button::-moz-focus-inner {
 .navbar .container-view .navbar-nav.pull-right li a {
   padding: 20px 10px;
 }
+
+/* Remove Border Radius and Border for Shopping Cart Icon, Add to Custom CSS for Shopping Cart Only. This is to avoid having circles around social media icons */
 .navbar .container .navbar-nav.pull-right li a i:first-of-type,
 .navbar .container-view .navbar-nav.pull-right li a i:first-of-type {
-  border-radius: 50%;
-  border: 1px solid #fff;
+  /*border-radius: 50%;
+  border: 1px solid #fff;*/
   text-align: center;
   padding: 10px;
   margin-top: -10px;
@@ -8077,6 +8088,8 @@ select.ng-invalid:invalid:invalid:focus {
 .panel-product-list ul li.minimal .panel-order-shipping-multiple > div:first-of-type > p:first-of-type {
   display: none;
 }
+
+/* Adjust Product List Link Here */
 .panel-product-list ul li a {
   padding: .75em;
   display: block;
