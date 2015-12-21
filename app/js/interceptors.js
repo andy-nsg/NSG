@@ -1,6 +1,7 @@
 four51.app.config(['$httpProvider', function($httpProvider) {
 	$httpProvider.interceptors.push(['$q', '$rootScope', '$451', 'Security', function($q, $rootScope, $451, Security) {
 		function appendAuth(config) {
+		    if (config.headers['Authorization']) return config;
 			config.headers['Authorization'] = Security.auth();
 			return config;
 		}
