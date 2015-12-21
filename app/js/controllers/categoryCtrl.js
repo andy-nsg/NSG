@@ -44,6 +44,8 @@ function ($routeParams, $sce, $scope, $451, Category, Product, Nav) {
 
     // panel-nav
     $scope.navStatus = Nav.status;
+		//Hides Category List
+	  //$scope.navStatus.visible = false;
     $scope.toggleNav = Nav.toggle;
 	$scope.$watch('sort', function(s) {
 		if (!s) return;
