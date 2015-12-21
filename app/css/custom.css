@@ -1,6 +1,183 @@
-/*
-Static file for Theme changes
-Theme name: My SPA Theme
-Version: 1.0
-Template: Howdy
-*/
+/*AmeriCorps*/
+
+.white {
+    color: #FFFFFF;
+}
+
+.NSGcenter {
+    text-align: center;
+}
+
+/* Jumbor Header Home Page*/
+.jumboHeaderText {
+    text-align: center;
+    /*vertical-align: middle;*/
+    padding-top: 30px;
+    color: #FFFFFF;
+    /*position: relative;
+    top: 50%;
+    transform: translateY(-50%);*/
+}
+
+#vertAlignJumbo {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* This counters the spacing issue on the product list page with <a> links */
+.aLinkSpacingFix p a {
+  padding: 0em !important;
+  display: inline !important;
+  text-decoration: none;
+}
+
+
+.officialCNCS {
+	font-family:'Source Sans Pro', arial, serif;
+	font-size: 12pt;
+	font-style: italic;
+	text-align: left;
+	width: 85%;
+	/*margin-top: 5px;
+	margin-right: 5px;
+	margin-bottom: 15px;
+	margin-left: 10px;*/
+	padding-top: 5px;
+	padding-right: 5px;
+	padding-bottom: 15px;
+	padding-left: 10px;
+}
+
+/*This is used for the header when closed for holidays*/
+.NSGHoliday {
+	font-family:'Source Sans Pro', arial, serif;
+	font-size: 18pt;
+	font-style: italic;
+	font-weight: bold;
+	color: #FFFFFF;
+	width: 100%;
+	text-align: center;
+	padding-top: 5px;
+	padding-right: 5px;
+	padding-bottom: 15px;
+	padding-left: 10px;
+	/*text-shadow: 2px 2px 4px #A1A1A1;*/
+}
+
+/*Used when we have tech difficulties*/
+.phoneDown {
+	font-family:'Source Sans Pro', arial, serif;
+	font-size: 17pt;
+	color: red;
+	font-style: italic;
+	font-weight: bold;
+	text-align: left;
+	width: 85%;
+	padding-top: 5px;
+	padding-right: 5px;
+	padding-bottom: 15px;
+	padding-left: 10px;
+	/*text-shadow: 2px 2px 4px #A1A1A1;*/
+}
+
+/*Footer CSS*/
+.NSGfooter {
+	margin-right: 5em;
+	margin-left: 4em;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	clear: both;
+	/*background-color: #e9e9e9;*/
+	height: 200px;
+	padding-top: 5em;
+	padding-right: 3px;
+	padding-bottom: 3px;
+	padding-left: 5px;
+	/*background-image: url(Images/IB.png);
+	background-repeat: no-repeat;
+	background-position: 5px 5px;*/
+}
+
+.fleft {
+	margin-right: 0px;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	float: left;
+}
+
+.fright {
+	margin-right: 0em;
+	margin-left: 0em;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding: 0em;
+	float: right;
+}
+/*End Footer CSS*/
+
+/* Shopping Cart Circle */
+.shoppingCartNavBar li a i:first-of-type{
+  border-radius: 50%;
+  border: 1px solid #fff;
+  text-align: center;
+  padding: 10px;
+  margin-top: -10px;
+}
+
+.fixedImage
+{
+    position: fixed;
+    top: 20px;
+}
+
+#fontProduct {
+	color: #000000;
+}
+
+#fontProgram {
+	font-size: 14px;
+	font-weight: bold;
+	text-transform: uppercase;
+	color: #000000;
+	text-indent: 0px;
+	width: 100%;
+	margin-top: 8px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	margin-left: 0px;
+}
+
+#footerFont {
+	font-size: 10px;
+}
+
+#mainbkg {
+	/*background-color: #e9e9e9;*/
+	margin-top: 0px;
+	margin-right: 20px;
+	margin-bottom: 0px;
+	margin-left: 15em;
+	padding-top: 1em;
+	padding-right: 0px;
+	padding-bottom: .25em;
+	padding-left: 3em;
+}
+
+#mainnav {
+	/*background-color: #136ca8;*/
+	margin-right: 5px;
+	margin-left: 0em;
+	margin-top: 0em;
+	margin-bottom: 0px;
+	text-align: left;
+	padding-top: 0em;
+	padding-right: 0em;
+	padding-bottom: 0em;
+	padding-left: 0em
+	/*background-image: ;
+	border-top-width: 4px;
+	border-top-style: solid;
+	border-top-color: #73a2c7;*/
+}
