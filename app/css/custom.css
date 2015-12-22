@@ -124,9 +124,11 @@
   margin-top: -10px;
 }
 
+/* Product Image */
 .fixedImage {
     position: fixed;
-    top: 20px;
+    top: 2000px;
+    right: 1000px;
 }
 
 /* Search Bar */
@@ -137,6 +139,7 @@
 	margin-right: 10px;
 	margin-bottom: 10px;
 }
+
 
 #fontProduct {
 	color: #000000;
