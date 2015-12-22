@@ -18,9 +18,9 @@
 }
 
 #vertAlignJumbo {
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 /* This counters the spacing issue on the product list page with <a> links */
@@ -162,6 +162,9 @@
 }
 
 .tdPPTimeline {
+  font-family: arial,helvetica,sans-serif;
+  font-size: 14px;
+  font-weight: bold;
 	border:2px;
 	border-style: solid;
 	border-color: #136ca8;
