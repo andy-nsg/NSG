@@ -145,20 +145,21 @@
 .tablePPTimeline {
 	border:2px;
 	border-style: solid;
-	border-color: #136ca8;
+  border-color: ##0C2A3A;
 	border-collapse:collapse;
 	box-shadow: 5px 5px 10px 0px rgba(119, 119, 119, 0.3);
 	-moz-box-shadow: 5px 5px 10px 0px rgba(119, 119, 119, 0.3);
 	-webkit-box-shadow: 5px 5px 10px 0px rgba(119, 119, 119, 0.3);
-	background-color: #bfdbf0;
+	background-color: ##359FD5;
 }
 
 .thPPTimeline {
 	border:2px;
 	border-style: solid;
-	border-color: #136ca8;
+	border-color: ##0C2A3A;
 	border-collapse:collapse;
 	padding:5px;
+  text-align:center;
 }
 
 .tdPPTimeline {
@@ -167,7 +168,7 @@
   font-weight: bold;
 	border:2px;
 	border-style: solid;
-	border-color: #136ca8;
+	border-color: ##0C2A3A;
 	border-collapse:collapse;
 	padding:5px;
 	text-align:center;
