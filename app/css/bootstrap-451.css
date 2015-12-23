@@ -5,8 +5,7 @@ html {
   -webkit-text-size-adjust: 100%;
 }
 body {
-  margin-left: 10px;
-  margin-right: 10px
+  margin: 0;
 }
 article,
 aside,
