@@ -193,7 +193,7 @@
 	text-align:center;
 }
 
-@keyframes vert-Icon {
+/* @keyframes vert-Icon {
   from {
     top: 0;
   }
@@ -208,7 +208,7 @@
   }
 }
 
-/* @keyframes icon-flip {
+@keyframes icon-flip {
   from {
     top: 0;
   }
