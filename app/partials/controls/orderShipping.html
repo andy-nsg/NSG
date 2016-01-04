@@ -48,6 +48,16 @@
                                         </select>
                                         <i class="fa fa-map-marker"></i>
                                 </div>
+                                <div class="panel panel-primary">
+                              		<div class="panel-heading">
+                              		  <h2 class="panel-title panel-primary">
+                              		    {{'Free UPS Ground Shipping on Orders over $300' | r | xlat}}
+                              		  </h2>
+                              		</div>
+                              		<div class="panel-body">
+                              		  <h4 class="NSGcenter">If your SUBTOTAL is $300 or more, please select "Free Shipping - $300 Order" from the Shipping Method drop down below</h4>
+                              		</div>
+                              	</div>
                                 <div ng-show="user.ShipMethod != null && shippers" ng-class="{'view-form-select': !currentOrder.LineItems[0].ShipperName, '': currentOrder.LineItems[0].ShipperName }">
                                     <label ng-class="{required: !currentOrder.IsMultipleShip() && user.ShipMethod != null}" ng-show="currentOrder.LineItems[0].ShipperName || !currentOrder.IsMultipleShip() && user.ShipMethod != null">{{('Shipping' | r) + ' Method' | xlat}}</label>
                                     <select class="form-control" ng-change="updateShipper()" name="shipMethod"
