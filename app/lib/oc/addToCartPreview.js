@@ -60,10 +60,11 @@ function addtocartpreview() {
             '</div>',
             '<div class="row">',
             '<div ng-show="list.length > 0">',
+            '<p><em><strong>Go back to the top to select a new size, otherwise if done, click the "Add List to Cart" button below. Customization settings will not change.</strong></em></p>',
             '<loadingindicator ng-show="addListToCartIndicator" />',
             '<div class="panel panel-default">',
             '<div class="panel-heading">',
-            '<h3 class="panel-title">Variant List</h3>',
+            '<h3 class="panel-title">Item List</h3>',
             '<loadingindicator ng-show="addToOrderIndicator" />',
             '</div>',
             '<div ng-repeat="item in list">',
@@ -346,7 +347,7 @@ function AddToCartPreview(User, Order) {
         var entryError = "";
         angular.forEach(list, function(i) {
             if (item.Variant.InteropID == i.Variant.InteropID) {
-                entryError = "<p>-Cannot Enter Same Variant Twice (Change Quantity Below)</p>"
+                entryError = "<p>-Cannot Enter Same Size Twice (Change Quantity Below)</p>"
             }
         });
         _then(success, entryError);
