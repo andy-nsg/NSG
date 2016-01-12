@@ -49,51 +49,68 @@
     </head>
     <!--[if (gte IE 9)|!(IE)]><!-->
     <body ng-cloak ng-class="ng-cloak">
-        <section>
-            <section ng-hide="Four51User.isAuthenticated() || isAnon" class="container">
-                <login />
+        <div class="NSGwrapper">
+            <section>
+                <section ng-hide="Four51User.isAuthenticated() || isAnon" class="container">
+                    <login />
+                </section>
+                <section ng-if="Four51User.isAuthenticated()" id="content">
+                    <section class="hidden-print">
+                        <navigation />
+                    </section>
+                    <section class="hidden-print">
+                        <branding />
+                    </section>
+                    <section class="container-view">
+                        <ng-view autoscroll />
+                    </section>
+                    <section class="hidden-print">
+                        <copyright ng-if="!user.Permissions.contains('UnBrandedSite')" />
+                    </section>
+                </section>
             </section>
-            <section ng-if="Four51User.isAuthenticated()" id="content">
-                <section class="hidden-print">
-                    <navigation />
-                </section>
-                <section class="hidden-print">
-                    <branding />
-                </section>
-                <section class="container-view">
-                    <ng-view autoscroll />
-                </section>
-                <section class="hidden-print">
-                    <copyright ng-if="!user.Permissions.contains('UnBrandedSite')" />
-                </section>
-            </section>
-        </section>
-        <footer>
-            <div class="NSGfooter">
-                <div class="fleft">
-                    <a href="https://www.ibmilw.com/" target="_blank"><img src="https://www.four51.com/Themes/Custom/cdde0792-3f36-497d-88eb-12c282cba5d2/NSG/images/IB-AbilityOne.png" alt="National Service Gear is a registered trademark and global brand of INDUSTRIES for the BLIND, Inc. Industries for the Blind is an AbiltiyOne agency." width="100%" /></a>
+            <div class="push"></div>
+            <footer>
+                <div class="NSGfooter hidden-xs">
+                    <div class="fleft">
+                        <a href="https://www.ibmilw.com/" target="_blank"><img src="https://www.four51.com/Themes/Custom/cdde0792-3f36-497d-88eb-12c282cba5d2/NSG/images/IB-AbilityOne.png" alt="National Service Gear is a registered trademark and global brand of INDUSTRIES for the BLIND, Inc. Industries for the Blind is an AbiltiyOne agency." width="100%" /></a>
+                    </div>
+                    <div class="fright">
+                        <p class="NSGcontactUs">Contact Customer Service</p>
+                        <p><i class="fa fa-phone"></i>  1.855.444.0847</p>
+                        <p><i class="fa fa-envelope"></i>  <a href="mailto:service@nationalservicegear.org?subject=NSG%20Contact">service@nationalservicegear.org</a></p>
+                    </div>
                 </div>
-                <div class="fright">
-                    <p class="NSGcontactUs">Contact Customer Service</p>
-                    <p><i class="fa fa-phone"></i>  1.855.444.0847</p>
-                    <p><i class="fa fa-envelope"></i>  <a href="mailto:service@nationalservicegear.org?subject=NSG%20Contact">service@nationalservicegear.org</a></p>
+                <div class="NSGSmallFooter hidden-sm hidden-md hidden-lg">
+                    <div class="fSmallLeft">
+                        <a href="https://www.ibmilw.com/" target="_blank"><img src="https://www.four51.com/Themes/Custom/cdde0792-3f36-497d-88eb-12c282cba5d2/NSG/images/IB-AbilityOne.png" alt="National Service Gear is a registered trademark and global brand of INDUSTRIES for the BLIND, Inc. Industries for the Blind is an AbiltiyOne agency." width="100%" /></a>
+                    </div>
+                    <div class="fSmallRight">
+                        <p class="NSGcontactUs">Contact Customer Service</p>
+                        <p><i class="fa fa-phone"></i>  1.855.444.0847</p>
+                        <p><i class="fa fa-envelope"></i>  <a href="mailto:service@nationalservicegear.org?subject=NSG%20Contact">service@nationalservicegear.org</a></p>
+                    </div>
                 </div>
-            </div>
-            <div class="socialFooter">
-                <!--<section class="ng-scope">
-                    <div class="container"> -->
-                        <p class="text-right">
-                            <!-- <a class="pull-left" href="" style="padding-top:10px;">Terms</a> -->
-                            <a class="vertIcon" target="_blank" href="https://twitter.com/servicegear"><i class="fa fa-twitter-square fa-3x"></i></a>
-                            <a class="vertIcon" target="_blank" href="https://www.facebook.com/NationalServiceGear"><i class="fa fa-facebook-square fa-3x"></i></a>
-                            <!-- <a class="vertIcon" target="_blank" href="https://plus.google.com/b/101151839970654395169/101151839970654395169"><i class="fa fa-google-plus-square fa-3x"></i></a> -->
-                            <a class="vertIcon" target="_blank" href="https://www.instagram.com/nationalservicegear"><i class="fa fa-instagram fa-3x"></i></a>
-                            <a class="vertIcon" target="_blank" href="https://www.linkedin.com/company/1564607?trk=tyah&trkInfo=tas%3Aindustries%20for%20the%20bli%2Cidx%3A1-1-1"><i class="fa fa-linkedin-square fa-3x"></i></a>
-                        </p>
-                    <!-- </div>
-                </section> -->
-            </div>
-        </footer>
+                <!-- <div class="NSGSmallFooter fleft hidden-sm hidden-md hidden-lg">
+                    <a href="https://www.ibmilw.com/" target="_blank"><img src="https://www.four51.com/Themes/Custom/cdde0792-3f36-497d-88eb-12c282cba5d2/NSG/images/IB-AbilityOne.png" alt="National Service Gear is a registered trademark and global brand of INDUSTRIES for the BLIND, Inc. Industries for the Blind is an AbiltiyOne agency." width="100%" /></a><p class="NSGcontactUs">Contact Customer Service &bull; 1.855.444.0847 &bull; <a href="mailto:service@nationalservicegear.org?subject=NSG%20Contact">service@nationalservicegear.org</a></p>
+                </div> -->
+                <div class="socialFooter">
+                    <!--<section class="ng-scope">
+                        <div class="container"> -->
+                            <p class="text-right">
+                                <!-- <a class="pull-left" href="" style="padding-top:10px;">Terms</a> -->
+                                <a class="vertIcon" target="_blank" href="https://twitter.com/servicegear"><i class="fa fa-twitter-square fa-3x"></i></a>
+                                <a class="vertIcon" target="_blank" href="https://www.facebook.com/NationalServiceGear"><i class="fa fa-facebook-square fa-3x"></i></a>
+                                <!-- <a class="vertIcon" target="_blank" href="https://plus.google.com/b/101151839970654395169/101151839970654395169"><i class="fa fa-google-plus-square fa-3x"></i></a> -->
+                                <a class="vertIcon" target="_blank" href="https://www.instagram.com/nationalservicegear"><i class="fa fa-instagram fa-3x"></i></a>
+                                <a class="vertIcon" target="_blank" href="https://www.linkedin.com/company/1564607?trk=tyah&trkInfo=tas%3Aindustries%20for%20the%20bli%2Cidx%3A1-1-1"><i class="fa fa-linkedin-square fa-3x"></i></a>
+                            </p>
+                        <!-- </div>
+                    </section> -->
+                </div>
+            </footer>
+        </div>
+
 
         <!--<script type="text/javascript" src="//dl1d2m8ri9v3j.cloudfront.net/releases/1.2.4/tracker.js" data-customer="bfec7bded14d43a7ace2697594e1369d"></script>-->
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js" data-group="cdn"></script>
