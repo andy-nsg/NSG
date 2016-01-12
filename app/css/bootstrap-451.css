@@ -5884,7 +5884,7 @@ ul:after,
 .visible-lg {
   display: none !important;
 }
-@media (max-width: 767px) {
+@media (min-width: 720px) and (max-width: 767px) {
   .visible-xs {
     display: block !important;
   }
