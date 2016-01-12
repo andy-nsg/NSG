@@ -25,11 +25,10 @@
 
 /* This counters the spacing issue on the product list page with <a> links */
 .aLinkSpacingFix p a {
-  padding: 0em !important;
-  display: inline !important;
-  text-decoration: none;
+    padding: 0em !important;
+    display: inline !important;
+    text-decoration: none;
 }
-
 
 .officialCNCS {
 	font-family:'Source Sans Pro', arial, serif;
@@ -79,21 +78,36 @@
 	/*text-shadow: 2px 2px 4px #A1A1A1;*/
 }
 
-
 /*Footer CSS*/
 .NSGfooter {
-	/*margin-right: 5em;
-	margin-left: 4em;
+    /*margin-right: 5em;
+    margin-left: 4em;
+    margin-top: 0px;
+    margin-bottom: 0px;*/
+    font-size: 13pt;
+    margin-top: 0px;
+    clear: both;
+    background-color: #dedede;
+    height: 150px;
+    width: 100%;
+    bottom: 0;
+    padding: 30px 0px;
+    /*padding-top: 5em;
+    padding-right: 3px;
+    padding-bottom: 3px;
+    padding-left: 5px;*/
+    /*background-image: url(Images/IB.png);
+    background-repeat: no-repeat;
+    background-position: 5px 5px;*/
+}
+
+.NSGSmallFooter {
 	margin-top: 0px;
-	margin-bottom: 0px;*/
-   font-size: 13pt;
-   margin-top: 0px;
 	clear: both;
 	background-color: #dedede;
-	height: 150px;
-  width: 100%;
-  bottom: 0;
-  padding: 30px 0;
+	height: 175px;
+    bottom: 0;
+    padding: 45px 0px;
 	/*padding-top: 5em;
 	padding-right: 3px;
 	padding-bottom: 3px;
@@ -103,77 +117,116 @@
 	background-position: 5px 5px;*/
 }
 
+.socialFooter {
+    margin-top: 0px;
+    clear: both;
+    background-color: #545454;
+    height: 60px;
+    width: 100%;
+    bottom: 0;
+    padding: 10px 25px 0px 0px;
+}
+
+* {
+	margin: 0;
+}
+
+.flushFooter, .push {
+    height: 210px; /* .push must be the same height as .footer */
+}
+
+.NSGwrapper {
+    min-height: 100%;
+	margin: 0 auto -210px; /* the bottom margin is the negative value of the footer's height */
+}
+
+.contactFooterText {
+    font-size: 4vw;
+}
 .fleft {
-	margin-right: 0px;
-	margin-left: 0px;
-	margin-top: 0px;
-	margin-bottom: 0px;
-  padding-top: 0em;
-	padding-right: 3px;
-	padding-bottom: 0px;
-	padding-left: 55px;
-	float: left;
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 0em;
+    padding-right: 3px;
+    padding-bottom: 0px;
+    padding-left: 55px;
+    float: left;
+}
+
+.fSmallLeft {
+    margin-right: 0px;
+    margin-left: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 0em;
+    padding-right: 3px;
+    padding-bottom: 0px;
+    padding-left: 25px;
+    float: left;
+    width: 100%;
+    max-width: 225px;
 }
 
 .fright {
-  margin-right: 0em;
-	margin-left: 0em;
-	margin-top: 0px;
-	margin-bottom: 0px;
-  padding-right: 25px;
-	float: right;
+    margin-right: 0em;
+    margin-left: 0em;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-right: 25px;
+    float: right;
+}
+
+.fSmallRight {
+    margin-right: 0em;
+    margin-left: 0em;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-right: 10px;
+    float: right;
+    font-size: 2vw;
 }
 
 .vertIcon {
-  padding-left: 5px;
-}
-
-.socialFooter {
-   margin-top: 0px;
-   clear: both;
-   background-color: #545454;
-   height: 75px;
-   width: 100%;
-   bottom: 0;
-   padding: 15px 25px 0px 0px;
+    padding-left: 5px;
 }
 
 /* Shopping Cart Circle */
 .shoppingCartNavBar li a i:first-of-type{
-  border-radius: 50%;
-  border: 1px solid #fff;
-  text-align: center;
-  padding: 10px;
-  margin-top: -10px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    text-align: center;
+    padding: 10px;
+    margin-top: -10px;
 }
 
 /* Product Image */
 .fixedImage {
     position: fixed;
-    top: 2000px;
-    right: 1000px;
+    padding: 1500px 500px 50px 80px;
 }
 
 /* Search Bar */
 .customSearchBar {
-  float: right !important;
-  width: 65%;
-  margin-top: 10px;
-	margin-right: 10px;
-	margin-bottom: 10px;
+    float: right !important;
+    width: 65%;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
 }
 
 /*PP Item Timetable settings*/
 
 .tablePPTimeline {
-	border:2px;
-	border-style: solid;
-  border-color: ##002A45;
-	border-collapse:collapse;
-	box-shadow: 5px 5px 10px 0px rgba(119, 119, 119, 0.3);
-	-moz-box-shadow: 5px 5px 10px 0px rgba(119, 119, 119, 0.3);
-	-webkit-box-shadow: 5px 5px 10px 0px rgba(119, 119, 119, 0.3);
-	background-color: #dedede;
+    border:2px;
+    border-style: solid;
+    border-color: ##002A45;
+    border-collapse:collapse;
+    box-shadow: 5px 5px 10px 0px rgba(119, 119, 119, 0.3);
+    -moz-box-shadow: 5px 5px 10px 0px rgba(119, 119, 119, 0.3);
+    -webkit-box-shadow: 5px 5px 10px 0px rgba(119, 119, 119, 0.3);
+    background-color: #dedede;
 }
 
 .thPPTimeline {
@@ -443,7 +496,7 @@
   border-color: ;
 }
 body {
-  background-color: f7f7f7;
+  background-color: #F7F7F7;
 }
 body {
   color: #333333;
@@ -560,7 +613,7 @@ h2 .jumbotron {
   color: #333333;
 }
 .panel-category-list .well {
-  border-color: f7f7f7;
+  border-color: #F7F7F7;
 }
 .panel-product-list .well {
   background-color: #FFFFFF;
@@ -569,5 +622,5 @@ h2 .jumbotron {
   color: #333333;
 }
 .panel-product-list .well {
-  border-color: f7f7f7;
+  border-color: #F7F7F7;
 }
