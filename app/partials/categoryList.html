@@ -3,7 +3,7 @@
     <nav class="nav 451_lbl_subcatlist">
         <ul>
             <!-- Edit this class to get more programs to fit on page -->
-            <li class="col-lg-3 col-md-4 col-sm-6 col-xs-12" ng-repeat="c in currentCategory.SubCategories">
+            <li class="col-lg-12 col-md-4 col-sm-6 col-xs-6" ng-repeat="c in currentCategory.SubCategories">
                 <div>
                     <!-- <a ng-href="catalog/{{c.InteropID}}"> -->
                     <a ng-href="{{c.InteropID == 'asi' ? 'asi' : 'catalog'}}/{{c.InteropID}}">
