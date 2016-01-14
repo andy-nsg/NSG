@@ -214,29 +214,6 @@
     font-size: 1.8vw;
 }
 
-.visible-xxs {
-  display: none !important;
-}
-
-@media (max-width: 719px) {
-  .visible-xxs {
-    display: block !important;
-  }
-  table.visible-xxs {
-    display: table;
-  }
-  tr.visible-xxs {
-    display: table-row !important;
-  }
-  th.visible-xxs,
-  td.visible-xxs {
-    display: table-cell !important;
-  }
-}
-.nav.visible-xxs {
-  margin-bottom: 10px;
-}
-
 .socialFooter {
     margin-top: 0px;
     clear: both;
