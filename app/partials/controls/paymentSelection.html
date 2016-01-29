@@ -17,7 +17,7 @@
                 ng-if="user.Permissions.contains('PayByBudgetAccount') && (SpendingAccounts|filter:{ForPurchase:true}).length > 0"
                 ng-click="setBudgetAccount((SpendingAccounts|filter:{AccountType.PurchaseCredit:true}).length)">
             <i ng-class="{'fa fa-check': currentOrder.PaymentMethod == 'BudgetAccount' || currentOrder.BudgetAccountID }"></i>
-            {{'Spending Account' | r | xlat}}
+            {{'Spending Account/Gift Card' | r | xlat}}
         </button>
         <button class="btn btn-default" type="button"
                 ng-if="user.AvailableCreditCards.length > 0 && user.Permissions.contains('PayByCreditCard')"
@@ -37,8 +37,8 @@
         </div>
         <div class="row view-form-icon" ng-show="(SpendingAccounts|filter:{ForPurchase:true}).length > 1">
             <div class="col-sm-6" ng-class="{'view-form-select': !currentOrder.BudgetAccountID, '': currentOrder.BudgetAccountID }">
-                <label ng-show="currentOrder.BudgetAccountID">{{'Spending Account' | r}}</label>
-                <select class="form-control" placeholder="{{'Spending Account' | r | xlat}}"
+                <label ng-show="currentOrder.BudgetAccountID">{{'Spending Account/Gift Card' | r}}</label>
+                <select class="form-control" placeholder="{{'Spending Account/Gift Card' | r | xlat}}"
                         ng-options="account.ID as (account.Label + ' - ' + ('Balance' | xlat) + ': ' + (account.Balance | culturecurrency)) for account in SpendingAccounts | filter:{ForPurchase:true}"
                         ng-model="currentOrder.BudgetAccountID"
                         ng-required="currentOrder.PaymentMethod == 'BudgetAccount'">
