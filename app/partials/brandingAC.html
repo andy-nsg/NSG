@@ -1,0 +1,27 @@
+<section class="jumbotron jumbotronInnerShadow" ng-class="{'active': isActive('catalog')}" ng-show="user.Company.LogoUrl">
+  <div class="container">
+    <div class="row jumboHeaderText"> <!-- pull-left if left allignment wanted again-->
+      <div ng-show="Four51User.isAuthenticated()">
+        <a ng-click="refreshUser()" href="catalog/AmeriCorps">
+            <img src="https://www.four51.com/Themes/Custom/cdde0792-3f36-497d-88eb-12c282cba5d2/NSG/images/NSG-WhiteLogo.png" width="100%" alt="Welcome to National Service Gear - The Volunteer Gear People"/>
+        </a>
+        <h2 class="thumbnail">
+            <!-- <span class="jumboHeaderText">
+                {{user.Company.Name}}
+            </span> -->
+        </h2>
+        <homemessage />
+      </div>
+      <!-- Header -->
+      <!-- <div id="NSGHoliday">PLEASE BE AWARE &amp; PLAN ACCORDINGLY: National Service Gear Customer Service &amp; Fulfillment Center will be closed December 24th through January 3rd for the Holidays and end of year inventory. The webstore will still accept orders however processing orders and shipping orders won't resume until the week of January 4th. All custom orders placed now will not ship until after January 4th. National Service Gear wishes you and your family a safe and Happy Holiday. <br /><br />
+
+      REMINDER: If ordering for MLK Day, please be sure to get your stock order in no later than January 4th to receive it by January 15th.
+      </div>-->
+      <!-- <div id="phoneDown">We are currently experiencing technical difficulties with our phone system. Please email us if you need assistance while we fix our phones: <a href="mailto:service@nationalservicegear.org?subject=NSG%20Question"> service@nationalservicegear.org</a>. We apologize for any inconveniences and appreciate your patience.
+      </div> -->
+      <!--<div id="officialCNCS">Thank you for shopping with National Service Gear. National Service Gear is the official provider of volunteer clothing, gear, and recruitment items to the <a href="http://www.nationalservice.gov/about/overview/index.asp" target="_blank"> Corporation for National &amp; Community Service</a> and its programs. If you don&#39;t see what you&#39;re looking for, please contact Customer Service at 1-855-444-0847 or email us at <a href="mailto:service@nationalservicegear.org?subject=Custom%20NSG%20Question"> service@nationalservicegear.org</a>. We&rsquo;ll work with you to find a custom product that meets the needs of your program and targeted audience!
+      </div>-->
+      <!--width="100%"-->
+    </div>
+  </div>
+</section>
