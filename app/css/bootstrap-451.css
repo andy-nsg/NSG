@@ -3673,7 +3673,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   /*margin-left: 50px;
   margin-right: 50px;*/
   margin-bottom: 0;
-  border: 1px solid transparent;
+  /*border: 0px solid transparent;*/
 }
 @media (min-width: 768px) {
   .navbar {
@@ -3982,9 +3982,10 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     margin-right: 0;
   }
 }
+/* Navbar Border Edit */
 .navbar-default {
   background-color: #002A45;
-  border-color: #4484AB;
+  /*border-color: #0069AA;*/
 }
 .navbar-default .navbar-brand {
   color: #ffffff;
@@ -6538,8 +6539,10 @@ button::-moz-focus-inner {
 .pagination li a {
   float: none;
 }
+/*Edit Jumbrotron width */
 .jumbotron {
-  margin: 45px 5px -45px;
+  margin: 45px 0px -45px;
+  /* margin: 45px 5px -45px; */
   display: none;
 }
 .jumbotron.active {
