@@ -3984,7 +3984,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 /* Navbar Border Edit */
 .navbar-default {
-  background-color: #002A45;
+  /*background-color: #002A45; */
   /*border-color: #0069AA;*/
 }
 .navbar-default .navbar-brand {
