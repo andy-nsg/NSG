@@ -6,6 +6,24 @@
         text-align: center;
     }
 
+    /* These will line up from left if needed 
+    #NSGCircleNavBar {
+        display: inline;
+        float: left;
+    }
+    #NSGFontNavBar {
+        clear: none;
+        display: inline;
+        float: left;
+        margin-left: 10px;
+    }
+    */
+
+    /*.NSGMiddle {
+        vertical-align: middle;
+    }
+    */
+
     /* Jumbor Header Home Page*/
     .jumboHeaderText {
         text-align: center;
