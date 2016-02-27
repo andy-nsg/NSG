@@ -8,9 +8,9 @@
                     <!-- <a ng-href="catalog/{{c.InteropID}}"> -->
                     <a ng-href="{{c.InteropID == 'asi' ? 'asi' : 'catalog'}}/{{c.InteropID}}" class="">
                         <figure class="" ng-show="c.Image.URL">
-                            <div class="hvr-grow-shadow">
+                            <!-- <div class="hvr-grow-shadow"> -->
                                 <img class="img-responsive hidden-xs hidden-xxs " ng-src="{{c.Image.URL}}"/>
-                            </div>
+                            <!-- </div> -->
                             <!-- <h5 class="NSGCategoryTitle" ng-bind-html="c.Name" /> -->
                             
                         </figure>
