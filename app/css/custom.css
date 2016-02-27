@@ -101,7 +101,7 @@
         font-size: 12pt;
     	font-style: bold;
         /* offset-x | offset-y | blur-radius | color */
-        /*text-shadow: 2px 2px 5px #000000;*/
+        text-shadow: 2px 2px 5px #000000;
     }
 
     .NSGCategoryTitle:hover {
