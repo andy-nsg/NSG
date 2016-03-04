@@ -28,7 +28,7 @@
     .jumboHeaderText {
         text-align: center;
         /*vertical-align: middle;*/
-        padding-top: 30px;
+        padding-top: 20px;
         color: #FFFFFF;
         /*position: relative;
         top: 50%;
@@ -77,10 +77,15 @@
         box-shadow: 8px 8px 15px 0px rgba(0,0,0,0.42);
     }
 
-    
+
 
     .panel-category-list ul li a h5 {
         height: 50px;
+    }
+
+    .NSGNavbarIconContainer {
+        max-width: 100%;
+        height: auto;
     }
 
 
