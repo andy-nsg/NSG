@@ -600,9 +600,14 @@
     h2 .jumbotron {
       color: #FFFFFF;
     }
-    .panel-primary .panel-heading .panel-title {
-      background-color: #F18F01; /*002A45*/
+    .panel-announcement {
+      background-color: #F18F01;
     }
+
+    .panel-primary .panel-heading .panel-title {
+      background-color: #2F2D2E;
+    }
+    
     .panel-primary .panel-heading .panel-title {
       color: #FFFFFF;
     }
