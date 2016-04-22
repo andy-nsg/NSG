@@ -319,7 +319,7 @@
     }
 
     .socialFooter > .text-right > .iconTrans {
-        color: #E04F4F;
+        color: #F7F7F7; /*E04F4F*/
     }
 
     .socialFooter > .text-right > .iconTwitter:hover {
