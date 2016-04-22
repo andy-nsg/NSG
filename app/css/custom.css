@@ -343,6 +343,12 @@
         font-size: 4vw;
     }
 
+    /*Gives items a list style*/
+    .prod-desc-list-style ul {
+    list-style-type: circle;
+    margin-left:10px;
+    }
+
 
     /* Shopping Cart Circle */
     .shoppingCartNavBar li a i:first-of-type{
