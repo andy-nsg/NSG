@@ -78,9 +78,14 @@
     }
 
 
-
+    /* Fixes row issues with Category List page */
     .panel-category-list ul li a h5 {
         height: 50px;
+    }
+
+    /* Fixes row issues with Product List page */
+    .panel-product-list ul li h3 {
+        font-size: 15px;
     }
 
     .NSGNavbarIconContainer {
