@@ -5,6 +5,10 @@
     .NSGcenter {
         text-align: center;
     }
+    
+    .thumbnail img {
+        max-height: 55px;
+    }
 
     /* These will line up from left if needed
     #NSGCircleNavBar {
