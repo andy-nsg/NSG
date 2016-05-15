@@ -7,7 +7,7 @@ html {
 }
 body {
   margin: 0;
-  height: 100%; /* Added this to make sticky footer - ak */
+  height: 100%; /* Added this to make sticky footer - $ak */
 }
 
 article,
@@ -5887,7 +5887,7 @@ ul:after,
   display: none !important;
 }
 
-/* Updated the min-width to work with .visible-xxs -ak */
+/* Updated the min-width to work with .visible-xxs - $ak */
 
 @media (max-width: 719px) {
   .visible-xxs {
@@ -6417,7 +6417,7 @@ button::-moz-focus-inner {
   padding: 20px 10px;
 }
 
-/* Remove Border Radius and Border for Shopping Cart Icon, Add to Custom CSS for Shopping Cart Only. This is to avoid having circles around social media icons -ak */
+/* Remove Border Radius and Border for Shopping Cart Icon, Add to Custom CSS for Shopping Cart Only. This is to avoid having circles around social media icons -$ak */
 .navbar .container .navbar-nav.pull-right li a i:first-of-type,
 .navbar .container-view .navbar-nav.pull-right li a i:first-of-type {
   /*border-radius: 50%;
@@ -6539,7 +6539,7 @@ button::-moz-focus-inner {
 .pagination li a {
   float: none;
 }
-/*Edit Jumbrotron width */
+/*Edit Jumbrotron width - $ak */
 .jumbotron {
   margin: 45px 0px -45px;
   /* margin: 45px 5px -45px; */
@@ -8114,7 +8114,7 @@ select.ng-invalid:invalid:invalid:focus {
   display: none;
 }
 
-/* Adjust Product List Link Here - ak*/
+/* Adjust Product List Link Here - $ak*/
 .panel-product-list ul li a {
   padding: .75em;
   display: block;
@@ -8760,7 +8760,7 @@ table[datepicker] {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-/* makes the font 33% larger relative to the icon container */
+/* makes the font 33% larger relative to the icon container - $ak */
 .fa-lg {
   font-size: 1.33333333em;
   line-height: 0.75em;
