@@ -3982,11 +3982,11 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
     margin-right: 0;
   }
 }
-/* Navbar Border Edit */
-.navbar-default {
-  /*background-color: #002A45; */
-  /*border-color: #0069AA;*/
-}
+/* Navbar Color & Border Edit - $ak */
+/*.navbar-default {
+  background-color: #002A45;
+  border-color: #0069AA;
+}*/
 .navbar-default .navbar-brand {
   color: #ffffff;
 }
@@ -4402,7 +4402,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   vertical-align: baseline;
   white-space: nowrap;
   text-align: center;
-  background-color: #0c2a3a;
+  /* Change Shopping Cart Indicator Background - $ak */
+  background-color: #000000;
   border-radius: 10px;
 }
 .badge:empty {
