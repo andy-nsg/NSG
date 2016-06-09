@@ -17,7 +17,7 @@ function backtotop() {
             $(document).ready(function () {
                 var duration = scope.duration || 800;
                 var offsetRight = scope.offsetright || 40;
-                var offsetBottom = scope.offsetbottom || 40;
+                var offsetBottom = scope.offsetbottom || 100;
 
                 scope.myStyles = {
                     position: "fixed",
