@@ -331,20 +331,20 @@
   transition: all ease-in-out 0.5s;
 }
 
-.socialFooter > .text-right > .iconTrans {
+.socialFooter > .text-left > .iconTrans {
     color: #F7F7F7; /*E04F4F*/
 }
 
-.socialFooter > .text-right > .iconTwitter:hover {
+.socialFooter > .text-left > .iconTwitter:hover {
     color: #00ACED !important; /* 2B2B2B */
 }
-.socialFooter > .text-right > .iconFacebook:hover {
+.socialFooter > .text-left > .iconFacebook:hover {
     color: #3B5998 !important; /* 2B2B2B */
 }
-.socialFooter > .text-right > .iconInstagram:hover {
+.socialFooter > .text-left > .iconInstagram:hover {
     color: #517fA4 !important; /* 2B2B2B */
 }
-.socialFooter > .text-right > .iconLinkedIn:hover {
+.socialFooter > .text-left > .iconLinkedIn:hover {
     color: #007BB6 !important; /* 2B2B2B */
 }
 
