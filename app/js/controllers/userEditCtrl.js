@@ -1,7 +1,7 @@
 four51.app.controller('UserEditCtrl', ['$scope', '$location', '$sce', '$injector', 'User',
 function ($scope, $location, $sce, $injector, User) {
     var _AnonRouter;
-    if($scope.user){
+    if ($scope.user){
         $scope.existingUser = $scope.user.Type != 'TempCustomer';
     }
     try {
