@@ -30,17 +30,17 @@ function productlightbox() {
             '.galleryImages a {display:block;}',
             '.galleryImages a.no-click {cursor:none;pointer-events: none;}',
             '.galleryImages .product-image-large {display:none;}',
-            '.galleryImages .active .product-image-large {display:block !important;max-height:100%;max-width:100%;position:relative;top:0;}',
+            '.galleryImages .active .product-image-large {display:block !important;max-width:100%;position:relative;top:0;}', // removed max-height:100% $ak
             '</style>',
             '<div class="panel-body">',
             '<ul class="galleryImages">',
             '<li ng-repeat="image in LineItem.images">',
-            '<a class="hidden-xs" ng-click="openLightboxModal($index)" ng-class="{active: $index==$parent.index}">',
+            '<a ng-click="openLightboxModal($index)" ng-class="{active: $index==$parent.index}">', // removed hidden-xs from a class $ak
             '<img ng-src="{{image.url}}" class="product-image-large img-responsive" />',
             '</a>',
-            '<a class="no-click visible-xs" ng-class="{active: $index==$parent.index}">',
-            '<img ng-src="{{image.url}}" class="product-image-large img-responsive" />',
-            '</a>',
+            //'<a class="no-click visible-xs" ng-class="{active: $index==$parent.index}">', removed because don't need for the resize $ak
+            //'<img ng-src="{{image.url}}" class="product-image-large img-responsive" />',
+            //'</a>',
             '</li>',
             '</ul>',
             '</div>',
