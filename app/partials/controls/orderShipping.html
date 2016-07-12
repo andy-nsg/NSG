@@ -39,40 +39,21 @@
                             <div ng-show="!currentOrder.IsMultipleShip()" class="view-form-icon">
                                 <div ng-show="shipaddresses" ng-class="{'view-form-select': !currentOrder.ShipAddressID, '': currentOrder.ShipAddressID }">
                                     <label ng-class="{required: !currentOrder.IsMultipleShip()}" ng-show="currentOrder.ShipAddressID || !currentOrder.IsMultipleShip()">{{('Shipping' | r) + ' ' + ('Address' | r) | xlat}}</label>
-                                    <select class="form-control" name="shippingAddress"
-                                            ng-change="setShipAddressAtOrderLevel()"
-                                            ng-options="address.ID as address.AddressName for address in shipaddresses"
-                                            ng-model="currentOrder.ShipAddressID"
-                                            ng-required="!currentOrder.IsMultipleShip()">
-                                        <option value=""></option>
-                                    </select>
-                                    <i class="fa fa-map-marker"></i>
-                                </div>
-                                <div class="panel panel-primary">
-                                    <div class="panel-heading">
-                                        <h2 class="panel-title panel-primary">
-                                            {{'Free UPS Ground Shipping on Orders over $300' | r | xlat}}
-                                        </h2>
-                                    </div>
-                                    <div class="panel-body">
-                                        <h4 class="NSGcenter">If your SUBTOTAL is $300 or more, please select "Free Shipping - $300 Order" from the Shipping Method drop down below</h4>
-                                    </div>
+                                        <select class="form-control" name="shippingAddress"
+                                                ng-change="setShipAddressAtOrderLevel()"
+                                                ng-options="address.ID as address.AddressName for address in shipaddresses"
+                                                ng-model="currentOrder.ShipAddressID"
+                                                ng-required="!currentOrder.IsMultipleShip()">
+                                            <option value=""></option>
+                                        </select>
+                                        <i class="fa fa-map-marker"></i>
                                 </div>
                                 <div ng-show="user.ShipMethod != null && shippers" ng-class="{'view-form-select': !currentOrder.LineItems[0].ShipperName, '': currentOrder.LineItems[0].ShipperName }">
                                     <label ng-class="{required: !currentOrder.IsMultipleShip() && user.ShipMethod != null}" ng-show="currentOrder.LineItems[0].ShipperName || !currentOrder.IsMultipleShip() && user.ShipMethod != null">{{('Shipping' | r) + ' Method' | xlat}}</label>
-                                    <!-- if subtotal is less than $300 -->
-                                    <select ng-if="currentOrder.Subtotal < 300" class="form-control" ng-change="updateShipper()" name="shipMethod"
+                                    <select class="form-control" ng-change="updateShipper()" name="shipMethod"
                                             ng-model="currentOrder.LineItems[0].ShipperName"
                                             ng-show="user.ShipMethod.ShipperSelectionType == 'UserDropDown'"
-                                            ng-options="shipper.Name as (shipper.Name + ' ' + (shipper.ShippingRate.Price | currency | xlat)) for shipper in shippers | filter: {Name: '!' + 'Free Shipping - $300 Order'}"
-                                            ng-required="!currentOrder.IsMultipleShip() && user.ShipMethod != null" >
-                                        <option value=""></option>
-                                    </select>
-                                    <!-- if subtotal is $300 or more -->
-                                    <select ng-if="currentOrder.Subtotal > 299" class="form-control" ng-change="updateShipper()" name="shipMethod"
-                                            ng-model="currentOrder.LineItems[0].ShipperName"
-                                            ng-show="user.ShipMethod.ShipperSelectionType == 'UserDropDown'"
-                                            ng-options="shipper.Name as (shipper.Name + ' ' + (shipper.ShippingRate.Price | currency | xlat)) for shipper in shippers | filter:{Name: 'Free Shipping - $300 Order'}"
+                                            ng-options="shipper.Name as (shipper.Name + ' ' + (shipper.ShippingRate.Price | currency | xlat)) for shipper in shippers"
                                             ng-required="!currentOrder.IsMultipleShip() && user.ShipMethod != null" >
                                         <option value=""></option>
                                     </select>
@@ -88,7 +69,7 @@
                                 </p>
                                 <div class="row" ng-show="!currentOrder.IsMultipleShip() && user.Permissions.contains('EditShipToName') && (orderShipAddress && !orderShipAddress.IsCustEditable)">
                                     <div class="col-sm-2">
-                                        <input class="form-control" type="text" ng-model="currentOrder.LineItems[0].ShipFirstName" placeholder="{{('First' | r) + ' ' + ('Name' | r) | xlat}}" />
+                                         <input class="form-control" type="text" ng-model="currentOrder.LineItems[0].ShipFirstName" placeholder="{{('First' | r) + ' ' + ('Name' | r) | xlat}}" />
                                     </div>
                                     <div class="col-sm-2">
                                         <input class="form-control" type="text" ng-model="currentOrder.LineItems[0].ShipLastName" placeholder="{{('Last' | r) + ' ' + ('Name' | r) | xlat}}" />
@@ -118,7 +99,7 @@
                                     <small><strong>{{item.Product.Name}}</strong>{{' x ' + item.Quantity}}</small>
                                 </p>
                                 <p ng-show="user.Permissions.contains('EditShipToName') && !ShipAddress.IsCustEditable"><small>Attention:</small></p>
-                                <div class="row" ng-show="user.Permissions.contains('EditShipToName') && !ShipAddress.IsCustEditable">
+                                <div class="row" ng-show="user.Permissions.contains('EditShipToName') && !ShipAddress.IsCustEditable && item.ShipAddressID">
                                     <div class="view-form-icon col-sm-6">
                                         <div>
                                             <label ng-show="item.ShipFirstName || currentOrder.IsMultipleShip() && user.Permissions.contains('EditShipToName') && !ShipAddress.IsCustEditable" ng-class="{required: currentOrder.IsMultipleShip() && user.Permissions.contains('EditShipToName') && !ShipAddress.IsCustEditable}">{{('First' | r) + ' ' + ('Name' | r) | xlat}}</label>
@@ -149,7 +130,7 @@
                                         <i class="fa fa-map-marker"></i>
                                     </div>
                                 </div>
-                                <div class="view-form-icon" ng-show="currentOrder.LineItems[0].ShipperName || currentOrder.IsMultipleShip() && user.ShipMethod != null">
+                                <div class="view-form-icon" ng-show="item.ShipAddressID || currentOrder.IsMultipleShip() && item.ShipAddressID && user.ShipMethod != null">
                                     <div ng-class="{'view-form-select': !item.ShipperName, '' : item.ShipperName }">
                                         <label ng-class="{required: currentOrder.IsMultipleShip() && user.ShipMethod != null}">{{('Shipping' | r) + ' ' + ('Method' | r) | xlat}}</label>
                                         <select class="form-control" ng-change="updateShipper(item)"
