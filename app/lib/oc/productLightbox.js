@@ -46,11 +46,13 @@ function productlightbox() {
             '</div>',
             '<div class="panel-footer">',
             '<ul class="galleryThumbs">',
+            '<div class="scrollLightbox">',
             '<li ng-repeat="image in LineItem.images">',
             '<a ng-click="$parent.index=$index" ng-class="{active: $index==$parent.index}">',
-            '<img ng-src="{{image.url}}" class="img-thumbnail img-responsive" />',
+            '<img ng-src="{{image.url}}" class="img-thumbnail img-responsive" data-toggle="tooltip" data-placement="bottom" title="{{LineItem.Specs.Color}}"/>',
             '</a>',
             '</li>',
+            '</div>',
             '</ul>',
             '</div>'
         ].join('');
