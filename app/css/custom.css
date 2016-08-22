@@ -107,8 +107,15 @@
   max-height: 400px;
   max-width: 100%;
 }
+/* Light Scroll Bar */
+.scrollLightbox {
+    width: auto;
+    height: 60px;
+    overflow: auto;
+    white-space: nowrap;
+}
 .testy {
-    max-height: 200px;
+    max-width: 400px;
 }
 /*.NSGCategoryButton:hover {
     margin: 0px 25px 30px 25px;
