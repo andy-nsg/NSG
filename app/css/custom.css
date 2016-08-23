@@ -347,7 +347,7 @@
 }
 
 .socialFooter > .text-left > .iconTrans {
-    color: #F7F7F7; /*E04F4F*/
+    color: #ffffff; /*E04F4F*/
 }
 
 .socialFooter > .text-left > .iconTwitter:hover {
@@ -543,7 +543,7 @@
   border-color: ;
 }
 body {
-  background-color: #F7F7F7;
+  background-color: #ffffff;
 }
 body {
   color: #333333;
@@ -642,7 +642,7 @@ h2 .jumbotron {
   color: #FFFFFF;
 }
 .panel-default .panel-heading .panel-title {
-  background-color: #F5F5F5;
+  background-color: #dedede;
 }
 .panel-default .panel-heading .panel-title {
   color: #333333;
@@ -651,7 +651,7 @@ h2 .jumbotron {
   background-color: #FFFFFF;
 }
 .panel-footer {
-  background-color: #F5F5F5;
+  background-color: #dedede;
 }
 .panel-category-list .well {
   background-color: #FFFFFF;
@@ -660,7 +660,7 @@ h2 .jumbotron {
   color: #333333;
 }
 .panel-category-list .well {
-  border-color: #F7F7F7;
+  border-color: #dedede;
 }
 /* Adjust product list border/backgrounds $ak */
 .panel-product-list {
