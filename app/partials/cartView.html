@@ -11,9 +11,9 @@
             <div>
                 <cartmessage />
             </div>
-            <div class="panel panel-default">
+            <div class="panel panel-primary">
                 <div class="panel-heading">
-                    <h3 class="panel-title">
+                    <h3 class="panel-title panel-primary">
                         {{currentOrder.LineItems.length}} {{'item' + (currentOrder.LineItems.length > 1 ? 's' : '') | rl | xlat}} {{'in your' | rl | xlat:(currentOrder.LineItems.length)}} {{'cart' | rl | xlat}}
                     </h3>
                 </div>
@@ -154,6 +154,7 @@
                 </div>
                 <div class="panel-footer">
                     <div class="row">
+                        <!-- Comment out to move Gift Card field to Checkout Page (ordersummary.html) $ak -->
                         <!-- <div class="col-md-4 col-lg-3">
                             <giftcardredemption ng-if="user.Permissions.contains('ViewPromotions')" />
                         </div> -->
