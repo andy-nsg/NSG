@@ -5,7 +5,9 @@
 .NSGcenter {
     text-align: center;
 }
-
+.FontSmall {
+    font-size: 80%;
+}
 /* These will line up from left if needed
 #NSGCircleNavBar {
     display: inline;
