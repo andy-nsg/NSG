@@ -373,9 +373,9 @@
     font-size: 4vw;
 }
 
-/*Gives items a list style*/
+/*Gives items a list style, bullets*/
 .prod-desc-list-style ul {
-    list-style-type: circle;
+    list-style-type: disc;
     margin-left:25px;
 }
 
