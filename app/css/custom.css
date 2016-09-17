@@ -378,6 +378,10 @@
     list-style-type: disc;
     margin-left:25px;
 }
+.contactListStyle ul li {
+    list-style-type: disc;
+    margin-left:25px;
+}
 
 
 /* Shopping Cart Circle */
