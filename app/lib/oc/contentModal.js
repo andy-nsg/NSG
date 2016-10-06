@@ -70,7 +70,7 @@ function ContentModalCtrl($scope, $modal) {
                 '</a>',
                 '</div>',
                 //'<div class="modal-body">',
-                //'<h3>Heading</h3>',
+                //'<h3>2016 Schedule</h3>',
                 //content block 1
                 //'<h4>Subheading</h4>',
                 //'<p>',
@@ -133,7 +133,7 @@ function ContentModalCtrl($scope, $modal) {
                 '</tr>',
                 '<tr>',
                   '<td class="tdPPTimeline">October 3rd - October 24th</td>',
-                  '<td class="tdPPTimeline">November 18th</td>',
+                  '<td class="tdPPTimeline">November 28th</td>',
                 '</tr>',
                 '<tr>',
                   '<td class="tdPPTimeline">October 24th - November 14th</td>',
