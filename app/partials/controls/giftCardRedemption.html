@@ -5,7 +5,7 @@
             <div class="input-group">
                 <input class="form-control" type="text" ng-model="giftcard.Code" placeholder="{{'Gift Card Code' | r | xlat}}" autocomplete="off"/>
                 <span class="input-group-btn">
-                    <button type="submit" class="btn btn-success" value="Refresh Page" onClick="window.location.reload(5);alert('{{'A gift card' | xlat}}, <strong>{{giftcard.Code}}</strong>, {{'with a balance of' | xlat}} <strong>{{giftcard.Balance | culturecurrency}}</strong> {{'has been attached to your account and will be available under Spending Account/Gift Card of the Billing step of the checkout process while a balance remains' | xlat}}.')"><i class="fa fa-check"></i></button>
+                    <button type="submit" class="btn btn-success" value="Refresh Page" onClick="window.location.reload(5);" onclick="alert('{{'A gift card' | xlat}}, <strong>{{giftcard.Code}}</strong>, {{'with a balance of' | xlat}} <strong>{{giftcard.Balance | culturecurrency}}</strong> {{'has been attached to your account and will be available under Spending Account/Gift Card of the Billing step of the checkout process while a balance remains' | xlat}}.')"><i class="fa fa-check"></i></button>
                 </span>
             </div>
             <i class="fa fa-dollar"></i>
