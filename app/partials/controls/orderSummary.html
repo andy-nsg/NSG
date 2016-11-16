@@ -24,14 +24,15 @@
             <span class="text-info">{{'Tax' | r | xlat}}</span>
             <span class="pull-right">{{currentOrder.TaxCost || 0 | culturecurrency}}</span>
         </p>
+        <!-- Insert Gift Card redemption code here -->
         <giftcardredemption ng-if="user.Permissions.contains('ViewPromotions')" />
         <div ng-show="user.Permissions.contains('ViewPromotions')">
             <div ng-show="!currentOrder.Coupon">
                 <div class="form-group view-form-icon">
                     <div>
-                        <label ng-show="currentOrder.CouponCode">{{('Promotion' | r) + ' ' + ('Code' | r) | xlat}}</label>
+                        <label>{{('Enter' | r) + ' ' + ('Promotion' | r) + ' ' + ('Code' | r) + ' ' + ('Below' | r) | xlat}}</label>
                         <div class="input-group">
-                            <input class="form-control" type="text" ng-model="currentOrder.CouponCode" placeholder="{{('Promotion' | r) + ' ' + ('Code' | r) | xlat}}" autocomplete="off"/>
+                            <input class="form-control" type="text" ng-model="currentOrder.CouponCode" placeholder="{{('Promotion' | r) + ' ' + ('Code' | r) + ' ' + ('Here' | r) | xlat}}" autocomplete="off"/>
                             <span class="input-group-btn">
                                 <button type="button" class="btn btn-success" ng-click="applyCoupon()"><i class="fa fa-check"></i></button>
                             </span>
