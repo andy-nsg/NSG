@@ -1,7 +1,10 @@
 <form name="giftcard_redeem" ng-submit="redeemGiftCard()" class="gift-card-redemption-view">
     <div class="form-group view-form-icon">
         <div>
-            <label>{{('Enter' | r) + ' ' + ('Gift' | r) + ' ' + ('Card' | r) + ' ' + ('Code' | r) + ' ' + ('Below' | r) | xlat}}</label> <!-- ng-show="giftcard.Code"-->
+            <label>{{('Enter' | r) + ' ' + ('Gift' | r) + ' ' + ('Card' | r) + ' ' + ('Code' | r) + ' ' + ('Below' | r) | xlat}}</label><!-- ng-show="giftcard.Code"-->
+            <div class="NSGtooltip FontSize10">Gift Card Instructions
+                <span class="NSGtooltiptext">Tooltip text</span>
+            </div>
             <div class="input-group">
                 <input class="form-control" type="text" ng-model="giftcard.Code" placeholder="{{('Gift' | r) + ' ' + ('Card' | r) + ' ' + ('Code' | r) + ' ' + ('Here' | r) | xlat}}" autocomplete="off"/>
                 <span class="input-group-btn">
