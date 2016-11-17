@@ -8,6 +8,12 @@
 .FontSmall {
     font-size: 85%;
 }
+.FontSize07 {
+    font-size: 7pt;
+}
+.FontItalics {
+    font-style: italic;
+}
 /* These will line up from left if needed
 #NSGCircleNavBar {
     display: inline;
@@ -35,6 +41,42 @@
     /*position: relative;
     top: 50%;
     transform: translateY(-50%);*/
+}
+
+/* NSG Tooltip */
+.NSGtooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+.NSGtooltip .NSGtooltiptext {
+    visibility: hidden;
+    width: 200px;
+    background-color: black;
+    color: #fff;
+    font-style: normal;
+    font-size: 10pt;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 150%;
+    left: 50%;
+    margin-left: -100px;
+}
+.NSGtooltip .NSGtooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
+}
+.NSGtooltip:hover .NSGtooltiptext {
+    visibility: visible;
 }
 
 .jumbotronInnerShadow {
