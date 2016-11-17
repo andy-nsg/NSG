@@ -1,10 +1,10 @@
 <form name="giftcard_redeem" ng-submit="redeemGiftCard()" class="gift-card-redemption-view">
     <div class="form-group view-form-icon">
         <div>
-            <label>{{('Enter' | r) + ' ' + ('Gift' | r) + ' ' + ('Card' | r) + ' ' + ('Code' | r) + ' ' + ('Below' | r) | xlat}}</label><!-- ng-show="giftcard.Code"-->
-            <div class="NSGtooltip FontSize10">Gift Card Instructions
-                <span class="NSGtooltiptext">Tooltip text</span>
-            </div>
+            <label>{{('Enter' | r) + ' ' + ('Gift' | r) + ' ' + ('Card' | r) + ' ' + ('Code' | r) + ' ' + ('Below' | r) | xlat}}<!-- ng-show="giftcard.Code"-->
+            <div class="NSGtooltip FontSize07 FontItalics">{{'   Gift card instructions' | xlat}}
+                <span class="NSGtooltiptext">After applying a gift card, you must select the "Spending Account/Gift Card" option in the Billing step of the checkout process while a balance remains. Please do not select the Credit Card option unless paying for the remainder of an order.</span>
+            </div></label>
             <div class="input-group">
                 <input class="form-control" type="text" ng-model="giftcard.Code" placeholder="{{('Gift' | r) + ' ' + ('Card' | r) + ' ' + ('Code' | r) + ' ' + ('Here' | r) | xlat}}" autocomplete="off"/>
                 <span class="input-group-btn">
