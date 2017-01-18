@@ -130,7 +130,7 @@ function ContentModalCtrl($scope, $modal) {
                 '</tr>',
                 '<tr>',
                   '<td class="tdPPTimeline">October 17th - November 10th</td>',
-                  '<td class="tdPPTimeline">December 1th - In time for the Holidays</td>',
+                  '<td class="tdPPTimeline">December 11th - In time for the Holidays</td>',
                 '</tr>',
                 '</tbody>',
                 '</table>',
