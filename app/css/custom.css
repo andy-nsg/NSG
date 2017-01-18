@@ -1,7 +1,6 @@
 .white {
     color: #FFFFFF;
 }
-
 .NSGcenter {
     text-align: center;
 }
@@ -26,12 +25,10 @@
     margin-left: 10px;
 }
 */
-
 /*.NSGMiddle {
     vertical-align: middle;
 }
 */
-
 /* Jumbor Header Home Page*/
 .jumboHeaderText {
     text-align: center;
@@ -42,7 +39,6 @@
     top: 50%;
     transform: translateY(-50%);*/
 }
-
 /* NSG Tooltip */
 .NSGtooltip {
     position: relative;
@@ -78,30 +74,52 @@
 .NSGtooltip:hover .NSGtooltiptext {
     visibility: visible;
 }
-
+.purchasePowerModalBox {
+    text-align: center;
+    max-width: 500px;
+}
 .jumbotronInnerShadow {
     -webkit-box-shadow: inset 0px 0px 20px 10px rgba(0,0,0,0.1);
     -moz-box-shadow: inset 0px 0px 20px 10px rgba(0,0,0,0.1);
     box-shadow: inset 0px 0px 20px 10px rgba(0,0,0,0.1);
 }
-
 /* Navbar Drop Shadow */
 .navbarDropShadow {
     -webkit-box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.42);
     -moz-box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.42);
     box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.42);
 }
-
 .navbarInnerShadow {
     -webkit-box-shadow: inset 0px 0px 15px 5px rgba(0,0,0,0.1);
     -moz-box-shadow: inset 0px 0px 15px 5px rgba(0,0,0,0.1);
     box-shadow: inset 0px 0px 15px 5px rgba(0,0,0,0.1);
 }
-
 #vertAlignJumbo {
   position: relative;
   top: 50%;
   transform: translateY(-50%);
+}
+/* Adjust product list border/backgrounds $ak */
+.panel-product-list {
+    border-radius: 0px;
+    border-color: transparent;
+}
+.panel-product-list .well {
+  background-color: transparent;
+  border: none;
+  border-color: transparent;
+}
+.panel-product-list .aLinkSpacingFix {
+  color: #333333;
+}
+.panel-product-list .well {
+  border-color: transparent;
+}
+/*Changes size of images on category page*/
+.thumbnail img {
+  max-height: 250px; /*must match smallest size of thumbnail image*/
+  max-width: 100%;
+  margin: 0 auto 15px;
 }
 
 /* This counters the spacing issue on the product list page with <a> links */
@@ -110,37 +128,29 @@
     display: inline !important;
     text-decoration: none;
 }
-
 .NSGCategoryButtonPadding {
     margin: 0px 25px 25px 25px;
 }
-
 .NSGCategoryButton {
     -webkit-box-shadow: 8px 8px 15px 0px rgba(0,0,0,0.42);
     -moz-box-shadow: 8px 8px 15px 0px rgba(0,0,0,0.42);
     box-shadow: 8px 8px 15px 0px rgba(0,0,0,0.42);
 }
-
-
 /* Fixes row issues with Category List page */
 .panel-category-list ul li a h5 {
     height: 50px;
 }
-
 /* Fixes row issues with Product List page */
 .panel-product-list ul li h3 {
     font-size: 15px;
 }
-
 .shoppingCartIndicator ul li a {
     color: #FFFFFF;
 }
-
 .navLogo {
     max-width: 100%;
     max-height: 30px;
 }
-
 /* Fixed Product Image */
 .fixedProductImage {
     position: fixed !important;
@@ -172,7 +182,6 @@
 /*.NSGCategoryButtonPadding:hover {
     padding: 0px 25px 25px 25px;
 }*/
-
 .NSGCategoryTitle {
     color: #0B3648;
     font-size: 13pt;
@@ -180,11 +189,9 @@
     /* offset-x | offset-y | blur-radius | color */
     /*text-shadow: 2px 2px 5px #000000;*/
 }
-
 .NSGCategoryTitle:hover {
     color: #E04F4F;
 }
-
 .officialCNCS {
     font-family:'Source Sans Pro', arial, serif;
     font-size: 12pt;
@@ -200,7 +207,6 @@
     padding-bottom: 15px;
     padding-left: 10px;
 }
-
 /*This is used for the header when closed for holidays*/
 .NSGHoliday {
     font-family:'Source Sans Pro', arial, serif;
@@ -216,7 +222,6 @@
     padding-left: 10px;
     /*text-shadow: 2px 2px 4px #A1A1A1;*/
 }
-
 /*Used when we have tech difficulties*/
 .phoneDown {
     font-family:'Source Sans Pro', arial, serif;
@@ -232,22 +237,17 @@
     padding-left: 10px;
     /*text-shadow: 2px 2px 4px #A1A1A1;*/
 }
-
 /*Footer CSS*/
-
 * {
     margin: 0;
 }
-
 .flushFooter, .push {
     height: 210px; /* .push must be the same height as .footer */
 }
-
 .NSGwrapper {
     min-height: 100%;
     margin: 0 auto -210px; /* the bottom margin is the negative value of the footer's height */
 }
-
 .NSGfooter {
     /*margin-right: 5em;
     margin-left: 4em;
@@ -269,7 +269,6 @@
     background-repeat: no-repeat;
     background-position: 5px 5px;*/
 }
-
 .NSGxsFooter {
     margin-top: 0px;
     clear: both;
@@ -285,7 +284,6 @@
     background-repeat: no-repeat;
     background-position: 5px 5px;*/
 }
-
 .NSGxxsFooter {
     margin-top: 0px;
     clear: both;
@@ -301,7 +299,6 @@
     background-repeat: no-repeat;
     background-position: 5px 5px;*/
 }
-
 .footLeft {
     margin-right: 0px;
     margin-left: 0px;
@@ -313,7 +310,6 @@
     padding-left: 55px;
     float: left;
 }
-
 .xsFootLeft {
     margin-right: 0px;
     margin-left: 0px;
@@ -340,7 +336,6 @@
     width: 100%;
     max-width: 180px;
 }
-
 .footRight {
     margin-right: 0em;
     margin-left: 0em;
@@ -349,7 +344,6 @@
     padding-right: 25px;
     float: right;
 }
-
 .xsFootRight {
     margin-right: 0em;
     margin-left: 0em;
@@ -368,7 +362,6 @@
     float: right;
     font-size: 1.8vw;
 }
-
 .socialFooter {
     margin-top: 0px;
     clear: both;
@@ -378,7 +371,6 @@
     bottom: 0;
     padding: 10px 0px 0px 60px;
 }
-
 /* Use this to transition icons */
 .iconTrans,
 .iconTrans:hover,
@@ -389,11 +381,9 @@
   -o-transition: all ease-in-out 0.5s;
   transition: all ease-in-out 0.5s;
 }
-
 .socialFooter > .text-left > .iconTrans {
     color: #ffffff; /*E04F4F*/
 }
-
 .socialFooter > .text-left > .iconTwitter:hover {
     color: #00ACED !important; /* 2B2B2B */
 }
@@ -406,15 +396,12 @@
 .socialFooter > .text-left > .iconLinkedIn:hover {
     color: #007BB6 !important; /* 2B2B2B */
 }
-
 .vertIcon {
     padding-left: 5px;
 }
-
 .contactFooterText {
     font-size: 4vw;
 }
-
 /*Gives items a list style, bullets*/
 .prod-desc-list-style ul {
     list-style-type: disc;
@@ -424,8 +411,6 @@
     list-style-type: disc;
     margin-left:25px;
 }
-
-
 /* Shopping Cart Circle */
 .shoppingCartNavBar li a i:first-of-type{
     border-radius: 50%;
@@ -434,13 +419,11 @@
     padding: 10px;
     margin-top: -10px;
 }
-
 /* Product Image */
 .fixedImage {
     position: fixed;
     padding: 1500px 500px 50px 80px;
 }
-
 /* Search Bar */
 .customSearchBar {
     float: right !important;
@@ -449,33 +432,14 @@
     margin-right: 10px;
     margin-bottom: 10px;
 }
-
 /*PP Item Timetable settings*/
-
 .tablePPTimeline {
-    border:2px;
-    border-style: solid;
-    border-color: #0B3648;
-    border-collapse:collapse;
     box-shadow: 5px 5px 10px 0px rgba(119, 119, 119, 0.3);
     -moz-box-shadow: 5px 5px 10px 0px rgba(119, 119, 119, 0.3);
     -webkit-box-shadow: 5px 5px 10px 0px rgba(119, 119, 119, 0.3);
     background-color: #dedede;
 }
-
 .thPPTimeline {
-    border:2px;
-    border-style: solid;
-    border-color: #0B3648;
-    border-collapse:collapse;
-    padding:5px;
-  text-align:center;
-}
-
-.tdPPTimeline {
-  font-family: arial,helvetica,sans-serif;
-  font-size: 14px;
-  font-weight: bold;
     border:2px;
     border-style: solid;
     border-color: #0B3648;
@@ -483,11 +447,20 @@
     padding:5px;
     text-align:center;
 }
-
+.tdPPTimeline {
+    font-family: arial,helvetica,sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    border:2px;
+    border-style: solid;
+    border-color: #0B3648;
+    border-collapse:collapse;
+    padding:5px;
+    text-align:center;
+}
 #fontProduct {
     color: #000000;
 }
-
 #fontProgram {
     font-size: 14px;
     font-weight: bold;
@@ -500,11 +473,9 @@
     margin-bottom: 0px;
     margin-left: 0px;
 }
-
 #footerFont {
     font-size: 10px;
 }
-
 #mainbkg {
     /*background-color: #e9e9e9;*/
     margin-top: 0px;
@@ -516,7 +487,6 @@
     padding-bottom: .25em;
     padding-left: 3em;
 }
-
 #mainnav {
     /*background-color: #136ca8;*/
     margin-right: 5px;
@@ -533,7 +503,6 @@
     border-top-style: solid;
     border-top-color: #73a2c7;*/
 }
-
 /* Theme CSS Edits */
 .container .navbar-nav li.active a:hover {
   background-color: #99C24D; /*#A8AB00*/
@@ -709,87 +678,4 @@ h2 .jumbotron {
 }
 .panel-category-list .well {
   border-color: #dedede;
-}
-/* Adjust product list border/backgrounds $ak */
-.panel-product-list {
-    border-radius: 0px;
-    border-color: transparent;
-}
-.panel-product-list .well {
-  background-color: transparent;
-}
-.panel-product-list .aLinkSpacingFix {
-  color: #333333;
-}
-.panel-product-list .well {
-  border-color: transparent;
-}/*Changes size of images on category page*/
-.thumbnail img {
-  max-height: 100px; /*must match smallest size of thumbnail image*/
-  max-width: 100%;
-  margin: 0 auto 15px;
-}
-
-/* Float Shadow */
-.hvr-float-shadow {
-    display: inline-block;
-    vertical-align: middle;
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
-    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    -moz-osx-font-smoothing: grayscale;
-    position: relative;
-    -webkit-transition-duration: 0.3s;
-    transition-duration: 0.3s;
-    -webkit-transition-property: transform;
-    transition-property: transform;
-}
-.hvr-float-shadow:before {
-    pointer-events: none;
-    position: absolute;
-    z-index: -1;
-    content: '';
-    top: 100%;
-    left: 5%;
-    height: 10px;
-    width: 90%;
-    opacity: 0;
-    background: -webkit-radial-gradient(center, ellipse, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
-    background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
-    /* W3C */
-    -webkit-transition-duration: 0.3s;
-    transition-duration: 0.3s;
-    -webkit-transition-property: transform, opacity;
-    transition-property: transform, opacity;
-}
-.hvr-float-shadow:hover, .hvr-float-shadow:focus, .hvr-float-shadow:active {
-    -webkit-transform: translateY(-5px);
-    transform: translateY(-5px);
-    /* move the element up by 5px */
-}
-.hvr-float-shadow:hover:before, .hvr-float-shadow:focus:before, .hvr-float-shadow:active:before {
-    opacity: 1;
-    -webkit-transform: translateY(5px);
-    transform: translateY(5px);
-    /* move the element down by 5px (it will stay in place because it's attached to the element that also moves up 5px) */
-}
-
-/* Grow */
-.hvr-grow {
-    display: inline-block;
-    vertical-align: middle;
-    transform: translateZ(0);
-    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-    backface-visibility: hidden;
-    -moz-osx-font-smoothing: grayscale;
-    transition-duration: 0.3s;
-    transition-property: transform;
-}
-
-.hvr-grow:hover,
-.hvr-grow:focus,
-.hvr-grow:active {
-    transform: scale(1.1);
 }
