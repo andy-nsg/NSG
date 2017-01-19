@@ -41,7 +41,7 @@ function productsearchinputnav() {
 
     function searchNavTemplate() {
         return [
-            '<style>.navbar .container .navbar-nav.pull-right li a i.fa-search,.navbar .container-view .navbar-nav.pull-right li a i.fa-search{border-radius:0;border:none;text-align:center;padding:0 10px;margin-top:0}.product-search-display{position:fixed;top:-100%;left:0;right:0;height:60px;background-color:#F2DC5D;padding:10px 5px;opacity:0;z-index:1030;transition:all 300ms;-moz-transition:all 300ms;-webkit-transition:all 300ms}.product-search-display.active{top:0;opacity:1;transition:all 300ms;-moz-transition:all 300ms;-webkit-transition:all 300ms}.product-search-display .fa-angle-double-up{color: #ffffff;cursor:pointer;margin-top:5px}</style>',
+            '<style>.navbar .container .navbar-nav.pull-right li a i.fa-search,.navbar .container-view .navbar-nav.pull-right li a i.fa-search{border-radius:0;border:none;text-align:center;padding:13px 10px;margin-top:0}.product-search-display{position:fixed;top:-100%;left:0;right:0;height:60px;background-color:#F2DC5D;padding:10px 5px;opacity:0;z-index:1030;transition:all 300ms;-moz-transition:all 300ms;-webkit-transition:all 300ms}.product-search-display.active{top:0;opacity:1;transition:all 300ms;-moz-transition:all 300ms;-webkit-transition:all 300ms}.product-search-display .fa-angle-double-up{color: #ffffff;cursor:pointer;margin-top:5px}</style>',
             '<div class="product-search-display" ng-class="{\'active\':displayProductSearch}">',
             '<div class="row">',
             '<div class="col-xs-10 col-md-11">',

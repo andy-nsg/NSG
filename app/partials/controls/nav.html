@@ -46,12 +46,15 @@
                             <span class="hidden-xs">{{'Programs' | rc | xlat}}</span>
                         </a>
                     </li>
+                    <li>
+                        <productsearchinputnav></productsearchinputnav>
+                    </li>
 
                     <!-- Orders Button -->
                     <li class="order" ng-if="user.Type == 'Customer'" ng-class="{'active': isActive('order'), 'active-xs': isActive('favoriteorders')}">
                         <a id="451qa_order_link" href="order">
                             <i class="fa fa-clipboard"></i>
-                            <span class="hidden-xs">{{'Orders' | r | xlat}}</span>
+                            <span class="hidden-xs hidden-sm">{{'Orders' | r | xlat}}</span>
                         </a>
                     </li>
 
@@ -59,7 +62,7 @@
                     <li class="report" ng-if="user.Type == 'Customer' && user.Permissions.contains('AdvancedReporting')" ng-class="{'active': isActive('reports')}">
                         <a id="451qa_order_link" href="reports">
                             <i class="fa fa-bar-chart-o"></i>
-                            <span class="hidden-xs">{{'Reports' | r | xlat}}</span>
+                            <span class="hidden-xs hidden-sm">{{'Reports' | r | xlat}}</span>
                         </a>
                     </li>
 
@@ -73,7 +76,7 @@
                         <!-- If Logged In -->
                         <a id="451qa_acct_link" href="admin" ng-show="user.Type == 'Customer'" class="hidden-md hidden-lg">
                             <i class="fa fa-cogs"></i>
-                            <span class="hidden-xs">{{'Account' | r | xlat}}</span>
+                            <span class="hidden-xs hidden-sm">{{'Account' | r | xlat}}</span>
                         </a>
                     </li>
 
@@ -88,7 +91,7 @@
                         <!-- If Logged In -->
                         <a id="451qa_acct_link2" ng-show="user.Type == 'Customer'" class="dropdown-toggle" data-toggle="dropdown">
                             <i class="fa fa-cogs"></i>
-                            <span class="hidden-xs">{{'Account' | r | xlat}}</span>
+                            <span class="hidden-xs hidden-sm">{{'Account' | r | xlat}}</span>
                             <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu">
@@ -167,13 +170,13 @@
                     </li>
                     <!-- If Logged In -->
                     <li class="contactus" ng-if="user.Permissions.contains('ViewContactUs')" ng-show="user.Type == 'Customer'" ng-class="{'active': isActive('contactus')}">
-                        <a id="451qa_mesg_link" class="hidden-xs hidden-sm" href="contactus">
+                        <a id="451qa_mesg_link" class="hidden-xs hidden-sm hidden-md" href="contactus">
                             <i class="fa fa-support"></i>
                             {{'Help' | r | xlat}}
                         </a>
                     </li>
                     <li class="contactus" ng-if="user.Permissions.contains('ViewContactUs')" ng-show="user.Type == 'Customer'" ng-class="{'active': isActive('contactus')}">
-                        <a id="451qa_mesg_link" class="hidden-xs hidden-sm" href="contactus">
+                        <a id="451qa_mesg_link" class="hidden-xs hidden-sm hidden-md" href="contactus">
                             <i class="fa fa-file"></i>
                             {{'Forms' | r | xlat}}
                          </a>
@@ -181,13 +184,12 @@
                     <li class="contactus" ng-if="user.Permissions.contains('ViewContactUs')" ng-show="user.Type == 'Customer'" ng-class="{'active': isActive('contactus')}">
                         <a id="451qa_mesg_link" class="hidden-xs" href="contactus">
                             <i class="fa fa-question-circle"></i>
-                            <span class="hidden-xs">{{'About Us' | r | xlat}}</span>
+                            <span class="hidden-xs hidden-sm">{{'About Us' | r | xlat}}</span>
                         </a>
                     </li>
-                  </ul>
-
+                </ul>
                 <!-- Shopping Cart -->
-                <ul class="nav navbar-nav pull-right shoppingCartNavBar">
+                <!-- <ul class="nav navbar-nav pull-right shoppingCartNavBar">
                     <li class="cart" ng-class="{'active': isActive(['cart', 'checkout'])}">
                         <a id="451qa_cart_link" ng-show="cartCount && user.CurrentOrderID" class="cart" href="cart">
                             <span ng-bind="cartCount" class="badge"></span>
@@ -195,10 +197,11 @@
                             <i class="fa fa-caret-down"></i>
                         </a>
                     </li>
+                </ul> -->
+                <!-- For Mini Cart, replaces Shopping Cart code above -->
+                <ul class="pull-right">
+                    <minicart></minicart>
                 </ul>
-                <!-- <productsearchinput></productsearchinput> -->
-                <productsearchinputnav></productsearchinputnav>
-
                 <!-- Social Icons -->
                 <!-- <span class="hidden-xs hidden-sm">
                     <ul class="nav navbar-nav pull-right">
