@@ -30,9 +30,9 @@
             <div ng-show="!currentOrder.Coupon">
                 <div class="form-group view-form-icon">
                     <div>
-                        <label>{{('Enter' | r) + ' ' + ('Promotion' | r) + ' ' + ('Code' | r) + ' ' + ('Below' | r) | xlat}}</label>
+                        <label ng-show="currentOrder.CouponCode">{{('Promotion' | r) + ' ' + ('Code' | r) | xlat}}</label>
                         <div class="input-group">
-                            <input class="form-control" type="text" ng-model="currentOrder.CouponCode" placeholder="{{('Promotion' | r) + ' ' + ('Code' | r) + ' ' + ('Here' | r) | xlat}}" autocomplete="off"/>
+                            <input class="form-control" type="text" ng-model="currentOrder.CouponCode" placeholder="{{('Promotion' | r) + ' ' + ('Code' | r) | xlat}}" autocomplete="off"/>
                             <span class="input-group-btn">
                                 <button type="button" class="btn btn-success" ng-click="applyCoupon()"><i class="fa fa-check"></i></button>
                             </span>
