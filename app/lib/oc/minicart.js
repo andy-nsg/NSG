@@ -16,7 +16,7 @@ function minicart() {
     function template(){
         return [
             '<style>',
-            '.minicart { padding: 15px 20px 5px 0; float: right; cursor: pointer;color: #ffffff; min-width:285px; text-align:right;}',
+            '.minicart { padding: 15px 10px 5px 0; float: right; cursor: pointer;color: #ffffff; min-width:285px; text-align:right;}',
             '@media (max-width: 768px) {.minicart { min-width:auto; } }',
             '.text-muted {color: #000000;}',
             '.text-mutedCaretDown {color: #ffffff;}',

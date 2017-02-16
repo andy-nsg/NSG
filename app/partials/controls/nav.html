@@ -14,13 +14,13 @@
                     <!-- Top-left Menu Icon -->
                     <li id="" class="back animated fadeInLeft hidden-xs">
                         <a id="451qa_home_link" class="" style="padding: 16px 10px 0px 10px; text-align: center;" href="catalog" ng-show="Four51User.isAuthenticated()">
-                            <img class="image-responsive navLogo" ng-src="images/NSG-Navbar-Circle-Icon.png" src="images/NSG-Navbar-Circle-Icon.png">
+                            <img class="image-responsive navLogo" ng-src="https://www.four51.com/Themes/Custom/cdde0792-3f36-497d-88eb-12c282cba5d2/NSG/images/NSG-Nav.png" src="https://www.four51.com/Themes/Custom/cdde0792-3f36-497d-88eb-12c282cba5d2/NSG/images/NSG-Nav.png">
                             <!-- <img class="image-responsive navLogo" ng-src="images/NSG-Navbar-Full-Icon.png" src="images/NSG-Navbar-Full-Icon.png"> -->
                         </a>
                     </li>
                     <li id="" class="back animated fadeInLeft hidden-sm hidden-md hidden-lg">
                         <a id="451qa_home_link" class="" style="padding: 16px 10px 0px 10px; text-align: center;" href="catalog" ng-show="Four51User.isAuthenticated()">
-                            <img class="image-responsive navLogo" ng-src="images/NSG-Navbar-Circle-Icon.png" src="images/NSG-Navbar-Circle-Icon.png">
+                            <img class="image-responsive navLogo" ng-src="https://www.four51.com/Themes/Custom/cdde0792-3f36-497d-88eb-12c282cba5d2/NSG/images/NSG-Cirlce-Nav.png" src="https://www.four51.com/Themes/Custom/cdde0792-3f36-497d-88eb-12c282cba5d2/NSG/images/NSG-Cirlce-Nav.png">
                         </a>
                     </li>
 
@@ -47,7 +47,7 @@
                             <span class="hidden-xs">{{'Programs' | rc | xlat}}</span>
                         </a>
                     </li>
-                    <li>
+                    <li class="hidden-xs hidden-sm">
                         <productsearchinputnav></productsearchinputnav>
                     </li>
 
@@ -166,7 +166,7 @@
                     <li class="contactus" ng-if="user.Permissions.contains('ViewContactUs')" ng-hide="user.Type == 'Customer'" ng-class="{'active': isActive('contactus')}">
                         <a id="451qa_mesg_link" href="contactus">
                             <i class="fa fa-question-circle"></i>
-                            <span class="hidden-xs">{{'About Us/Help' | r | xlat}}</span>
+                            <span class="hidden-xs hidden-sm hidden-md">{{'About Us/Help' | r | xlat}}</span>
                         </a>
                     </li>
                     <!-- If Logged In -->
@@ -183,15 +183,15 @@
                          </a>
                     </li> -->
                     <li class="contactus" ng-if="user.Permissions.contains('ViewContactUs')" ng-show="user.Type == 'Customer'" ng-class="{'active': isActive('contactus')}">
-                        <a id="451qa_mesg_link" class="hidden-xs" href="contactus">
+                        <a id="451qa_mesg_link" href="contactus">
                             <i class="fa fa-question-circle"></i>
-                            <span class="hidden-xs hidden-sm">{{'About Us/Help' | r | xlat}}</span>
+                            <span class="hidden-xs hidden-sm hidden-md">{{'About Us/Help' | r | xlat}}</span>
                         </a>
                     </li>
                     <!--SPENDING ACCOUNTS NAV-->
-                    <!-- <li ng-if="userSpendingAccounts" class="spendingaccounts">
-                        <span class="hidden-xs">{{userSpendingAccounts[0].Name}}: {{userSpendingAccounts[0].Balance | currency}}</span>
-                    </li> -->
+                    <li ng-if="userSpendingAccounts" class="spendingaccounts">
+                        <span class="hidden-xs">{{userSpendingAccounts[0].Name}}:<br> {{userSpendingAccounts[0].Balance | currency}}</span>
+                    </li>
                     <!--END SPENDING ACCOUNTS NAV-->
                 </ul>
                 <!-- Shopping Cart -->

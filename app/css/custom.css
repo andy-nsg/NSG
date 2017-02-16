@@ -13,6 +13,12 @@
 .FontItalics {
     font-style: italic;
 }
+/* Spending Account Nav Option */
+.spendingaccounts {
+    padding: 15px 8px;
+    color: #ffffff;
+    font-size: 75%;
+}
 /* These will line up from left if needed
 #NSGCircleNavBar {
     display: inline;
