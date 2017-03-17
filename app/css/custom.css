@@ -7,6 +7,10 @@
 .FontSmall {
     font-size: 85%;
 }
+/* Billing Bullets */
+.FontSmall ul li {
+  list-style-type: disc;
+}
 .FontSize07 {
     font-size: 7pt;
 }
