@@ -78,3 +78,26 @@ four51.app.filter('paginate', function() {
 		return input.slice(start);
 	}
 });
+
+four51.app.filter('shipperFilter', function() {
+    return function(shipper) {
+        var results = [];
+        var freight = [];
+
+        angular.forEach(shipper, function(s) {
+            if(s.Name.indexOf('NSG-Over 150# Ground Ship') != -1){
+                freight.push(s);
+            }
+            else{
+                results.push(s);
+            }
+        });
+
+        if(results.length > 0){
+            return results;
+        }
+        else{
+            return freight;
+        }
+    }
+});
