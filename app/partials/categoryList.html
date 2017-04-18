@@ -1,39 +1,21 @@
 <div class="panel-category-list no-panels" ng-show="currentCategory.SubCategories.length"> <!-- add class hidden-xxs hidden-xs for text category list? -->
-    <loadingindicator ng-show="categoryLoadingIndicator" title="{{'Please wait while we fetch all categories' | r | xlat}}" />
-    <nav class="nav 451_lbl_subcatlist">
-        <ul>
-            <!-- Edit this class to get more programs to fit on page -->
-            <li class="col-lg-3 col-md-3 col-sm-4 col-xs-4 col-xxs-4" ng-repeat="c in currentCategory.SubCategories"> <!-- Old settings: col-lg-3 col-md-4 col-sm-6 col-xs-12 -->
-                <div class="">
-                    <!-- <a ng-href="catalog/{{c.InteropID}}"> -->
-                    <a ng-href="{{c.InteropID == 'asi' ? 'asi' : 'catalog'}}/{{c.InteropID}}" class="">
-                        <figure class="" ng-show="c.Image.URL">
-                            <!-- <div class="hvr-grow-shadow"> -->
-                                <img class="img-responsive hidden-xs hidden-xxs " ng-src="{{c.Image.URL}}"/>
-                            <!-- </div> -->
-                            <h5 class="NSGCategoryTitle hidden-sm hidden-md hidden-lg" ng-bind-html="c.Name" />
-
-                        </figure>
-                        <!-- div class="empty" ng-show="!c.Image.URL">
-                            <span class="fa empty"><i class="fa fa-camera"></i></span>
-                        </div> -->
-                        <!--<h5 class="NSGCategoryTitle" ng-bind-html="c.Name" />-->
-                    </a>
-                </div>
-            </li>
-        </ul>
-    </nav>
+  <loadingindicator ng-show="categoryLoadingIndicator" title="{{'Please wait while we fetch all categories' | r | xlat}}" />
+  <nav class="nav 451_lbl_subcatlist">
+    <ul>
+      <!-- Edit this class to get more programs to fit on page -->
+      <li class="col-lg-3 col-md-3 col-sm-4 col-xs-4 col-xxs-4" ng-repeat="c in currentCategory.SubCategories"> <!-- Old settings: col-lg-3 col-md-4 col-sm-6 col-xs-12 -->
+        <div class="">
+          <!-- <a ng-href="catalog/{{c.InteropID}}"> -->
+          <a ng-href="{{c.InteropID == 'asi' ? 'asi' : 'catalog'}}/{{c.InteropID}}" class="">
+            <figure class="" ng-show="c.Image.URL">
+              <!-- <div class="hvr-grow-shadow"> -->
+              <img class="img-responsive" ng-src="{{c.Image.URL}}"/> <!--hidden-xs hidden-xxs-->
+              <!-- </div> -->
+              <!-- <h5 class="TPCategoryTitle hidden-sm hidden-md hidden-lg" ng-bind-html="c.Name" /> -->
+            </figure>
+          </a>
+        </div>
+      </li>
+    </ul>
+  </nav>
 </div>
-<!-- Trying to add category text list instead of icons -->
-<!-- <div class="panel panel-default panel-nav hidden-sm hidden-md hidden-lg">
-    <div class="panel-heading">
-        <h3 class="panel-title">
-            {{'Program List' | r | xlat}}
-        </h3>
-    </div>
-    <nav class="nav 451qa_sidenav panel-body">
-        <ul>
-            <categorycollapse tree='tree' current='currentCategory'></categorycollapse>
-        </ul>
-    </nav>
-</div> -->
