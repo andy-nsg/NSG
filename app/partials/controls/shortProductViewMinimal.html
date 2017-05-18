@@ -21,7 +21,7 @@
                     {{'for' | xlat}} {{LineItem.PriceSchedule.PriceBreaks[0].Price | culturecurrency}}
                 </p> -->
                 <!-- Shows large price on category page -->
-                <h2 ng-show="LineItem.PriceSchedule.PriceBreaks.length == 1" ng-if="!(user.Permissions.contains('HidePricing'))">
+                <h2 ng-show="LineItem.PriceSchedule.PriceBreaks[0]" ng-if="!(user.Permissions.contains('HidePricing'))">
                     {{LineItem.PriceSchedule.PriceBreaks[0].Price | culturecurrency}}
                 </h2>
                 <!-- <p ng-show="LineItem.Product.UnitOfMeasure">
