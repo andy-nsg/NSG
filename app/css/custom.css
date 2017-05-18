@@ -662,7 +662,8 @@ body a {
   background-color: #D2322D;
 }
 .jumbotron {
-  background-color: #3E7CB1; /*3E7CB1*/
+  background-color: transparent !important;
+  /*background-color: #3E7CB1;*/
 }
 h2 .jumbotron {
   color: #FFFFFF;
