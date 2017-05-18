@@ -49,6 +49,11 @@
     top: 50%;
     transform: translateY(-50%);*/
 }
+/* Nav Logo */
+.navLogo {
+    max-width: 100%;
+    max-height: 50px;
+}
 /* Banner Logo */
 .bannerLogo {
     max-width: 100%;
@@ -170,10 +175,6 @@
 }
 .shoppingCartIndicator ul li a {
     color: #FFFFFF;
-}
-.navLogo {
-    max-width: 100%;
-    max-height: 30px;
 }
 /* Fixed Product Image */
 .fixedProductImage {
