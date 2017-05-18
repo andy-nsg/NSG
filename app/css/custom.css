@@ -54,6 +54,15 @@
     max-width: 100%;
     /*max-height: 250px;*/
 }
+.jumbotron {
+  padding: 0px;
+}
+/*Edit Jumbrotron width - $ak */
+.jumbotron {
+  margin: 45px 0px -45px;
+  /* margin: 45px 5px -45px; */
+  display: none;
+}
 /* NSG Tooltip */
 .NSGtooltip {
     position: relative;
