@@ -530,28 +530,28 @@
 }
 /* Theme CSS Edits */
 .container .navbar-nav li.active a:hover {
-  background-color: #e33222; /*99C24D*/
+  background-color: #cf5c36; /*99C24D*/
 }
 .container .navbar-nav li.active a:focus {
-  background-color: #e33222;
+  background-color: #cf5c36;
 }
 .navbar-default .navbar-nav .open > a {
-  background-color: #e33222;
+  background-color: #cf5c36;
 }
 .navbar-default .navbar-nav .open > a:hover {
-  background-color: #e33222;
+  background-color: #cf5c36;
 }
 .navbar-default .navbar-nav .open > a:focus {
-  background-color: #e33222;
+  background-color: #cf5c36;
 }
 .navbar-nav li.dropdown li > a:hover {
-  background-color: #e33222;
+  background-color: #cf5c36;
 }
 .navbar-nav li.dropdown li > a:focus {
-  background-color: #e33222;
+  background-color: #cf5c36;
 }
 .navbar .container .navbar-nav li.active .fa-caret-down {
-  color: #e33222;
+  color: #cf5c36;
 }
 .navbar-nav li.dropdown li > a {
   color: #333333;
@@ -576,7 +576,7 @@
   color: #FFFFFF;
 }
 .container .navbar-nav li.active > a {
-  background-color: #e33222;
+  background-color: #cf5c36;
 }
 .container .navbar-nav li.active > a {
   color: undefined;
@@ -679,7 +679,7 @@ h2 .jumbotron {
   color: #FFFFFF;
 }
 .panel-primary .panel-heading .panel-title {
-  background-color: #e33222; /*002A45*/
+  background-color: #cf5c36; /*002A45*/
 }
 .panel-primary .panel-heading .panel-title {
   color: #FFFFFF;
