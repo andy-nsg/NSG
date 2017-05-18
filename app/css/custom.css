@@ -529,7 +529,7 @@
 }
 /* Theme CSS Edits */
 .container .navbar-nav li.active a:hover {
-  background-color: #cf5c36; /*cf5c36*/
+  background-color: #cf5c36; /*99C24D*/
 }
 .container .navbar-nav li.active a:focus {
   background-color: #cf5c36;
@@ -569,7 +569,7 @@
   color: #FFFFFF;
 }
 .navbar-default {
-  background-color: #0B3648; /*0B3648*/
+  background-color: #3E7CB1; /*0B3648*/
 }
 .container .navbar-nav li a {
   color: #FFFFFF;
