@@ -19,8 +19,12 @@
                     {{LineItem.PriceSchedule.PriceBreaks[0].Quantity}}
                     <span ng-show="LineItem.Product.QuantityMultiplier > 1">(x {{LineItem.Product.QuantityMultiplier}})</span>
                     {{'for' | xlat}} {{LineItem.PriceSchedule.PriceBreaks[0].Price | culturecurrency}}
-                </p>
-                <p ng-show="LineItem.Product.UnitOfMeasure">
+                </p> -->
+                <!-- Shows large price on category page -->
+                <h2 ng-show="LineItem.PriceSchedule.PriceBreaks.length == 1" ng-if="!(user.Permissions.contains('HidePricing'))">
+                    {{LineItem.PriceSchedule.PriceBreaks[0].Price | culturecurrency}}
+                </h2>
+                <!-- <p ng-show="LineItem.Product.UnitOfMeasure">
                     {{'Unit of Measure' | r | xlat}}: {{LineItem.Product.UnitOfMeasure}}
                 </p>
 
