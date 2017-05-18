@@ -529,28 +529,28 @@
 }
 /* Theme CSS Edits */
 .container .navbar-nav li.active a:hover {
-  background-color: #99C24D; /*#A8AB00*/
+  background-color: #cf5c36; /*cf5c36*/
 }
 .container .navbar-nav li.active a:focus {
-  background-color: #99C24D; /*#A8AB00*/;
+  background-color: #cf5c36;
 }
 .navbar-default .navbar-nav .open > a {
-  background-color: #99C24D; /*#A8AB00*/
+  background-color: #cf5c36;
 }
 .navbar-default .navbar-nav .open > a:hover {
-  background-color: #99C24D; /*#A8AB00*/
+  background-color: #cf5c36;
 }
 .navbar-default .navbar-nav .open > a:focus {
-  background-color: #99C24D; /*#A8AB00*/
+  background-color: #cf5c36;
 }
 .navbar-nav li.dropdown li > a:hover {
-  background-color: #99C24D; /*#A8AB00*/
+  background-color: #cf5c36;
 }
 .navbar-nav li.dropdown li > a:focus {
-  background-color: #99C24D; /*#A8AB00*/
+  background-color: #cf5c36;
 }
 .navbar .container .navbar-nav li.active .fa-caret-down {
-  color: #99C24D; /*#A8AB00*/
+  color: #cf5c36;
 }
 .navbar-nav li.dropdown li > a {
   color: #333333;
@@ -575,7 +575,7 @@
   color: #FFFFFF;
 }
 .container .navbar-nav li.active > a {
-  background-color: #99C24D; /*#A8AB00*/
+  background-color: #cf5c36;
 }
 .container .navbar-nav li.active > a {
   color: undefined;
