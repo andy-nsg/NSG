@@ -31,6 +31,7 @@ function productlightbox() {
             '.galleryImages a.no-click {cursor:none;pointer-events: none;}',
             '.galleryImages .product-image-large {display:none;}',
             '.galleryImages .active .product-image-large {display:block !important;max-width:100%;position:relative;top:0;}', // removed max-height:100% $ak
+            '.lightbox-image-title {font-size:1.1vmin;font-weight:bold;text-align:center;}',
             '</style>',
             '<div class="panel-body">',
             '<ul class="galleryImages">',
@@ -51,6 +52,9 @@ function productlightbox() {
             '<a ng-click="$parent.index=$index" ng-class="{active: $index==$parent.index}">',
             '<img ng-src="{{image.url}}" class="img-thumbnail img-responsive" data-toggle="tooltip" data-placement="bottom" title="{{image.Name}}"/>',
             '</a>',
+            '<div class="lightbox-image-title">',
+            '{{image.Name}}',
+            '<div',
             '</li>',
             '</div>',
             '</ul>',
