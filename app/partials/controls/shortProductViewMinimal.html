@@ -20,6 +20,10 @@
                     <span ng-show="LineItem.Product.QuantityMultiplier > 1">(x {{LineItem.Product.QuantityMultiplier}})</span>
                     {{'for' | xlat}} {{LineItem.PriceSchedule.PriceBreaks[0].Price | culturecurrency}}
                 </p> -->
+                <!-- Shows item number -->
+                <h4 ng-show="LineItem.Product.ExternalID" class="text-info">
+                {{'Item #' | r | xlat}}: {{LineItem.Product.ExternalID}}
+                </h4>
                 <!-- Shows large price on category page -->
                 <h2 ng-show="LineItem.PriceSchedule.PriceBreaks[0]" ng-if="!(user.Permissions.contains('HidePricing'))">
                     {{LineItem.PriceSchedule.PriceBreaks[0].Price | culturecurrency}}

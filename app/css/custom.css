@@ -19,9 +19,14 @@
 }
 /* Spending Account Nav Option */
 .spendingaccounts {
-    padding: 15px 8px;
-    color: #ffffff;
-    font-size: 75%;
+  padding: 15px 8px;
+  color: #ffffff;
+  font-size: 75%;
+}
+.spendingaccounts-xs {
+  padding: 18px 0px 0px 0px;
+  color: #ffffff;
+  font-size: 1.7vmin;
 }
 /* These will line up from left if needed
 #NSGCircleNavBar {
