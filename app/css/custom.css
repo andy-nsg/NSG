@@ -151,7 +151,7 @@
 }
 /*Changes size of images on category page*/
 .thumbnail img {
-  max-height: 250px; /*must match smallest size of thumbnail image*/
+  max-height: 100px; /*must match smallest size of thumbnail image*/
   max-width: 100%;
   margin: 0 auto 15px;
 }
