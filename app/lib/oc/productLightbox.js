@@ -37,7 +37,7 @@ function productlightbox() {
             '<ul class="galleryImages">',
             '<li ng-repeat="image in LineItem.images">',
             '<a ng-click="openLightboxModal($index)" ng-class="{active: $index==$parent.index}">', // removed hidden-xs from a class $ak
-            '<img ng-src="{{image.url}}" class="product-image-large img-responsive" />',
+            '<img ng-src="{{image.url}}" class="product-image-large img-responsive" data-toggle="tooltip" data-placement="top" title="Click to Enlarge" />',
             '</a>',
             //'<a class="no-click visible-xs" ng-class="{active: $index==$parent.index}">', removed because don't need for the resize $ak
             //'<img ng-src="{{image.url}}" class="product-image-large img-responsive" />',
@@ -50,7 +50,7 @@ function productlightbox() {
             '<div class="scrollLightbox">',
             '<li ng-repeat="image in LineItem.images">',
             '<a ng-click="$parent.index=$index" ng-class="{active: $index==$parent.index}">',
-            '<img ng-src="{{image.url}}" class="img-thumbnail img-responsive" data-toggle="tooltip" data-placement="bottom" title="{{image.Name}}"/>',
+            '<img ng-src="{{image.url}}" class="img-thumbnail img-responsive" data-toggle="tooltip" data-placement="top" title="{{image.Name}}"/>',
             '</a>',
             '<div class="lightbox-image-title">',
             '{{image.Name}}',
@@ -273,7 +273,7 @@ function imagelightboxtemplate () {
         '<div class="lightbox-nav">',
         '<div class="btn-group">',
         '<a class="btn btn-xs btn-default" ng-click="Lightbox.prevImage()"><i class="fa fa-chevron-left"></i> Previous</a>',
-        '<a ng-href="{{Lightbox.imageUrl}}" target="_blank" class="btn btn-xs btn-default" title="Open in new tab">Open image in new tab</a>',
+        '<a ng-href="{{Lightbox.imageUrl}}" target="_blank" class="btn btn-xs btn-default" title="Open in new tab">Download Image</a>',
         '<a class="btn btn-xs btn-default" ng-click="Lightbox.nextImage()">Next <i class="fa fa-chevron-right"></i></a>',
         '<a class="btn btn-xs btn-default pull-right" aria-hidden="true" ng-click="$dismiss()">Close <i class="fa fa-times"></i></a>',
         '</div>',

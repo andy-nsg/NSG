@@ -191,10 +191,10 @@
   max-height: 400px;
   max-width: 100%;
 }
-/* Light Scroll Bar */
+/* Lightbox Scroll Bar */
 .scrollLightbox {
     width: auto;
-    height: 75px;
+    height: 90px;
     overflow: auto;
     white-space: nowrap;
 }
