@@ -247,13 +247,26 @@ four51.app.factory('ProductDisplayService', ['$sce', '$451', 'Variant', 'Product
 				scope.variantLineItems = {};
 				angular.forEach(p.Variants, function(v){
 					if (!v) return;
-					scope.variantLineItems[v.InteropID] = {
-						PriceSchedule: (scope.currentOrder ? v[scope.currentOrder.Type + 'PriceSchedule'] : (v.StandardPriceSchedule || v.ReplenishmentPriceSchedule))
-						|| (scope.currentOrder ? p[scope.currentOrder.Type + 'PriceSchedule'] : (v.StandardPriceSchedule || v.ReplenishmentPriceSchedule || scope.LineItem.PriceSchedule)),
-						Product: p,
-						Variant: v,
-						Specs: scope.LineItem.Specs
-					};
+					if(p.Type == "VariableText"){
+						Variant.get({'ProductInteropID': p.InteropID, 'VariantInteropID': v.InteropID}, function(data){
+							scope.variantLineItems[v.InteropID] = {
+								PriceSchedule: (scope.currentOrder ? v[scope.currentOrder.Type + 'PriceSchedule'] : (v.StandardPriceSchedule || v.ReplenishmentPriceSchedule))
+								|| (scope.currentOrder ? p[scope.currentOrder.Type + 'PriceSchedule'] : (v.StandardPriceSchedule || v.ReplenishmentPriceSchedule || scope.LineItem.PriceSchedule)),
+								Product: p,
+								Variant: data,
+								Specs: scope.LineItem.Specs
+							};
+						});
+					}
+					else{
+						scope.variantLineItems[v.InteropID] = {
+		 					PriceSchedule: (scope.currentOrder ? v[scope.currentOrder.Type + 'PriceSchedule'] : (v.StandardPriceSchedule || v.ReplenishmentPriceSchedule))
+		 					|| (scope.currentOrder ? p[scope.currentOrder.Type + 'PriceSchedule'] : (v.StandardPriceSchedule || v.ReplenishmentPriceSchedule || scope.LineItem.PriceSchedule)),
+		 					Product: p,
+		 					Variant: v,
+		 					Specs: scope.LineItem.Specs
+		 				};
+					}
 				});
 			}
 		}
@@ -282,11 +295,13 @@ four51.app.factory('ProductDisplayService', ['$sce', '$451', 'Variant', 'Product
 				//return scope.LineItem.PriceSchedule.OrderType == type && scope.user.Permissions.contains(type + 'Order');
 			}
 
-			//use scope.currentFirstVariant instead of 0
-			return scope.user.Permissions.contains(type + 'Order')
-			&& scope.variantLineItems ? scope.variantLineItems[scope.LineItem.Product.Variants[scope.currentFirstVariant].InteropID].Variant[type + 'PriceSchedule'] != null : scope.LineItem.Product[type + 'PriceSchedule'] != null
-			&& (scope.currentOrder && scope.currentOrder.ID ? scope.currentOrder.Type == type : true)
-			&& (scope.currentOrder && scope.currentOrder.ID ? (scope.variantLineItems ? scope.variantLineItems[scope.LineItem.Product.Variants[scope.currentFirstVariant].InteropID].PriceSchedule.OrderType : scope.LineItem.PriceSchedule.OrderType) == scope.currentOrder.Type : true);
+            //use scope.currentFirstVariant instead of 0
+			if(scope.user){
+				return scope.user.Permissions.contains(type + 'Order')
+				&& scope.variantLineItems ? scope.variantLineItems[scope.LineItem.Product.Variants[scope.currentFirstVariant].InteropID].Variant[type + 'PriceSchedule'] != null : scope.LineItem.Product[type + 'PriceSchedule'] != null
+				&& (scope.currentOrder && scope.currentOrder.ID ? scope.currentOrder.Type == type : true)
+				&& (scope.currentOrder && scope.currentOrder.ID ? (scope.variantLineItems ? scope.variantLineItems[scope.LineItem.Product.Variants[scope.currentFirstVariant].InteropID].PriceSchedule.OrderType : scope.LineItem.PriceSchedule.OrderType) == scope.currentOrder.Type : true);
+			}
 		}
 
 		function canCreateVariant() {
