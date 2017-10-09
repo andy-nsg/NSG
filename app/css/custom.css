@@ -12,6 +12,13 @@
 .NSGcenter {
     text-align: center;
 }
+.checkoutButtonText {
+  font-size: 2vmin !important;
+}
+/* Moves checkout buttons behind navbar when scrolling */
+.checkoutButtonZIndex {
+  z-index: -1;
+}
 .FontSmall {
     font-size: 85%;
 }
