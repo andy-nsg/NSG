@@ -63,8 +63,7 @@
   </head>
   <!--[if (gte IE 9)|!(IE)]><!-->
   <body ng-cloak ng-class="ng-cloak">
-    <div class="NSGwrapper">
-      <section>
+    <section>
         <section ng-hide="Four51User.isAuthenticated() || isAnon" class="container">
           <login />
         </section>
@@ -78,60 +77,12 @@
           <section class="container-view">
             <ng-view autoscroll />
           </section>
+          <section class="hidden-print">
+            <fixedfooter />
+          </section>
         </section>
       </section>
-      <div class="push"></div>
-      <footer>
-        <div class="NSGfooter visible-sm visible-md visible-lg">
-          <div class="footLeft">
-            <a href="http://www.ibmilwaukee.com/" target="_blank"><img src="images/IB-AbilityOne.png" alt="National Service Gear is a registered trademark and global brand of INDUSTRIES for the BLIND, Inc. Industries for the Blind is an AbiltiyOne agency." width="100%" /></a>
-          </div>
-          <div class="footRight">
-            <p class="NSGcontactUs">Contact Customer Service</p>
-            <p><i class="fa fa-phone"></i>  1.855.444.0847</p>
-            <p><i class="fa fa-envelope"></i>  <a href="mailto:service@nationalservicegear.org?subject=NSG%20Contact">service@nationalservicegear.org</a></p>
-          </div>
-        </div>
-        <div class="NSGxsFooter visible-xs">
-          <div class="xsFootLeft">
-            <a href="http://www.ibmilwaukee.com/" target="_blank"><img src="images/IB-AbilityOne.png" alt="National Service Gear is a registered trademark and global brand of INDUSTRIES for the BLIND, Inc. Industries for the Blind is an AbiltiyOne agency." width="100%" /></a>
-          </div>
-          <div class="xsFootRight">
-            <p class="NSGcontactUs">Contact Customer Service</p>
-            <p><i class="fa fa-phone"></i>  1.855.444.0847</p>
-            <p><i class="fa fa-envelope"></i>  <a href="mailto:service@nationalservicegear.org?subject=NSG%20Contact">service@nationalservicegear.org</a></p>
-          </div>
-        </div>
-        <div class="NSGxxsFooter visible-xxs">
-          <div class="xxsFootLeft">
-            <a href="http://www.ibmilwaukee.com/" target="_blank"><img src="images/IB-AbilityOne.png" alt="National Service Gear is a registered trademark and global brand of INDUSTRIES for the BLIND, Inc. Industries for the Blind is an AbiltiyOne agency." width="100%" /></a>
-          </div>
-          <div class="xxsFootRight">
-            <p class="NSGcontactUs">Contact Customer Service</p>
-            <p><i class="fa fa-phone"></i>  1.855.444.0847</p>
-            <p><i class="fa fa-envelope"></i>  <a href="mailto:service@nationalservicegear.org?subject=NSG%20Contact">service@nationalservicegear.org</a></p>
-          </div>
-        </div>
-        <!-- <div class="NSGSmallFooter fleft hidden-sm hidden-md hidden-lg">
-          <a href="https://www.ibmilw.com/" target="_blank"><img src="https://www.four51.com/Themes/Custom/cdde0792-3f36-497d-88eb-12c282cba5d2/NSG/images/IB-AbilityOne.png" alt="National Service Gear is a registered trademark and global brand of INDUSTRIES for the BLIND, Inc. Industries for the Blind is an AbiltiyOne agency." width="100%" /></a><p class="NSGcontactUs">Contact Customer Service &bull; 1.855.444.0847 &bull; <a href="mailto:service@nationalservicegear.org?subject=NSG%20Contact">service@nationalservicegear.org</a></p>
-        </div> -->
-        <div class="socialFooter">
-          <!--<section class="ng-scope">
-            <div class="container"> -->
-              <p class="text-left">
-                <!-- <a class="pull-left" href="" style="padding-top:10px;">Terms</a> -->
-                <a class="vertIcon iconTrans iconTwitter" target="_blank" href="https://twitter.com/servicegear"><i class="fa fa-twitter-square fa-3x"></i></a>
-                <a class="vertIcon iconTrans iconFacebook" target="_blank" href="https://www.facebook.com/NationalServiceGear"><i class="fa fa-facebook-square fa-3x"></i></a>
-                <!-- <a class="vertIcon" target="_blank" href="https://plus.google.com/b/101151839970654395169/101151839970654395169"><i class="fa fa-google-plus-square fa-3x"></i></a> -->
-                <a class="vertIcon iconTrans iconInstagram" target="_blank" href="https://www.instagram.com/nationalservicegear"><i class="fa fa-instagram fa-3x"></i></a>
-                <a class="vertIcon iconTrans iconLinkedIn" target="_blank" href="https://www.linkedin.com/company/1564607?trk=tyah&trkInfo=tas%3Aindustries%20for%20the%20bli%2Cidx%3A1-1-1"><i class="fa fa-linkedin-square fa-3x "></i></a>
-              </p>
-            <!-- </div>
-          </section> -->
-        </div>
-      </footer>
-    </div>
-    <!-- Add for Back to Top icon -->
+      <!-- Add for Back to Top icon -->
     <backtotop offsetbottom="30" offsetright="30" duration="200"></backtotop>
 
     <!--<script type="text/javascript" src="//dl1d2m8ri9v3j.cloudfront.net/releases/1.2.4/tracker.js" data-customer="bfec7bded14d43a7ace2697594e1369d"></script>-->
@@ -271,7 +222,7 @@
     <script src="js/directives/ordertypeselector.js" data-group="source"></script>
     <script src="js/directives/creditcard.js" data-group="source"></script>
     <script src="js/directives/neworder.js" data-group="source"></script>
-    <script src="js/directives/orderbuttons.js" data-group="source"></script>
+    <!-- <script src="js/directives/orderbuttons.js" data-group="source"></script> -->
 
     <!-- Custom Solutions-->
     <script src="lib/oc/productMatrix.js" data-group="resources"></script>
@@ -285,6 +236,7 @@
     <script src="lib/oc/backToTop.js" data-group="resources"></script>
     <script src="lib/oc/sameAsShippingCheckbox.js" data-group="resources"></script>
     <script src="lib/oc/minicart.js" data-group="resources"></script>
+    <script src="lib/oc/fixedFooter.js" data-group="resources"></script>
   </body>
   <!-- <![endif]-->
 </html>
