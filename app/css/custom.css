@@ -13,7 +13,8 @@
     text-align: center;
 }
 .checkoutButtonText {
-  font-size: 1.8vmin !important;
+  font-size: 1.5vmin !important;
+  font-size: 1vmax !important;
 }
 /* Moves checkout buttons behind navbar when scrolling */
 .checkoutButtonZIndex {
