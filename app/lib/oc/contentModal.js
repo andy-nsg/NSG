@@ -63,7 +63,7 @@ function ContentModalCtrl($scope, $modal) {
                 '</style>',
                 '<div class="modal-header" class="col-xs-12 row pull-right">',
                 //Optional title in top header
-                '<h5 class="modal-title text-primary">2017 Purchase Power Production Schedule</h5>',
+                '<h5 class="modal-title text-primary">2017 Special Order Production Schedule</h5>',
                 //Optional close (x) in top header
                 '<a class="pull-right close" ng-click="close()">',
                 '<i class="fa fa-times"></i>',
