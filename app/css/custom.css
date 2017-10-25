@@ -286,9 +286,9 @@
 .categoryPanel {
   /* border-left: 5px solid #000000; */
   max-width: 1000px;
-  /* padding-left: 175px;
+  /* padding-left: 175px;*/
   margin-left: auto;
-  margin-right: auto;*/
+  margin-right: auto;
 }
 /* Category Bullets */
 .categoryPanel ul li {
