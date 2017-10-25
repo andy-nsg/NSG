@@ -22,7 +22,7 @@ function contentmodal() {
             // update the size of the modal window within the open()
             '<a ng-click="open(500)">',
             // replace the *Open Modal* below with your link name
-            '<span class="fa fa-info-circle"></span> {{\'READ PRODUCTION SCHEDULE DETAILS\' | r | xlat}}',
+            '<span class="fa fa-info-circle"></span> {{\'CLICK HERE & READ THE SPECIAL ORDER PRODUCTION SCHEDULE\' | r | xlat}}',
             '</a>'
         ].join('');
     }
