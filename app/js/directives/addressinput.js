@@ -1,13 +1,13 @@
-four51.app.directive('addressinput', function() {
+four51.app.directive("addressinput", function() {
 	var obj = {
-		restrict: 'E',
+		restrict: "E",
 		scope: {
-			address : '=',
-			return: '=',
-			user: '='
+			address: "=",
+			return: "=",
+			user: "="
 		},
-		templateUrl: 'partials/controls/addressInput.html',
-		controller: 'AddressInputCtrl'
-	}
+		templateUrl: "partials/controls/addressInput.html",
+		controller: "AddressInputCtrl"
+	};
 	return obj;
 });

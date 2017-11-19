@@ -1,3 +1,1 @@
-four51.app.controller('SecurityCtrl', function SecurityCtrl() {
-
-});
+four51.app.controller("SecurityCtrl", function SecurityCtrl() {});

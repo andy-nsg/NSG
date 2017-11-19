@@ -1,40 +1,40 @@
 <ul>
-    <style ng-if="continue">
-        .navbar-fixed-bottom ul li:nth-of-type(1) {
-            width: 25%;
-        }
-        .navbar-fixed-bottom ul li:nth-of-type(2) {
-            width: 20%;
-        }
-        .navbar-fixed-bottom ul li:nth-of-type(3) {
-            width: 20%;
-        }
-        .navbar-fixed-bottom ul li:last-child {
-            width: 35%;
-        }
-    </style>
-    <li ng-if="continue">
-        <button type="button" class="btn btn-info" redirect="catalog">
-          <span class="hidden-xs checkoutButtonText">{{'Continue Shopping' | r | xlat}}</span>
-          <span class="visible-xs visible-xxs checkoutButtonText">{{'Shop' | r | xlat}}</span>
-        </button>
-    </li>
-    <li>
-        <button type="button" class="btn btn-danger" ng-click="currentOrder.Status == 'AwaitingApproval' ? cancelEdit() : cancelOrder()">
-          <span class="checkoutButtonText" ng-show="currentOrder.Status != 'AwaitingApproval'">{{('Cancel' | r) + ' ' + ('Order' | r) | xlat}}</span>
-          <span class="checkoutButtonText" ng-show="currentOrder.Status == 'AwaitingApproval'">{{('Cancel' | r) + ' ' + ('Edit' | r) | xlat}}</span>
-        </button>
-    </li>
-    <li>
-        <button type="submit" class="btn btn-primary" ng-click="saveChanges()">
-            <loadingindicator  ng-show="displayLoadingIndicator" />
-            <span class="checkoutButtonText">{{('Save' | r) + ' ' + ('Order' | r) | xlat}}</span>
-        </button>
-    </li>
-    <li>
-        <button type="button" class="btn" ng-class="{'btn-warning': cart.$invalid, 'btn-success': !cart.$invalid }" ng-click="checkOut()" ng-disabled="cart.$invalid || kitValidation">
-            <i ng-show="cart.$invalid || kitValidation" class="fa fa-warning"></i>
-            <span class="checkoutButtonText">{{'Check Out' | r | xlat}} {{window.outerWidth}}</span>
-        </button>
-    </li>
+  <style ng-if="continue">
+      .navbar-fixed-bottom ul li:nth-of-type(1) {
+          width: 25%;
+      }
+      .navbar-fixed-bottom ul li:nth-of-type(2) {
+          width: 20%;
+      }
+      .navbar-fixed-bottom ul li:nth-of-type(3) {
+          width: 20%;
+      }
+      .navbar-fixed-bottom ul li:last-child {
+          width: 35%;
+      }
+  </style>
+  <li ng-if="continue">
+      <button type="button" class="btn btn-info" redirect="catalog">
+        <span class="hidden-xs checkoutButtonText">{{'Continue Shopping' | r | xlat}}</span>
+        <span class="visible-xs visible-xxs checkoutButtonText">{{'Shop' | r | xlat}}</span>
+      </button>
+  </li>
+  <li>
+      <button type="button" class="btn btn-danger" ng-click="currentOrder.Status == 'AwaitingApproval' ? cancelEdit() : cancelOrder()">
+        <span class="checkoutButtonText" ng-show="currentOrder.Status != 'AwaitingApproval'">{{('Cancel' | r) + ' ' + ('Order' | r) | xlat}}</span>
+        <span class="checkoutButtonText" ng-show="currentOrder.Status == 'AwaitingApproval'">{{('Cancel' | r) + ' ' + ('Edit' | r) | xlat}}</span>
+      </button>
+  </li>
+  <li>
+      <button type="submit" class="btn btn-primary" ng-click="saveChanges()">
+          <loadingindicator  ng-show="displayLoadingIndicator" />
+          <span class="checkoutButtonText">{{('Save' | r) + ' ' + ('Order' | r) | xlat}}</span>
+      </button>
+  </li>
+  <li>
+      <button type="button" class="btn" ng-class="{'btn-warning': cart.$invalid, 'btn-success': !cart.$invalid }" ng-click="checkOut()" ng-disabled="cart.$invalid || kitValidation">
+          <i ng-show="cart.$invalid || kitValidation" class="fa fa-warning"></i>
+          <span class="checkoutButtonText">{{'Check Out' | r | xlat}} {{window.outerWidth}}</span>
+      </button>
+  </li>
 </ul>

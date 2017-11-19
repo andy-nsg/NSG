@@ -1,12 +1,12 @@
-four51.app.directive('customcheckboxfield', function() {
+four51.app.directive("customcheckboxfield", function() {
 	var obj = {
 		scope: {
-			customfield : '=',
-			checked: '@',
-			unchecked: '@'
+			customfield: "=",
+			checked: "@",
+			unchecked: "@"
 		},
-		restrict: 'E',
-		templateUrl: 'partials/controls/customCheckBoxField.html'
+		restrict: "E",
+		templateUrl: "partials/controls/customCheckBoxField.html"
 	};
 
 	return obj;

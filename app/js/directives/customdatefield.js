@@ -1,12 +1,12 @@
-four51.app.directive('customdatefield', function() {
+four51.app.directive("customdatefield", function() {
 	var obj = {
 		scope: {
-			customfield : '=',
-            hidesuffix: '@',
-            hideprefix: '@'
+			customfield: "=",
+			hidesuffix: "@",
+			hideprefix: "@"
 		},
-		restrict: 'E',
-		templateUrl: 'partials/controls/customDateField.html'
+		restrict: "E",
+		templateUrl: "partials/controls/customDateField.html"
 	};
 
 	return obj;
