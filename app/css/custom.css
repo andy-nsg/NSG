@@ -730,6 +730,12 @@ h2 .jumbotron {
 .panel-default .panel-heading .panel-title {
 	color: #333333;
 }
+.panel-primary .panel-heading .panel-instructions {
+	background-color: #0069aa;
+}
+.panel-primary .panel-heading .panel-instructions {
+	color: #ffffff;
+}
 .panel {
 	background-color: #ffffff;
 }
