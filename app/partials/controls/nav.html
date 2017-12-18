@@ -3,7 +3,8 @@
         <section>
             <div class="container navbarInnerShadow">
                 <ul class="nav navbar-nav pull-left">
-                  <!-- Left Arrow/Back Icon -->
+
+                    <!-- Left Arrow/Back Icon -->
                     <li class="back animated fadeInLeft" ng-class="{'ng-hide': isActive('catalog')}">
                         <a href back-step class="back">
                             <i class="fa fa-arrow-left"></i>
@@ -39,13 +40,13 @@
                     </li> -->
 
                     <!-- Programs Button -->
-                    <li class="products" ng-class="{'active': isInPath('catalog') || isInPath('product') || isInPath('cart/default') || isInPath('search')}">
+                    <li class="products hidden-xs" ng-class="{'active': isInPath('catalog') || isInPath('product') || isInPath('cart/default') || isInPath('search')}">
                         <a id="451qa_home_link" ng-show="Four51User.isAuthenticated()" href="catalog">
                             <i class="fa fa-home"></i>
                             <span class="hidden-xs">{{'Home' | rc | xlat}}</span>
                         </a>
                     </li>
-                    <li class="hidden-xs hidden-sm">
+                    <li class="">
                         <productsearchinputnav></productsearchinputnav>
                     </li>
 
