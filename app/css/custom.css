@@ -659,9 +659,21 @@ body a {
 .btn-default:hover {
 	background-color: #ebebeb;
 }
-
-/*Checkout Payment Selection Buttons */
 .btn-checkout {
+	background-color: #ffffff;
+}
+.btn-checkout,
+.btn-checkout:hover {
+	color: #333333;
+}
+.btn-checkout {
+	border-color: #cccccc;
+}
+.btn-checkout:hover {
+	background-color: #ebebeb;
+}
+/*Checkout Payment Selection Buttons */
+/* .btn-checkout {
 	color: #333333;
 	background-color: #ffffff;
 	border-color: #cccccc;
@@ -697,7 +709,7 @@ fieldset[disabled] .btn-checkout:active,
 fieldset[disabled] .btn-checkout.active {
 	background-color: #ffffff;
 	border-color: #cccccc;
-}
+} */
 /*end checkout payment buttons*/
 .btn-info {
 	background-color: #5bc0de;
