@@ -1,26 +1,26 @@
 <div>
     <span class="btn-group">
       <h4><strong>PLEASE SELECT YOUR PAYMENT OPTION</strong></h4>
-        <button class="btn btn-default" type="button"
+        <button class="btn btn-checkout" type="button"
                 ng-show="user.Permissions.contains('PayByPO')"
                 ng-click="currentOrder.PaymentMethod = 'PurchaseOrder'">
             <i ng-class="{'fa fa-check': currentOrder.PaymentMethod == 'PurchaseOrder' }"></i>
             {{'Purchase Order/Prepay By Check' | r | xlat}}
         </button>
-        <button class="btn btn-default" type="button"
+        <button class="btn btn-checkout" type="button"
                 ng-show="user.Permissions.contains('SubmitForApproval') && currentOrder.Approvals"
                 ng-disabled="isSplitBilling"
                 ng-click="currentOrder.PaymentMethod = 'Undetermined'">
             <i ng-class="{'fa fa-check': currentOrder.PaymentMethod == 'Undetermined' }"></i>
             {{'Approval Order' | r | xlat}}
         </button>
-        <button class="btn btn-default" type="button"
+        <button class="btn btn-checkout" type="button"
                 ng-if="user.Permissions.contains('PayByBudgetAccount') && (SpendingAccounts|filter:{ForPurchase:true}).length > 0"
                 ng-click="setBudgetAccount((SpendingAccounts|filter:{AccountType.PurchaseCredit:true}).length)">
             <i ng-class="{'fa fa-check': currentOrder.PaymentMethod == 'BudgetAccount' || currentOrder.BudgetAccountID }"></i>
             {{'Spending Account/Gift Card' | r | xlat}}
         </button>
-        <button class="btn btn-default" type="button"
+        <button class="btn btn-checkout" type="button"
                 ng-if="user.AvailableCreditCards.length > 0 && user.Permissions.contains('PayByCreditCard')"
                 ng-click="currentOrder.PaymentMethod = 'CreditCard'">
             <i ng-class="{'fa fa-check': currentOrder.PaymentMethod == 'CreditCard' }"></i>

@@ -657,11 +657,48 @@ body a {
 	border-color: #cccccc;
 }
 .btn-default:hover {
-	background-color: #5cb85c;
+	background-color: #ebebeb;
 }
-.btn-default:focus{
-	background-color: #5cb85c;
+
+/*Checkout Payment Selection Buttons */
+.btn-checkout {
+	color: #333333;
+	background-color: #ffffff;
+	border-color: #cccccc;
 }
+.btn-checkout:hover,
+.btn-checkout:focus,
+.btn-checkout:active,
+.btn-checkout.active,
+.open .dropdown-toggle.btn-checkout {
+	color: #333333;
+	background-color: #5cb85c;
+	border-color: #adadad;
+}
+.btn-checkout:active,
+.btn-checkout.active,
+.open .dropdown-toggle.btn-checkout {
+	background-image: none;
+}
+.btn-checkout.disabled,
+.btn-checkout[disabled],
+fieldset[disabled] .btn-checkout,
+.btn-checkout.disabled:hover,
+.btn-checkout[disabled]:hover,
+fieldset[disabled] .btn-checkout:hover,
+.btn-checkout.disabled:focus,
+.btn-checkout[disabled]:focus,
+fieldset[disabled] .btn-checkout:focus,
+.btn-checkout.disabled:active,
+.btn-checkout[disabled]:active,
+fieldset[disabled] .btn-checkout:active,
+.btn-checkout.disabled.active,
+.btn-checkout[disabled].active,
+fieldset[disabled] .btn-checkout.active {
+	background-color: #ffffff;
+	border-color: #cccccc;
+}
+/*end checkout payment buttons*/
 .btn-info {
 	background-color: #5bc0de;
 }
