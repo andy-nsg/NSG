@@ -672,7 +672,7 @@ body a {
 .btn-checkout.active,
 .open .dropdown-toggle.btn-checkout {
 	color: #333333;
-	background-color: #5cb85c;
+	background-color: #ebebeb;
 	border-color: #adadad;
 }
 .btn-checkout:active,
