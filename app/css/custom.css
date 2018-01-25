@@ -659,6 +659,9 @@ body a {
 .btn-default:hover {
 	background-color: #ebebeb;
 }
+.btn-default:focus{
+	background: #5cb85c;
+}
 .btn-info {
 	background-color: #5bc0de;
 }
