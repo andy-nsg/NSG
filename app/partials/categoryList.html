@@ -1,30 +1,35 @@
-<div class="panel-category-list no-panels" ng-show="currentCategory.SubCategories.length"> <!-- add class hidden-xxs hidden-xs for text category list? -->
-<loadingindicator ng-show="categoryLoadingIndicator" title="{{'Please wait while we fetch all categories' | r | xlat}}" />
-<nav class="nav 451_lbl_subcatlist">
-  <ul>
-    <!-- Add this <li> tag for adding a new category -->
-    <li class="col-lg-3 col-md-3 col-sm-4 col-xs-4 col-xxs-4">
-      <div>
-        <a ng-href="http://www.nsgcustom.org/" href="http://www.nsgcustom.org/" target="_blank" onclick="alert('You will now be directed to the NSG Custom webstore, in a new tab or window, which is separate from the main NSG webstore. Search for items to customize and submit a request for a quote. Both webstores are run by National Service Gear by Industries for the Blind.');" class="">
-          <img class="img-responsive" ng-src="https://www.four51.com/Themes/Custom/cdde0792-3f36-497d-88eb-12c282cba5d2/NSGCustom/images/NSG-Custom-400.jpg" src="https://www.four51.com/Themes/Custom/cdde0792-3f36-497d-88eb-12c282cba5d2/NSGCustom/images/NSG-Custom-400.jpg" alt="National Service Gear Custom Webstore - Your Custom Volunteer Gear Solutions" />
-        </a>
+<div class="panel-category-list no-panels" ng-show="currentCategory.SubCategories.length">
+  <!-- add class hidden-xxs hidden-xs for text category list? -->
+  <loadingindicator ng-show="categoryLoadingIndicator" title="{{'Please wait while we fetch all categories' | r | xlat}}" />
+  <nav class="nav 451_lbl_subcatlist">
+    <ul>
+      <!-- Add this <li> tag for adding a new category -->
+      <div ng-show="(currentCategory.Name === {{'Categories' | r | xlat}})">
+        <li class="col-lg-3 col-md-3 col-sm-4 col-xs-4 col-xxs-4">
+          <div>
+            <a ng-href="http://www.nsgcustom.org/" href="http://www.nsgcustom.org/" target="_blank" onclick="alert('You will now be directed to the NSG Custom webstore, in a new tab or window, which is separate from the main NSG webstore. Search for items to customize and submit a request for a quote. Both webstores are run by National Service Gear by Industries for the Blind.');">
+            <img class="img-responsive" ng-src="https://www.four51.com/Themes/Custom/cdde0792-3f36-497d-88eb-12c282cba5d2/NSGCustom/images/NSG-Custom-400.jpg" src="https://www.four51.com/Themes/Custom/cdde0792-3f36-497d-88eb-12c282cba5d2/NSGCustom/images/NSG-Custom-400.jpg" alt="National Service Gear Custom Webstore - Your Custom Volunteer Gear Solutions" />
+          </a>
+          </div>
+        </li>
       </div>
-    </li>
-    <!-- End new category -->
-    <!-- Edit this class to get more programs to fit on page -->
-    <li class="col-lg-3 col-md-3 col-sm-4 col-xs-4 col-xxs-4" ng-repeat="c in currentCategory.SubCategories"> <!-- Old settings: col-lg-3 col-md-4 col-sm-6 col-xs-12 -->
-      <div class="">
-        <!-- <a ng-href="catalog/{{c.InteropID}}"> -->
-        <a ng-href="{{c.InteropID == 'asi' ? 'asi' : 'catalog'}}/{{c.InteropID}}" class="">
-          <figure class="" ng-show="c.Image.URL">
-            <!-- <div class="hvr-grow-shadow"> -->
-            <img class="img-responsive" ng-src="{{c.Image.URL}}"/> <!--hidden-xs hidden-xxs-->
-            <!-- </div> -->
-            <!-- <h5 class="TPCategoryTitle hidden-sm hidden-md hidden-lg" ng-bind-html="c.Name" /> -->
-          </figure>
-        </a>
-      </div>
-    </li>
-  </ul>
-</nav>
+      <!-- End new category -->
+      <!-- Edit this class to get more programs to fit on page -->
+      <li class="col-lg-3 col-md-3 col-sm-4 col-xs-4 col-xxs-4" ng-repeat="c in currentCategory.SubCategories">
+        <!-- Old settings: col-lg-3 col-md-4 col-sm-6 col-xs-12 -->
+        <div class="">
+          <!-- <a ng-href="catalog/{{c.InteropID}}"> -->
+          <a ng-href="{{c.InteropID == 'asi' ? 'asi' : 'catalog'}}/{{c.InteropID}}" class="">
+            <figure class="" ng-show="c.Image.URL">
+              <!-- <div class="hvr-grow-shadow"> -->
+              <img class="img-responsive" ng-src="{{c.Image.URL}}" />
+              <!--hidden-xs hidden-xxs-->
+              <!-- </div> -->
+              <!-- <h5 class="TPCategoryTitle hidden-sm hidden-md hidden-lg" ng-bind-html="c.Name" /> -->
+            </figure>
+          </a>
+        </div>
+      </li>
+    </ul>
+  </nav>
 </div>
