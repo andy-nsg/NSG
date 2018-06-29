@@ -373,7 +373,8 @@
   margin: 0;
 }
 
-.flushFooter, .push {
+.flushFooter,
+.push {
   height: 210px;
   /* .push must be the same height as .footer */
 }
@@ -519,7 +520,9 @@
 
 /* Use this to transition icons */
 
-.iconTrans, .iconTrans:hover, .iconTrans:focus {
+.iconTrans,
+.iconTrans:hover,
+.iconTrans:focus {
   -webkit-transition: all ease-in-out 0.5s;
   -moz-transition: all ease-in-out 0.5s;
   -ms-transition: all ease-in-out 0.5s;
@@ -527,27 +530,27 @@
   transition: all ease-in-out 0.5s;
 }
 
-.socialFooter>.text-left>.iconTrans {
+.socialFooter > .text-left > .iconTrans {
   color: #ffffff;
   /*E04F4F*/
 }
 
-.socialFooter>.text-left>.iconTwitter:hover {
+.socialFooter > .text-left > .iconTwitter:hover {
   color: #00aced !important;
   /* 2B2B2B */
 }
 
-.socialFooter>.text-left>.iconFacebook:hover {
+.socialFooter > .text-left > .iconFacebook:hover {
   color: #3b5998 !important;
   /* 2B2B2B */
 }
 
-.socialFooter>.text-left>.iconInstagram:hover {
+.socialFooter > .text-left > .iconInstagram:hover {
   color: #517fa4 !important;
   /* 2B2B2B */
 }
 
-.socialFooter>.text-left>.iconLinkedIn:hover {
+.socialFooter > .text-left > .iconLinkedIn:hover {
   color: #007bb6 !important;
   /* 2B2B2B */
 }
@@ -690,23 +693,23 @@
   background-color: #cf5c36;
 }
 
-.navbar-default .navbar-nav .open>a {
+.navbar-default .navbar-nav .open > a {
   background-color: #cf5c36;
 }
 
-.navbar-default .navbar-nav .open>a:hover {
+.navbar-default .navbar-nav .open > a:hover {
   background-color: #cf5c36;
 }
 
-.navbar-default .navbar-nav .open>a:focus {
+.navbar-default .navbar-nav .open > a:focus {
   background-color: #cf5c36;
 }
 
-.navbar-nav li.dropdown li>a:hover {
+.navbar-nav li.dropdown li > a:hover {
   background-color: #cf5c36;
 }
 
-.navbar-nav li.dropdown li>a:focus {
+.navbar-nav li.dropdown li > a:focus {
   background-color: #cf5c36;
 }
 
@@ -714,11 +717,11 @@
   color: #cf5c36;
 }
 
-.navbar-nav li.dropdown li>a {
+.navbar-nav li.dropdown li > a {
   color: #333333;
 }
 
-.navbar-nav li.dropdown li>a:hover {
+.navbar-nav li.dropdown li > a:hover {
   color: #ffffff;
 }
 
@@ -745,15 +748,16 @@
   color: #ffffff;
 }
 
-.container .navbar-nav li.active>a {
+.container .navbar-nav li.active > a {
   background-color: #cf5c36;
 }
 
-.container .navbar-nav li.active>a {
+.container .navbar-nav li.active > a {
   color: undefined;
 }
 
-.navbar-default, .dropdown-mega {
+.navbar-default,
+.dropdown-mega {
   border-color: ;
 }
 
@@ -781,7 +785,8 @@ body a {
   background-color: #0b3648;
 }
 
-.btn-primary, .btn-primary:hover {
+.btn-primary,
+.btn-primary:hover {
   color: #ffffff;
 }
 
@@ -797,7 +802,8 @@ body a {
   background-color: #ffffff;
 }
 
-.btn-default, .btn-default:hover {
+.btn-default,
+.btn-default:hover {
   color: #333333;
 }
 
@@ -813,7 +819,8 @@ body a {
   background-color: #ffffff;
 }
 
-.btn-checkout, .btn-checkout:hover {
+.btn-checkout,
+.btn-checkout:hover {
   color: #333333;
 }
 
@@ -831,7 +838,8 @@ body a {
   background-color: #ffffff;
 }
 
-.btn-checkout, .btn-checkout:hover {
+.btn-checkout,
+.btn-checkout:hover {
   color: #333333;
 }
 
@@ -849,17 +857,37 @@ body a {
   border-color: #cccccc;
 }
 
-.btn-checkout:hover, .btn-checkout:focus, .btn-checkout:active, .btn-checkout.active, .open .dropdown-toggle.btn-checkout {
+.btn-checkout:hover,
+.btn-checkout:focus,
+.btn-checkout:active,
+.btn-checkout.active,
+.open .dropdown-toggle.btn-checkout {
   color: #333333;
   background-color: #ebebeb;
   border-color: #adadad;
 }
 
-.btn-checkout:active, .btn-checkout.active, .open .dropdown-toggle.btn-checkout {
+.btn-checkout:active,
+.btn-checkout.active,
+.open .dropdown-toggle.btn-checkout {
   background-image: none;
 }
 
-.btn-checkout.disabled, .btn-checkout[disabled], fieldset[disabled] .btn-checkout, .btn-checkout.disabled:hover, .btn-checkout[disabled]:hover, fieldset[disabled] .btn-checkout:hover, .btn-checkout.disabled:focus, .btn-checkout[disabled]:focus, fieldset[disabled] .btn-checkout:focus, .btn-checkout.disabled:active, .btn-checkout[disabled]:active, fieldset[disabled] .btn-checkout:active, .btn-checkout.disabled.active, .btn-checkout[disabled].active, fieldset[disabled] .btn-checkout.active {
+.btn-checkout.disabled,
+.btn-checkout[disabled],
+fieldset[disabled] .btn-checkout,
+.btn-checkout.disabled:hover,
+.btn-checkout[disabled]:hover,
+fieldset[disabled] .btn-checkout:hover,
+.btn-checkout.disabled:focus,
+.btn-checkout[disabled]:focus,
+fieldset[disabled] .btn-checkout:focus,
+.btn-checkout.disabled:active,
+.btn-checkout[disabled]:active,
+fieldset[disabled] .btn-checkout:active,
+.btn-checkout.disabled.active,
+.btn-checkout[disabled].active,
+fieldset[disabled] .btn-checkout.active {
   background-color: #ffffff;
   border-color: #cccccc;
 }
@@ -875,7 +903,8 @@ body a {
   background-color: #5bc0de;
 }
 
-.btn-info, .btn-info:hover {
+.btn-info,
+.btn-info:hover {
   color: #ffffff;
 }
 
@@ -891,7 +920,8 @@ body a {
   background-color: #5cb85c;
 }
 
-.btn-success, .btn-success:hover {
+.btn-success,
+.btn-success:hover {
   color: #ffffff;
 }
 
@@ -907,7 +937,8 @@ body a {
   background-color: #f0ad4e;
 }
 
-.btn-warning, .btn-warning:hover {
+.btn-warning,
+.btn-warning:hover {
   color: #ffffff;
 }
 
@@ -924,7 +955,8 @@ body a {
   /*D9534F*/
 }
 
-.btn-danger, .btn-danger:hover {
+.btn-danger,
+.btn-danger:hover {
   color: #ffffff;
 }
 
