@@ -502,7 +502,7 @@ var XLATTables = {
 		"your order has been saved as a favorite":
 			"Su pedido se ha guardado como favorita",
 
-		// StaticSpecs
+		//StaticSpecs
 
 		//Gift Card
 		"a gift card": "una tarjeta de regalo",
