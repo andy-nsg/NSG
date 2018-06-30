@@ -34,7 +34,7 @@ four51.app.factory("ProductDisplayService", [
 						: $451.filter(spec.Options, {
 								Property: "ID",
 								Value: spec.SelectedOptionID
-							})[0];
+						  })[0];
 					if (!option && !otherMarkup) return;
 					if (spec.MarkupType === "AmountPerQuantity")
 						amountPerQty += otherMarkup || option.Markup;
@@ -77,6 +77,7 @@ four51.app.factory("ProductDisplayService", [
 			lineItem.LineTotal = total;
 			lineItem.UnitPrice = priceBreak.Price;
 		}
+
 		function productViewScope(scope) {
 			scope.lineItemErrors = [];
 			scope.$watch(
@@ -128,7 +129,7 @@ four51.app.factory("ProductDisplayService", [
 					if (s.Required && !s.Value)
 						newErrorList.push(s.Name + " is a required field");
 				});
-				// if(scope.addToOrderForm && scope.addToOrderForm.$invalid){
+				//if(scope.addToOrderForm && scope.addToOrderForm.$invalid){
 				//	newErrorList.push("Please fill all required fields");
 				//}
 				scope.lineItemErrors = newErrorList;
@@ -150,7 +151,7 @@ four51.app.factory("ProductDisplayService", [
 					var hasAllVarDefiningSpecs = true;
 					$451.filter(
 						scope.LineItem.Specs,
-						{ Property: "DefinesVariant", Value: true },
+						{Property: "DefinesVariant", Value: true},
 						function(item) {
 							if (!item.SelectedOptionID) {
 								hasAllVarDefiningSpecs = false;
@@ -198,6 +199,7 @@ four51.app.factory("ProductDisplayService", [
 				window.location.href = url;
 			};
 		}
+
 		function newLineItemScope(scope) {
 			function variantHasPriceSchedule(product, scheduleType) {
 				if (!product.Variants) return false;
@@ -228,7 +230,7 @@ four51.app.factory("ProductDisplayService", [
 			//used for checking pageinated variants for price schedules
 			scope.currentFirstVariant = scope.settings
 				? scope.settings.currentPage * scope.settings.pageSize -
-					scope.settings.pageSize
+				  scope.settings.pageSize
 				: 0;
 
 			scope.allowAddFromVariantList =
@@ -312,24 +314,21 @@ four51.app.factory("ProductDisplayService", [
 					scope.variantLineItems = {};
 					angular.forEach(p.Variants, function(v) {
 						if (!v) return;
-						if (p.Type == "VariableText") {
+						if (p.Type == "VariableText" && v.InteropID) {
 							Variant.get(
-								{
-									ProductInteropID: p.InteropID,
-									VariantInteropID: v.InteropID
-								},
+								{ProductInteropID: p.InteropID, VariantInteropID: v.InteropID},
 								function(data) {
 									scope.variantLineItems[v.InteropID] = {
 										PriceSchedule:
 											(scope.currentOrder
 												? v[scope.currentOrder.Type + "PriceSchedule"]
 												: v.StandardPriceSchedule ||
-													v.ReplenishmentPriceSchedule) ||
+												  v.ReplenishmentPriceSchedule) ||
 											(scope.currentOrder
 												? p[scope.currentOrder.Type + "PriceSchedule"]
 												: v.StandardPriceSchedule ||
-													v.ReplenishmentPriceSchedule ||
-													scope.LineItem.PriceSchedule),
+												  v.ReplenishmentPriceSchedule ||
+												  scope.LineItem.PriceSchedule),
 										Product: p,
 										Variant: data,
 										Specs: scope.LineItem.Specs
@@ -342,12 +341,12 @@ four51.app.factory("ProductDisplayService", [
 									(scope.currentOrder
 										? v[scope.currentOrder.Type + "PriceSchedule"]
 										: v.StandardPriceSchedule ||
-											v.ReplenishmentPriceSchedule) ||
+										  v.ReplenishmentPriceSchedule) ||
 									(scope.currentOrder
 										? p[scope.currentOrder.Type + "PriceSchedule"]
 										: v.StandardPriceSchedule ||
-											v.ReplenishmentPriceSchedule ||
-											scope.LineItem.PriceSchedule),
+										  v.ReplenishmentPriceSchedule ||
+										  scope.LineItem.PriceSchedule),
 								Product: p,
 								Variant: v,
 								Specs: scope.LineItem.Specs
@@ -411,7 +410,7 @@ four51.app.factory("ProductDisplayService", [
 						? scope.variantLineItems[
 								scope.LineItem.Product.Variants[scope.currentFirstVariant]
 									.InteropID
-							].Variant[type + "PriceSchedule"] != null
+						  ].Variant[type + "PriceSchedule"] != null
 						: scope.LineItem.Product[type + "PriceSchedule"] != null &&
 								(scope.currentOrder && scope.currentOrder.ID
 									? scope.currentOrder.Type == type
@@ -422,9 +421,9 @@ four51.app.factory("ProductDisplayService", [
 													scope.LineItem.Product.Variants[
 														scope.currentFirstVariant
 													].InteropID
-												].PriceSchedule.OrderType
+											  ].PriceSchedule.OrderType
 											: scope.LineItem.PriceSchedule.OrderType) ==
-										scope.currentOrder.Type
+									  scope.currentOrder.Type
 									: true);
 				}
 			}
@@ -463,6 +462,7 @@ four51.app.factory("ProductDisplayService", [
 				escapeNull
 			);
 		}
+
 		function _getProductAndVariant(
 			productInteropID,
 			variantInteropID,
@@ -482,7 +482,7 @@ four51.app.factory("ProductDisplayService", [
 								ProductInteropID: p.InteropID
 							},
 							function(v) {
-								callback({ product: p, variant: v });
+								callback({product: p, variant: v});
 							}
 						);
 					} else {
@@ -497,16 +497,16 @@ four51.app.factory("ProductDisplayService", [
 							});
 							if (options.length > 0 && hasAllDefinesAsVariant) {
 								Variant.get(
-									{ ProductInteropID: p.InteropID, SpecOptionIDs: options },
+									{ProductInteropID: p.InteropID, SpecOptionIDs: options},
 									function(v) {
-										callback({ product: p, variant: v });
+										callback({product: p, variant: v});
 									},
 									function(ex) {
-										callback({ product: p });
+										callback({product: p});
 									}
 								);
-							} else callback({ product: p });
-						} else callback({ product: p });
+							} else callback({product: p});
+						} else callback({product: p});
 					}
 				},
 				page,
