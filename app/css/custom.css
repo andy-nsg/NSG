@@ -1,5 +1,19 @@
+body {
+  font-family: "Droid Sans", sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #333333;
+  background-color: #ffffff;
+}
+body a {
+  color: #e04f4f;
+}
+a:hover,
+a:focus {
+  color: #2b2b2b;
+  text-decoration: underline;
+}
 /* Login Logo */
-
 .loginLogo {
   max-width: 100%;
   max-height: 80px;
@@ -7,52 +21,42 @@
   margin-left: auto;
   padding-top: 15px;
 }
-
 .white {
   color: #ffffff;
 }
-
 .NSGcenter {
   text-align: center;
 }
-
 .checkoutButtonText {
   font-size: 1.4vmin;
   font-size: 1.4vmax;
 }
 
 /* Moves checkout buttons behind navbar when scrolling */
-
 .checkoutButtonZIndex {
   z-index: -1;
 }
-
 .FontSmall {
   font-size: 85%;
 }
 
 /* Billing Bullets */
-
 .FontSmall ul li {
   list-style-type: disc;
 }
-
 .FontSize07 {
   font-size: 7pt;
 }
-
 .FontItalics {
   font-style: italic;
 }
 
 /* Spending Account Nav Option */
-
 .spendingaccounts {
   padding: 15px 8px;
   color: #ffffff;
   font-size: 75%;
 }
-
 .spendingaccounts-xs {
   padding: 18px 0px 0px 0px;
   color: #ffffff;
@@ -78,7 +82,6 @@
 */
 
 /* Jumbor Header Home Page*/
-
 .jumboHeaderText {
   text-align: center;
   /*vertical-align: middle;*/
@@ -90,25 +93,21 @@
 }
 
 /* Nav Logo */
-
 .navLogo {
   max-width: 100%;
   max-height: 35px;
 }
 
 /* Banner Logo */
-
 .bannerLogo {
   max-width: 100%;
   /*max-height: 250px;*/
 }
-
 .jumbotron {
   padding: 0px;
 }
 
 /*Edit Jumbrotron width - $ak */
-
 .jumbotron {
   margin: 45px 0px -45px;
   /* margin: 45px 5px -45px; */
@@ -116,13 +115,11 @@
 }
 
 /* NSG Tooltip */
-
 .NSGtooltip {
   position: relative;
   display: inline-block;
   border-bottom: 1px dotted black;
 }
-
 .NSGtooltip .NSGtooltiptext {
   visibility: hidden;
   width: 200px;
@@ -139,7 +136,6 @@
   left: 50%;
   margin-left: -100px;
 }
-
 .NSGtooltip .NSGtooltiptext::after {
   content: "";
   position: absolute;
@@ -150,16 +146,13 @@
   border-style: solid;
   border-color: black transparent transparent transparent;
 }
-
 .NSGtooltip:hover .NSGtooltiptext {
   visibility: visible;
 }
-
 .purchasePowerModalBox {
   text-align: center;
   max-width: 500px;
 }
-
 .jumbotronInnerShadow {
   -webkit-box-shadow: inset 0px 0px 20px 10px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: inset 0px 0px 20px 10px rgba(0, 0, 0, 0.1);
@@ -167,19 +160,16 @@
 }
 
 /* Navbar Drop Shadow */
-
 .navbarDropShadow {
   -webkit-box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.42);
   -moz-box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.42);
   box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.42);
 }
-
 .navbarInnerShadow {
   -webkit-box-shadow: inset 0px 0px 15px 5px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: inset 0px 0px 15px 5px rgba(0, 0, 0, 0.1);
   box-shadow: inset 0px 0px 15px 5px rgba(0, 0, 0, 0.1);
 }
-
 #vertAlignJumbo {
   position: relative;
   top: 50%;
@@ -187,28 +177,23 @@
 }
 
 /* Adjust product list border/backgrounds $ak */
-
 .panel-product-list {
   border-radius: 0px;
   border-color: transparent;
 }
-
 .panel-product-list .well {
   background-color: transparent;
   border: none;
   border-color: transparent;
 }
-
 .panel-product-list .aLinkSpacingFix {
   color: #333333;
 }
-
 .panel-product-list .well {
   border-color: transparent;
 }
 
 /*Changes size of images on category page*/
-
 .thumbnail img {
   max-height: 100px;
   /*must match smallest size of thumbnail image*/
@@ -217,17 +202,14 @@
 }
 
 /* This counters the spacing issue on the product list page with <a> links */
-
 .aLinkSpacingFix p a {
   padding: 0em !important;
   display: inline !important;
   text-decoration: none;
 }
-
 .NSGCategoryButtonPadding {
   margin: 0px 25px 25px 25px;
 }
-
 .NSGCategoryButton {
   -webkit-box-shadow: 8px 8px 15px 0px rgba(0, 0, 0, 0.42);
   -moz-box-shadow: 8px 8px 15px 0px rgba(0, 0, 0, 0.42);
@@ -235,29 +217,24 @@
 }
 
 /* Fixes row issues with Category List page */
-
 .panel-category-list ul li a h5 {
   height: 50px;
 }
 
 /* Fixes row issues with Product List page */
-
 .panel-product-list ul li h3 {
   font-size: 15px;
 }
-
 .shoppingCartIndicator ul li a {
   color: #ffffff;
 }
 
 /* Fixed Product Image */
-
 .fixedProductImage {
   position: fixed !important;
 }
 
 /* Alters image size on main product page - overrides same class in bootstrap-451.css */
-
 .product-image-large {
   margin: 0 auto;
   max-height: 360px;
@@ -265,14 +242,12 @@
 }
 
 /* Lightbox Scroll Bar */
-
 .scrollLightbox {
   width: auto;
   height: 90px;
   overflow: auto;
   white-space: nowrap;
 }
-
 .testy {
   max-width: 400px;
 }
@@ -288,7 +263,6 @@
 /*.NSGCategoryButtonPadding:hover {
     padding: 0px 25px 25px 25px;
 }*/
-
 .NSGCategoryTitle {
   color: #0b3648;
   font-size: 13pt;
@@ -296,11 +270,9 @@
   /* offset-x | offset-y | blur-radius | color */
   /*text-shadow: 2px 2px 5px #000000;*/
 }
-
 .NSGCategoryTitle:hover {
   color: #e04f4f;
 }
-
 .officialCNCS {
   font-family: "Source Sans Pro", arial, serif;
   font-size: 12pt;
@@ -318,7 +290,6 @@
 }
 
 /*This is used for the header when closed for holidays*/
-
 .NSGHoliday {
   font-family: "Source Sans Pro", arial, serif;
   font-size: 25pt;
@@ -335,7 +306,6 @@
 }
 
 /*Used when we have tech difficulties*/
-
 .phoneDown {
   font-family: "Source Sans Pro", arial, serif;
   font-size: 17pt;
@@ -352,7 +322,6 @@
 }
 
 /* Category Message Settings */
-
 .categoryPanel {
   /* border-left: 5px solid #000000; */
   max-width: 1000px;
@@ -362,29 +331,24 @@
 }
 
 /* Category Bullets */
-
 .categoryPanel ul li {
   list-style-type: disc;
 }
 
 /*Footer CSS*/
-
 * {
   margin: 0;
 }
-
 .flushFooter,
 .push {
   height: 210px;
   /* .push must be the same height as .footer */
 }
-
 .NSGwrapper {
   min-height: 100%;
   margin: 0 auto -210px;
   /* the bottom margin is the negative value of the footer's height */
 }
-
 .NSGfooter {
   /*margin-right: 5em;
     margin-left: 4em;
@@ -406,7 +370,6 @@
     background-repeat: no-repeat;
     background-position: 5px 5px;*/
 }
-
 .NSGxsFooter {
   margin-top: 0px;
   clear: both;
@@ -422,7 +385,6 @@
     background-repeat: no-repeat;
     background-position: 5px 5px;*/
 }
-
 .NSGxxsFooter {
   margin-top: 0px;
   clear: both;
@@ -438,7 +400,6 @@
     background-repeat: no-repeat;
     background-position: 5px 5px;*/
 }
-
 .footLeft {
   margin-right: 0px;
   margin-left: 0px;
@@ -450,7 +411,6 @@
   padding-left: 55px;
   float: left;
 }
-
 .xsFootLeft {
   margin-right: 0px;
   margin-left: 0px;
@@ -464,7 +424,6 @@
   width: 100%;
   max-width: 225px;
 }
-
 .xxsFootLeft {
   margin-right: 0px;
   margin-left: 0px;
@@ -478,7 +437,6 @@
   width: 100%;
   max-width: 180px;
 }
-
 .footRight {
   margin-right: 0em;
   margin-left: 0em;
@@ -487,7 +445,6 @@
   padding-right: 25px;
   float: right;
 }
-
 .xsFootRight {
   margin-right: 0em;
   margin-left: 0em;
@@ -497,7 +454,6 @@
   float: right;
   font-size: 2vw;
 }
-
 .xxsFootRight {
   margin-right: 0em;
   margin-left: 0em;
@@ -507,7 +463,6 @@
   float: right;
   font-size: 1.8vw;
 }
-
 .socialFooter {
   margin-top: 0px;
   clear: both;
@@ -519,7 +474,6 @@
 }
 
 /* Use this to transition icons */
-
 .iconTrans,
 .iconTrans:hover,
 .iconTrans:focus {
@@ -529,54 +483,44 @@
   -o-transition: all ease-in-out 0.5s;
   transition: all ease-in-out 0.5s;
 }
-
 .socialFooter > .text-left > .iconTrans {
   color: #ffffff;
   /*E04F4F*/
 }
-
 .socialFooter > .text-left > .iconTwitter:hover {
   color: #00aced !important;
   /* 2B2B2B */
 }
-
 .socialFooter > .text-left > .iconFacebook:hover {
   color: #3b5998 !important;
   /* 2B2B2B */
 }
-
 .socialFooter > .text-left > .iconInstagram:hover {
   color: #517fa4 !important;
   /* 2B2B2B */
 }
-
 .socialFooter > .text-left > .iconLinkedIn:hover {
   color: #007bb6 !important;
   /* 2B2B2B */
 }
-
 .vertIcon {
   padding-left: 5px;
 }
-
 .contactFooterText {
   font-size: 4vw;
 }
 
 /*Gives items a list style, bullets*/
-
 .prod-desc-list-style ul {
   list-style-type: disc;
   margin-left: 25px;
 }
-
 .contactListStyle ul li {
   list-style-type: disc;
   margin-left: 25px;
 }
 
 /* Shopping Cart Circle */
-
 .shoppingCartNavBar li a i:first-of-type {
   border-radius: 50%;
   border: 1px solid #fff;
@@ -586,14 +530,12 @@
 }
 
 /* Product Image */
-
 .fixedImage {
   position: fixed;
   padding: 1500px 500px 50px 80px;
 }
 
 /* Search Bar */
-
 .customSearchBar {
   float: right !important;
   width: 65%;
@@ -603,14 +545,12 @@
 }
 
 /*PP Item Timetable settings*/
-
 .tablePPTimeline {
   box-shadow: 5px 5px 10px 0px rgba(119, 119, 119, 0.3);
   -moz-box-shadow: 5px 5px 10px 0px rgba(119, 119, 119, 0.3);
   -webkit-box-shadow: 5px 5px 10px 0px rgba(119, 119, 119, 0.3);
   background-color: #dedede;
 }
-
 .thPPTimeline {
   border: 2px;
   border-style: solid;
@@ -619,7 +559,6 @@
   padding: 5px;
   text-align: center;
 }
-
 .tdPPTimeline {
   font-family: arial, helvetica, sans-serif;
   font-size: 14px;
@@ -631,11 +570,9 @@
   padding: 5px;
   text-align: center;
 }
-
 #fontProduct {
   color: #000000;
 }
-
 #fontProgram {
   font-size: 14px;
   font-weight: bold;
@@ -648,11 +585,9 @@
   margin-bottom: 0px;
   margin-left: 0px;
 }
-
 #footerFont {
   font-size: 10px;
 }
-
 #mainbkg {
   /*background-color: #e9e9e9;*/
   margin-top: 0px;
@@ -664,7 +599,6 @@
   padding-bottom: 0.25em;
   padding-left: 3em;
 }
-
 #mainnav {
   /*background-color: #136ca8;*/
   margin-right: 5px;
@@ -683,180 +617,223 @@
 }
 
 /* Theme CSS Edits */
-
+.table .table {
+  background-color: #f7f7f7;
+}
 .container .navbar-nav li.active a:hover {
   background-color: #cf5c36;
   /*99C24D*/
 }
-
 .container .navbar-nav li.active a:focus {
   background-color: #cf5c36;
 }
-
 .navbar-default .navbar-nav .open > a {
   background-color: #cf5c36;
 }
-
 .navbar-default .navbar-nav .open > a:hover {
   background-color: #cf5c36;
 }
-
 .navbar-default .navbar-nav .open > a:focus {
   background-color: #cf5c36;
 }
-
 .navbar-nav li.dropdown li > a:hover {
   background-color: #cf5c36;
 }
-
 .navbar-nav li.dropdown li > a:focus {
   background-color: #cf5c36;
 }
-
 .navbar .container .navbar-nav li.active .fa-caret-down {
   color: #cf5c36;
 }
-
 .navbar-nav li.dropdown li > a {
   color: #333333;
 }
-
 .navbar-nav li.dropdown li > a:hover {
   color: #ffffff;
 }
-
 .navbar .container .navbar-nav.pull-right li a i:first-of-type {
   border-color: #ffffff;
 }
-
+.dropup .caret,
+.navbar-fixed-bottom .dropdown .caret,
+.navbar-fixed-bottom .dropdown-mega .caret {
+  border-top: 0;
+  border-bottom: 0px none;
+  content: "";
+}
 .badge {
+  display: inline-block;
+  min-width: 10px;
+  padding: 3px 7px;
+  font-size: 11px;
+  font-weight: bold;
+  color: #ffffff;
+  line-height: 1;
+  vertical-align: baseline;
+  white-space: nowrap;
+  text-align: center;
+  /* Change Shopping Cart Indicator Background - $ak */
   background-color: undefined;
+  border-radius: 10px;
+}
+.well {
+  min-height: 20px;
+  padding: 19px;
+  margin-bottom: 20px;
+  background-color: #ffffff;
+  border: 1px solid #f7f7f7;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
+}
+.navbar-default {
+  background-color: #0069aa;
+  border: 0;
 }
 
-/* Change Shopping Cart Indicator Number Color */
-
-.badge {
+/* Change Back Left Arrow Color */
+.navbar .container .navbar-nav.pull-left li.fadeInLeft a i,
+.navbar .container-view .navbar-nav.pull-left li.fadeInLeft a i {
   color: #ffffff;
 }
 
-.navbar-default {
-  background-color: #0069aa;
-  /*0B3648 3E7CB1*/
+/* Remove Border Radius and Border for Shopping Cart Icon, Add to Custom CSS for Shopping Cart Only. This is to avoid having circles around social media icons -$ak */
+.navbar .container .navbar-nav.pull-right li a i:first-of-type,
+.navbar .container-view .navbar-nav.pull-right li a i:first-of-type {
+  border-radius: 0;
+  border: none;
+  text-align: center;
+  padding: 10px;
+  margin-top: -10px;
 }
 
+/*Navbar*/
+.nav {
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+}
+.nav.visible-sm.visible-xs.visible-xxs {
+  margin-bottom: 10px;
+}
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
+  color: #555555;
+  background-color: #f7f7f7;
+  border: 1px solid #dddddd;
+  border-bottom-color: transparent;
+  cursor: default;
+}
 .container .navbar-nav li a {
   color: #ffffff;
 }
-
 .container .navbar-nav li.active > a {
   background-color: #cf5c36;
 }
-
 .container .navbar-nav li.active > a {
   color: undefined;
 }
 
+/* Adjust Navbar Margin and Border*/
+.navbar {
+  position: relative;
+  min-height: 60px;
+  margin-left: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+  border: none;
+}
 .navbar-default,
 .dropdown-mega {
   border-color: ;
 }
-
-body {
-  background-color: #ffffff;
-}
-
-body {
-  color: #333333;
-}
-
 .text-primary {
   color: #0b3648;
 }
-
 .text-info {
   color: #31708f;
 }
-
-body a {
-  color: #e04f4f;
+.breadcrumb {
+  padding: 8px 15px;
+  margin-bottom: 20px;
+  list-style: none;
+  background-color: #f7f7f7;
+  border-radius: 4px;
 }
-
+.pagination > li > a:hover,
+.pagination > li > span:hover,
+.pagination > li > a:focus,
+.pagination > li > span:focus {
+  color: #2b2b2b;
+  background-color: #eeeeee;
+  border-color: #dddddd;
+}
+.btn-link:hover,
+.btn-link:focus {
+  color: #2b2b2b;
+  text-decoration: underline;
+  background-color: transparent;
+}
 .btn-primary {
   background-color: #0b3648;
 }
-
 .btn-primary,
 .btn-primary:hover {
   color: #ffffff;
 }
-
 .btn-primary {
   border-color: #081b24;
 }
-
 .btn-primary:hover {
   background-color: #051118;
 }
-
 .btn-default {
   background-color: #ffffff;
 }
-
 .btn-default,
 .btn-default:hover {
   color: #333333;
 }
-
 .btn-default {
   border-color: #cccccc;
 }
-
 .btn-default:hover {
   background-color: #ebebeb;
 }
-
 .btn-checkout {
   background-color: #ffffff;
 }
-
 .btn-checkout,
 .btn-checkout:hover {
   color: #333333;
 }
-
 .btn-checkout {
   border-color: #cccccc;
 }
-
 .btn-checkout:hover {
   background-color: #ebebeb;
 }
 
 /*Checkout Payment Selection Buttons */
-
 .btn-checkout {
   background-color: #ffffff;
 }
-
 .btn-checkout,
 .btn-checkout:hover {
   color: #333333;
 }
-
 .btn-checkout {
   border-color: #cccccc;
 }
-
 .btn-checkout:hover {
   background-color: #ebebeb;
 }
-
 .btn-checkout {
   color: #333333;
   background-color: #ffffff;
   border-color: #cccccc;
 }
-
 .btn-checkout:hover,
 .btn-checkout:focus,
 .btn-checkout:active,
@@ -866,13 +843,11 @@ body a {
   background-color: #ebebeb;
   border-color: #adadad;
 }
-
 .btn-checkout:active,
 .btn-checkout.active,
 .open .dropdown-toggle.btn-checkout {
   background-image: none;
 }
-
 .btn-checkout.disabled,
 .btn-checkout[disabled],
 fieldset[disabled] .btn-checkout,
@@ -891,132 +866,169 @@ fieldset[disabled] .btn-checkout.active {
   background-color: #ffffff;
   border-color: #cccccc;
 }
-
 .btn-checkout .badge {
   color: #ffffff;
   background-color: #333333;
 }
 
 /*end checkout payment buttons*/
-
 .btn-info {
   background-color: #5bc0de;
 }
-
 .btn-info,
 .btn-info:hover {
   color: #ffffff;
 }
-
 .btn-info {
   border-color: #46b8da;
 }
-
 .btn-info:hover {
   background-color: #39b3d7;
 }
-
 .btn-success {
   background-color: #5cb85c;
 }
-
 .btn-success,
 .btn-success:hover {
   color: #ffffff;
 }
-
 .btn-success {
   border-color: #4cae4c;
 }
-
 .btn-success:hover {
   background-color: #00ab41;
 }
-
 .btn-warning {
   background-color: #f0ad4e;
 }
-
 .btn-warning,
 .btn-warning:hover {
   color: #ffffff;
 }
-
 .btn-warning {
   border-color: #eea236;
 }
-
 .btn-warning:hover {
   background-color: #ed9c28;
 }
-
 .btn-danger {
   background-color: #e04f4f;
   /*D9534F*/
 }
-
 .btn-danger,
 .btn-danger:hover {
   color: #ffffff;
 }
-
 .btn-danger {
   border-color: #d43f3a;
 }
-
 .btn-danger:hover {
   background-color: #d2322d;
 }
-
 .jumbotron {
   background-color: transparent !important;
   /*background-color: #3E7CB1;*/
 }
-
 h2 .jumbotron {
   color: #ffffff;
 }
 
+/*Edit Jumbrotron width - $ak */
+.jumbotron {
+  margin: 45px 0px -45px;
+  display: none;
+}
+.panel .panel-heading {
+  border-top: none;
+  padding: 0;
+}
 .panel-primary .panel-heading .panel-title {
   background-color: #cf5c36;
 }
-
 .panel-primary .panel-heading .panel-title {
   color: #ffffff;
 }
-
 .panel-default .panel-heading .panel-title {
   background-color: #dedede;
 }
-
 .panel-default .panel-heading .panel-title {
   color: #333333;
 }
-
 .panel-primary .panel-heading .panel-instructions {
   background-color: #0069aa;
 }
-
 .panel-primary .panel-heading .panel-instructions {
   color: #ffffff;
 }
-
 .panel {
   background-color: #ffffff;
 }
-
 .panel-footer {
   background-color: #dedede;
 }
-
 .panel-category-list .well {
   background-color: #ffffff;
 }
-
 .panel-category-list .well h5 {
   color: #333333;
 }
-
 .panel-category-list .well {
   border-color: #dedede;
+}
+@media (min-width: 768px) {
+  .nav-tabs.nav-justified > li > a {
+    border-bottom: 1px solid #dddddd;
+    border-radius: 4px 4px 0 0;
+  }
+  .nav-tabs.nav-justified > .active > a,
+  .nav-tabs.nav-justified > .active > a:hover,
+  .nav-tabs.nav-justified > .active > a:focus {
+    border-bottom-color: #f7f7f7;
+  }
+}
+@media (min-width: 768px) {
+  .nav-tabs-justified > li > a {
+    border-bottom: 1px solid #dddddd;
+    border-radius: 4px 4px 0 0;
+  }
+  .nav-tabs-justified > .active > a,
+  .nav-tabs-justified > .active > a:hover,
+  .nav-tabs-justified > .active > a:focus {
+    border-bottom-color: #f7f7f7;
+  }
+}
+.visible-xxs {
+  display: none !important;
+}
+
+/* Updated the min-width to work with .visible-xxs - $ak */
+@media (max-width: 719px) {
+  .visible-xxs {
+    display: block !important;
+  }
+  table.visible-xxs {
+    display: table;
+  }
+  tr.visible-xxs {
+    display: table-row !important;
+  }
+  th.visible-xxs,
+  td.visible-xxs {
+    display: table-cell !important;
+  }
+}
+@media (min-width: 720px) and (max-width: 767px) {
+  .visible-xs {
+    display: block !important;
+  }
+  table.visible-xs {
+    display: table;
+  }
+  tr.visible-xs {
+    display: table-row !important;
+  }
+  th.visible-xs,
+  td.visible-xs {
+    display: table-cell !important;
+  }
 }
