@@ -56,7 +56,7 @@ four51.app.factory("User", [
 				? (function() {
 						_extend(user);
 						_then(success, user);
-					})()
+				  })()
 				: $resource($451.api("user"))
 						.get()
 						.$promise.then(function(u) {
@@ -87,7 +87,11 @@ four51.app.factory("User", [
 				.get(credentials)
 				.$promise.then(
 					function(u) {
-						_then(success, u);
+						if (credentials.CurrentOrderID) {
+							_setorder(credentials.CurrentOrderID, success, error);
+						} else {
+							_then(success, u);
+						}
 					},
 					function(ex) {
 						if (angular.isFunction(error)) error(Error.format(ex));
@@ -116,8 +120,8 @@ four51.app.factory("User", [
 		};
 
 		var _setorder = function(id, success, error) {
-			$resource($451.api("user/currentorder/:id"), { id: "@id" })
-				.save({ id: id })
+			$resource($451.api("user/currentorder/:id"), {id: "@id"})
+				.save({id: id})
 				.$promise.then(
 					function(data) {
 						store.set(_cacheName, data);
