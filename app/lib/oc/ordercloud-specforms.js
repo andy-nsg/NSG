@@ -54,8 +54,7 @@ function ocmask() {
 	return directive;
 
 	function link(scope, elem, attr, ctrl) {
-		if (attr.jmask)
-			elem.mask(attr.jmask, { placeholder: attr.maskPlaceholder });
+		if (attr.jmask) elem.mask(attr.jmask, {placeholder: attr.maskPlaceholder});
 	}
 }
 
@@ -354,7 +353,7 @@ function ocselectionfield($451) {
 					? $451.filter(scope.customfield.Options, {
 							Property: "ID",
 							Value: id
-						})[0]
+					  })[0]
 					: null;
 			if (this.item && this.item.Value == "Other") {
 				scope.other = scope.customfield.Value;
@@ -555,6 +554,12 @@ function octimefield($filter) {
 		restrict: "E",
 		template: template,
 		link: function(scope) {
+			scope.$watch("customfield", function(field) {
+				if (!field) return;
+				if (scope.customfield.Value == "") {
+					scope.customfield.Value = "12:00 PM";
+				}
+			});
 			scope.$watch("customfield.Time", function(newVal) {
 				if (!newVal) return;
 				scope.customfield.Value = $filter("date")(
@@ -681,28 +686,28 @@ function octextboxfield() {
 				if (0 !== this.length && !this.is(":hidden"))
 					return "number" == typeof begin
 						? ((end = "number" == typeof end ? end : begin),
-							this.each(function() {
+						  this.each(function() {
 								this.setSelectionRange
 									? this.setSelectionRange(begin, end)
 									: this.createTextRange &&
-										((range = this.createTextRange()),
-										range.collapse(!0),
-										range.moveEnd("character", end),
-										range.moveStart("character", begin),
-										range.select());
-							}))
+									  ((range = this.createTextRange()),
+									  range.collapse(!0),
+									  range.moveEnd("character", end),
+									  range.moveStart("character", begin),
+									  range.select());
+						  }))
 						: (this[0].setSelectionRange
 								? ((begin = this[0].selectionStart),
-									(end = this[0].selectionEnd))
+								  (end = this[0].selectionEnd))
 								: document.selection &&
-									document.selection.createRange &&
-									((range = document.selection.createRange()),
-									(begin = 0 - range.duplicate().moveStart("character", -1e5)),
-									(end = begin + range.text.length)),
-							{
+								  document.selection.createRange &&
+								  ((range = document.selection.createRange()),
+								  (begin = 0 - range.duplicate().moveStart("character", -1e5)),
+								  (end = begin + range.text.length)),
+						  {
 								begin: begin,
 								end: end
-							});
+						  });
 			},
 			unmask: function() {
 				return this.trigger("unmask");
@@ -739,9 +744,9 @@ function octextboxfield() {
 							? (len--, (partialPosition = i))
 							: defs[c]
 								? (tests.push(new RegExp(defs[c])),
-									null === firstNonMaskPos &&
+								  null === firstNonMaskPos &&
 										(firstNonMaskPos = tests.length - 1),
-									partialPosition > i &&
+								  partialPosition > i &&
 										(lastRequiredNonMaskPos = tests.length - 1))
 								: tests.push(null);
 					}),
@@ -822,23 +827,23 @@ function octextboxfield() {
 								(oldVal = input.val()),
 									8 === k || 46 === k || (iPhone && 127 === k)
 										? ((pos = input.caret()),
-											(begin = pos.begin),
-											(end = pos.end),
-											end - begin === 0 &&
+										  (begin = pos.begin),
+										  (end = pos.end),
+										  end - begin === 0 &&
 												((begin =
 													46 !== k
 														? seekPrev(begin)
 														: (end = seekNext(begin - 1))),
 												(end = 46 === k ? seekNext(end) : end)),
-											clearBuffer(begin, end),
-											shiftL(begin, end - 1),
-											e.preventDefault())
+										  clearBuffer(begin, end),
+										  shiftL(begin, end - 1),
+										  e.preventDefault())
 										: 13 === k
 											? blurEvent.call(this, e)
 											: 27 === k &&
-												(input.val(focusText),
-												input.caret(0, checkVal()),
-												e.preventDefault());
+											  (input.val(focusText),
+											  input.caret(0, checkVal()),
+											  e.preventDefault());
 							}
 						}
 						function keypressEvent(e) {
@@ -914,7 +919,7 @@ function octextboxfield() {
 											? (input.val() && input.val(""), clearBuffer(0, len))
 											: writeBuffer()
 										: (writeBuffer(),
-											input.val(input.val().substring(0, lastMatch + 1))),
+										  input.val(input.val().substring(0, lastMatch + 1))),
 								partialPosition ? i : firstNonMaskPos
 							);
 						}
@@ -1090,7 +1095,12 @@ function getDateFromFormat(val, format) {
 					year = 2000 + (year - 0);
 				}
 			}
-		} else if (token == "MMM" || token == "NNN") {
+		} else if (
+			token == "MMM" ||
+			token == "NNN" ||
+			token == "MMMM" ||
+			token == "NNNN"
+		) {
 			month = 0;
 			for (var i = 0; i < MONTH_NAMES.length; i++) {
 				var month_name = MONTH_NAMES[i];
@@ -1106,12 +1116,22 @@ function getDateFromFormat(val, format) {
 						i_val += month_name.length;
 						break;
 					}
+					if (token == "MMMM" || (token == "NNNN" && i < 12)) {
+						month = i + 1;
+						i_val += month_name.length;
+						break;
+					}
 				}
 			}
 			if (month < 1 || month > 12) {
 				return 0;
 			}
-		} else if (token == "EE" || token == "E") {
+		} else if (
+			token == "EEEE" ||
+			token == "EEE" ||
+			token == "EE" ||
+			token == "E"
+		) {
 			for (var i = 0; i < DAY_NAMES.length; i++) {
 				var day_name = DAY_NAMES[i];
 				if (
