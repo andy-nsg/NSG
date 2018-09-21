@@ -2,9 +2,8 @@
   <nav tolerance='0' offset='75' class="navbar navbar-default navbar-fixed-top" role="navigation" headroom>
     <!-- tolerance='20'  -->
     <section>
-      <div class="container navbarInnerShadow">
+      <div class="container">
         <ul class="nav navbar-nav pull-left">
-
           <!-- Left Arrow/Back Icon -->
           <li class="back animated fadeInLeft" ng-class="{'ng-hide': isActive('catalog')}">
             <a href back-step class="back">
@@ -52,12 +51,12 @@
           </li>
 
           <!-- Orders Button -->
-          <li class="order" ng-if="user.Type == 'Customer'" ng-class="{'active': isActive('order'), 'active-xs': isActive('favoriteorders')}">
+          <!-- <li class="order hidden-xs" ng-if="user.Type == 'Customer'" ng-class="{'active': isActive('order'), 'active-xs': isActive('favoriteorders')}">
             <a id="451qa_order_link" href="order">
-                            <i class="fa fa-clipboard"></i>
-                            <span class="hidden-xs hidden-sm">{{'Orders' | r | xlat}}</span>
+                            <i class="fa fa-clipboard" alt="Orders"></i>
+                            <span class="hidden-xs hidden-sm hidden-md">{{'Orders' | r | xlat}}</span>
                         </a>
-          </li>
+          </li> -->
 
           <!-- Reports Button -->
           <li class="report" ng-if="user.Type == 'Customer' && user.Permissions.contains('AdvancedReporting')" ng-class="{'active': isActive('reports')}">
@@ -108,6 +107,12 @@
                                     {{'User Information' | r | xlat}}
                                 </a>
               </li>
+              <!-- Orders Button -->
+              <li id="451qa_order_link" class="order hidden-xs" ng-if="user.Type == 'Customer'" ng-class="{'active': isActive('order')}">
+                <a href="order">
+                                {{'Orders' | r | xlat}}
+                            </a>
+              </li>
               <li id="451qa_addy_link" ng-show="user.Type == 'Customer' && (user.Permissions.contains('CreateShipToAddress') || user.Permissions.contains('CreateBillToAddress'))" class="addresses">
                 <a href="addresses">
                                     {{'Addresses' | r | xlat}}
@@ -118,11 +123,11 @@
                                     {{'Messages' | r | xlat}}
                                 </a>
               </li>
-              <li class="favorites" ng-show="user.Type == 'Customer'">
+              <!-- <li class="favorites" ng-show="user.Type == 'Customer'">
                 <a id="451qa_fave_link" href="favoriteorders">
                                     {{'Favorites' | r | xlat}}
                                 </a>
-              </li>
+              </li>-->
               <!--<li id="451qa_mesg_link" ng-show="user.Permissions.contains('ViewContactUs')" class="contactus">
                                 <a href="contactus">
                                     {{'Contact Us' | r | xlat}}
@@ -196,6 +201,12 @@
             <span class="hidden-sm hidden-md hidden-lg">{{userSpendingAccounts[0].Label}}:<br> {{userSpendingAccounts[0].Balance | currency}}</span>
           </li>
           <!--END SPENDING ACCOUNTS NAV-->
+          <li class="welcomeUser" id="451qa_user_link" ng-show="user.Type == 'Customer'">
+            <div class="hidden-xs animated fadeInRight"><strong>Welcome,<br>{{user.FirstName}}</strong></div>
+          </li>
+          <li class="welcomeUser-xs" id="451qa_user_link" ng-show="user.Type == 'Customer'">
+            <div class="hidden-sm hidden-md hidden-lg animated fadeInRight"><strong>Welcome,<br>{{user.FirstName}}</strong></div>
+          </li>
         </ul>
         <!-- Shopping Cart -->
         <!-- <ul class="nav navbar-nav pull-right shoppingCartNavBar">
@@ -212,9 +223,9 @@
           <minicart></minicart>
         </ul>
         <!-- Social Icons -->
-        <!-- <span class="hidden-xs hidden-sm">
-                    <ul class="nav navbar-nav pull-right">
-                        <li>
+        <!--<div class="hidden-xs hidden-sm">
+                    <ul class="welcomeUser nav navbar-nav pull-right">
+                      <li>
                             <a href="https://www.linkedin.com/company/1564607?trk=tyah&trkInfo=tas%3Aindustries%20for%20the%20bli%2Cidx%3A1-1-1" target="_blank">
                                 <i class="fa fa-linkedin"></i>
                             </a>
@@ -234,15 +245,14 @@
                             </a>
                         </li>
                     </ul>
-                </span> -->
-        <!-- <ul class="nav navbar-nav pull-right">
+            <ul class="nav navbar-nav pull-right">
                     <li>
                         <a href="https://www.facebook.com/NationalServiceGear" target="_blank">
                             <i class="fa fa-facebook"></i>
                         </a>
                     </li>
-                </ul> -->
-      </div>
+                </ul>
+      </div>-->
     </section>
   </nav>
   <nav class="dropdown-mega">

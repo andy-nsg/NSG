@@ -50,6 +50,17 @@ a:focus {
 .FontItalics {
   font-style: italic;
 }
+/* Welcome User Nav Option */
+.welcomeUser {
+  padding: 12px 6px;
+  color: #ffffff;
+  font-size: 90%;
+}
+.welcomeUser-xs {
+  padding: 18px 0px 0px 0px;
+  color: #ffffff;
+  font-size: 1.8vmin;
+}
 
 /* Spending Account Nav Option */
 .spendingaccounts {
