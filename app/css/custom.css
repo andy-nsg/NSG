@@ -1,5 +1,5 @@
 body {
-  font-family: "Droid Sans", sans-serif;
+  font-family: "Raleway", sans-serif;
   font-size: 14px;
   line-height: 1.42857143;
   color: #333333;
@@ -738,11 +738,11 @@ a:focus {
 
 /* Adjust Navbar Margin and Border*/
 .navbar {
-  position: relative;
+  /*position: relative;
   min-height: 60px;
   margin-left: 0;
   margin-right: 0;
-  margin-bottom: 0;
+  margin-bottom: 0;*/
   border: none;
 }
 .navbar-default,
