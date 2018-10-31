@@ -112,7 +112,8 @@
         <div class="col-sm-6 view-form-icon">
           <div>
             <label class="required">{{'Username - Please use your email address' | r | xlat}}</label>
-            <input name="username" class="form-control" type="text" ng-model="user.TempUsername" required placeholder="{{'Please use email address for username' | r | xlat}}" autocomplete="off" />
+            <input name="username" class="form-control" type="text" ng-model="user.TempUsername" required placeholder="{{('Username' | r) + ' ' + ('-' | r) + ' ' + ('Please' | r) + ' ' + ('use' | r) + ' ' + ('your' | r) + ' ' + ('email' | r) + ' ' + ('address' | r) | xlat}}"
+              autocomplete="off" />
             <i class="fa fa-user"></i>
           </div>
           <!--TODO username input shouldn't default to temporary usernames, if the user is temp, make the placeholder show instead !-->
