@@ -106,7 +106,7 @@
             <label ng-show="user.Email">{{'Email' | r | xlat}}</label>
             <input name="email" class="form-control" type="email" required ng-model="user.Email" placeholder="{{'Email' | r | xlat}}" autocomplete="off" />
             <i class="fa fa-envelope-o"></i>
-            <inlineerror ng-show="user_form.email.$invalid" title="{{'Please enter a valid' + ' ' +  ('Email' | rl) + ' ' + ('Address' | rl) | xlat}}" />
+            <inlineerror ng-show="user_form.email.$invalid" class="ng-hide" title="{{'Please enter a valid' + ' ' +  ('Email' | rl) + ' ' + ('Address' | rl) | xlat}}" />
           </div>
         </div>
         <div class="col-sm-6 view-form-icon">
