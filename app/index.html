@@ -7,11 +7,16 @@
       { window.location.replace("sitedownSplashPage.html"); }
     </script> -->
   <!-- site down script end -->
-  <!-- Set sub-folder here if different than base -->
-  <base href="/store/" />
-  <!-- Set four51IsAnonUser to true if anonymous or false if password is needed -->
-  <script>
-    var four51IsAnonUser = true;
+  <!--baseTagToken-->
+  <!--headscriptToken-->
+  <style id="antiClickjack">body{display:none !important;}</style>
+  <script type="text/javascript">
+    if (self === top) {
+      var antiClickjack = document.getElementById("antiClickjack");
+      antiClickjack.parentNode.removeChild(antiClickjack);
+    } else {
+      top.location = self.location;
+    }
   </script>
   <!-- Set Window/Tab title here -->
   <title>National Service Gear - The Volunteer Gear People</title>
