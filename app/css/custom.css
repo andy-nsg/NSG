@@ -27,14 +27,22 @@ a:focus {
 .NSGcenter {
   text-align: center;
 }
-.checkoutButtonText {
-  font-size: 1.4vmin;
-  font-size: 1.4vmax;
+/* Check Out Buttons */
+.checkoutShopButton {
+  font-size: 1.8vmax;
+  text-transform: uppercase;
 }
-
-/* Moves checkout buttons behind navbar when scrolling */
-.checkoutButtonZIndex {
-  z-index: -1;
+.checkoutCancelButton {
+  font-size: 1.8vmax;
+  text-transform: uppercase;
+}
+.checkoutSaveButton {
+  font-size: 1.5vmax;
+  text-transform: uppercase;
+}
+.checkoutCheckOutButton {
+  font-size: 1.5vmax;
+  text-transform: uppercase;
 }
 .FontSmall {
   font-size: 85%;
