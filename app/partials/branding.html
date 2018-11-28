@@ -1,0 +1,13 @@
+<section class="jumbotron" ng-class="{'active': isActive('catalog')}" ng-show="user.Company.LogoUrl">
+  <customcarousel></customcarousel>
+  <div class="container">
+    <div class="row jumboHeaderText"> <!-- pull-left if left allignment wanted again-->
+      <div ng-show="Four51User.isAuthenticated()">
+        <a href="catalog">
+          <img class="bannerLogo" src="https://www.four51.com/Themes/Custom/cdde0792-3f36-497d-88eb-12c282cba5d2/NSG/images/NSG-Home-Banner-2017-2000x600.jpg" alt="Welcome to National Service Gear - The Volunteer Gear People"/>
+        </a>
+        <homemessage />
+      </div>
+    </div>
+  </div>
+</section>
