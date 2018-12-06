@@ -15,20 +15,22 @@
   </style>
   <li ng-if="continue">
     <button type="button" class="btn btn-info" redirect="catalog">
-      <span class="hidden-xs checkoutShopButton">{{'Continue Shopping' | r | xlat}}</span>
-      <span class="visible-xs visible-xxs checkoutShopButton">{{'SHOP' | r | xlat}}</span>
+      <span class="hidden-xs hidden-xxs checkoutShopButton">{{'Continue Shopping' | r | xlat}}</span>
+      <span class="visible-xs visible-xxs checkoutShopButton">{{'Shop' | r | xlat}}</span>
     </button>
   </li>
   <li>
     <button type="button" class="btn btn-danger" ng-click="currentOrder.Status == 'AwaitingApproval' ? cancelEdit() : cancelOrder()">
-      <span class="checkoutCancelButton" ng-show="currentOrder.Status != 'AwaitingApproval'">{{('Cancel' | r) + ' ' + ('Order' | r) | xlat}}</span>
+      <span class="hidden-xs hidden-xxs checkoutCancelButton" ng-show="currentOrder.Status != 'AwaitingApproval'">{{('Cancel' | r) + ' ' + ('Order' | r) | xlat}}</span>
+      <span class="visible-xs visible-xxs checkoutCancelButton" ng-show="currentOrder.Status != 'AwaitingApproval'">{{'Cancel' | r | xlat}}</span>
       <span class="checkoutCancelButton" ng-show="currentOrder.Status == 'AwaitingApproval'">{{('Cancel' | r) + ' ' + ('Edit' | r) | xlat}}</span>
     </button>
   </li>
   <li>
     <button type="submit" class="btn btn-primary" ng-click="saveChanges()">
       <loadingindicator ng-show="displayLoadingIndicator" />
-      <span class="checkoutSaveButton">{{('Save' | r) + ' ' + ('Order' | r) | xlat}}</span>
+      <span class="hidden-xs hidden-xxs checkoutSaveButton">{{('Save' | r) + ' ' + ('Order' | r) | xlat}}</span>
+      <span class="visible-xs visible-xxs checkoutSaveButton">{{'Save' | r | xlat}}</span>
     </button>
   </li>
   <li>
