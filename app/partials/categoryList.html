@@ -1,0 +1,56 @@
+<!-- Take out for main programs header -->
+<!--<div class="panel panel-default" ng-show="currentCategory.SubCategories.length">
+  <div class="panel-heading">
+    <h3 class="panel-title">
+            {{'Categories' | r | xlat}}
+        </h3>
+  </div>
+  <div ng-show="currentCategory.Description" ng-bind-html="trusted(currentCategory.Description)" class="category_desc"></div>
+  <div class="well" ng-show="productCount > settings.pageSize">
+    <pagination page="settings.currentPage" max-size="10" rotate="false" boundary-links="true" total-items="productCount" items-per-page="settings.pageSize" direction-links="true" previous-text="{{'Previous' | xlat}}" next-text="{{'Next' | xlat}}" first-text="{{'First' | xlat}}"
+      last-text="{{'Last' | xlat}}"></pagination>
+  </div> -->
+
+<div class="panel-category-list no-panels" ng-show="currentCategory.SubCategories.length">
+  <!-- add class hidden-xxs hidden-xs for text category list? -->
+  <loadingindicator ng-show="categoryLoadingIndicator" title="{{'Please wait while we fetch all categories' | r | xlat}}" />
+  <nav class="nav 451_lbl_subcatlist">
+    <ul>
+      <!-- Add this <li> tag for adding a new category -->
+      <div ng-show="(currentCategory.Name === {{'Categories' | r | xlat}}) || (currentCategory.Name === 'AmeriCorps') || (currentCategory.Name === 'AmeriCorps Alumni') || (currentCategory.Name === 'AmeriCorps NCCC') || (currentCategory.Name === 'AmeriCorps VISTA') || (currentCategory.Name === 'AmeriCorps VISTA Alumni') || (currentCategory.Name === 'AmeriCorps Week') || (currentCategory.Name === 'Corporation for National & Community Service') || (currentCategory.Name === 'Foster Grandparents') || (currentCategory.Name === 'Kidz Showing Kindness') || (currentCategory.Name === 'Martin Luther King, Jr. Day of Service') || (currentCategory.Name === 'RSVP') || (currentCategory.Name === 'Senior Companions') || (currentCategory.Name === 'September 11th National Day of Service and Remembrance') || (currentCategory.Name === 'United We Serve') || (currentCategory.Name === 'Washington Service Corps')">
+        <li class="col-lg-3 col-md-3 col-sm-4 col-xs-4 col-xxs-4">
+          <div>
+            <a ng-href="https://www.nsgcustom.org/" href="https://www.nsgcustom.org/" target="_blank" onclick="alert('You will now be directed to the NSG Custom webstore, in a new tab or window, which is separate from the main NSG webstore. Search for items to customize and submit a request for a quote. Both webstores are run by National Service Gear by Industries for the Blind.');">
+            <img class="img-responsive" ng-src="https://www.four51.com/Themes/Custom/cdde0792-3f36-497d-88eb-12c282cba5d2/NSGCustom/images/NSG-Custom-400.jpg" src="https://www.four51.com/Themes/Custom/cdde0792-3f36-497d-88eb-12c282cba5d2/NSGCustom/images/NSG-Custom-400.jpg" alt="National Service Gear Custom Webstore - Your Custom Volunteer Gear Solutions" />
+          </a>
+          </div>
+        </li>
+      </div>
+      <!-- End new category -->
+      <!-- Edit this class to get more programs to fit on page -->
+      <li class="col-lg-3 col-md-3 col-sm-4 col-xs-4 col-xxs-4" ng-repeat="c in currentCategory.SubCategories">
+        <!-- Old settings: col-lg-3 col-md-4 col-sm-6 col-xs-12 -->
+        <div class="">
+          <a ng-href="catalog/{{c.InteropID}}">
+            <figure ng-show="c.Image.URL">
+              <!-- <div class="hvr-grow-shadow"> -->
+              <img class="img-responsive" ng-src="{{c.Image.URL}}" />
+              <!--hidden-xs hidden-xxs-->
+              <!-- </div> -->
+              <!-- <h5 class="TPCategoryTitle hidden-sm hidden-md hidden-lg" ng-bind-html="c.Name" /> -->
+            </figure>
+            <div class="empty" ng-show="!c.Image.URL">
+              <span class="fa empty"><i class="fa fa-camera"></i></span>
+            </div>
+          </a>
+        </div>
+      </li>
+    </ul>
+  </nav>
+</div>
+<!-- Take out for main programs header -->
+<!-- <div class="well" ng-show="productCount > settings.pageSize">
+  <pagination page="settings.currentPage" max-size="10" rotate="false" boundary-links="true" total-items="productCount" items-per-page="settings.pageSize" direction-links="true" previous-text="{{'Previous' | xlat}}" next-text="{{'Next' | xlat}}" first-text="{{'First' | xlat}}"
+    last-text="{{'Last' | xlat}}"></pagination>
+</div>
+</div> -->
