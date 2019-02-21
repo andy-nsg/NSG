@@ -34,7 +34,7 @@ function productmatrix() {
       '<div class="col-xs-3"><div>{{spec2Name}}</div><div ng-repeat="item in group | orderobjectby:\'ListOrder\':false | filter:{Show: true}"><b>{{item.DisplayName[1]}}</b></div></div>',
       '<div class="col-xs-2" ng-show="product.DisplayInventory"><div>{{\'Quantity Available\' | r}}</div><div ng-repeat="item in group | orderobjectby:\'ListOrder\':false | filter:{Show: true}">{{item.QuantityAvailable}}</div></div>',
       '<div class="col-xs-1" ng-show="displayOnOrder"><div>{{\'On Order\' | r}}</div><div ng-repeat="item in group | orderobjectby:\'ListOrder\':false | filter:{Show: true}">{{item.OrderQuantity}}</div></div>',
-      '<div class="col-xs-3"><div>{{\'Price\' | r}}</div><div ng-repeat="item in group | orderobjectby:\'ListOrder\':false | filter:{Show: true}">{{(product.UnitPrice + item.Markup || product.StandardPriceSchedule.PriceBreaks[0].Price + item.Markup) | currency}}</div></div>',
+      '<div class="col-xs-3"><div>{{\'Price\' | r}}</div><div ng-repeat="item in group | orderobjectby:\'ListOrder\':false | filter:{Show: true}">{{(product.UnitPrice || product.StandardPriceSchedule.PriceBreaks[0].Price) + item.Markup | currency}}</div></div>',
       '<div ng-class="{\'col-xs-3\':(product.DisplayInventory && displayOnOrder),\'col-xs-5\':(!product.DisplayInventory && displayOnOrder),\'col-xs-4\':(product.DisplayInventory && !displayOnOrder),\'col-xs-6\':(!product.DisplayInventory && !displayOnOrder)}">',
       '<div>{{\'Quantity\' | r}}</div>',
       '<div ng-repeat="item in group | orderobjectby:\'ListOrder\':false | filter:{Show: true}">',
@@ -51,7 +51,7 @@ function productmatrix() {
       '<div class="col-xs-3"><div>{{spec1Name}}</div><div ng-repeat="group in comboVariants | orderobjectby:\'ListOrder\':false | filter:{Show: true}"><b>{{group.DisplayName}}</b></div></div>',
       '<div class="col-xs-2" ng-show="product.DisplayInventory"><div>{{\'Quantity Available\' | r}}</div><div ng-repeat="group in comboVariants | orderobjectby:\'ListOrder\':false | filter:{Show: true}">{{group.QuantityAvailable}}</div></div>',
       '<div class="col-xs-1" ng-show="displayOnOrder"><div>{{\'On Order\' | r}}</div><div ng-repeat="group in comboVariants | orderobjectby:\'ListOrder\':false | filter:{Show: true}">{{group.OrderQuantity}}</div></div>',
-      '<div class="col-xs-3"><div>{{\'Price\' | r}}</div><div ng-repeat="group in comboVariants | orderobjectby:\'ListOrder\':false | filter:{Show: true}">{{(product.UnitPrice + group.Markup || product.StandardPriceSchedule.PriceBreaks[0].Price + group.Markup) | currency}}</div></div>',
+      '<div class="col-xs-3"><div>{{\'Price\' | r}}</div><div ng-repeat="group in comboVariants | orderobjectby:\'ListOrder\':false | filter:{Show: true}">{{(product.UnitPrice || product.StandardPriceSchedule.PriceBreaks[0].Price) + group.Markup | currency}}</div></div>',
       '<div ng-class="{\'col-xs-3\':(product.DisplayInventory && displayOnOrder),\'col-xs-5\':(!product.DisplayInventory && displayOnOrder),\'col-xs-4\':(product.DisplayInventory && !displayOnOrder),\'col-xs-6\':(!product.DisplayInventory && !displayOnOrder)}">',
       '<div>{{\'Quantity\' | r}}</div>',
       '<div ng-repeat="group in comboVariants | orderobjectby:\'ListOrder\':false | filter:{Show: true}">',
@@ -370,57 +370,17 @@ function ProductMatrix($451, Variant) {
     }
 
     var ps = priceSchedule;
-    var unitPrice = 0;
-    // AmountPerQuantity(fixed amount per unit)
-    // AmountTotal (fixed amount per line)
-    // Percentage (of line total)
-    var fixedAddPerLine = 0;
-    var percentagePerLine = 0;
-    var amountPerQty = 0;
     var priceBreak;
     //var otherValueMarkup = 0;
     //var specs = $scope.variant ? $scope.variant.Specs : [];
 
-    var addToMarkups = function(spec) {
-      var otherMarkup;
-      if (
-        spec.AllowOtherValue &&
-        spec.OtherValueMarkup > 0 &&
-        (spec.isOtherSelected || (spec.Value && !spec.SelectedOptionID))
-      )
-        otherMarkup = spec.OtherValueMarkup;
-
-      if ((spec.Options && spec.SelectedOptionID) || otherMarkup) {
-        var option = !spec.SelectedOptionID ?
-          null :
-          $451.filter(spec.Options, {
-            Property: "ID",
-            Value: spec.SelectedOptionID
-          })[0];
-        if (!option && !otherMarkup) return;
-        if (spec.MarkupType === "AmountPerQuantity")
-          amountPerQty += otherMarkup || option.Markup;
-        if (spec.MarkupType === "Percentage")
-          percentagePerLine += otherMarkup || option.Markup;
-        if (spec.MarkupType === "AmountTotal")
-          fixedAddPerLine += otherMarkup || option.Markup;
-      }
-    };
-
-    angular.forEach(product.Specs, addToMarkups);
 
     angular.forEach(ps.PriceBreaks, function(pb) {
       if (totalQty >= pb.Quantity) priceBreak = pb; //assumes they will be in order of smallest to largest
     });
     if (!priceBreak) {
-      product.LineTotal = 0;
       product.UnitPrice = 0;
     } else {
-      var total = totalQty * (priceBreak.Price + amountPerQty);
-      total += totalQty * priceBreak.Price * (percentagePerLine / 100);
-      total += fixedAddPerLine; //+ otherValueMarkup;
-
-      product.LineTotal = total;
       product.UnitPrice = priceBreak.Price;
     }
 
