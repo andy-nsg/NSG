@@ -21,8 +21,9 @@
         <li class="col-lg-3 col-md-3 col-sm-4 col-xs-4 col-xxs-4">
           <div>
             <a ng-href="https://www.nsgcustom.org/" href="https://www.nsgcustom.org/" target="_blank" onclick="alert('You will now be directed to the NSG Custom webstore, in a new tab or window, which is separate from the main NSG webstore. Search for items to customize and submit a request for a quote. Both webstores are run by National Service Gear by Industries for the Blind.');">
-            <img class="img-responsive" ng-src="https://www.four51.com/Themes/Custom/cdde0792-3f36-497d-88eb-12c282cba5d2/NSGCustom/images/NSG-Custom-400.jpg" src="https://www.four51.com/Themes/Custom/cdde0792-3f36-497d-88eb-12c282cba5d2/NSGCustom/images/NSG-Custom-400.jpg" alt="National Service Gear Custom Webstore - Your Custom Volunteer Gear Solutions" />
-          </a>
+              <img class="img-responsive" ng-src="https://www.four51.com/Themes/Custom/cdde0792-3f36-497d-88eb-12c282cba5d2/NSGCustom/images/NSG-Custom-400.jpg" src="https://www.four51.com/Themes/Custom/cdde0792-3f36-497d-88eb-12c282cba5d2/NSGCustom/images/NSG-Custom-400.jpg"
+                alt="National Service Gear Custom Webstore - Your Custom Volunteer Gear Solutions" />
+            </a>
           </div>
         </li>
       </div>
@@ -45,6 +46,27 @@
           </a>
         </div>
       </li>
+      <!-- External Links to other programs -->
+      <div ng-show="(currentCategory.Name === {{'Categories' | r | xlat}})">
+        <li class="col-lg-3 col-md-3 col-sm-4 col-xs-4 col-xxs-4">
+          <div>
+            <!-- National Park Service -->
+            <a ng-href="https://nps.nationalservicegear.org/" href="https://nps.nationalservicegear.org/" onclick="alert('You will now be directed to the National Park Service webstore which is separate from the AmeriCorps webstore. Both stores are run by National Service Gear by Industries for the Blind and Visually Impaired, Inc. however both require unique logins.');"
+              class="">
+              <img class="img-responsive" ng-src="https://www.four51.com/Themes/Custom/cdde0792-3f36-497d-88eb-12c282cba5d2/NationalParkService/images/NPS-400-8.png" src="https://www.four51.com/Themes/Custom/cdde0792-3f36-497d-88eb-12c282cba5d2/NationalParkService/images/NPS-400-8.png" />
+            </a>
+          </div>
+        </li>
+        <li class="col-lg-3 col-md-3 col-sm-4 col-xs-4 col-xxs-4">
+          <div>
+            <!-- Youth Conservation Corps -->
+            <a ng-href="https://youthconservationcorps.nationalservicegear.org/" href="https://youthconservationcorps.nationalservicegear.org/" onclick="alert('You will now be directed to the Youth Conservation Corps webstore which is separate from the AmeriCorps webstore. Both stores are run by National Service Gear by Industries for the Blind and Visually Impaired, Inc. however both require unique logins.');"
+              class="">
+              <img class="img-responsive" ng-src="https://www.four51.com/Themes/Custom/cdde0792-3f36-497d-88eb-12c282cba5d2/YCC/images/YCC-400.jpg" src="https://www.four51.com/Themes/Custom/cdde0792-3f36-497d-88eb-12c282cba5d2/YCC/images/YCC-400.jpg" />
+            </a>
+          </div>
+        </li>
+      </div>
     </ul>
   </nav>
 </div>
