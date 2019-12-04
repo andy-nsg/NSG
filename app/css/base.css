@@ -5,14 +5,17 @@ body {
   color: #333333;
   background-color: #ffffff;
 }
+
 body a {
   color: #e04f4f;
 }
+
 a:hover,
 a:focus {
   color: #2b2b2b;
   text-decoration: underline;
 }
+
 /* Main Home Page Banner */
 /*Edit Jumbrotron width - $ak */
 .jumbotron {
@@ -23,80 +26,98 @@ a:focus {
 .jumbotron {
   padding: 0px;
 }
+
 /* Jumbor Header Text*/
 .jumboHeaderText {
   text-align: center;
   color: #ffffff;
 }
+
 #vertAlignJumbo {
   position: relative;
   top: 50%;
   transform: translateY(-50%);
 }
+
 .white {
   color: #ffffff;
 }
+
 .NSGcenter {
   text-align: center;
 }
+
 /* Check Out Buttons */
 .checkoutShopButton {
   font-size: 1.8vmax;
   text-transform: uppercase;
 }
+
 .checkoutCancelButton {
   font-size: 1.8vmax;
   text-transform: uppercase;
 }
+
 .checkoutSaveButton {
   font-size: 1.5vmax;
   text-transform: uppercase;
 }
+
 .checkoutCheckOutButton {
   font-size: 1.5vmax;
   text-transform: uppercase;
 }
+
 .FontSmall {
   font-size: 85%;
 }
+
 /* Billing Bullets */
 .FontSmall ul li {
   list-style-type: disc;
 }
+
 .FontSize07 {
   font-size: 7pt;
 }
+
 .FontItalics {
   font-style: italic;
 }
+
 /* Welcome User Nav Option */
 .welcomeUser {
   padding: 12px 6px;
   color: #ffffff;
   font-size: 90%;
 }
+
 .welcomeUser-xs {
   padding: 18px 0px 0px 0px;
   color: #ffffff;
   font-size: 1.8vmin;
 }
+
 /* Spending Account Nav Option */
 .spendingaccounts {
   padding: 15px 8px;
   color: #ffffff;
   font-size: 75%;
 }
+
 .spendingaccounts-xs {
   padding: 18px 0px 0px 0px;
   color: #ffffff;
   font-size: 1.7vmin;
 }
+
 /* NSG Tooltip */
 .NSGtooltip {
   position: relative;
   display: inline-block;
   border-bottom: 1px dotted black;
 }
+
 .NSGtooltip .NSGtooltiptext {
   visibility: hidden;
   width: 200px;
@@ -113,6 +134,7 @@ a:focus {
   left: 50%;
   margin-left: -100px;
 }
+
 .NSGtooltip .NSGtooltiptext::after {
   content: "";
   position: absolute;
@@ -123,20 +145,22 @@ a:focus {
   border-style: solid;
   border-color: black transparent transparent transparent;
 }
+
 .NSGtooltip:hover .NSGtooltiptext {
   visibility: visible;
 }
+
 .purchasePowerModalBox {
   text-align: center;
   max-width: 500px;
 }
+
 /* Home Page Shadows */
 /* .jumbotronInnerShadow {
   -webkit-box-shadow: inset 0px 0px 20px 10px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: inset 0px 0px 20px 10px rgba(0, 0, 0, 0.1);
   box-shadow: inset 0px 0px 20px 10px rgba(0, 0, 0, 0.1);
 } */
-
 /* Navbar Drop Shadow */
 /* .navbarDropShadow {
   -webkit-box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.42);
@@ -153,52 +177,64 @@ a:focus {
   border-radius: 0px;
   border-color: transparent;
 }
+
 .panel-product-list .well {
   background-color: transparent;
   border: none;
   border-color: transparent;
 }
+
 .panel-product-list .aLinkSpacingFix {
   color: #333333;
 }
+
 .panel-product-list .well {
   border-color: transparent;
 }
+
 /* This counters the spacing issue on the product list page with <a> links */
 .aLinkSpacingFix p a {
   padding: 0em !important;
   display: inline !important;
   text-decoration: none;
 }
+
 .NSGCategoryButtonPadding {
   margin: 0px 25px 25px 25px;
 }
+
 .NSGCategoryButton {
   -webkit-box-shadow: 8px 8px 15px 0px rgba(0, 0, 0, 0.42);
   -moz-box-shadow: 8px 8px 15px 0px rgba(0, 0, 0, 0.42);
   box-shadow: 8px 8px 15px 0px rgba(0, 0, 0, 0.42);
 }
+
 /* Fixes row issues with Category List page */
 .panel-category-list ul li a h5 {
   height: 50px;
 }
+
 /* Fixes row issues with Product List page */
 .panel-product-list ul li h3 {
   font-size: 15px;
 }
+
 .shoppingCartIndicator ul li a {
   color: #ffffff;
 }
+
 /* Fixed Product Image */
 .fixedProductImage {
   position: fixed !important;
 }
+
 /* Alters image size on main product page - overrides same class in bootstrap-451.css */
 .product-image-large {
   margin: 0 auto;
   max-height: 360px;
   max-width: 100%;
 }
+
 /* Lightbox Scroll Bar */
 .scrollLightbox {
   width: auto;
@@ -206,6 +242,7 @@ a:focus {
   overflow: auto;
   white-space: nowrap;
 }
+
 .officialCNCS {
   font-family: "Source Sans Pro", arial, serif;
   font-size: 12pt;
@@ -221,6 +258,7 @@ a:focus {
   padding-bottom: 15px;
   padding-left: 10px;
 }
+
 /*This is used for the header when closed for holidays*/
 .NSGHoliday {
   font-family: "Source Sans Pro", arial, serif;
@@ -236,6 +274,7 @@ a:focus {
   padding-left: 10px;
   /*text-shadow: 2px 2px 4px #A1A1A1;*/
 }
+
 /*Used when we have tech difficulties*/
 .phoneDown {
   font-family: "Source Sans Pro", arial, serif;
@@ -251,6 +290,7 @@ a:focus {
   padding-left: 10px;
   /*text-shadow: 2px 2px 4px #A1A1A1;*/
 }
+
 /* Category Message Settings */
 .categoryPanel {
   /* border-left: 5px solid #000000; */
@@ -259,36 +299,24 @@ a:focus {
   margin-left: auto;
   margin-right: auto;
 }
+
 /* Category Bullets */
 .categoryPanel ul li {
   list-style-type: disc;
 }
-/*Footer CSS*/
-* {
-  margin: 0;
-}
-.flushFooter,
-.push {
-  height: 210px;
-  /* .push must be the same height as .footer */
-}
-.NSGwrapper {
-  min-height: 100%;
-  margin: 0 auto -210px;
-  /* the bottom margin is the negative value of the footer's height */
-}
+
 .NSGfooter {
   /*margin-right: 5em;
     margin-left: 4em;
     margin-top: 0px;
     margin-bottom: 0px;*/
-  font-size: 13pt;
+  /*font-size: 10pt;*/
   margin-top: 0px;
   clear: both;
   background-color: #dedede;
-  height: 150px;
+  height: 175px;
   width: 100%;
-  bottom: 0;
+  bottom: 0px;
   padding: 30px 0px;
   /*padding-top: 5em;
     padding-right: 3px;
@@ -298,12 +326,13 @@ a:focus {
     background-repeat: no-repeat;
     background-position: 5px 5px;*/
 }
+
 .NSGxsFooter {
   margin-top: 0px;
   clear: both;
   background-color: #dedede;
-  height: 150px;
-  bottom: 0;
+  height: 175px;
+  bottom: 0px;
   padding: 45px 0px;
   /*padding-top: 5em;
     padding-right: 3px;
@@ -313,12 +342,13 @@ a:focus {
     background-repeat: no-repeat;
     background-position: 5px 5px;*/
 }
+
 .NSGxxsFooter {
   margin-top: 0px;
   clear: both;
   background-color: #dedede;
-  height: 150px;
-  bottom: 0;
+  height: 175px;
+  bottom: 0px;
   padding: 55px 0px;
   /*padding-top: 5em;
     padding-right: 3px;
@@ -328,36 +358,39 @@ a:focus {
     background-repeat: no-repeat;
     background-position: 5px 5px;*/
 }
+
 .footLeft {
   margin-right: 0px;
   margin-left: 0px;
   margin-top: 0px;
   margin-bottom: 0px;
-  padding-top: 0em;
+  padding-top: 8px;
   padding-right: 3px;
   padding-bottom: 0px;
   padding-left: 55px;
   float: left;
 }
+
 .xsFootLeft {
   margin-right: 0px;
   margin-left: 0px;
   margin-top: 0px;
   margin-bottom: 0px;
-  padding-top: 0em;
+  padding-top: 10px;
   padding-right: 3px;
   padding-bottom: 0px;
   padding-left: 25px;
   float: left;
-  width: 100%;
-  max-width: 225px;
+  max-width: 280px;
+  max-height: 100%;
 }
+
 .xxsFootLeft {
   margin-right: 0px;
   margin-left: 0px;
   margin-top: 0px;
   margin-bottom: 0px;
-  padding-top: 0em;
+  padding-top: 0px;
   padding-right: 3px;
   padding-bottom: 0px;
   padding-left: 20px;
@@ -365,32 +398,37 @@ a:focus {
   width: 100%;
   max-width: 180px;
 }
+
 .footRight {
-  margin-right: 0em;
-  margin-left: 0em;
+  font-size: 11pt;
+  margin-right: 0px;
+  margin-left: 0px;
   margin-top: 0px;
   margin-bottom: 0px;
   padding-right: 25px;
   float: right;
 }
+
 .xsFootRight {
-  margin-right: 0em;
-  margin-left: 0em;
+  margin-right: 0px;
+  margin-left: 0px;
   margin-top: 0px;
   margin-bottom: 0px;
   padding-right: 10px;
   float: right;
   font-size: 2vw;
 }
+
 .xxsFootRight {
-  margin-right: 0em;
-  margin-left: 0em;
+  margin-right: 0px;
+  margin-left: 0px;
   margin-top: 0px;
   margin-bottom: 0px;
   padding-right: 10px;
   float: right;
   font-size: 1.8vw;
 }
+
 .socialFooter {
   margin-top: 0px;
   clear: both;
@@ -411,41 +449,51 @@ a:focus {
   -o-transition: all ease-in-out 0.5s;
   transition: all ease-in-out 0.5s;
 }
-.socialFooter > .text-left > .iconTrans {
+
+.socialFooter>.text-left>.iconTrans {
   color: #ffffff;
   /*E04F4F*/
 }
-.socialFooter > .text-left > .iconTwitter:hover {
+
+.socialFooter>.text-left>.iconTwitter:hover {
   color: #00aced !important;
   /* 2B2B2B */
 }
-.socialFooter > .text-left > .iconFacebook:hover {
+
+.socialFooter>.text-left>.iconFacebook:hover {
   color: #3b5998 !important;
   /* 2B2B2B */
 }
-.socialFooter > .text-left > .iconInstagram:hover {
+
+.socialFooter>.text-left>.iconInstagram:hover {
   color: #517fa4 !important;
   /* 2B2B2B */
 }
-.socialFooter > .text-left > .iconLinkedIn:hover {
+
+.socialFooter>.text-left>.iconLinkedIn:hover {
   color: #007bb6 !important;
   /* 2B2B2B */
 }
+
 .vertIcon {
   padding-left: 5px;
 }
+
 .contactFooterText {
   font-size: 4vw;
 }
+
 /*Gives items a list style, bullets*/
 .prod-desc-list-style ul {
   list-style-type: disc;
   margin-left: 25px;
 }
+
 .contactListStyle ul li {
   list-style-type: disc;
   margin-left: 25px;
 }
+
 /* Shopping Cart Circle */
 .shoppingCartNavBar li a i:first-of-type {
   border-radius: 50%;
@@ -454,6 +502,7 @@ a:focus {
   padding: 10px;
   margin-top: -10px;
 }
+
 /* Search Bar */
 .customSearchBar {
   float: right !important;
@@ -462,6 +511,7 @@ a:focus {
   margin-right: 10px;
   margin-bottom: 10px;
 }
+
 /*PP Item Timetable settings*/
 .tablePPTimeline {
   box-shadow: 5px 5px 10px 0px rgba(119, 119, 119, 0.3);
@@ -469,6 +519,7 @@ a:focus {
   -webkit-box-shadow: 5px 5px 10px 0px rgba(119, 119, 119, 0.3);
   background-color: #dedede;
 }
+
 .thPPTimeline {
   border: 2px;
   border-style: solid;
@@ -477,6 +528,7 @@ a:focus {
   padding: 5px;
   text-align: center;
 }
+
 .tdPPTimeline {
   font-family: arial, helvetica, sans-serif;
   font-size: 14px;
@@ -488,9 +540,11 @@ a:focus {
   padding: 5px;
   text-align: center;
 }
+
 #fontProduct {
   color: #000000;
 }
+
 #fontProgram {
   font-size: 14px;
   font-weight: bold;
@@ -503,9 +557,11 @@ a:focus {
   margin-bottom: 0px;
   margin-left: 0px;
 }
+
 #footerFont {
   font-size: 10px;
 }
+
 #mainbkg {
   /*background-color: #e9e9e9;*/
   margin-top: 0px;
@@ -517,6 +573,7 @@ a:focus {
   padding-bottom: 0.25em;
   padding-left: 3em;
 }
+
 #mainnav {
   /*background-color: #136ca8;*/
   margin-right: 5px;
@@ -533,6 +590,7 @@ a:focus {
     border-top-style: solid;
     border-top-color: #73a2c7;*/
 }
+
 .dropup .caret,
 .navbar-fixed-bottom .dropdown .caret,
 .navbar-fixed-bottom .dropdown-mega .caret {
@@ -540,6 +598,7 @@ a:focus {
   border-bottom: 0px none;
   content: "";
 }
+
 .badge {
   display: inline-block;
   min-width: 10px;
@@ -555,6 +614,7 @@ a:focus {
   background-color: undefined;
   border-radius: 10px;
 }
+
 .well {
   min-height: 20px;
   padding: 19px;
@@ -565,6 +625,7 @@ a:focus {
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
 }
+
 /* Remove Border Radius and Border for Shopping Cart Icon, Add to Custom CSS for Shopping Cart Only. This is to avoid having circles around social media icons -$ak */
 .navbar .container .navbar-nav.pull-right li a i:first-of-type,
 .navbar .container-view .navbar-nav.pull-right li a i:first-of-type {
@@ -574,15 +635,18 @@ a:focus {
   padding: 10px;
   margin-top: -10px;
 }
+
 /*Navbar*/
 .nav {
   margin-bottom: 0;
   padding-left: 0;
   list-style: none;
 }
+
 .nav.visible-sm.visible-xs.visible-xxs {
   margin-bottom: 10px;
 }
+
 /* Adjust Navbar Margin and Border*/
 .navbar {
   /*position: relative;
@@ -600,78 +664,98 @@ a:focus {
   background-color: #f7f7f7;
   border-radius: 4px;
 }
-.pagination > li > a:hover,
-.pagination > li > span:hover,
-.pagination > li > a:focus,
-.pagination > li > span:focus {
+
+.pagination>li>a:hover,
+.pagination>li>span:hover,
+.pagination>li>a:focus,
+.pagination>li>span:focus {
   color: #2b2b2b;
   background-color: #eeeeee;
   border-color: #dddddd;
 }
+
 .btn-link:hover,
 .btn-link:focus {
   color: #2b2b2b;
   text-decoration: underline;
   background-color: transparent;
 }
+
 .btn-primary {
   background-color: #0b3648;
 }
+
 .btn-primary,
 .btn-primary:hover {
   color: #ffffff;
 }
+
 .btn-primary {
   border-color: #081b24;
 }
+
 .btn-primary:hover {
   background-color: #051118;
 }
+
 .btn-default {
   background-color: #ffffff;
 }
+
 .btn-default,
 .btn-default:hover {
   color: #333333;
 }
+
 .btn-default {
   border-color: #cccccc;
 }
+
 .btn-default:hover {
   background-color: #ebebeb;
 }
+
 .btn-checkout {
   background-color: #ffffff;
 }
+
 .btn-checkout,
 .btn-checkout:hover {
   color: #333333;
 }
+
 .btn-checkout {
   border-color: #cccccc;
 }
+
 .btn-checkout:hover {
   background-color: #ebebeb;
 }
+
 /*Checkout Payment Selection Buttons */
 .btn-checkout {
   background-color: #ffffff;
 }
+
 .btn-checkout,
 .btn-checkout:hover {
   color: #333333;
 }
+
 .btn-checkout {
   border-color: #cccccc;
 }
+
 .btn-checkout:hover {
   background-color: #ebebeb;
 }
+
 .btn-checkout {
   color: #333333;
   background-color: #ffffff;
   border-color: #cccccc;
 }
+
 .btn-checkout:hover,
 .btn-checkout:focus,
 .btn-checkout:active,
@@ -681,11 +765,13 @@ a:focus {
   background-color: #ebebeb;
   border-color: #adadad;
 }
+
 .btn-checkout:active,
 .btn-checkout.active,
 .open .dropdown-toggle.btn-checkout {
   background-image: none;
 }
+
 .btn-checkout.disabled,
 .btn-checkout[disabled],
 fieldset[disabled] .btn-checkout,
@@ -704,6 +790,7 @@ fieldset[disabled] .btn-checkout.active {
   background-color: #ffffff;
   border-color: #cccccc;
 }
+
 .btn-checkout .badge {
   color: #ffffff;
   background-color: #333333;
@@ -713,78 +800,98 @@ fieldset[disabled] .btn-checkout.active {
 .btn-info {
   background-color: #5bc0de;
 }
+
 .btn-info,
 .btn-info:hover {
   color: #ffffff;
 }
+
 .btn-info {
   border-color: #46b8da;
 }
+
 .btn-info:hover {
   background-color: #39b3d7;
 }
+
 .btn-success {
   background-color: #5cb85c;
 }
+
 .btn-success,
 .btn-success:hover {
   color: #ffffff;
 }
+
 .btn-success {
   border-color: #4cae4c;
 }
+
 .btn-success:hover {
   background-color: #00ab41;
 }
+
 .btn-warning {
   background-color: #f0ad4e;
 }
+
 .btn-warning,
 .btn-warning:hover {
   color: #ffffff;
 }
+
 .btn-warning {
   border-color: #eea236;
 }
+
 .btn-warning:hover {
   background-color: #ed9c28;
 }
+
 .btn-danger {
   background-color: #e04f4f;
   /*D9534F*/
 }
+
 .btn-danger,
 .btn-danger:hover {
   color: #ffffff;
 }
+
 .btn-danger {
   border-color: #d43f3a;
 }
+
 .btn-danger:hover {
   background-color: #d2322d;
 }
+
 @media (min-width: 768px) {
-  .nav-tabs.nav-justified > li > a {
+  .nav-tabs.nav-justified>li>a {
     border-bottom: 1px solid #dddddd;
     border-radius: 4px 4px 0 0;
   }
-  .nav-tabs.nav-justified > .active > a,
-  .nav-tabs.nav-justified > .active > a:hover,
-  .nav-tabs.nav-justified > .active > a:focus {
+
+  .nav-tabs.nav-justified>.active>a,
+  .nav-tabs.nav-justified>.active>a:hover,
+  .nav-tabs.nav-justified>.active>a:focus {
     border-bottom-color: #f7f7f7;
   }
 }
+
 @media (min-width: 768px) {
-  .nav-tabs-justified > li > a {
+  .nav-tabs-justified>li>a {
     border-bottom: 1px solid #dddddd;
     border-radius: 4px 4px 0 0;
   }
-  .nav-tabs-justified > .active > a,
-  .nav-tabs-justified > .active > a:hover,
-  .nav-tabs-justified > .active > a:focus {
+
+  .nav-tabs-justified>.active>a,
+  .nav-tabs-justified>.active>a:hover,
+  .nav-tabs-justified>.active>a:focus {
     border-bottom-color: #f7f7f7;
   }
 }
+
 .visible-xxs {
   display: none !important;
 }
@@ -794,27 +901,34 @@ fieldset[disabled] .btn-checkout.active {
   .visible-xxs {
     display: block !important;
   }
+
   table.visible-xxs {
     display: table;
   }
+
   tr.visible-xxs {
     display: table-row !important;
   }
+
   th.visible-xxs,
   td.visible-xxs {
     display: table-cell !important;
   }
 }
+
 @media (min-width: 720px) and (max-width: 767px) {
   .visible-xs {
     display: block !important;
   }
+
   table.visible-xs {
     display: table;
   }
+
   tr.visible-xs {
     display: table-row !important;
   }
+
   th.visible-xs,
   td.visible-xs {
     display: table-cell !important;
