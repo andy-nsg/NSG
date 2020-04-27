@@ -185,7 +185,7 @@ four51.app.directive("ordershipping", [
             if (usOrder) {
               angular.forEach(shippers, function(shipper) {
                 if (shipper.Name === "UPS Ground" && shipper.ShipperRateType === "ActualRates") {
-                  shipper.ShippingRate.Price = "FREE";
+                  shipper.ShippingRate.Price = 0;
                 }
               });
             }
