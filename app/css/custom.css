@@ -163,6 +163,11 @@ h2 .jumbotron {
   background-color: #dedede;
 }
 
+/* userView Page Header colors */
+.panel-default .panel-heading .userViewPanelHeader {
+  background-color: #0069aa;
+}
+
 .panel-default .panel-heading .panel-title {
   color: #333333;
 }
