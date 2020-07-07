@@ -163,13 +163,18 @@ h2 .jumbotron {
   background-color: #dedede;
 }
 
+.panel-default .panel-heading .panel-title {
+  color: #333333;
+}
+
 /* userView Page Header colors */
 .panel-default .panel-heading .userViewPanelHeader {
   background-color: #0069aa;
 }
 
-.panel-default .panel-heading .panel-title {
-  color: #333333;
+/* userView Page Header Text colors */
+.panel-default .panel-heading .userViewPanelHeader {
+  color: #ffffff;
 }
 
 .panel-primary .panel-heading .panel-instructions {
