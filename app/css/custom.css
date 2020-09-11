@@ -29,6 +29,13 @@ h2 .jumbotron {
   /*max-height: 250px;*/
 }
 
+/* AmeriCorps Banner Logo */
+.AMCbannerLogo {
+  max-width: 100%;
+  /*max-height: 250px;*/
+  text-align: center
+}
+
 /*Changes size of images on category page*/
 .thumbnail img {
   max-height: 100px;
