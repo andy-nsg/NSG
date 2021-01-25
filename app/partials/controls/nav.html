@@ -46,9 +46,9 @@
               <span class="hidden-xs">{{'Home' | rc | xlat}}</span>
             </a>
           </li>
-          <li class="">
+          <!-- <li class="">
             <productsearchinputnav></productsearchinputnav>
-          </li>
+          </li> -->
 
           <!-- Orders Button -->
           <!-- <li class="order hidden-xs" ng-if="user.Type == 'Customer'" ng-class="{'active': isActive('order'), 'active-xs': isActive('favoriteorders')}">
@@ -59,56 +59,56 @@
           </li> -->
 
           <!-- Reports Button -->
-          <li class="report" ng-if="user.Type == 'Customer' && user.Permissions.contains('AdvancedReporting')" ng-class="{'active': isActive('reports')}">
+          <!-- <li class="report" ng-if="user.Type == 'Customer' && user.Permissions.contains('AdvancedReporting')" ng-class="{'active': isActive('reports')}">
             <a id="451qa_order_link" href="reports">
               <i class="fa fa-bar-chart-o"></i>
               <span class="hidden-xs hidden-sm">{{'Reports' | r | xlat}}</span>
             </a>
-          </li>
+          </li> -->
 
           <!-- Login/Account Buttons - No Dropdown-->
           <!-- If Anonymous User -->
-          <li ng-class="{'active': isActive(['admin', 'addresses', 'address', 'messages', 'message', 'favoriteorders'])}">
+          <!-- <li ng-class="{'active': isActive(['admin', 'addresses', 'address', 'messages', 'message', 'favoriteorders'])}">
             <a id="451qa_acct_link" href="admin" ng-hide="user.Type == 'Customer'" class="hidden-md hidden-lg">
               <i class="fa fa-user"></i>
               <span class="hidden-xs">{{'Login' | r | xlat}}</span>
-            </a>
-            <!-- If Logged In -->
-            <a id="451qa_acct_link" href="admin" ng-show="user.Type == 'Customer'" class="hidden-md hidden-lg">
+            </a> -->
+          <!-- If Logged In -->
+          <!-- <a id="451qa_acct_link" href="admin" ng-show="user.Type == 'Customer'" class="hidden-md hidden-lg">
               <i class="fa fa-cogs"></i>
               <span class="hidden-xs hidden-sm">{{'Account' | r | xlat}}</span>
             </a>
-          </li>
+          </li> -->
 
           <!-- Login/Account Buttons - Dropdown -->
-          <li class="dropdown admin-user visible-md visible-lg" ng-class="{'active': isActive(['admin', 'addresses', 'address', 'messages', 'message', 'favoriteorders'])}">
-            <!-- If Anonymous User -->
-            <a id="451qa_acct_link2" ng-hide="user.Type == 'Customer'" class="dropdown-toggle" data-toggle="dropdown">
+          <!-- <li class="dropdown admin-user visible-md visible-lg" ng-class="{'active': isActive(['admin', 'addresses', 'address', 'messages', 'message', 'favoriteorders'])}"> -->
+          <!-- If Anonymous User -->
+          <!-- <a id="451qa_acct_link2" ng-hide="user.Type == 'Customer'" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-user"></i>
               <span class="hidden-xs">{{'Login' | r | xlat}}</span>
               <b class="caret"></b>
-            </a>
-            <!-- If Logged In -->
-            <a id="451qa_acct_link2" ng-show="user.Type == 'Customer'" class="dropdown-toggle" data-toggle="dropdown">
+            </a> -->
+          <!-- If Logged In -->
+          <!-- <a id="451qa_acct_link2" ng-show="user.Type == 'Customer'" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-cogs"></i>
               <span class="hidden-xs hidden-sm">{{'Account' | r | xlat}}</span>
               <b class="caret"></b>
             </a>
-            <ul class="dropdown-menu">
-              <!-- If Anonymous User -->
-              <li id="451qa_user_link" ng-show="user.Permissions.contains('ViewSelfAdmin')" ng-hide="user.Type == 'Customer'" class="admin">
+            <ul class="dropdown-menu"> -->
+          <!-- If Anonymous User -->
+          <!-- <li id="451qa_user_link" ng-show="user.Permissions.contains('ViewSelfAdmin')" ng-hide="user.Type == 'Customer'" class="admin">
                 <a href="admin">
                   {{'LOGIN/Create Account' | r | xlat}}
                 </a>
-              </li>
-              <!-- If Logged In -->
-              <li id="451qa_user_link" ng-show="user.Type == 'Customer'" class="admin">
+              </li> -->
+          <!-- If Logged In -->
+          <!-- <li id="451qa_user_link" ng-show="user.Type == 'Customer'" class="admin">
                 <a href="admin">
                   {{'User Information' | r | xlat}}
                 </a>
-              </li>
-              <!-- Orders Button -->
-              <li id="451qa_order_link" class="order hidden-xs" ng-if="user.Type == 'Customer'" ng-class="{'active': isActive('order')}">
+              </li> -->
+          <!-- Orders Button -->
+          <!-- <li id="451qa_order_link" class="order hidden-xs" ng-if="user.Type == 'Customer'" ng-class="{'active': isActive('order')}">
                 <a href="order">
                   {{'Orders' | r | xlat}}
                 </a>
@@ -122,18 +122,18 @@
                 <a href="message">
                   {{'Messages' | r | xlat}}
                 </a>
-              </li>
-              <!-- <li class="favorites" ng-show="user.Type == 'Customer'">
+              </li> -->
+          <!-- <li class="favorites" ng-show="user.Type == 'Customer'">
                 <a id="451qa_fave_link" href="favoriteorders">
                                     {{'Favorites' | r | xlat}}
                                 </a>
               </li>-->
-              <!--<li id="451qa_mesg_link" ng-show="user.Permissions.contains('ViewContactUs')" class="contactus">
+          <!--<li id="451qa_mesg_link" ng-show="user.Permissions.contains('ViewContactUs')" class="contactus">
                                 <a href="contactus">
                                     {{'Contact Us' | r | xlat}}
                                 </a>
                             </li>-->
-              <li>
+          <!-- <li>
                 <a href="#" neworder ng-if="user.Permissions.contains('MultipleShoppingCart') && currentOrder" class="neworder" ng-click="newOrderLoadingIndicator = true;startNewOrder()">
                   {{"Start" | r | xlat}} {{"New" | r | xlat}} {{"Order" | r | xlat}}
                 </a>
@@ -152,7 +152,7 @@
                 </a>
               </li>
             </ul>
-          </li>
+          </li> -->
 
           <!-- Contact Us Links -->
           <!-- If Anonymous User -->
