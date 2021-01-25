@@ -138,7 +138,7 @@
   </div>
   <!-- END Category Header for Special Categories -->
   <nav id="451qa_nav_hdr" class="nav">
-    <ul>
+    <!-- <ul>
       <li class="hidden-sm hidden-xs">
         <span ng-click="toggleNav()"><i class="fa fa-bars" ng-class="{ 'text-info': navStatus.visible }"></i></span>
       </li>
@@ -146,15 +146,15 @@
         <span id="451_lbl_curcat" class="text-primary" ng-bind-html="currentCategory.Name || '  {{'Programs' | r | xlat}}'"></span>
       </li>
       <li class="customSearchBar">
-        <productsearchinput></productsearchinput>
-        <!--<a href="search">
+        <productsearchinput></productsearchinput> -->
+    <!--<a href="search">
           <span><i class="fa fa-search text-primary"></i></span>
         </a> -->
-      </li>
-    </ul>
+    <!-- </li>
+    </ul> -->
   </nav>
   <div class="row">
-    <aside class="col-md-3 visible-md visible-lg" ng-if="navStatus.visible">
+    <!-- <aside class="col-md-3 visible-md visible-lg" ng-if="navStatus.visible">
       <div class="panel panel-default panel-nav">
         <div class="panel-heading">
           <h3 class="panel-title">
@@ -167,7 +167,7 @@
           </ul>
         </nav>
       </div>
-    </aside>
+    </aside> -->
     <div ng-class="{ 'col-md-9': navStatus.visible, 'col-md-12': !navStatus.visible }">
       <categorylistview></categorylistview>
 
