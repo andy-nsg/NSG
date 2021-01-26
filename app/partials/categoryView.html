@@ -168,10 +168,14 @@
         </nav>
       </div>
     </aside> -->
+    <br>
+    <br>
     <div ng-class="{ 'NSGcenter': navStatus.visible, 'col-md-12': !navStatus.visible }">
       <h3 class="panel-title">
         {{'Program List' | r | xlat}}
       </h3>
+      <br>
+      <br>
       <categorylistview></categorylistview>
 
       <loadingindicator ng-show="productLoadingIndicator" title="{{'Please wait while we fetch all products' | r | xlat}}" />
