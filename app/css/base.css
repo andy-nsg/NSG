@@ -61,17 +61,6 @@ a:focus {
 }
 /* End udpate home alert bar attributes */
 
-.NSGcenter {
-  text-align: center;
-}
-
-/* Justifies text in paragraphs */
-.NSGjustify {
-  text-align: justify;
-  text-justify: inter-word;
-  margin: 0px 20px 0px 20px
-}
-
 /* Check Out Buttons */
 .checkoutShopButton {
   font-size: 1.8vmax;
