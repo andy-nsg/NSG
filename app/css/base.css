@@ -43,6 +43,10 @@ a:focus {
   color: #ffffff;
 }
 
+.black {
+  color: #000000;
+}
+
 /* Edit homepage Alert/Message header bar */
 .panel-primary .alert-message .panel-title {
   background-color: #e04f4f;
