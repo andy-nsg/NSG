@@ -47,6 +47,14 @@ a:focus {
   color: #000000;
 }
 
+/*Changes size of images on category page*/
+.thumbnail img {
+  max-height: 200px;
+  /*must match smallest size of thumbnail image*/
+  max-width: 100%;
+  margin: 0 auto 15px;
+}
+
 /* Edit homepage Alert/Message header bar */
 .panel-primary .alert-message .panel-title {
   background-color: #e04f4f;
