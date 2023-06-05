@@ -31,7 +31,7 @@ function fixedfooter() {
       "</div>",
       '<div class="footRight">',
       '<p>Contact Customer Service</p>',
-      '<p><i class="fa fa-clock-o"></i>  M-F 8a-6p EST</p>',
+      '<p><i class="fa fa-clock-o"></i>  M-F 8a-4p CT</p>',
       '<p><i class="fa fa-phone"></i>  1.855.444.0847</p>',
       '<p><i class="fa fa-envelope"></i>  <a href="mailto:service@nationalservicegear.org?subject=NSG%20Contact">service@nationalservicegear.org</a></p>',
       "</div>",
@@ -42,7 +42,7 @@ function fixedfooter() {
       "</div>",
       '<div class="xsFootRight">',
       '<p>Contact Customer Service</p>',
-      '<p><i class="fa fa-clock-o"></i>  M-F 8a-6p EST</p>',
+      '<p><i class="fa fa-clock-o"></i>  M-F 8a-4p CT</p>',
       '<p><i class="fa fa-phone"></i>  1.855.444.0847</p>',
       '<p><i class="fa fa-envelope"></i>  <a href="mailto:service@nationalservicegear.org?subject=NSG%20Contact">service@nationalservicegear.org</a></p>',
       "</div>",
@@ -52,7 +52,6 @@ function fixedfooter() {
       //<a class="pull-left" href="" style="padding-top:10px;">Terms</a>
       '<a class="vertIcon iconTrans iconTwitter" target="_blank" href="https://twitter.com/servicegear"><i class="fa fa-twitter-square fa-3x"></i></a>',
       '<a class="vertIcon iconTrans iconFacebook" target="_blank" href="https://www.facebook.com/NationalServiceGear"><i class="fa fa-facebook-square fa-3x"></i></a>',
-      //a class="vertIcon" target="_blank" href="https://plus.google.com/b/101151839970654395169/101151839970654395169"><i class="fa fa-google-plus-square fa-3x"></i></a>
       '<a class="vertIcon iconTrans iconInstagram" target="_blank" href="https://www.instagram.com/nationalservicegear"><i class="fa fa-instagram fa-3x"></i></a>',
       '<a class="vertIcon iconTrans iconLinkedIn" target="_blank" href="https://www.linkedin.com/company/1564607?trk=tyah&trkInfo=tas%3Aindustries%20for%20the%20bli%2Cidx%3A1-1-1"><i class="fa fa-linkedin-square fa-3x "></i></a>',
       "</p>",
