@@ -1,15 +1,6 @@
-four51.app.controller("CartViewCtrl", [
-	"$scope",
-	"$routeParams",
-	"$location",
-	"$451",
-	"Order",
-	"OrderConfig",
-	"User",
-	function($scope, $routeParams, $location, $451, Order, OrderConfig, User) {
-		$scope.isEditforApproval =
-			$routeParams.id != null &&
-			$scope.user.Permissions.contains("EditApprovalOrder");
+four51.app.controller('CartViewCtrl', ['$scope', '$routeParams', '$location', '$451', 'Order', 'OrderConfig', 'User',
+function ($scope, $routeParams, $location, $451, Order, OrderConfig, User) {
+	$scope.isEditforApproval = $routeParams.id != null && $scope.user.Permissions.contains('EditApprovalOrder');
 		if ($scope.isEditforApproval) {
 			Order.get($routeParams.id, function(order) {
 				$scope.currentOrder = order;
@@ -22,7 +13,7 @@ four51.app.controller("CartViewCtrl", [
 					});
 					if (!exists) {
 						$scope.user.CostCenters.push({
-							Name: li.CostCenter
+						'Name': li.CostCenter
 						});
 					}
 				});
@@ -33,137 +24,132 @@ four51.app.controller("CartViewCtrl", [
 		$scope.errorMessage = null;
 		$scope.continueShopping = function() {
 			if (!$scope.cart.$invalid) {
-				if (
-					confirm(
-						"Do you want to save changes to your order before continuing?"
-					) == true
-				)
-					$scope.saveChanges(function() {
-						$location.path("catalog");
-					});
-			} else $location.path("catalog");
+			if (confirm('Do you want to save changes to your order before continuing?') == true)
+				$scope.saveChanges(function() { $location.path('catalog') });
+		}
+		else
+			$location.path('catalog');
 		};
 
 		$scope.cancelOrder = function() {
-			if (confirm("Are you sure you wish to cancel your order?") == true) {
+		if (confirm('Are you sure you wish to cancel your order?') == true) {
 				$scope.displayLoadingIndicator = true;
 				$scope.actionMessage = null;
-				Order.delete(
-					$scope.currentOrder,
-					function() {
+			Order.delete($scope.currentOrder,
+				function(){
 						$scope.currentOrder = null;
 						$scope.user.CurrentOrderID = null;
-						User.save($scope.user, function() {
-							$location.path("catalog");
+					User.save($scope.user, function(){
+						$location.path('catalog');
 						});
 						$scope.displayLoadingIndicator = false;
-						$scope.actionMessage = "Your Changes Have Been Saved";
+					$scope.actionMessage = 'Your Changes Have Been Saved';
 					},
 					function(ex) {
-						$scope.actionMessage = "An error occurred: " + ex.Message;
+					$scope.actionMessage = 'An error occurred: ' + ex.Message;
 						$scope.displayLoadingIndicator = false;
 					}
 				);
 			}
 		};
+
+	var cleanDate = function(callback){
+		angular.forEach($scope.currentOrder.LineItems, function(li){
+			if(li.DateNeeded){
+			    var newDate = new Date(li.DateNeeded);
+				li.DateNeeded = newDate.toDateString();
+			}
+		});
+		if (callback) callback();
+	}
 
 		$scope.saveChanges = function(callback) {
 			$scope.actionMessage = null;
 			$scope.errorMessage = null;
-			if (
-				$scope.currentOrder.LineItems.length ==
-				$451.filter($scope.currentOrder.LineItems, {
-					Property: "Selected",
-					Value: true
-				}).length
-			) {
+		if($scope.currentOrder.LineItems.length == $451.filter($scope.currentOrder.LineItems, {Property:'Selected', Value: true}).length) {
 				$scope.cancelOrder();
-			} else {
+		}
+		else {
 				$scope.displayLoadingIndicator = true;
 				OrderConfig.address($scope.currentOrder, $scope.user);
-				Order.save(
-					$scope.currentOrder,
-					function(data) {
+			cleanDate(function(){
+				Order.save($scope.currentOrder,
+					function (data) {
 						$scope.currentOrder = data;
 						$scope.displayLoadingIndicator = false;
 						if (callback) callback();
-						$scope.actionMessage = "Your Changes Have Been Saved";
+						$scope.actionMessage = 'Your Changes Have Been Saved';
 					},
-					function(ex) {
+					function (ex) {
 						$scope.errorMessage = ex.Message;
 						$scope.displayLoadingIndicator = false;
 					}
 				);
+			});
 			}
 		};
 
 		$scope.removeItem = function(item) {
-			if (
-				confirm("Are you sure you wish to remove this item from your cart?") ==
-				true
-			) {
-				Order.deletelineitem(
-					$scope.currentOrder.ID,
-					item.ID,
+		if (confirm('Are you sure you wish to remove this item from your cart?') == true) {
+			Order.deletelineitem($scope.currentOrder.ID, item.ID,
 					function(order) {
-						$scope.currentOrder = order;
-						Order.clearshipping($scope.currentOrder);
 						if (!order) {
 							$scope.user.CurrentOrderID = null;
-							User.save($scope.user, function() {
-								$location.path("catalog");
+						User.save($scope.user, function(){
+							$location.path('catalog');
 							});
 						}
+					else{
+						$scope.currentOrder = order;
+						if(!$scope.isEditforApproval){
+							Order.clearshipping($scope.currentOrder);
+						}
+						$scope.saveChanges(function(){
 						$scope.displayLoadingIndicator = false;
-						$scope.actionMessage = "Your Changes Have Been Saved";
+							$scope.actionMessage = 'Your Changes Have Been Saved';
+						})
+					}
 					},
-					function(ex) {
-						$scope.errorMessage = ex.Message.replace(
-							/\<<Approval Page>>/g,
-							"Approval Page"
-						);
+				function (ex) {
+					$scope.errorMessage = ex.Message.replace(/\<<Approval Page>>/g, 'Approval Page');
 						$scope.displayLoadingIndicator = false;
 					}
 				);
 			}
-		};
+	}
 
 		$scope.checkOut = function() {
 			$scope.displayLoadingIndicator = true;
 			if (!$scope.isEditforApproval)
 				OrderConfig.address($scope.currentOrder, $scope.user);
-			Order.save(
-				$scope.currentOrder,
-				function(data) {
+		cleanDate(function(){
+			Order.save($scope.currentOrder,
+				function (data) {
 					$scope.currentOrder = data;
-					$location.path(
-						$scope.isEditforApproval
-							? "checkout/" + $routeParams.id
-							: "checkout"
-					);
+					$location.path($scope.isEditforApproval ? 'checkout/' + $routeParams.id : 'checkout');
 					$scope.displayLoadingIndicator = false;
 				},
-				function(ex) {
+				function (ex) {
 					$scope.errorMessage = ex.Message;
 					$scope.displayLoadingIndicator = false;
 				}
 			);
+		});
 		};
 
-		$scope.$watch(
-			"currentOrder.LineItems",
-			function(newval) {
+	$scope.$watch('currentOrder.LineItems', function (newval) {
 				var newTotal = 0;
+		var invalidKitFound = false;
 				if (!$scope.currentOrder) return newTotal;
-				angular.forEach($scope.currentOrder.LineItems, function(item) {
-					if (item.IsKitParent)
-						$scope.cart.$setValidity("kitValidation", !item.KitIsInvalid);
+		angular.forEach($scope.currentOrder.LineItems, function (item) {
+			if (item.IsKitParent && !invalidKitFound) {
+				$scope.cart.$setValidity('kitValidation', !item.KitIsInvalid);
+				invalidKitFound = true;
+			}
 					newTotal += item.LineTotal;
 				});
 				$scope.currentOrder.Subtotal = newTotal;
-			},
-			true
-		);
+	}, true);
 
 		$scope.copyAddressToAll = function() {
 			angular.forEach($scope.currentOrder.LineItems, function(n) {
@@ -177,16 +163,15 @@ four51.app.controller("CartViewCtrl", [
 			});
 		};
 
-		$scope.onPrint = function() {
+	$scope.onPrint = function()  {
 			window.print();
 		};
 
 		$scope.cancelEdit = function() {
-			$location.path("order");
+		$location.path('order');
 		};
 
 		$scope.downloadProof = function(item) {
 			window.location = item.Variant.ProofUrl;
 		};
-	}
-]);
+}]);
