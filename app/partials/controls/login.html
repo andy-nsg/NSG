@@ -43,7 +43,6 @@
                 <inlineerror ng-show="login_form.confirm_password.$error.match" title="{{'Password' | r}} do not match!" />
               </div>
             </div>
-            <input ng-disabled="login_form.$invalid" class="btn btn-large btn-primary btn-block" id="451_btn_login" type="submit" value="{{buttonText}}" />
             <div>
               <p class="alert alert-info" ng-show="showEmailHelp && (!EmailNotFoundException || !PasswordSecurityException)">If you would like to be reminded of your {{'Username' | r}} or have the option to reset your {{'Password' | r}}, please
                 provide your email address and your log on information will be emailed to you immediately.
@@ -55,6 +54,7 @@
                   <i class="fa fa-envelope"></i>
                 </div>
               </div>
+              <input ng-disabled="login_form.$invalid" class="btn btn-large btn-primary btn-block" id="451_btn_login" type="submit" value="{{buttonText}}" />
               <btn class="btn btn-info btn-block" ng-show="!showEmailHelp && !PasswordReset && !EmailNotFoundException && !PasswordSecurityException" ng-click="showEmailHelp = !showEmailHelp; buttonText = 'Submit'">Need help logging on?
               </btn>
               <btn class="btn btn-info btn-block" ng-show="showEmailHelp" ng-click="showEmailHelp = !showEmailHelp; buttonText = 'Logon'">Return to logon
