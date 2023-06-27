@@ -7,33 +7,28 @@
   padding-top: 15px;
 }
 
-/* Main Home Page Banner */
-/* Jumbotron settings */
-.jumbotron {
-  background-color: transparent !important;
+.container .jumbotron, .container-view .jumbotron {
+  border-radius: 0px;
 }
 
-h2 .jumbotron {
+.jumbotron .row {
   color: #ffffff;
+}
+
+.jumbotron {
+  padding: 0px;
 }
 
 /* Navbar Logo */
 .navLogo {
   max-width: 100%;
-  max-height: 45px;
+  max-height: 47px;
 }
 
 /* Banner Logo */
 .bannerLogo {
   max-width: 100%;
-  /*max-height: 250px;*/
-}
-
-/* AmeriCorps Banner Logo */
-.AMCbannerLogo {
-  max-width: 100%;
-  /*max-height: 250px;*/
-  text-align: center
+  /* max-height: 250px; */
 }
 
 /*Changes size of images on category page*/
@@ -59,8 +54,7 @@ h2 .jumbotron {
 /* Theme CSS Edits */
 /* Navbar Color - Update This */
 .navbar-default {
-  background-color: #012568;
-  border: 0;
+  background-color: #f5f5f5;
 }
 
 /* Highlight Colors - Update These */
@@ -140,11 +134,6 @@ h2 .jumbotron {
   color: undefined;
 }
 
-.navbar-default,
-.dropdown-mega {
-  border-color: ;
-}
-
 .text-primary {
   color: #0b3648;
 }
@@ -158,10 +147,13 @@ h2 .jumbotron {
   padding: 0;
 }
 
+/* End match color here */
+/* Change Panel Heading Color */
 .panel-primary .panel-heading .panel-title {
   background-color: #073892;
 }
 
+/* Change Panel Heading Font Color */
 .panel-primary .panel-heading .panel-title {
   color: #ffffff;
 }

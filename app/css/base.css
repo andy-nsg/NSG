@@ -27,12 +27,6 @@ a:focus {
   padding: 0px;
 }
 
-/* Jumbor Header Text*/
-.jumboHeaderText {
-  text-align: center;
-  color: #ffffff;
-}
-
 #vertAlignJumbo {
   position: relative;
   top: 50%;
