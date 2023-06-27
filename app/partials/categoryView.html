@@ -124,62 +124,15 @@
   <br> -->
   <!-- End Announcement -->
   <!-- Custom Program Stores -->
-  <div class="categoryPanel" ng-show="(currentCategory.Name === 'Made-To-Order Program')">
-    <h1 class="text-center"><strong>Welcome to the Made-To-Order Program</strong></h1>
-    <ul>
-      <li>
-        <h4 class="text-justify">If you were given instructions by Customer Service to visit this category to reorder your organization's custom gear and you don't see your program below please try clearing your cookies/cache first. If that does not work, please let us know by <a href="mailto:service@nationalservicegear.org?subject=NSG%20Made-To-Order%20Program%20Question">sending us an email by clicking here</a>.</h4>
-      </li>
-      <li>
-        <h4 class="text-justify">If you just happened to come across this category you will notice that there are no options below. This category is intended for our customers that make reorders of their organization's set uniform items. We create a category for your volunteer organization and in that category we add items that you need to reorder. We then assign that category to the respective customers so only the people that need the items can purchase and see the items. So, instead of contacting us for a quote each time we'll just let you log in, go to your program's category, select your gear and voilà, your custom gear will arrive in 10-15 business days. If this sounds like something you and your organization would like to take advantage of, please let us know by <a href="mailto:service@nationalservicegear.org?subject=NSG%20Made-To-Order%20Program%20Question">clicking here and sending us an email</a> with your questions.</h4>
-      </li>
-    </ul>
+  <div class="categoryPanel" ng-hide="(currentCategory.Name === 'MLK Day' || currentCategory.Name === '9/11 Day of Service')">
+    <h1 class="text-center"><strong>Welcome to the National Service Gear Webstore</strong></h1>
+    <h4 class="text-center">To order gear, please select from the listed programs below. If you need something that's not on the webstore or would like to customize any of the available items, please contact Customer Service at 1.855.444.0847 or email us at <a href="mailto:service@nationalservicegear.org?subject=NSG%20Custom%20Quote%20Request">service@nationalservicegear.org</a>.</h4>
     <br>
   </div>
   <!-- END Category Header for Special Categories -->
-  <nav id="451qa_nav_hdr" class="nav">
-    <!-- <ul>
-      <li class="hidden-sm hidden-xs">
-        <span ng-click="toggleNav()"><i class="fa fa-bars" ng-class="{ 'text-info': navStatus.visible }"></i></span>
-      </li>
-      <li>
-        <span id="451_lbl_curcat" class="text-primary" ng-bind-html="currentCategory.Name || '  {{'Programs' | r | xlat}}'"></span>
-      </li>
-      <li class="customSearchBar">
-        <productsearchinput></productsearchinput> -->
-    <!--<a href="search">
-          <span><i class="fa fa-search text-primary"></i></span>
-        </a> -->
-    <!-- </li>
-    </ul> -->
-  </nav>
   <div class="row">
-    <!-- <aside class="col-md-3 visible-md visible-lg" ng-if="navStatus.visible">
-      <div class="panel panel-default panel-nav">
-        <div class="panel-heading">
-          <h3 class="panel-title">
-            {{'Program List' | r | xlat}}
-          </h3>
-        </div>
-        <nav class="nav 451qa_sidenav panel-body">
-          <ul>
-            <categorycollapse tree='tree' current='currentCategory'></categorycollapse>
-          </ul>
-        </nav>
-      </div>
-    </aside> -->
-    <br>
-    <br>
-    <div ng-class="{ 'text-justify': navStatus.visible, 'col-md-12': !navStatus.visible }">
-      <h1 class="panel-title">
-        {{'Program List' | r | xlat}}
-      </h1>
-      <br>
-      <br>
-      <categorylistview></categorylistview>
-
-      <loadingindicator ng-show="productLoadingIndicator" title="{{'Please wait while we fetch all products' | r | xlat}}" />
-      <productlistview></productlistview>
-    </div>
+    <categorylistview></categorylistview>
+    <loadingindicator ng-show="productLoadingIndicator" title="{{'Please wait while we fetch all products' | r | xlat}}" />
+    <productlistview></productlistview>
   </div>
 </section>
