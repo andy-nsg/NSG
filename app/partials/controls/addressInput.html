@@ -1,5 +1,5 @@
 <div id="address_edit">
-  <!-- Comment out to remove Google Quick Address feature -->
+  <!-- Comment out to remove Google Quick Address feature $ak -->
   <!-- <div class="view-form-icon" ng-hide="address.IsCustEditable == false">
         <div>
             <label for="Autocomplete">{{'Quick Address' | r | xlat}}</label>
@@ -78,8 +78,8 @@
         </div>
         <div ng-class="{'view-form-select': !address.Country, '': address.Country }">
           <label ng-class="{'required': address.IsCustEditable != false}">{{'Country' | r | xlat}}</label>
-          <select name="country" class="form-control" ng-options="country.value as country.label for country in countries" ng-model="address.Country" placeholder="{{'Country' | r | xlat}}" ng-required="address.IsCustEditable != false"
-            ng-disabled="address.IsCustEditable == false" />
+          <select name="country" class="form-control" ng-options="country.value as country.label for country in countries" ng-model="address.Country" placeholder="{{'Country' | r | xlat}}" ng-required="address.IsCustEditable != false" ng-disabled="address.IsCustEditable == false">
+          </select>
           <i class="fa fa-globe"></i>
         </div>
       </div>
