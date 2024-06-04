@@ -10,7 +10,7 @@
       <div>
           <billingmessage />
       </div>
-      <sameasshipaddresscheckbox></sameasshipaddresscheckbox>
+      <sameasshipaddresscheckbox></sameasshipaddresscheckbox> <!-- add for "Same as Shipping" checkbox under Order Billing $ak -->
       <div ng-show="billaddressform || (billaddresses.length == 0 && user.Permissions.contains('CreateBillToAddress'))">
           <addressinput address='billaddress' user='user'></addressinput>
       </div>

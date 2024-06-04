@@ -17,7 +17,7 @@
       <i ng-class="{'fa fa-check': currentOrder.PaymentMethod == 'CreditCard' }"></i>
       {{'Credit Card' | r | xlat}}
     </button>
-    <!-- Comment out for Same As Shipping Address Button -->
+    <!-- Comment out for Same As Shipping Address Button $ak -->
     <!-- <button class="btn btn-info pull-right" type="button"
                 ng-hide="(billaddressform || (!addressform && (addresses | filter:{IsBilling:true}).length == 0) || !user.Permissions.contains('CreateBillToAddress'))"
                 ng-click="billaddressform = true">

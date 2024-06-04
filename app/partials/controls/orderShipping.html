@@ -48,12 +48,13 @@
                                       </select>
                                       <i class="fa fa-map-marker"></i>
                               </div>
+                              <!-- Add shipperFilter under ng-options for UPS options on orderShipping.js $ak -->
                               <div ng-show="user.ShipMethod != null && shippers" ng-class="{'view-form-select': !currentOrder.LineItems[0].ShipperName, '': currentOrder.LineItems[0].ShipperName }">
                                   <label ng-class="{required: !currentOrder.IsMultipleShip() && user.ShipMethod != null}" ng-show="currentOrder.LineItems[0].ShipperName || !currentOrder.IsMultipleShip() && user.ShipMethod != null">{{('Shipping' | r) + ' Method' | xlat}}</label>
                                   <select class="form-control" ng-change="updateShipper()" name="shipMethod"
                                           ng-model="currentOrder.LineItems[0].ShipperName"
                                           ng-show="user.ShipMethod.ShipperSelectionType == 'UserDropDown'"
-                                          ng-options="shipper.Name as (shipper.Name + ' ' + (shipper.ShippingRate.Price | currency | xlat)) for shipper in shippers | shipperFilter"
+                                          ng-options="shipper.Name as (shipper.Name + ' ' + (shipper.ShippingRate.Price | currency | xlat)) for shipper in shippers | shipperFilter" 
                                           ng-required="!currentOrder.IsMultipleShip() && user.ShipMethod != null" >
                                       <option value=""></option>
                                   </select>

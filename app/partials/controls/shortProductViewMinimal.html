@@ -21,13 +21,13 @@
                   {{'for' | xlat}} {{LineItem.PriceSchedule.PriceBreaks[0].Price | culturecurrency}}
               </p> -->
         <!-- Shows item number -->
-        <h4 ng-show="LineItem.Product.ExternalID" class="text-info">
-              {{'Item #' | r | xlat}}: {{LineItem.Product.ExternalID}}
-              </h4>
+        <h5 ng-show="LineItem.Product.ExternalID" class="text-info">
+          {{'Item #' | r | xlat}}: {{LineItem.Product.ExternalID}}
+        </h5>
         <!-- Shows large price on category page -->
         <h2 ng-show="LineItem.PriceSchedule.PriceBreaks[0]" ng-if="!(user.Permissions.contains('HidePricing'))">
-                  {{LineItem.PriceSchedule.PriceBreaks[0].Price | culturecurrency}}
-              </h2>
+          {{LineItem.PriceSchedule.PriceBreaks[0].Price | culturecurrency}}
+        </h2>
         <!-- <p ng-show="LineItem.Product.UnitOfMeasure">
                   {{'Unit of Measure' | r | xlat}}: {{LineItem.Product.UnitOfMeasure}}
               </p>
@@ -37,7 +37,7 @@
               </p> -->
         <!-- End comment out -->
       </div>
-      <br/>
+      <br />
       <a class="btn btn-default btn-block" href="product/{{LineItem.Product.InteropID}}">{{('View' | r) + ' ' + ('Product' | r) | xlat}}</a>
     </div>
   </div>
