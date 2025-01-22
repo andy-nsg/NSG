@@ -6151,12 +6151,12 @@ button::-moz-focus-inner {
 .view-form-icon.view-form-icon-input-group .input-group-addon:first-of-type:before {
   text-decoration: inherit;
   padding-right: 5px;
-  padding-lefT: 5px;
+  padding-left: 5px;
 }
 @media (max-width: 767px) {
   .view-form-icon.view-form-icon-input-group .input-group-addon:first-of-type:before {
     content: "";
-    padding-lefT: 0;
+    padding-left: 0;
     margin-lefT: -5px;
   }
 }
