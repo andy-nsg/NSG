@@ -1,1 +1,3 @@
-four51.app.controller("OrderTypeSelectorCtrl", ["$scope", function($scope) {}]);
+four51.app.controller('OrderTypeSelectorCtrl', ['$scope', function ($scope) {
+
+}]);
