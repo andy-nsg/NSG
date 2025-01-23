@@ -9,8 +9,8 @@ four51.app.controller("GiftCardRedemptionCtrl", [
 				this.giftcard,
 				function(card) {
 					$scope.giftcard = card;
-					setTimeout(location.reload.bind(location), 3000); // Add this to delay refresh for gift card
-					//$route.reload();//Add this to refresh for gift card
+					setTimeout(location.reload.bind(location), 3000); // Add this to delay refresh for gift card $ak
+					//$route.reload();//Add this to refresh for gift card $ak
 				},
 				function(ex) {
 					$scope.$parent.gcMessage = ex.Message;
