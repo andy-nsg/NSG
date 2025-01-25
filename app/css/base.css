@@ -886,6 +886,19 @@ fieldset[disabled] .btn-checkout.active {
   background-color: #d2322d;
 }
 
+/* Below code was in Four51 bootstrap.css file but not NSG Base's. Copied here in case I have to remove it from NSG's file. */
+/* .nav-tabs > li > a {
+  margin-right: 2px;
+  line-height: 1.42857143;
+  border: 1px solid transparent;
+  border-radius: 4px 4px 0 0;
+  padding: 0;
+}
+.nav-tabs > li > a > tab-heading {
+  display: block;
+padding: 20px 15px;
+} */
+
 @media (min-width: 768px) {
   .nav-tabs.nav-justified>li>a {
     border-bottom: 1px solid #dddddd;
