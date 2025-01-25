@@ -33,26 +33,26 @@ function productlightbox() {
 			'.galleryImages .active .product-image-large {display:block !important;max-width:100%;position:relative;top:0;}', // removed max-height:100% $ak
 			'.lightbox-image-title {font-size:1.1vmin;font-weight:bold;text-align:center;}',
 			'</style>',
-			'<div class='panel-body'>',
-			'<ul class='galleryImages'>',
-			'<li ng-repeat='image in LineItem.images'>',
-			'<a ng-click='openLightboxModal($index)' ng-class='{active: $index==$parent.index}'>', // removed hidden-xs from a class $ak
-			'<img ng-src='{{image.url}}' class='product-image-large img-responsive' data-toggle='tooltip' data-placement='top' title='Click to Enlarge' />',
+			'<div class="panel-body">',
+			'<ul class="galleryImages">',
+			'<li ng-repeat="image in LineItem.images">',
+			'<a ng-click="openLightboxModal($index)" ng-class="{active: $index==$parent.index}">', // removed hidden-xs from a class $ak
+			'<img ng-src="{{image.url}}" class="product-image-large img-responsive" data-toggle="tooltip" data-placement="top" title="Click to Enlarge" />',
 			'</a>',
-			//'<a class='no-click visible-xs' ng-class='{active: $index==$parent.index}'>', removed because don't need for the resize $ak
-			//'<img ng-src='{{image.url}}' class='product-image-large img-responsive' />',
+			//'<a class="no-click visible-xs" ng-class="{active: $index==$parent.index}"">', removed because don't need for the resize $ak
+			//'<img ng-src="{{image.url}}"" class="product-image-large img-responsive" />',
 			//'</a>',
 			'</li>',
 			'</ul>',
 			'</div>',
-			'<div class='panel-footer'>',
-			'<ul class='galleryThumbs'>',
-			'<div class='scrollLightbox'>',
-			'<li ng-repeat='image in LineItem.images'>',
-			'<a ng-click='$parent.index=$index' ng-class='{active: $index==$parent.index}'>',
-			'<img ng-src='{{image.url}}' class='img-thumbnail img-responsive' data-toggle='tooltip' data-placement='top' title='{{image.Name}}'/>',
+			'<div class="panel-footer">',
+			'<ul class="galleryThumbs">',
+			'<div class="scrollLightbox">',
+			'<li ng-repeat="image in LineItem.images">',
+			'<a ng-click="$parent.index=$index" ng-class="{active: $index==$parent.index}">',
+			'<img ng-src="{{image.url}}" class="img-thumbnail img-responsive" data-toggle="tooltip" data-placement="top" title="{{image.Name}}"/>',
 			'</a>',
-			'<div class='lightbox-image-title'>',
+			'<div class="lightbox-image-title">',
 			'{{image.Name}}',
 			'<div',
 			'</li>',
@@ -67,14 +67,12 @@ LightboxCtrl.$inject = ['$scope', 'Lightbox'];
 function LightboxCtrl($scope, Lightbox) {
 	function LightboxImageScope($scope) {
 		if ($scope.LineItem.Specs && $scope.LineItem.Specs.Color) {
-			var varSpecName = 'Color';
+            var varSpecName = "Color";
 		}
-		var specGroupName = 'LightboxImages';
+        var specGroupName = "LightboxImages";
 
-		if (
-			$scope.LineItem.Specs ||
-			($scope.LineItem.Product && $scope.LineItem.Product.StaticSpecGroups)
-		) {
+        if ($scope.LineItem.Specs || $scope.LineItem.Product && $scope.LineItem.Product.StaticSpecGroups) {
+
 			$scope.LineItem.images = [];
 			var count = 0;
 
@@ -82,9 +80,7 @@ function LightboxCtrl($scope, Lightbox) {
 				if (varSpecName) {
 					var specOption = $scope.LineItem.Specs[varSpecName].Value;
 				}
-				angular.forEach(
-					$scope.LineItem.Product.StaticSpecGroups[specGroupName].Specs,
-					function(staticSpecs) {
+                angular.forEach($scope.LineItem.Product.StaticSpecGroups[specGroupName].Specs, function (staticSpecs) {
 						var image = {};
 						image.Number = count;
 						image.url = staticSpecs.FileURL;
@@ -96,8 +92,7 @@ function LightboxCtrl($scope, Lightbox) {
 						}
 						$scope.LineItem.images.push(image);
 						count++;
-					}
-				);
+                });
 			}
 			$scope.imageLoaded = true;
 		}
@@ -108,20 +103,20 @@ function LightboxCtrl($scope, Lightbox) {
 		$scope.index = 0;
 	}
 
-	$scope.openLightboxModal = function(index) {
+    $scope.openLightboxModal = function (index) {
 		Lightbox.openModal($scope.LineItem.images, index);
 	};
 
-	$scope.$watch('LineItem.Product.StaticSpecGroups', function(n, o) {
-		if (n!= o) {
+    $scope.$watch('LineItem.Product.StaticSpecGroups', function(n,o){
+        if ( n!= o) {
 			LightboxImageScope($scope);
 		}
 	});
 
-	$scope.$watch('LineItem.Specs.Color.Value', function(n, o) {
-		if (n!= o) {
+    $scope.$watch('LineItem.Specs.Color.Value', function(n,o){
+        if ( n!= o) {
 			LightboxImageScope($scope);
-			angular.forEach($scope.LineItem.images, function(img) {
+            angular.forEach ($scope.LineItem.images, function(img) {
 				if (img.Selected) {
 					$scope.index = img.Number;
 				}
@@ -131,26 +126,26 @@ function LightboxCtrl($scope, Lightbox) {
 }
 
 function Lightbox() {
-	this.getImageUrl = function(image) {
+    this.getImageUrl = function (image) {
 		return image.url;
 	};
-	this.getImageCaption = function(image) {
+    this.getImageCaption = function (image) {
 		return image.caption;
 	};
-	this.calculateImageDimensionLimits = function(dimensions) {
+    this.calculateImageDimensionLimits = function (dimensions) {
 		if (dimensions.windowWidth >= 768) {
 			return {
-				maxWidth: dimensions.windowWidth - 92,
-				maxHeight: dimensions.windowHeight - 126
+                'maxWidth': dimensions.windowWidth - 92,
+                'maxHeight': dimensions.windowHeight - 126
 			};
 		} else {
 			return {
-				maxWidth: dimensions.windowWidth - 52,
-				maxHeight: dimensions.windowHeight - 86
+                'maxWidth': dimensions.windowWidth - 52,
+                'maxHeight': dimensions.windowHeight - 86
 			};
 		}
 	};
-	this.calculateModalDimensions = function(dimensions) {
+    this.calculateModalDimensions = function (dimensions) {
 		var width = Math.max(400, dimensions.imageDisplayWidth + 32);
 		var height = Math.max(200, dimensions.imageDisplayHeight + 66);
 		if (width >= dimensions.windowWidth - 20 || dimensions.windowWidth < 768) {
@@ -160,16 +155,11 @@ function Lightbox() {
 			height = 'auto';
 		}
 		return {
-			width: width,
-			height: height
+            'width': width,
+            'height': height
 		};
 	};
-	this.$get = [
-		'$document',
-		'$modal',
-		'$timeout',
-		'ImageLoader',
-		function($document, $modal, $timeout, ImageLoader) {
+    this.$get = ['$document', '$modal', '$timeout', 'ImageLoader', function ($document, $modal, $timeout, ImageLoader) {
 			var Lightbox = {};
 			Lightbox.images = [];
 			Lightbox.index = -1;
@@ -180,21 +170,18 @@ function Lightbox() {
 			Lightbox.keyboardNavEnabled = false;
 			Lightbox.image = {};
 			Lightbox.modalInstance = null;
-			Lightbox.openModal = function(newImages, newIndex) {
+        Lightbox.openModal = function (newImages, newIndex) {
 				Lightbox.images = newImages;
 				Lightbox.setImage(newIndex);
 				Lightbox.modalInstance = $modal.open({
-					template: imagelightboxtemplate,
-					controller: [
-						'$scope',
-						function($scope) {
+                'template': imagelightboxtemplate,
+                'controller': ['$scope', function ($scope) {
 							$scope.Lightbox = Lightbox;
 							Lightbox.keyboardNavEnabled = true;
-						}
-					],
-					windowClass: 'lightbox-modal'
+                }],
+                'windowClass': 'lightbox-modal'
 				});
-				Lightbox.modalInstance.result['finally'](function() {
+            Lightbox.modalInstance.result['finally'](function () {
 					Lightbox.images = [];
 					Lightbox.index = 1;
 					Lightbox.image = {};
@@ -205,51 +192,47 @@ function Lightbox() {
 				});
 				return Lightbox.modalInstance;
 			};
-			Lightbox.closeModal = function(result) {
+        Lightbox.closeModal = function (result) {
 				return Lightbox.modalInstance.close(result);
 			};
-			Lightbox.setImage = function(newIndex) {
+        Lightbox.setImage = function (newIndex) {
 				if (!(newIndex in Lightbox.images)) {
 					throw 'Invalid image.';
 				}
-				var success = function() {
+            var success = function () {
 					Lightbox.index = newIndex;
 					Lightbox.image = Lightbox.images[Lightbox.index];
 				};
 
 				var imageUrl = Lightbox.getImageUrl(Lightbox.images[newIndex]);
-				ImageLoader.load(imageUrl).then(
-					function() {
+            ImageLoader.load(imageUrl).then(function () {
 						success();
 						Lightbox.imageUrl = imageUrl;
 						Lightbox.imageCaption = Lightbox.getImageCaption(Lightbox.image);
-					},
-					function() {
+            }, function () {
 						success();
 						Lightbox.imageUrl = '//:0';
 						Lightbox.imageCaption = 'Failed to load image';
-					}
-				);
+            });
 			};
-			Lightbox.firstImage = function() {
+        Lightbox.firstImage = function () {
 				Lightbox.setImage(0);
 			};
-			Lightbox.prevImage = function() {
-				Lightbox.setImage(
-					(Lightbox.index - 1 + Lightbox.images.length) % Lightbox.images.length
-				);
+        Lightbox.prevImage = function () {
+            Lightbox.setImage((Lightbox.index - 1 + Lightbox.images.length) %
+                Lightbox.images.length);
 			};
-			Lightbox.nextImage = function() {
+        Lightbox.nextImage = function () {
 				Lightbox.setImage((Lightbox.index + 1) % Lightbox.images.length);
 			};
-			Lightbox.lastImage = function() {
+        Lightbox.lastImage = function () {
 				Lightbox.setImage(Lightbox.images.length - 1);
 			};
-			Lightbox.setImages = function(newImages) {
+        Lightbox.setImages = function (newImages) {
 				Lightbox.images = newImages;
 				Lightbox.setImage(Lightbox.index);
 			};
-			$document.bind('keydown', function(event) {
+        $document.bind('keydown', function (event) {
 				if (!Lightbox.keyboardNavEnabled) {
 					return;
 				}
@@ -262,24 +245,20 @@ function Lightbox() {
 						method = 'prevImage';
 						break;
 				}
-				if (
-					method !== null &&
-					['input', 'textarea'].indexOf(event.target.tagName.toLowerCase()) ===
-						-1
-				) {
+            if (method !== null && ['input', 'textarea'].indexOf(
+                    event.target.tagName.toLowerCase()) === -1) {
 					// the view doesn't update without a manual digest
-					$timeout(function() {
+                $timeout(function () {
 						Lightbox[method]();
 					});
 					event.preventDefault();
 				}
 			});
 			return Lightbox;
-		}
-	];
+    }];
 }
 
-function imagelightboxtemplate() {
+function imagelightboxtemplate () {
 	return [
 		'<style>',
 		'.modal-body {background: none repeat scroll 0 0; background-color: white !important; width:100%; height:auto;}',
@@ -293,19 +272,19 @@ function imagelightboxtemplate() {
 		'<div class="modal-body" ng-swipe-left="Lightbox.nextImage()" ng-swipe-right="Lightbox.prevImage()">',
 		'<div class="lightbox-nav">',
 		'<div class="btn-group">',
-		'<a class='btn btn-xs btn-default' ng-click='Lightbox.prevImage()'><i class='fa fa-chevron-left'></i> Previous</a>',
-		'<a ng-href='{{Lightbox.imageUrl}}' target='_blank' class='btn btn-xs btn-default' title='Open in new tab'>Download Image</a>',
-		'<a class='btn btn-xs btn-default' ng-click='Lightbox.nextImage()'>Next <i class='fa fa-chevron-right'></i></a>',
-		'<a class='btn btn-xs btn-default pull-right' aria-hidden='true' ng-click='$dismiss()'>Close <i class='fa fa-times'></i></a>',
-		'</div>',
-		'</div>',
-		'<div class='lightbox-image-container'>',
-		'<div class='lightbox-image-caption'><span>{{Lightbox.imageCaption}}</span></div>',
-		'<img lightbox-src='{{Lightbox.imageUrl}}' alt=''>',
-		'</div>',
-		'</div>',
-		'</div>'
-	].join('');
+    '<a class="btn btn-xs btn-default" ng-click="Lightbox.prevImage()"><i class="fa fa-chevron-left"></i> Previous</a>',
+    '<a ng-href="{{Lightbox.imageUrl}}" target="_blank" class="btn btn-xs btn-default" title="Open in new tab">Open image in new tab</a>',
+    '<a class="btn btn-xs btn-default" ng-click="Lightbox.nextImage()">Next <i class="fa fa-chevron-right"></i></a>',
+    '<a class="btn btn-xs btn-default pull-right" aria-hidden="true" ng-click="$dismiss()">Close <i class="fa fa-times"></i></a>',
+    '</div>',
+    '</div>',
+    '<div class="lightbox-image-container">',
+    '<div class="lightbox-image-caption"><span>{{Lightbox.imageCaption}}</span></div>',
+    '<img lightbox-src="{{Lightbox.imageUrl}}" alt="">',
+    '</div>',
+    '</div>',
+    '</div>'
+].join('');
 }
 
 ImageLoader.$inject = ['$q'];
