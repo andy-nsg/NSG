@@ -156,5 +156,3 @@ function minicartCtrl($scope, $location, Order, OrderConfig, User) {
 				$scope.currentOrder = order ? (order.Status === 'Unsubmitted') ? order : null : null;
 		})
 }
-
-0
