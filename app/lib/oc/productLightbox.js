@@ -47,7 +47,7 @@ function productlightbox() {
 			'</div>',
 			'<div class="panel-footer">',
 			'<ul class="galleryThumbs">',
-			'<div class="scrollLightbox">',
+			'<div class="scrollLightbox">', // added to allow for scrolling $ak
 			'<li ng-repeat="image in LineItem.images">',
 			'<a ng-click="$parent.index=$index" ng-class="{active: $index==$parent.index}">',
 			'<img ng-src="{{image.url}}" class="img-thumbnail img-responsive" data-toggle="tooltip" data-placement="top" title="{{image.Name}}"/>',
