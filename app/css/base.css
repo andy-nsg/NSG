@@ -16,6 +16,13 @@ a:focus {
   text-decoration: underline;
 }
 
+/* Bullet Override Class */
+.bullet-list ul {
+  list-style-type: disc;
+  /* You may also need to ensure margin-left or padding-left is set */
+  padding-left: 20px; 
+}
+
 /* Main Home Page Banner */
 /*Edit Jumbrotron width - $ak */
 .jumbotron {
