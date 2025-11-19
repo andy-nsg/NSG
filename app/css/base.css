@@ -30,10 +30,13 @@ a:focus {
     display: block;      /* Ensures the other properties apply correctly */
 }
 
+/* Below 4 blocks are meant for adjusting product display page and lining everything up correctly. */
 /* 1. Make the main product card a vertical flex column */
 [class*="451qa_prod_item"] {
     display: flex;
     flex-direction: column;
+    height: 480px !important;
+    min-height: 480px !important;
     /* The height is already set in your HTML (480px), so flex will use it */
 }
 
