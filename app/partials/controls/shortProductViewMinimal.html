@@ -1,5 +1,5 @@
 <!-- This file was edited by $ak -->
-<div class="451qa_prod_item row" style="height: 450px !important; min-height: 450px !important;">
+<div class="451qa_prod_item row" style="height: 480px !important; min-height: 480px !important;"> <!-- Adjusting the height changes the size of product icons so the fit into a grid more uniformly-->
   <div class="col-xs-12 text-center">
     <a class="thumbnail" href="{{LineItem.Product.Type == 'Kit' ? 'kit' : 'product'}}/{{LineItem.Product.InteropID}}">
       <figure ng-show="LineItem.Variant.SmallImageUrl || LineItem.Product.SmallImageUrl">
@@ -17,14 +17,14 @@
       </h4>
       <div>
         <p ng-bind-html="trustedDescription(LineItem.Product)" ng-show="LineItem.Product.Description" />
-        <h5 ng-show="LineItem.Product.ExternalID" class="text-info">
+        <h5 ng-show="LineItem.Product.ExternalID" class="text-info text-truncate">
           {{'Item #' | r | xlat}}: {{LineItem.Product.ExternalID}}
         </h5>
         <!-- Shows price on category page -->
-        <h5 ng-show="LineItem.PriceSchedule.PriceBreaks[0].Price > 0" ng-if="!(user.Permissions.contains('HidePricing'))">
+        <h4 ng-show="LineItem.PriceSchedule.PriceBreaks[0].Price > 0" ng-if="!(user.Permissions.contains('HidePricing'))">
           <span ng-if="LineItem.Product.ExternalID.endsWith('MTO')">Pricing starting at </span>
           {{LineItem.PriceSchedule.PriceBreaks[0].Price | culturecurrency}}
-        </h5>
+        </h4>
       </div>
     <br />
     <a class="btn btn-default btn-block" href="product/{{LineItem.Product.InteropID}}">{{('View' | r) + ' ' + ('Product' | r) | xlat}}</a>
