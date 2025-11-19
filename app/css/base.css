@@ -31,33 +31,57 @@ a:focus {
 }
 
 /* Below 4 blocks are meant for adjusting product display page and lining everything up correctly. */
-/* 1. Make the main product card a vertical flex column */
+/* 1. MAIN PRODUCT CARD: Fixed Height and Vertical Flex Container */
 [class*="451qa_prod_item"] {
     display: flex;
     flex-direction: column;
-    height: 480px !important;
+    /* Fixed Height for uniformity (Moved from HTML inline style) */
+    height: 480px !important; 
     min-height: 480px !important;
-    /* The height is already set in your HTML (480px), so flex will use it */
 }
 
-/* 2. TARGET THE TEXT COLUMN: Make it fill the remaining space below the image */
+/* 2. TEXT COLUMN: Make it fill the remaining space below the image */
 [class*="451qa_prod_item"] > .col-xs-12.text-left {
     display: flex;
     flex-direction: column;
-    flex-grow: 1; /* This is crucial: it forces this column to expand to the bottom */
+    flex-grow: 1; 
 }
 
-/* 3. TARGET THE PANEL BODY: Make it fill the column */
+/* 3. PANEL BODY: Make it fill the column */
 [class*="451qa_prod_item"] .panel-body {
     display: flex;
     flex-direction: column;
-    flex-grow: 1; /* Expands to fill the parent column */
+    flex-grow: 1; 
     height: 100%;
 }
 
-/* 4. TARGET THE BUTTON: Push it to the very bottom */
+/* 4. CONTENT WRAPPER: Make the div holding the ID/Price/Desc grow */
+/* This is the anonymous <div> after the product name (<h4>) */
+[class*="451qa_prod_item"] .panel-body > div {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Key for alignment! Fills gap below Name */
+}
+
+/* 5. PRODUCT ID (Item #): Pushes itself (and the Price below it) to the bottom */
+/* This ensures the ID and Price always sit right above the button, creating uniformity. */
+[class*="451qa_prod_item"] .text-info {
+    margin-top: auto !important; 
+    padding-bottom: 5px; /* Adds a little separation from the Price/Button area */
+}
+
+/* 6. BUTTON: Pushes itself to the very bottom of the card */
 [class*="451qa_prod_item"] .btn-block {
-    margin-top: auto; /* Now that the parent is full height, this pushes the button down */
+    margin-top: auto; 
+}
+
+/* 7. OPTIONAL: Standardize Product Name height (Recommended) */
+/* Ensures 1-line names don't make the ID/Price shift up, filling the space */
+[class*="451qa_prod_item"] h4.text-center {
+    min-height: 40px; /* Adjust based on your font size/line height */
+    display: flex;
+    align-items: center; 
+    justify-content: center;
 }
 
 /* Main Home Page Banner */
