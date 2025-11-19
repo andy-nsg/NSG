@@ -1,4 +1,5 @@
-<div class="451qa_prod_item row">
+<!-- This file was edited by $ak -->
+<div class="451qa_prod_item row" style="height: 450px !important; min-height: 450px !important;">
   <div class="col-xs-12 text-center">
     <a class="thumbnail" href="{{LineItem.Product.Type == 'Kit' ? 'kit' : 'product'}}/{{LineItem.Product.InteropID}}">
       <figure ng-show="LineItem.Variant.SmallImageUrl || LineItem.Product.SmallImageUrl">
@@ -11,34 +12,22 @@
   </div>
   <div class="col-xs-12 text-left">
     <div class="panel-body">
-      <h3 class="text-center">{{LineItem.Product.Name}}</h3>
+      <h4 class="text-center">
+        {{LineItem.Product.Name}}
+      </h4>
       <div>
         <p ng-bind-html="trustedDescription(LineItem.Product)" ng-show="LineItem.Product.Description" />
-        <!-- Comment out to get rid of pricing and other info not needed for item -->
-        <!-- <p ng-show="LineItem.PriceSchedule.PriceBreaks[0]" ng-if="!(user.Permissions.contains('HidePricing'))">
-                  {{LineItem.PriceSchedule.PriceBreaks[0].Quantity}}
-                  <span ng-show="LineItem.Product.QuantityMultiplier > 1">(x {{LineItem.Product.QuantityMultiplier}})</span>
-                  {{'for' | xlat}} {{LineItem.PriceSchedule.PriceBreaks[0].Price | culturecurrency}}
-              </p> -->
-        <!-- Shows item number -->
         <h5 ng-show="LineItem.Product.ExternalID" class="text-info">
           {{'Item #' | r | xlat}}: {{LineItem.Product.ExternalID}}
         </h5>
-        <!-- Shows large price on category page -->
-        <h2 ng-show="LineItem.PriceSchedule.PriceBreaks[0]" ng-if="!(user.Permissions.contains('HidePricing'))">
+        <!-- Shows price on category page -->
+        <h5 ng-show="LineItem.PriceSchedule.PriceBreaks[0].Price > 0" ng-if="!(user.Permissions.contains('HidePricing'))">
+          <span ng-if="LineItem.Product.ExternalID.endsWith('MTO')">Pricing starting at </span>
           {{LineItem.PriceSchedule.PriceBreaks[0].Price | culturecurrency}}
-        </h2>
-        <!-- <p ng-show="LineItem.Product.UnitOfMeasure">
-                  {{'Unit of Measure' | r | xlat}}: {{LineItem.Product.UnitOfMeasure}}
-              </p>
-
-              <p ng-show="LineItem.Product.DisplayInventory && inventoryDisplay(LineItem.Product, LineItem.Variant) != undefined">
-                  {{'Quantity Available' | r | xlat}}: {{inventoryDisplay(LineItem.Product, LineItem.Variant) }}
-              </p> -->
-        <!-- End comment out -->
+        </h5>
       </div>
-      <br />
-      <a class="btn btn-default btn-block" href="product/{{LineItem.Product.InteropID}}">{{('View' | r) + ' ' + ('Product' | r) | xlat}}</a>
+    <br />
+    <a class="btn btn-default btn-block" href="product/{{LineItem.Product.InteropID}}">{{('View' | r) + ' ' + ('Product' | r) | xlat}}</a>
     </div>
   </div>
 </div>

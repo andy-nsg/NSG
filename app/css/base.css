@@ -23,6 +23,13 @@ a:focus {
   padding-left: 20px; 
 }
 
+.text-truncate {
+    white-space: nowrap; /* Prevents the text from wrapping to the next line */
+    overflow: hidden;    /* Hides any content that exceeds the box width */
+    text-overflow: ellipsis; /* Displays "..." where the text is cut off */
+    display: block;      /* Ensures the other properties apply correctly */
+}
+
 /* Main Home Page Banner */
 /*Edit Jumbrotron width - $ak */
 .jumbotron {
