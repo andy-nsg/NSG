@@ -22,7 +22,7 @@
         </h5>
         <!-- Shows price on category page -->
         <h4 ng-show="LineItem.PriceSchedule.PriceBreaks[0].Price > 0" ng-if="!(user.Permissions.contains('HidePricing'))">
-          <span ng-if="LineItem.Product.ExternalID.endsWith('MTO')">Pricing starting at </span>
+          <span ng-if="LineItem.Product.ExternalID.endsWith('MTO') || LineItem.Product.Name.startsWith('Made-To-Order')">Pricing starting at </span>
           {{LineItem.PriceSchedule.PriceBreaks[0].Price | culturecurrency}}
         </h4>
       </div>
