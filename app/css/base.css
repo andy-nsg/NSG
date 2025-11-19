@@ -30,21 +30,31 @@ a:focus {
     display: block;      /* Ensures the other properties apply correctly */
 }
 
-/* 1. SAFE: This only targets the panel-body INSIDE your product grid item */
+/* 1. Make the main product card a vertical flex column */
+[class*="451qa_prod_item"] {
+    display: flex;
+    flex-direction: column;
+    /* The height is already set in your HTML (480px), so flex will use it */
+}
+
+/* 2. TARGET THE TEXT COLUMN: Make it fill the remaining space below the image */
+[class*="451qa_prod_item"] > .col-xs-12.text-left {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* This is crucial: it forces this column to expand to the bottom */
+}
+
+/* 3. TARGET THE PANEL BODY: Make it fill the column */
 [class*="451qa_prod_item"] .panel-body {
     display: flex;
     flex-direction: column;
-    height: 100%; /* Ensures the body fills the available space */
+    flex-grow: 1; /* Expands to fill the parent column */
+    height: 100%;
 }
 
-/* 2. SAFE: This targets the div holding the text/price INSIDE that specific panel-body */
-[class*="451qa_prod_item"] .panel-body > div:first-of-type {
-    flex-grow: 1; /* This forces the text area to grow and push the button down */
-}
-
-/* Add this to base.css - it forces the button to the bottom visually */
+/* 4. TARGET THE BUTTON: Push it to the very bottom */
 [class*="451qa_prod_item"] .btn-block {
-    margin-top: auto; /* Flexbox magic: pushes the element to the far end */
+    margin-top: auto; /* Now that the parent is full height, this pushes the button down */
 }
 
 /* Main Home Page Banner */
