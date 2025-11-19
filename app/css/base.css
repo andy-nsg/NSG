@@ -30,6 +30,23 @@ a:focus {
     display: block;      /* Ensures the other properties apply correctly */
 }
 
+/* 1. SAFE: This only targets the panel-body INSIDE your product grid item */
+[class*="451qa_prod_item"] .panel-body {
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Ensures the body fills the available space */
+}
+
+/* 2. SAFE: This targets the div holding the text/price INSIDE that specific panel-body */
+[class*="451qa_prod_item"] .panel-body > div:first-of-type {
+    flex-grow: 1; /* This forces the text area to grow and push the button down */
+}
+
+/* Add this to base.css - it forces the button to the bottom visually */
+[class*="451qa_prod_item"] .btn-block {
+    margin-top: auto; /* Flexbox magic: pushes the element to the far end */
+}
+
 /* Main Home Page Banner */
 /*Edit Jumbrotron width - $ak */
 .jumbotron {
