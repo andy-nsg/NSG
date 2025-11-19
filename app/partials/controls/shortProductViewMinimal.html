@@ -21,7 +21,7 @@
           {{'Item #' | r | xlat}}: {{LineItem.Product.ExternalID}}
         </h5>
         <!-- Shows price on category page -->
-        <h4 ng-show="LineItem.PriceSchedule.PriceBreaks[0].Price > 0" ng-if="!(user.Permissions.contains('HidePricing'))">
+        <h4 ng-if="!(user.Permissions.contains('HidePricing'))" ng-class="{'price-placeholder': LineItem.PriceSchedule.PriceBreaks[0].Price == 0}">
           <span ng-if="LineItem.Product.ExternalID.endsWith('MTO') || LineItem.Product.Name.startsWith('Made-To-Order')">Starting at </span>
           {{LineItem.PriceSchedule.PriceBreaks[0].Price | culturecurrency}}
         </h4>

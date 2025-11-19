@@ -30,7 +30,7 @@ a:focus {
     display: block;      /* Ensures the other properties apply correctly */
 }
 
-/* Below 4 blocks are meant for adjusting product display page and lining everything up correctly. */
+/* Below 8 blocks are meant for adjusting product display page and lining everything up correctly. */
 /* 1. MAIN PRODUCT CARD: Fixed Height and Vertical Flex Container */
 [class*="451qa_prod_item"] {
     display: flex;
@@ -82,6 +82,20 @@ a:focus {
     display: flex;
     align-items: center; 
     justify-content: center;
+}
+
+/* 8. NEW: Ensure Price Line has a Fixed Height */
+/* This maintains vertical position for the Product ID above it. */
+[class*="451qa_prod_item"] h4[ng-if] {
+    min-height: 25px; /* Adjust this to match the height of one line of your price font */
+    line-height: 25px; /* Ensures vertical consistency */
+}
+
+/* 9. NEW: HIDE TEXT BUT KEEP SPACE when price is $0 */
+[class*="451qa_prod_item"] .price-placeholder {
+    /* Hide the text content but preserve the box model (height and padding) */
+    color: transparent !important;
+    visibility: hidden; 
 }
 
 /* Main Home Page Banner */
