@@ -30,6 +30,13 @@ a:focus {
     display: block;      /* Ensures the other properties apply correctly */
 }
 
+/* Holiday Notices */
+.holiday-notices {
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: left;
+}
+
 /* Below 8 blocks are meant for adjusting product display page and lining everything up correctly. */
 /* 1. MAIN PRODUCT CARD: Fixed Height and Vertical Flex Container */
 [class*="451qa_prod_item"] {
