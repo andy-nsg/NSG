@@ -3,7 +3,7 @@
 
     <h3>Our Mission & Who We Are</h3>
     <p>
-        <strong>National Service Gear</strong> is a brand of <strong>Industries for the Blind and Visually Impaired, Inc. (IBVI)</strong>. We are a proud AbilityOne® non-profit organization and an ISO 9001 certified company. 
+        <strong>National Service Gear</strong> is a brand of <strong>Industries for the Blind and Visually Impaired, Inc. (IBVI)</strong>. We are a proud AbilityOne® <strong>not-for-profit</strong> organization and an ISO 9001 certified company. 
     </p>
     <p>
         Every purchase you make directly supports our mission: to create and grow meaningful employment opportunities for professionals who are blind or visually impaired. By providing high-quality branded gear and essential supplies, we empower our customers to make a difference while fulfilling our own commitment to workforce inclusivity.
@@ -50,7 +50,7 @@
     <ul>
         <li><strong>Embroidery:</strong> High-density stitching for a premium, 3D finish on polos and hats.</li>
         <li><strong>Screen Printing:</strong> The gold standard for large bulk orders.</li>
-        <li><strong>DTF (Direct to Film):</strong> Best for complex, full-color logos with a soft-feel finish.</li>
+        <li><strong>DTF (Direct to Film):</strong> Ideal for complex, full-color logos with a soft-feel finish.</li>
     </ul>
 
     <hr />
@@ -68,18 +68,28 @@
     </div>
 
     <h3>Payment, Tax & Returns</h3>
-    <p><strong>Payment:</strong> We accept VISA and MasterCard. Established organizations may apply for <strong><a href="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/NSG/docs/CreditApplication.pdf" target="_blank">Net Terms</a></strong>.</p>
+    <p><strong>Payment:</strong> We accept VISA and MasterCard. Established organizations may apply for <strong><a ng-href="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/NSG/docs/CreditApplication.pdf" target="_blank">Net Terms</a></strong>.</p>
     
-    <p><strong>Sales Tax:</strong> We collect tax in 22 states where IBVI has a presence. Tax-exempt organizations should email certificates to <a href="mailto:service@nationalservicegear.org?subject=Tax%20Exempt%20Certificate">service@nationalservicegear.org</a>.</p>
+    <p><strong>Sales Tax:</strong> We collect tax in 22 states where IBVI has a presence. Tax-exempt organizations should email certificates to <a ng-href="mailto:service@nationalservicegear.org?subject=Tax Exempt Certificate Submission - {{ (user.Company.InteropID == 'PLfeekEf8p56') ? 'AmeriCorps' : (user.Company.InteropID == 'HC3Rn6DYKK2d') ? 'NPS' : 'NSG Store' }}">service@nationalservicegear.org</a>.</p>
 
-    <p><strong>Returns:</strong> Stock items are subject to a 10% restocking fee. Custom/MTO items are non-returnable unless defective. Report any discrepancies within 5 business days.</p>
+    <p><strong>Returns:</strong> Stock items are subject to a 10% restocking fee. Custom/MTO items are non-returnable unless defective.</p>
 
     <hr />
 
     <h3>Need Assistance?</h3>
     <p>
-        <strong>Hours:</strong> Mon–Fri, 8:00 AM – 4:30 PM ET | <strong>Phone:</strong> 1.855.444.0847
+        <strong>Hours:</strong> Monday–Friday, 8:00 AM – 4:30 PM ET
         <br />
-        <strong>Email:</strong> <a href="mailto:service@nationalservicegear.org?subject=Webstore%20Inquiry%20-%20ID:%20{{user.Company.InteropID}}">service@nationalservicegear.org</a>
+        <strong>Phone:</strong> 1.855.444.0847 (Toll-Free)
+        <br />
+        <strong>Email:</strong> 
+        <a ng-href="mailto:service@nationalservicegear.org?subject=Webstore Inquiry - {{
+            (user.Company.InteropID == 'PLfeekEf8p56') ? 'AmeriCorps' : 
+            (user.Company.InteropID == 'KGdYwZEsp2cX') ? 'BLM' : 
+            (user.Company.InteropID == 'TZfF8Nq8HVwy') ? 'Custom Store' : 
+            (user.Company.InteropID == 'HC3Rn6DYKK2d') ? 'NPS' : 
+            (user.Company.InteropID == 'nQakFSt9JRee') ? 'YCC' : 
+            (user.Company.InteropID == 'jTaqgnkZjUKc') ? 'General NSG' : 'National Service Gear'
+        }}">service@nationalservicegear.org</a>
     </p>
 </div>
