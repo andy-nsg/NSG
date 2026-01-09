@@ -15,6 +15,7 @@
         <li>Balance job creation, capital investments, and profitability while adhering to regulatory requirements.</li>
         <li>Create an open, collaborative environment that fosters innovative business ideas, engages employees, and adds a true sense of belonging.</li>
     </ul>
+    <br />
     <p>
         By partnering with us, you are directly supporting upward mobility for the blind and visually impaired and helping us bring new purpose to the lives of our team members. 
         <br>
@@ -30,12 +31,12 @@
 
     <div ng-show="user.Company.InteropID == 'HC3Rn6DYKK2d'" style="background-color: #fff4e5; padding: 15px; border-left: 5px solid #ffa500; margin-bottom: 20px;">
         <h4><i class="fa fa-university"></i> National Park Service Inventory</h4>
-        <p>Items in this store are a combination of <strong>Made-To-Order (MTO)</strong> gear and <strong>Customer-Owned Inventory</strong>. Government-owned stock is managed specifically for NPS parks and centers to ensure consistent availability for your personnel.</p>
+        <p>Items in this store are a combination of <strong>Made-To-Order (MTO)</strong> gear and <strong>Customer-Owned Inventory</strong>. Government-owned stock is managed specifically for NPS parks and centers.</p>
     </div>
 
     <div ng-show="user.Company.InteropID == 'KGdYwZEsp2cX' || user.Company.InteropID == 'TZfF8Nq8HVwy' || user.Company.InteropID == 'nQakFSt9JRee'" style="background-color: #f0f7f0; padding: 15px; border-left: 5px solid #28a745; margin-bottom: 20px;">
         <h4><i class="fa fa-tag"></i> Made-To-Order Program</h4>
-        <p>To provide you with the greatest selection of garments and customization options, this store operates on a <strong>Made-To-Order (MTO)</strong> model. We do not maintain a pre-printed "shelf" stock; instead, each item is crafted specifically for your order.</p>
+        <p>To provide you with the greatest selection of garments and customization options, this store operates on a <strong>Made-To-Order (MTO)</strong> model. Each item is crafted specifically for your order.</p>
     </div>
 
     <hr />
@@ -78,20 +79,40 @@
         <hr />
     </div>
 
-    <h3>Payment, Tax & Returns</h3>
-    <p><strong>Payment:</strong> We accept VISA and MasterCard. Established organizations may apply for <strong><a href="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/NSG/docs/CreditApplication.pdf" target="_blank">Net Terms</a></strong>.</p>
+    <h3>Payment & Sales Tax</h3>
+    <p><strong>Payment Methods:</strong> We accept VISA and MasterCard. Charges appear as <em>Industries for the Blind and Visually Impaired, Inc.</em></p>
     
-    <p><strong>Sales Tax:</strong> We collect tax in 22 states where IBVI has a presence. Tax-exempt organizations should email certificates to <a href="mailto:service@nationalservicegear.org?subject=Tax Exempt Certificate Submission">service@nationalservicegear.org</a>.</p>
+    <p><strong>Purchase Orders:</strong> Established organizations may apply for <strong><a href="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/NSG/docs/CreditApplication.pdf" target="_blank">Net Terms</a></strong>.</p>
 
-    <p><strong>Returns:</strong> Stock items are subject to a 10% restocking fee. Custom/MTO items are non-returnable unless defective.</p>
+    <p><strong>Check Payments:</strong> To pay by check, please contact us at <a href="mailto:service@nationalservicegear.org?subject=Prepayment By Check Inquiry">service@nationalservicegear.org</a> to get set up. Please note that orders paid by check will not ship until we have received and processed your payment.</p>
+
+    <div ng-hide="user.Company.InteropID == 'HC3Rn6DYKK2d' || user.Company.InteropID == 'KGdYwZEsp2cX' || user.Company.InteropID == 'nQakFSt9JRee'">
+        <p><strong>Sales Tax:</strong> We collect tax in 22 states where IBVI has a presence. Tax-exempt organizations should email certificates to <a href="mailto:service@nationalservicegear.org?subject=Tax Exempt Certificate Submission">service@nationalservicegear.org</a> before ordering.</p>
+    </div>
+    <div ng-show="user.Company.InteropID == 'HC3Rn6DYKK2d' || user.Company.InteropID == 'KGdYwZEsp2cX' || user.Company.InteropID == 'nQakFSt9JRee'">
+        <p><strong>Sales Tax:</strong> This storefront is configured for tax-exempt government transactions.</p>
+    </div>
+
+    <hr />
+
+    <h3>Returns & Defective Items</h3>
+    <p><strong>Verify Order:</strong> Please count and inspect items immediately. Discrepancies must be reported within 5 business days of receipt.</p>
+    
+    <p ng-show="user.Company.InteropID == 'PLfeekEf8p56' || user.Company.InteropID == 'jTaqgnkZjUKc' || user.Company.InteropID == 'HC3Rn6DYKK2d'">
+        <strong>Stock Returns:</strong> Stock items must be returned within 30 days and be in unworn/unwashed condition. 
+        <span ng-hide="user.Company.InteropID == 'HC3Rn6DYKK2d'">Returns are subject to a 10% restocking fee.</span>
+        <span ng-show="user.Company.InteropID == 'HC3Rn6DYKK2d'">NPS stock returns are not subject to a restocking fee.</span>
+    </p>
+
+    <p><strong>Custom & MTO Items:</strong> Made-To-Order and Custom items cannot be returned for any reason except for manufacturer defects.</p>
+
+    <p><strong>Defective Items:</strong> If you receive a defective item, please notify us within 5 business days of receipt at <a href="mailto:service@nationalservicegear.org?subject=Defective Item Report">service@nationalservicegear.org</a> so we can issue a Return Authorization and replace your item promptly.</p>
 
     <hr />
 
     <h3>Need Assistance?</h3>
     <p>
-        <strong>Hours:</strong> Monday–Friday, 8:00 AM – 4:30 PM ET
-        <br />
-        <strong>Phone:</strong> 1.855.444.0847 (Toll-Free)
+        <strong>Hours:</strong> Monday–Friday, 8:00 AM – 4:30 PM ET | <strong>Phone:</strong> 1.855.444.0847
         <br />
         <strong>Email:</strong> 
         <a href="mailto:service@nationalservicegear.org?subject=National Service Gear Inquiry">service@nationalservicegear.org</a>
