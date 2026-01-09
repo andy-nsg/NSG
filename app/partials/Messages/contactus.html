@@ -1,126 +1,85 @@
-<div class="panel-body contactListStyle" style="font-family:sans-serif">
-  <h2>Terms of Service, Forms &amp; Other Fun Facts</h2>
-  <h3>Who We Are</h3>
-  <p>
-    At National Service Gear, we create custom-branded gear that empowers our customers to make a difference in the world. We are a provider of branded gear for AmeriCorps, National Park Service, Bureau of Land Management, Youth Conservation Corps, USDA FSIS, and we serve many other national and community service programs throughout the country. By serving our customers, we’re fulfilling our own mission to create meaningful employment opportunities that empower the blind and visually impaired.
-  </p>
-  <p>
-    National Service Gear is a brand of Industries for the Blind and Visually Impaired, Inc (IBVI). Our mission is to provide and grow meaningful employment opportunities for people who are blind or visually impaired. IBVI is an AbilityOne, non-profit organization dedicated to providing employment opportunities to blind professionals through the identification and fulfillment of customer needs. We serve a wide range of customers from the federal government and military installations, to Fortune 500 companies and small businesses. We provide these companies with the supplies they need to keep daily operations running smoothly. These supplies include anything and everything from office supplies to furniture and janitorial to tool and maintenance products.
-  </p>
-  <p>  
-    <a href="https://ibvi.org/about-us/" target="_blank">Learn more about IBVI</a>.
-  </p>
-  <h3>Payment information</h3>
-  <h4>Credit Cards</h4>
-  <p>
-    Charges on credit card statements will appear as Industries for the Blind and Visually Impaired, Inc. We accept prepayment by credit card: VISA and MasterCard. Please be aware that your credit card will be charged at the moment you submit your order (the transaction will be authorized and settled right away). If you have any questions regarding this or need to make other arrangements, please notify us right away and we'll work with you to fit your organization's needs.
-  </p>
-  <h4>Purchase Orders</h4>
-  <p>
-    We gladly accept Purchase Orders from established organizations. To set your organization up on Net/Credit Terms with us, please complete our <a href="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/NSG/docs/CreditApplication.pdf" target="_blank">Credit Application</a> and email it to us at <a href="mailto:service@nationalservicegear.org?subject=I%20Want%20To%20Get%20Setup%20On%20Terms%20With%20National%20Service%20Gear!">service@nationalservicegear.org</a>. The whole process takes about 2-10 business days depending on your trade references and how quickly they get back to us. Any questions or concerns, just give us a holler.
-  </p>
-  <h4>Check Payments</h4>
-  <p>
-    To pay by check, please contact us via email at <a href="mailto:service@nationalservicegear.org?subject=Prepayment%20By%20Check%20Please">service@nationalservicegear.org</a> to get set up. Please note that orders paid by check will not ship until we have received and processed your payment.
-  </p>
-  <h3>Sales Tax</h3>
-  <div class="bullet-list">
+<div class="panel-body contactListStyle" style="font-family:sans-serif; line-height: 1.6;">
+    <h2>Terms of Service, Forms & Helpful Information</h2>
+
+    <h3>Our Mission & Who We Are</h3>
     <p>
-      Because Industries for the Blind and Visually Impaired, Inc. has a physical presence ("footprint") in the following states, we are required to charge the appropriate state sales tax on orders shipped to:
+        <strong>National Service Gear</strong> is a brand of <strong>Industries for the Blind and Visually Impaired, Inc. (IBVI)</strong>. We are a proud AbilityOne® non-profit organization and an ISO 9001 certified company. 
     </p>
+    <p>
+        Every purchase you make directly supports our mission: to create and grow meaningful employment opportunities for professionals who are blind or visually impaired. By providing high-quality branded gear and essential supplies, we empower our customers to make a difference while fulfilling our own commitment to workforce inclusivity.
+        <br>
+        <a href="https://ibvi.org/about-us/" target="_blank">Learn more about the IBVI mission</a>.
+    </p>
+
+    <hr />
+
+    <div ng-show="user.Company.InteropID == 'PLfeekEf8p56'" style="background-color: #f9f9f9; padding: 15px; border-left: 5px solid #0056b3; margin-bottom: 20px;">
+        <h4><i class="fa fa-info-circle"></i> A Note on AmeriCorps Inventory</h4>
+        <p>Due to the evolving landscape of the AmeriCorps program, we are transitioning many items that were previously "Stock" into a <strong>Made-To-Order (MTO)</strong> model. This ensures a wider variety of gear remains available for your programs year-round.</p>
+    </div>
+
+    <div ng-show="user.Company.InteropID == 'HC3Rn6DYKK2d'" style="background-color: #fff4e5; padding: 15px; border-left: 5px solid #ffa500; margin-bottom: 20px;">
+        <h4><i class="fa fa-university"></i> National Park Service Inventory</h4>
+        <p>Items in this store are a combination of <strong>Made-To-Order (MTO)</strong> gear and <strong>Customer-Owned Inventory</strong>. Government-owned stock is managed specifically for NPS parks and centers to ensure consistent availability for your personnel.</p>
+    </div>
+
+    <div ng-show="user.Company.InteropID == 'KGdYwZEsp2cX' || user.Company.InteropID == 'TZfF8Nq8HVwy' || user.Company.InteropID == 'nQakFSt9JRee'" style="background-color: #f0f7f0; padding: 15px; border-left: 5px solid #28a745; margin-bottom: 20px;">
+        <h4><i class="fa fa-tag"></i> Made-To-Order Program</h4>
+        <p>To provide you with the greatest selection of garments and customization options, this store operates on a <strong>Made-To-Order (MTO)</strong> model. We do not maintain a pre-printed "shelf" stock; instead, each item is crafted specifically for your order.</p>
+    </div>
+
+    <hr />
+
+    <h3>Shipping & Processing</h3>
+    <p>
+        <strong>General Processing:</strong> All orders are processed within 2-3 business days. Orders received before 11 AM ET are entered the same day.
+    </p>
+
+    <p ng-show="user.Company.InteropID == 'PLfeekEf8p56' || user.Company.InteropID == 'jTaqgnkZjUKc' || user.Company.InteropID == 'HC3Rn6DYKK2d'">
+        <strong>Stock Items:</strong> Items currently in stock ship within 2-3 business days. If unavailable, they will be placed on backorder.
+    </p>
+
+    <p ng-show="user.Company.InteropID != 'jTaqgnkZjUKc'">
+        <strong>Production Timeline:</strong> MTO and Custom items ship based on the lead time listed in the product description. 
+    </p>
+
+    <hr />
+
+    <h3>Branding Techniques</h3>
+    <p>We use industry-leading equipment to ensure your gear looks professional and lasts:</p>
     <ul>
-      <li>
-        Arizona, California, Connecticut, District of Columbia, Florida, Illinois, Louisiana, Maryland, Massachusetts, Minnesota, Mississippi, Nevada, New Mexico, Ohio, Pennsylvania, South Carolina, Tennessee, Texas, Utah, Vermont, and Wisconsin.
-      </li>
+        <li><strong>Embroidery:</strong> High-density stitching for a premium, 3D finish on polos and hats.</li>
+        <li><strong>Screen Printing:</strong> The gold standard for large bulk orders.</li>
+        <li><strong>DTF (Direct to Film):</strong> Best for complex, full-color logos with a soft-feel finish.</li>
     </ul>
-    <br>
+
+    <hr />
+
+    <div ng-show="user.Company.InteropID != 'jTaqgnkZjUKc'">
+        <h3>Custom & Made-To-Order (MTO) Workflow</h3>
+        <ol>
+            <li><strong>Order Placement:</strong> Place your order via the webstore.</li>
+            <li><strong>Digital Proofing:</strong> We send a design proof via <em>Adobe Acrobat Request Signature</em> (New orders only).</li>
+            <li><strong>Approval:</strong> Once art is approved, the production lead time begins.</li>
+            <li><strong>Shipment:</strong> Your gear is finished, inspected, and shipped.</li>
+        </ol>
+        <p><em>Reorders of existing art skip the proofing process to speed up production.</em></p>
+        <hr />
+    </div>
+
+    <h3>Payment, Tax & Returns</h3>
+    <p><strong>Payment:</strong> We accept VISA and MasterCard. Established organizations may apply for <strong><a href="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/NSG/docs/CreditApplication.pdf" target="_blank">Net Terms</a></strong>.</p>
+    
+    <p><strong>Sales Tax:</strong> We collect tax in 22 states where IBVI has a presence. Tax-exempt organizations should email certificates to <a href="mailto:service@nationalservicegear.org?subject=Tax%20Exempt%20Certificate">service@nationalservicegear.org</a>.</p>
+
+    <p><strong>Returns:</strong> Stock items are subject to a 10% restocking fee. Custom/MTO items are non-returnable unless defective. Report any discrepancies within 5 business days.</p>
+
+    <hr />
+
+    <h3>Need Assistance?</h3>
     <p>
-      <em>**Tax-Exempt Organizations:** If your organization is tax-exempt in one of these states, you must provide us with a copy of your **State Tax Exempt Certificate** *before* we can process your order without charging sales tax. Please email them here to <a href="mailto:service@nationalservicegear.org?subject=Tax%20Exempt%20Certificate">service@nationalservicegear.org</a>.</em>
+        <strong>Hours:</strong> Mon–Fri, 8:00 AM – 4:30 PM ET | <strong>Phone:</strong> 1.855.444.0847
+        <br />
+        <strong>Email:</strong> <a href="mailto:service@nationalservicegear.org?subject=Webstore%20Inquiry%20-%20ID:%20{{user.Company.InteropID}}">service@nationalservicegear.org</a>
     </p>
-  </div>
-  <h3>Shipping and Processing</h3>
-  <p>
-    All orders will be processed in 2-3 business days. If your order is received before 10a CST, it will be entered that day and the process starts there. If the order is received after 10a CST, it will be entered the next business day and the process will begin there.
-  </p>
-  <p>
-    Any orders with expedited shipping will ship out via that method after processing. If the order is received after 10a CST, processing will begin the next business days. Same day processing available for stock items only by request with Customer Service - same day order processing must be requested before 10a CST by calling into Customer Service at 1.855.444.0847.
-  </p>
-  <p>
-    Orders originate from Southern Wisconsin. <a href="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/NSG/docs/UPSServiceMapping.pdf" target="_blank">Click here</a> to view a shipping map.
-  </p>
-  <p>
-    All packages ship UPS and cannot be delivered to a PO Box. If other arrangements need to be made with a different shipping method, please call Customer Service at 1.855.444.0847.
-  </p>
-  <h3>Placing An Order</h3>
-  <h4>To Order Stock Merchandise</h4>
-  <p>
-    Select products featured in the store are carried in Stock, pre-printed with the AmeriCorps logo and available immediately. These items are identified by the item number prefix 'C-'. To order Stock merchandise, simply pick your items and quantities, add to your shopping cart and proceed through the checkout process.
-  </p>
-  <h4>To Order Custom and Made-To-Order (MTO) Products</h4>
-  <p>
-    Are you looking for items that feature your organization or program name? We offer a wide variety of items with the option to add your own customized designs! We have many items that can be customized or branded to fit your needs. Some of our items have the option built in to brand or customize. If you see any item that you would like branded or customized that doesn't have that option, please contact us and we'll help you get your order placed. Custom orders typically ship out in 20-25 business days from final art approval.
-  </p>
-  <h4>To Obtain Quote or Pre-Order Invoice</h4>
-  <p>
-    We understand that you may need a written quote or pre-order invoice prior to ordering. If this is the case, please shoot us an email with the items you need and all pertinent information and we'll reply back with your required docs.
-  </p>
-  <h4>Verify Order</h4>
-  <p>
-    Please be sure to count your items as soon as they arrive. Any discrepancies must be made known to Customer Service within 5 business days from receipt of the order.
-  </p>
-  <h4>Other Ordering Information</h4>
-  <ul>
-    <li>
-      E-mail (preferred): You may e-mail your order to: <a href="mailto:service@nationalservicegear.org?subject=Here's%20My%20National%20Service%20Gear%20Order!">service@nationalservicegear.org</a><br />
-    </li>
-    <li>
-      Fax: You may fax your order to: 1.414.778.3041<br />
-    </li>
-    <li>
-      Phone: You may phone your order to us toll-free at 1.855.444.0847 - For Phone orders, our office is open Monday-Friday from 8a-4:30p ET
-    </li>
-  </ul>
-  <h3>Returns</h3>
-  <h4>Returning Stock, Purchase Power, or Digital Items</h4>
-  <p>
-    If you need to make a return, please contact Customer Service for a Return Authorization number - please contact us Monday – Friday, between the hours of 8a-4:30p ET at 855.444.0847 or email us at <a href="mailto:service@nationalservicegear.org?subject=Here's%20My%20National%20Service%20Gear%20Order!">service@nationalservicegear.org</a>.
-  </p>
-  <p>
-    Returns of Stock, Purchase Power, or Digital items must be made within 30 days of receipt of your order and are subject to a 10% restocking fee. Original freight will not be credited and you are responsible for return freight. However, if we have made an error in processing an order, we will make it right at no cost to the customer. Credit will be issued for the value of the returned items less restock fee and freight within 5-10 business days from the date your items are returned. We will reimburse you using the same method you used for payment. We do not accept returns for items worn, soiled or washed. Download our <a href="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/NSG/docs/ReturnForm.pdf" target="_blank">Return Form</a> and enclose this entire form with your return and pack the items in a sturdy box. Be sure to get a tracking number for your return shipment - we are not responsible for cost of merchandise lost in transit.
-  </p>
-  <h4>Custom Items</h4>
-  <p>
-    Custom items cannot be returned for any reason, except if it is defective. If the item is defective, please make it known to us within 5 business days of receipt of order. Unfortunately there are no exceptions to this so please communicate with us if you have any questions or concerns regarding this policy.
-  </p>
-  <h4>Defective Items</h4>
-  <p>
-    If you happen to receive a defective item, we're very sorry and want to be sure that your case is resolved immediately. Please let us know within 5 business days of receipt of your order so that we can issue you a Return Authorization number and replace, or refund in full, your defect in a timely manner. Merchandise received without a Return Authorization will not be credited.
-  </p>
-  <h3>Cancelling Orders</h3>
-  <p>
-    If you need to cancel an order for any reason, please contact us right away. Please be aware that restocking fees may apply. Orders for Custom Items can only be cancelled prior to art approval and restocking fees may apply.
-  </p>
-  <h3>Disclaimer</h3>
-  <ul>
-    <li>National Service Gear is a registered trademark and global brand of Industries for the Blind and Visually Impaired, Inc.</li>
-    <li>We may not be able to guarantee the availability of all stock products at all times</li>
-    <li>We reserve the right to change pricing on stock items as needed without notice</li>
-    <li><a href="https://ibvi.org/privacy-policy/" target="_blank">Privacy Statement</a></li>
-  </ul>
-  <h3>Forms</h3>
-  <ul>
-    <!-- <li>
-      To obtain a copy of these Terms, please click here: <strong><a href="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/NSG/docs/Terms.pdf" target="_blank">Terms of Service</a></strong>
-    </li>-->
-    <li>
-      <strong><a href="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/NSG/docs/ReturnForm.pdf" target="_blank">Return Form</a></strong>
-    </li>
-    <li>
-      <strong><a href="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/NSG/docs/CreditApplication.pdf" target="_blank">Credit Application</a></strong>
-    </li>
-  </ul>
-  <br>
-  <p>
-    Do you have any questions or need any help? Please call Customer Service Monday-Friday, between the hours of 8a-4:30p ET at 1.855.444.0847 or e-mail your question to <a href="mailto:service@nationalservicegear.org?subject=General%20Question%20about%20the%20National%20Service%20Gear%20Webstore">service@nationalservicegear.org</a>.
-  </p>
 </div>
