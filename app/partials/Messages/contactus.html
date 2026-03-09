@@ -24,17 +24,17 @@
 
     <hr />
 
-    <div ng-show="user.Company.InteropID == 'PLfeekEf8p56' || user.InteropID == 'PLfeekEf8p56'" style="background-color: #f9f9f9; padding: 15px; border-left: 5px solid #0056b3; margin-bottom: 20px;">
+    <div ng-show="user.Company.InteropID == 'AMC'" style="background-color: #f9f9f9; padding: 15px; border-left: 5px solid #0056b3; margin-bottom: 20px;">
         <h4><i class="fa fa-info-circle"></i> A Note on AmeriCorps Inventory</h4>
         <p>Due to the evolving landscape of the AmeriCorps program, we are transitioning many items that were previously "Stock" into a <strong>Made-To-Order (MTO)</strong> model. This ensures a wider variety of gear remains available for your programs year-round.</p>
     </div>
 
-    <div ng-show="user.Company.InteropID == 'HC3Rn6DYKK2d' || user.InteropID == 'HC3Rn6DYKK2d'" style="background-color: #fff4e5; padding: 15px; border-left: 5px solid #ffa500; margin-bottom: 20px;">
+    <div ng-show="user.Company.InteropID == 'NPS'" style="background-color: #fff4e5; padding: 15px; border-left: 5px solid #ffa500; margin-bottom: 20px;">
         <h4><i class="fa fa-university"></i> National Park Service Inventory</h4>
         <p>Items in this store are a combination of <strong>Made-To-Order (MTO)</strong> gear and <strong>Customer-Owned Inventory</strong> managed specifically for NPS parks and centers.</p>
     </div>
 
-    <div ng-show="user.Company.InteropID == 'KGdYwZEsp2cX' || user.Company.InteropID == 'TZfF8Nq8HVwy' || user.Company.InteropID == 'nQakFSt9JRee'" style="background-color: #f0f7f0; padding: 15px; border-left: 5px solid #28a745; margin-bottom: 20px;">
+    <div ng-show="user.Company.InteropID == 'BLM' || user.Company.InteropID == 'IBC' || user.Company.InteropID == 'YCC'" style="background-color: #f0f7f0; padding: 15px; border-left: 5px solid #28a745; margin-bottom: 20px;">
         <h4><i class="fa fa-tag"></i> Made-To-Order Program</h4>
         <p>To provide you with the greatest selection of garments and customization options, this store operates on a <strong>Made-To-Order (MTO)</strong> model. Each item is crafted specifically for your order.</p>
     </div>
@@ -44,11 +44,11 @@
     <h3>Shipping & Processing</h3>
     <p><strong>General Processing:</strong> All orders are processed within 2-3 business days. Orders received before 11 AM ET are entered the same day.</p>
     
-    <p ng-show="user.Company.InteropID == 'PLfeekEf8p56' || user.Company.InteropID == 'jTaqgnkZjUKc' || user.Company.InteropID == 'HC3Rn6DYKK2d'">
+    <p ng-show="user.Company.InteropID == 'AMC' || user.Company.InteropID == 'NSG' || user.Company.InteropID == 'NPS'">
         <strong>Stock Items:</strong> In-stock items ship within 2-3 business days. If unavailable, they will be placed on backorder.
     </p>
 
-    <p ng-show="user.Company.InteropID != 'jTaqgnkZjUKc'">
+    <p ng-show="user.Company.InteropID != 'NSG'">
         <strong>Production Timeline:</strong> MTO and Custom items ship based on the lead time listed in the product description. 
     </p>
 
@@ -67,7 +67,7 @@
 
     <hr />
 
-    <div ng-show="user.Company.InteropID != 'jTaqgnkZjUKc'">
+    <div ng-show="user.Company.InteropID != 'NSG'">
         <h3>Custom & Made-To-Order (MTO) Workflow</h3>
         <ol>
             <li><strong>Order Placement:</strong> Place your order via the webstore.</li>
@@ -86,7 +86,7 @@
 
     <p><strong>Check Payments:</strong> To pay by check, please contact us at <a href="mailto:service@nationalservicegear.org?subject=Prepayment By Check Inquiry">service@nationalservicegear.org</a> to get set up. Orders paid by check will not ship until payment is processed.</p>
 
-    <div ng-hide="user.Company.InteropID == 'HC3Rn6DYKK2d' || user.Company.InteropID == 'KGdYwZEsp2cX' || user.Company.InteropID == 'nQakFSt9JRee'" style="background-color: #f4f4f4; padding: 15px; border: 1px solid #ddd; border-radius: 4px; margin-bottom: 20px;">
+    <div ng-hide="user.Company.InteropID == 'NPS' || user.Company.InteropID == 'BLM' || user.Company.InteropID == 'YCC'" style="background-color: #f4f4f4; padding: 15px; border: 1px solid #ddd; border-radius: 4px; margin-bottom: 20px;">
         <h4>Sales Tax Disclosure</h4>
         <p>IBVI has a physical or economic presence (Nexus) in the following states and is required by law to collect sales tax on taxable purchases:</p>
         <p style="font-size: 0.9em; color: #555;">
@@ -95,7 +95,7 @@
         <p><em><strong>Tax-Exempt?</strong> Email your certificate to <a href="mailto:service@nationalservicegear.org?subject=Tax Exempt Certificate Submission">service@nationalservicegear.org</a> before ordering.</em></p>
     </div>
 
-    <div ng-show="user.Company.InteropID == 'HC3Rn6DYKK2d' || user.Company.InteropID == 'KGdYwZEsp2cX' || user.Company.InteropID == 'nQakFSt9JRee'">
+    <div ng-show="user.Company.InteropID == 'NPS' || user.Company.InteropID == 'BLM' || user.Company.InteropID == 'YCC'">
         <p><strong>Sales Tax:</strong> This storefront is configured for tax-exempt government transactions.</p>
     </div>
 
@@ -104,9 +104,9 @@
     <h3>Returns & Defective Items</h3>
     <p><strong>Inspection:</strong> Please count and inspect items immediately. Discrepancies must be reported within 5 business days of receipt.</p>
     
-    <p ng-show="user.Company.InteropID == 'PLfeekEf8p56' || user.Company.InteropID == 'jTaqgnkZjUKc' || user.Company.InteropID == 'HC3Rn6DYKK2d'">
+    <p ng-show="user.Company.InteropID == 'AMC' || user.Company.InteropID == 'NSG' || user.Company.InteropID == 'NPS'">
         <strong>Stock Returns:</strong> Stock items must be returned within 30 days in unworn condition. 
-        <span ng-hide="user.Company.InteropID == 'HC3Rn6DYKK2d'">A 10% restocking fee applies.</span>
+        <span ng-hide="user.Company.InteropID == 'NPS'">A 10% restocking fee applies.</span>
     </p>
 
     <p><strong>Custom & MTO Items:</strong> These items cannot be returned for any reason except for manufacturer defects.</p>
