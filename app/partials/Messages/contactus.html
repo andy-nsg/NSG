@@ -45,11 +45,11 @@
     <p><strong>General Processing:</strong> All orders are processed within 2-3 business days. Orders received before 11 AM ET are entered the same day.</p>
     
     <p ng-show="user.Company.InteropID == 'AMC' || user.Company.InteropID == 'NSG' || user.Company.InteropID == 'NPS'">
-        <strong>Stock Items:</strong> In-stock items ship within 2-3 business days. If unavailable, they will be placed on backorder.
+      <strong>Stock Items:</strong> In-stock items ship within 2-3 business days. If unavailable, they will be placed on backorder.
     </p>
 
-    <p ng-show="user.Company.InteropID != 'NSG'">
-        <strong>Production Timeline:</strong> MTO and Custom items ship based on the lead time listed in the product description. 
+    <p ng-show="user.Company.InteropID == 'AMC' || user.Company.InteropID == 'NPS' || user.Company.InteropID == 'BLM' || user.Company.InteropID == 'IBC' || user.Company.InteropID == 'YCC'">
+      <strong>Production Timeline:</strong> MTO and Custom items ship based on the lead time listed in the product description. 
     </p>
 
     <hr />
@@ -67,7 +67,7 @@
 
     <hr />
 
-    <div ng-show="user.Company.InteropID != 'NSG'">
+    <div ng-show="user.Company.InteropID == 'AMC' || user.Company.InteropID == 'NPS' || user.Company.InteropID == 'BLM' || user.Company.InteropID == 'IBC' || user.Company.InteropID == 'YCC'">
         <h3>Custom & Made-To-Order (MTO) Workflow</h3>
         <ol>
             <li><strong>Order Placement:</strong> Place your order via the webstore.</li>
@@ -86,7 +86,7 @@
 
     <p><strong>Check Payments:</strong> To pay by check, please contact us at <a href="mailto:service@nationalservicegear.org?subject=Prepayment By Check Inquiry">service@nationalservicegear.org</a> to get set up. Orders paid by check will not ship until payment is processed.</p>
 
-    <div ng-hide="user.Company.InteropID == 'NPS' || user.Company.InteropID == 'BLM' || user.Company.InteropID == 'YCC'" style="background-color: #f4f4f4; padding: 15px; border: 1px solid #ddd; border-radius: 4px; margin-bottom: 20px;">
+    <div ng-show="user.Company.InteropID == 'AMC' || user.Company.InteropID == 'IBC' || user.Company.InteropID == 'NSG'" style="background-color: #f4f4f4; padding: 15px; border: 1px solid #ddd; border-radius: 4px; margin-bottom: 20px;">
         <h4>Sales Tax Disclosure</h4>
         <p>IBVI has a physical or economic presence (Nexus) in the following states and is required by law to collect sales tax on taxable purchases:</p>
         <p style="font-size: 0.9em; color: #555;">
