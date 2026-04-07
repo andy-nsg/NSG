@@ -1,0 +1,45 @@
+<div class="billing-info-wrapper" style="font-family: sans-serif; line-height: 1.6;">
+    <h3>Payment Information</h3>
+    
+    <h4>Credit Cards</h4>
+    <p>
+        Charges on credit card statements will appear as <strong>Industries for the Blind and Visually Impaired, Inc.</strong> We accept prepayment by credit card: <strong>VISA and MasterCard</strong>. Please be aware that your credit card will be charged at the moment you submit your order (the transaction will be authorized and settled right away). If you have any questions regarding this or need to make other arrangements, please notify us right away and we'll work with you to fit your organization's needs.
+    </p>
+
+    <h4>Purchase Orders</h4>
+    <p>
+        We gladly accept Purchase Orders from established organizations. To set your organization up on Net/Credit Terms with us, please complete our <strong><a href="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/NSG/docs/CreditApplication.pdf" target="_blank">Credit Application</a></strong> and email it to <strong><a href="mailto:service@nationalservicegear.org?subject=I%20Want%20To%20Get%20Setup%20On%20Terms%20With%20National%20Service%20Gear!">service@nationalservicegear.org</a></strong>. The process typically takes 2-10 business days.
+    </p>
+
+    <h4>Check Payments</h4>
+    <p>
+        To pay by check, please contact us at <strong><a href="mailto:service@nationalservicegear.org?subject=Prepayment%20By%20Check%20Please">service@nationalservicegear.org</a></strong> to get set up. Please note that orders paid by check will not ship until we have received and processed your payment.
+    </p>
+
+    <hr />
+
+    <h3>Sales Tax</h3>
+
+    <div class="tax-standard" ng-show="user.Company.InteropID == 'AMC' || user.Company.InteropID == 'NSG' || user.Company.InteropID == 'IBC'">
+        <p>
+            Because <strong>Industries for the Blind and Visually Impaired, Inc.</strong> has a physical or economic presence ("Nexus") in the following states, we are required by law to collect sales tax:
+        </p>
+        <ul>
+            <li>
+                AZ, CA, CO, CT, DC, FL, GA, IL, LA, MD, MA, MN, MS, NV, NM, OH, PA, SC, TN, TX, UT, VT, and WI.
+            </li>
+        </ul>
+        <p style="margin-top: 15px; background-color: #f9f9f9; padding: 10px; border-left: 4px solid #004a99;">
+            <em><strong>Tax-Exempt Organizations:</strong> Please email your <strong>State Tax Exempt Certificate</strong> to <a href="mailto:service@nationalservicegear.org?subject=Tax%20Exempt%20Certificate">service@nationalservicegear.org</a> <strong>before</strong> placing your order to ensure tax is not applied.</em>
+        </p>
+    </div>
+
+    <div class="tax-govt" ng-show="user.Company.InteropID == 'NPS' || user.Company.InteropID == 'BLM' || user.Company.InteropID == 'YCC'">
+        <p>
+            <strong>Government Tax-Exempt Status:</strong> This storefront is configured specifically for tax-exempt government transactions. 
+        </p>
+        <p>
+            If you are using a Government Purchase Card (GPC) or official funds, tax will not be applied to this order. If you see tax appearing in your cart in error, please contact us at <strong>1.855.444.0847</strong> before submitting your order.
+        </p>
+    </div>
+</div>
