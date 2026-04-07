@@ -1,62 +1,67 @@
-<div class="panel-category-list no-panels" ng-show="currentCategory.SubCategories.length">
+<div class="panel-category-list no-panels" ng-show="currentCategory.SubCategories.length > 0">
 
-  <div ng-show="false" class="alert alert-info" style="margin: 15px; text-align: center;">
-    IBVI will be closed on Friday, July 3rd for the holiday. Orders will resume processing on Monday, July 6th.
+  <div ng-show="true" style="margin: 15px 15px 25px 15px; padding: 15px; background-color: #fffbe6; border: 1px solid #ffe58f; border-left: 5px solid #faad14; border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+    <h4 style="margin-top: 0; color: #ad6800; font-size: 1.1em;">
+      <i class="fa fa-bullhorn" aria-hidden="true"></i> Holiday Schedule Update
+    </h4>
+    <p style="margin-bottom: 0; color: #333; font-size: 1.05em;">
+      IBVI will be closed on Friday, July 3rd. Orders will resume processing on Monday, July 6th.
+    </p>
   </div>
 
   <loadingindicator ng-show="categoryLoadingIndicator" title="{{'Please wait while we fetch all categories' | r | xlat}}" />
-  
+
   <nav class="nav 451_lbl_subcatlist">
     <ul>
 
       <li class="col-lg-3 col-md-3 col-sm-4 col-xs-4 col-xxs-4" ng-repeat="c in currentCategory.SubCategories">
         <div>
-          <a ng-href="catalog/{{c.InteropID}}">
-            <figure ng-show="c.Image.URL">
-              <img class="img-responsive" ng-src="{{c.Image.URL}}" />
+          <a ng-href="catalog/{{c.InteropID}}" aria-label="{{c.Name}}">
+            <figure ng-show="c.Image.URL !== null">
+              <img class="img-responsive" ng-src="{{c.Image.URL}}" alt="{{c.Name}}" />
             </figure>
-            <div class="empty" ng-show="!c.Image.URL">
-              <span class="fa empty"><i class="fa fa-camera"></i></span>
+            <div class="empty" ng-show="c.Image.URL === null">
+              <span class="fa empty" aria-hidden="true"><i class="fa fa-camera"></i></span>
             </div>
           </a>
         </div>
       </li>
 
-      <div ng-show="(currentCategory.Name === {{'Categories' | r | xlat}})">
+      <div ng-show="currentCategory.Name === {{'Categories' | r | xlat}}">
 
         <div ng-if="user.Company.InteropID === 'NSG'">
           <li class="col-lg-3 col-md-3 col-sm-4 col-xs-4 col-xxs-4">
             <div>
-              <a ng-href="https://www.nsgcustom.org/" href="https://www.nsgcustom.org/">
-                <img class="img-responsive" ng-src="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/NSG/images/NSG-Custom-2020-500.jpg" src="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/NSG/images/NSG-Custom-2020-500.jpg" alt="National Service Gear Custom Catalog Webstore" />
+              <a ng-href="https://www.nsgcustom.org/" href="https://www.nsgcustom.org/" aria-label="National Service Gear Custom Catalog Webstore">
+                <img class="img-responsive" ng-src="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/NSG/images/NSG-Custom-2020-500.jpg" src="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/NSG/images/NSG-Custom-2020-500.jpg" alt="" />
               </a>
             </div>
           </li>
           <li class="col-lg-3 col-md-3 col-sm-4 col-xs-4 col-xxs-4">
             <div>
-              <a ng-href="https://americorps.nationalservicegear.org/store/catalog" href="https://americorps.nationalservicegear.org/store/catalog">
-                <img class="img-responsive" ng-src="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/AmeriCorps/images/AmeriCorps-2020-500.jpg" src="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/AmeriCorps/images/AmeriCorps-2020-500.jpg" alt="Official AmeriCorps Gear Webstore" />
+              <a ng-href="https://americorps.nationalservicegear.org/store/catalog" href="https://americorps.nationalservicegear.org/store/catalog" aria-label="Official AmeriCorps Gear Webstore">
+                <img class="img-responsive" ng-src="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/AmeriCorps/images/AmeriCorps-2020-500.jpg" src="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/AmeriCorps/images/AmeriCorps-2020-500.jpg" alt="" />
               </a>
             </div>
           </li>
           <li class="col-lg-3 col-md-3 col-sm-4 col-xs-4 col-xxs-4">
             <div>
-              <a ng-href="https://nps.nationalservicegear.org/store/catalog" href="https://nps.nationalservicegear.org/store/catalog">
-                <img class="img-responsive" ng-src="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/NationalParkService/images/NPS-2000-500.jpg" src="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/NationalParkService/images/NPS-2000-500.jpg" alt="National Park Service Webstore" />
+              <a ng-href="https://nps.nationalservicegear.org/store/catalog" href="https://nps.nationalservicegear.org/store/catalog" aria-label="National Park Service Webstore">
+                <img class="img-responsive" ng-src="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/NationalParkService/images/NPS-2000-500.jpg" src="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/NationalParkService/images/NPS-2000-500.jpg" alt="" />
               </a>
             </div>
           </li>
           <li class="col-lg-3 col-md-3 col-sm-4 col-xs-4 col-xxs-4">
             <div>
-              <a ng-href="https://blm.nationalservicegear.org/store/catalog" href="https://blm.nationalservicegear.org/store/catalog">
-                <img class="img-responsive" ng-src="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/BLM/images/BLM-500.jpg" src="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/BLM/images/BLM-500.jpg" alt="Bureau of Land Management Webstore" />
+              <a ng-href="https://blm.nationalservicegear.org/store/catalog" href="https://blm.nationalservicegear.org/store/catalog" aria-label="Bureau of Land Management Webstore">
+                <img class="img-responsive" ng-src="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/BLM/images/BLM-500.jpg" src="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/BLM/images/BLM-500.jpg" alt="" />
               </a>
             </div>
           </li>
           <li class="col-lg-3 col-md-3 col-sm-4 col-xs-4 col-xxs-4">
             <div>
-              <a ng-href="https://youthconservationcorps.nationalservicegear.org/store/catalog" href="https://youthconservationcorps.nationalservicegear.org/store/catalog">
-                <img class="img-responsive" ng-src="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/YCC/images/YCC-2020-500.jpg" src="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/YCC/images/YCC-2020-500.jpg" alt="Youth Conservation Corps Webstore" />
+              <a ng-href="https://youthconservationcorps.nationalservicegear.org/store/catalog" href="https://youthconservationcorps.nationalservicegear.org/store/catalog" aria-label="Youth Conservation Corps Webstore">
+                <img class="img-responsive" ng-src="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/YCC/images/YCC-2020-500.jpg" src="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/YCC/images/YCC-2020-500.jpg" alt="" />
               </a>
             </div>
           </li>
@@ -65,8 +70,9 @@
         <div ng-if="user.Company.InteropID === 'NPS'">
           <li class="col-lg-3 col-md-3 col-sm-4 col-xs-4 col-xxs-4">
             <div>
-              <a ng-href="https://youthconservationcorps.nationalservicegear.org/" href="https://youthconservationcorps.nationalservicegear.org/" target="_blank" onclick="alert('You will now be directed to the Youth Conservation Corps webstore, in a new tab or window, which is separate from the NPS store. Both stores are run by National Service Gear by Industries for the Blind however both require unique logins.');">
-                <img class="img-responsive" ng-src="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/YCC/images/YCC-400.jpg" src="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/YCC/images/YCC-400.jpg" alt="Click here to access the Youth Conservation Corps Webstore" />
+              <a ng-href="https://youthconservationcorps.nationalservicegear.org/" href="https://youthconservationcorps.nationalservicegear.org/" target="_blank" onclick="alert('You will now be directed to the Youth Conservation Corps webstore, in a new tab or window, which is separate from the NPS store. Both stores are run by National Service Gear by Industries for the Blind however both require unique logins.');" aria-label="Youth Conservation Corps Webstore">
+                <img class="img-responsive" ng-src="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/YCC/images/YCC-400.jpg" src="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/YCC/images/YCC-400.jpg" alt="" />
+                <span class="sr-only"> (opens in a new window)</span>
               </a>
             </div>
           </li>
