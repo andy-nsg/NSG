@@ -1,0 +1,101 @@
+<div class="panel-body FontSmall">
+
+  <div style="background-color: #fff4e5; border-left: 5px solid #ffa500; padding: 15px; margin-bottom: 20px; border-radius: 4px;">
+    <h4 style="margin-top: 0; color: #ad6800;">
+      <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> UPS Shipping Restriction
+    </h4>
+    <p style="margin-bottom: 0;">
+      Please do not enter a P.O. Box for your shipping address. All orders ship via UPS, and UPS will not deliver to P.O. Boxes.
+    </p>
+  </div>
+
+  <div ng-if="user.Company.InteropID === 'AMC'">
+    <p>
+      All orders with a subtotal of $50 or more and shipping within the contiguous 48 U.S. states, will get UPS Ground shipping at no charge. All other shipping methods, including expedited, will receive our discounted UPS rates.
+    </p>
+    <p>
+      If selecting an expedited shipping method, please be aware that there will still be a 2-3 business day processing period before we ship your order. If your order is received before 10a CST, it will be entered that day and the processing time starts there. If the order is received after 10a CST, it will be entered the next business day and the processing time will begin there.
+    </p>
+    <p>
+      If you need to make arrangements to ship anything other than UPS, please send us an email to <a href="mailto:service@nationalservicegear.org?subject=NSG%20Shipping%20Options%20Request">service@nationalservicegear.org</a> before submitting your order.
+    </p>
+    <p>
+      Stock orders originate from Southern Wisconsin. <a href="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/NSG/docs/UPSServiceMapping.pdf" target="_blank">Click here<span class="sr-only"> (opens in a new window)</span></a> to view a shipping map.
+    </p>
+  </div>
+
+  <div ng-if="user.Company.InteropID === 'IBC'">
+    <p>
+      If you need to make arrangements to ship anything other than UPS, please send us an email to <a href="mailto:service@nationalservicegear.org?subject=IBVI%20Custom%20Order%20Shipping%20Options%20Request">service@nationalservicegear.org</a> before submitting your order.
+    </p>
+  </div>
+
+  <div ng-if="user.Company.InteropID === 'NPS'">
+  <p>
+    If you need to make arrangements to ship anything other than UPS, please send us an email to <a href="mailto:service@nationalservicegear.org?subject=NPS%20Shipping%20Options%20Request">service@nationalservicegear.org</a> before submitting your order.
+  </p>
+  
+  <h4 style="margin-top: 25px;">Shipping Rates</h4>
+  <p>Shipping and Handling rates are a flat fee determined by the total weight of your order.</p>
+  
+  <table class="table table-striped table-bordered table-hover" style="margin-top: 15px; margin-bottom: 20px; background-color: #fff;">
+    <caption class="sr-only">Shipping Weight Rate Table</caption>
+    <thead>
+      <tr class="info">
+        <th scope="col">Weight (Lbs)</th>
+        <th scope="col">Flat Rate</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>0-5</td>
+        <td>$12.81</td>
+      </tr>
+      <tr>
+        <td>5.01-10</td>
+        <td>$16.46</td>
+      </tr>
+      <tr>
+        <td>10.01-20</td>
+        <td>$20.74</td>
+      </tr>
+      <tr>
+        <td>20.01-50</td>
+        <td>$38.17</td>
+      </tr>
+      <tr>
+        <td>50.01-100</td>
+        <td>$63.21</td>
+      </tr>
+      <tr>
+        <td>100.01-200</td>
+        <td>$104.39</td>
+      </tr>
+      <tr>
+        <td>200.01-300</td>
+        <td>$145.23</td>
+      </tr>
+      <tr>
+        <td>300.01-500</td>
+        <td>$206.43</td>
+      </tr>
+      <tr>
+        <td>500+ (Requires Freight)</td>
+        <td>$795.61</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+  <div ng-if="user.Company.InteropID === 'YCC'">
+    <p>
+      If you need to make arrangements to ship anything other than UPS, please send us an email to <a href="mailto:service@nationalservicegear.org?subject=NSG%20Shipping%20Options%20Request">service@nationalservicegear.org</a> before submitting your order.
+    </p>
+
+    <h4 style="margin-top: 20px;">Freight Shipping Procedure</h4>
+    <ul>
+      <li>If your total shipping weight is over 150 pounds, please select the "NPS - Over 150# Weight Shipping" option. This will pass $0 shipping on your order and Customer Service will recalculate freight shipping and email you the cost. We will then apply that cost to your order and payment method.</li>
+    </ul>
+  </div>
+
+</div>

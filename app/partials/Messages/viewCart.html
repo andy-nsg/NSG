@@ -1,0 +1,66 @@
+<div class="panel panel-primary" ng-show="user.Company.InteropID === 'AMC' || user.Company.InteropID === 'IBC' || user.Company.InteropID === 'NPS' || user.Company.InteropID === 'YCC'">
+  <div class="panel-heading">
+    <h2 class="panel-title panel-primary">
+      {{ 'Shipping and Processing' | r | xlat }}
+    </h2>
+  </div>
+  <div class="panel-body FontSmall">
+
+    <div ng-if="user.Company.InteropID === 'AMC'">
+      <p>
+        All orders will be processed in 2-3 business days. If your order is received before 10a CST, it will be entered that day and the process starts there. If the order is received after 10a CST, it will be entered the next business day and the process will begin there.
+      </p>
+      <p>
+        Any orders with expedited shipping will ship out via that method after processing. If the order is received after 10a CST, processing will begin the next business days. Same day processing available for stock items only by request with Customer Service - same day order processing must be requested before 10a CST by calling into Customer Service at 1.855.444.0847.
+      </p>
+      <p>
+        Orders originate from Southern Wisconsin. <a href="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/AmeriCorps/docs/UPSServiceMapping.pdf" target="_blank">Click here<span class="sr-only"> (opens in a new window)</span></a> to view a shipping map.
+      </p>
+      <p>
+        All packages ship UPS and cannot be delivered to a PO Box. If other arrangements need to be made with a different shipping method, please call Customer Service at 1.855.444.0847.
+      </p>
+      <p>
+        All orders with a subtotal of $50 or more and shipping within the contiguous 48 U.S. states, will get UPS Ground shipping at no charge. All other shipping methods, including expedited, will receive our discounted UPS rates.
+      </p>
+    </div>
+
+    <div ng-if="user.Company.InteropID === 'IBC'">
+      <ul>
+        <li>General Processing: All orders are processed within 2-3 business days. Orders received before 11 AM ET are entered the same day.</li>
+        <li>Stock Items: In-stock items ship within 2-3 business days. If unavailable, they will be placed on backorder.</li>
+        <li>Production Timeline: MTO and Custom items ship based on the lead time listed in the product description.</li>
+      </ul>
+    </div>
+
+    <div ng-if="user.Company.InteropID === 'NPS'">
+      <p>
+        All orders will be processed in 2-3 business days. If your order is received before 10a CST, it will be entered that day and the process starts there. If the order is received after 10a CST, it will be entered the next business day and the process will begin there.
+      </p>
+      <p>
+        Any orders with expedited shipping will ship out via that method after processing. If the order is received after 10a CST, processing will begin the next business days. Same day processing available for stock items only by request with Customer Service - same day order processing must be requested before 10a CST by calling into Customer Service at 1.855.444.0847.
+      </p>
+      <p>
+        Orders originate from Southern Wisconsin. <a href="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/AmeriCorps/docs/UPSServiceMapping.pdf" target="_blank">Click here<span class="sr-only"> (opens in a new window)</span></a> to view a shipping map.
+      </p>
+      <p>
+        All packages ship UPS and cannot be delivered to a PO Box. If other arrangements need to be made with a different shipping method, please call Customer Service at 1.855.444.0847.
+      </p>
+    </div>
+
+    <div ng-if="user.Company.InteropID === 'YCC'">
+      <p>
+        Any orders with expedited shipping will ship out via that method after processing. If the order is received after 10a CST, processing will begin the next business days. Same day processing available for stock items only by request with Customer Service - same day order processing must be requested before 10a CST by calling into Customer Service at 1.855.444.0847.
+      </p>
+      <p>
+        If the order has Made-To-Order items then the items will ship out via the method selected after the production of the items.
+      </p>
+      <p>
+        Orders originate from Southern Wisconsin. <a href="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/AmeriCorps/docs/UPSServiceMapping.pdf" target="_blank">Click here<span class="sr-only"> (opens in a new window)</span></a> to view a shipping map.
+      </p>
+      <p>
+        All packages ship UPS and cannot be delivered to a PO Box. If other arrangements need to be made with a different shipping method, please call Customer Service at 1.855.444.0847.
+      </p>
+    </div>
+
+    </div>
+</div>
