@@ -1,3 +1,4 @@
+/* Master Configuration Variables */
 :root {
   --brand-primary: #102c52;
   --brand-hover: #102c52;
@@ -12,6 +13,14 @@
   --nav-link-hover: #ffffff;
   --nav-left-arrow: #ffffff;
 }
+
+/* Fixes left/right scroll bar */
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 body {
   font-family: "Raleway", sans-serif;
   font-size: 14px;
@@ -35,7 +44,7 @@ a:focus {
   list-style-type: disc !important;
   padding-left: 20px !important;
   margin-left: 0 !important;
-  list-style-position: outside !important; 
+  list-style-position: outside !important;
   display: block !important;
 }
 
@@ -67,58 +76,58 @@ a:focus {
 [class*="451qa_prod_item"] > .col-xs-12.text-left {
   display: flex;
   flex-direction: column;
-  flex-grow: 1; 
+  flex-grow: 1;
 }
 
 /* 3. PANEL BODY: Make it fill the column */
 [class*="451qa_prod_item"] .panel-body {
   display: flex;
   flex-direction: column;
-  flex-grow: 1; 
+  flex-grow: 1;
   height: 100%;
 }
 
 /* 4. CONTENT WRAPPER: Make the div holding the ID/Price/Desc grow */
 /* This is the anonymous <div> after the product name (<h4>) */
 [class*="451qa_prod_item"] .panel-body > div {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1; /* Key for alignment! Fills gap below Name */
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Key for alignment! Fills gap below Name */
 }
 
 /* 5. PRODUCT ID (Item #): Pushes itself (and the Price below it) to the bottom */
 /* This ensures the ID and Price always sit right above the button, creating uniformity. */
 [class*="451qa_prod_item"] .text-info {
-    margin-top: auto !important; 
-    padding-bottom: 5px; /* Adds a little separation from the Price/Button area */
+  margin-top: auto !important;
+  padding-bottom: 5px; /* Adds a little separation from the Price/Button area */
 }
 
 /* 6. BUTTON: Pushes itself to the very bottom of the card */
 [class*="451qa_prod_item"] .btn-block {
-    margin-top: auto; 
+  margin-top: auto;
 }
 
 /* 7. OPTIONAL: Standardize Product Name height (Recommended) */
 /* Ensures 1-line names don't make the ID/Price shift up, filling the space */
 [class*="451qa_prod_item"] h4.text-center {
-    min-height: 40px; /* Adjust based on your font size/line height */
-    display: flex;
-    align-items: center; 
-    justify-content: center;
+  min-height: 40px; /* Adjust based on your font size/line height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 /* 8. NEW: Ensure Price Line has a Fixed Height */
 /* This maintains vertical position for the Product ID above it. */
 [class*="451qa_prod_item"] h4[ng-if] {
-    min-height: 25px; /* Adjust this to match the height of one line of your price font */
-    line-height: 25px; /* Ensures vertical consistency */
+  min-height: 25px; /* Adjust this to match the height of one line of your price font */
+  line-height: 25px; /* Ensures vertical consistency */
 }
 
 /* 9. NEW: HIDE TEXT BUT KEEP SPACE when price is $0 */
 [class*="451qa_prod_item"] .price-placeholder {
-    /* Hide the text content but preserve the box model (height and padding) */
-    color: transparent !important;
-    visibility: hidden; 
+  /* Hide the text content but preserve the box model (height and padding) */
+  color: transparent !important;
+  visibility: hidden;
 }
 
 /* Main Home Page Banner */
@@ -126,9 +135,6 @@ a:focus {
 .jumbotron {
   margin: 45px 0px -45px;
   display: none;
-}
-
-.jumbotron {
   padding: 0px;
 }
 
@@ -146,20 +152,9 @@ a:focus {
   color: #000000;
 }
 
-/*Changes size of images on category page*/
-.thumbnail img {
-  max-height: 200px;
-  /*must match smallest size of thumbnail image*/
-  max-width: 100%;
-  margin: 0 auto 15px;
-}
-
 /* Edit homepage Alert/Message header bar */
 .panel-primary .alert-message .panel-title {
   background-color: #e04f4f;
-}
-
-.panel-primary .alert-message .panel-title {
   color: #ffffff;
 }
 
@@ -173,21 +168,13 @@ a:focus {
 /* End udpate home alert bar attributes */
 
 /* Check Out Buttons */
-.checkoutShopButton {
-  font-size: 1.8vmax;
-  text-transform: uppercase;
-}
-
+.checkoutShopButton,
 .checkoutCancelButton {
   font-size: 1.8vmax;
   text-transform: uppercase;
 }
 
-.checkoutSaveButton {
-  font-size: 1.5vmax;
-  text-transform: uppercase;
-}
-
+.checkoutSaveButton,
 .checkoutCheckOutButton {
   font-size: 1.5vmax;
   text-transform: uppercase;
@@ -280,23 +267,6 @@ a:focus {
   max-width: 500px;
 }
 
-/* Home Page Shadows */
-/* .jumbotronInnerShadow {
-  -webkit-box-shadow: inset 0px 0px 20px 10px rgba(0, 0, 0, 0.1);
-  -moz-box-shadow: inset 0px 0px 20px 10px rgba(0, 0, 0, 0.1);
-  box-shadow: inset 0px 0px 20px 10px rgba(0, 0, 0, 0.1);
-} */
-/* Navbar Drop Shadow */
-/* .navbarDropShadow {
-  -webkit-box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.42);
-  -moz-box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.42);
-  box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.42);
-}
-.navbarInnerShadow {
-  -webkit-box-shadow: inset 0px 0px 15px 5px rgba(0, 0, 0, 0.1);
-  -moz-box-shadow: inset 0px 0px 15px 5px rgba(0, 0, 0, 0.1);
-  box-shadow: inset 0px 0px 15px 5px rgba(0, 0, 0, 0.1);
-} */
 /* Adjust product list border/backgrounds $ak */
 .panel-product-list {
   border-radius: 0px;
@@ -311,10 +281,6 @@ a:focus {
 
 .panel-product-list .aLinkSpacingFix {
   color: #333333;
-}
-
-.panel-product-list .well {
-  border-color: transparent;
 }
 
 /* This counters the spacing issue on the product list page with <a> links */
@@ -353,13 +319,6 @@ a:focus {
   position: fixed !important;
 }
 
-/* Alters image size on main product page - overrides same class in bootstrap-451.css */
-.product-image-large {
-  margin: 0 auto;
-  max-height: 360px;
-  max-width: 100%;
-}
-
 /* Lightbox Scroll Bar */
 .scrollLightbox {
   width: auto;
@@ -374,10 +333,6 @@ a:focus {
   font-style: italic;
   text-align: left;
   width: 85%;
-  /*margin-top: 5px;
-    margin-right: 5px;
-    margin-bottom: 15px;
-    margin-left: 10px;*/
   padding-top: 5px;
   padding-right: 5px;
   padding-bottom: 15px;
@@ -397,7 +352,6 @@ a:focus {
   padding-right: 5px;
   padding-bottom: 15px;
   padding-left: 10px;
-  /*text-shadow: 2px 2px 4px #A1A1A1;*/
 }
 
 /*Used when we have tech difficulties*/
@@ -413,14 +367,11 @@ a:focus {
   padding-right: 5px;
   padding-bottom: 15px;
   padding-left: 10px;
-  /*text-shadow: 2px 2px 4px #A1A1A1;*/
 }
 
 /* Category Message Settings */
 .categoryPanel {
-  /* border-left: 5px solid #000000; */
   max-width: 1000px;
-  /* padding-left: 175px;*/
   margin-left: auto;
   margin-right: auto;
 }
@@ -430,58 +381,27 @@ a:focus {
   list-style-type: disc;
 }
 
-.NSGfooter {
-  /*margin-right: 5em;
-    margin-left: 4em;
-    margin-top: 0px;
-    margin-bottom: 0px;*/
-  /*font-size: 10pt;*/
+.NSGfooter,
+.NSGxsFooter,
+.NSGxxsFooter {
   margin-top: 0px;
   clear: both;
   background-color: #dedede;
   height: 175px;
   width: 100%;
   bottom: 0px;
+}
+
+.NSGfooter {
   padding: 30px 0px;
-  /*padding-top: 5em;
-    padding-right: 3px;
-    padding-bottom: 3px;
-    padding-left: 5px;*/
-  /*background-image: url(Images/IB.png);
-    background-repeat: no-repeat;
-    background-position: 5px 5px;*/
 }
 
 .NSGxsFooter {
-  margin-top: 0px;
-  clear: both;
-  background-color: #dedede;
-  height: 175px;
-  bottom: 0px;
   padding: 45px 0px;
-  /*padding-top: 5em;
-    padding-right: 3px;
-    padding-bottom: 3px;
-    padding-left: 5px;*/
-  /*background-image: url(Images/IB.png);
-    background-repeat: no-repeat;
-    background-position: 5px 5px;*/
 }
 
 .NSGxxsFooter {
-  margin-top: 0px;
-  clear: both;
-  background-color: #dedede;
-  height: 175px;
-  bottom: 0px;
   padding: 55px 0px;
-  /*padding-top: 5em;
-    padding-right: 3px;
-    padding-bottom: 3px;
-    padding-left: 5px;*/
-  /*background-image: url(Images/IB.png);
-    background-repeat: no-repeat;
-    background-position: 5px 5px;*/
 }
 
 .footLeft {
@@ -575,29 +495,24 @@ a:focus {
   transition: all ease-in-out 0.5s;
 }
 
-.socialFooter>.text-left>.iconTrans {
+.socialFooter > .text-left > .iconTrans {
   color: #ffffff;
-  /*E04F4F*/
 }
 
-.socialFooter>.text-left>.iconTwitter:hover {
+.socialFooter > .text-left > .iconTwitter:hover {
   color: #00aced !important;
-  /* 2B2B2B */
 }
 
-.socialFooter>.text-left>.iconFacebook:hover {
+.socialFooter > .text-left > .iconFacebook:hover {
   color: #3b5998 !important;
-  /* 2B2B2B */
 }
 
-.socialFooter>.text-left>.iconInstagram:hover {
+.socialFooter > .text-left > .iconInstagram:hover {
   color: #517fa4 !important;
-  /* 2B2B2B */
 }
 
-.socialFooter>.text-left>.iconLinkedIn:hover {
+.socialFooter > .text-left > .iconLinkedIn:hover {
   color: #007bb6 !important;
-  /* 2B2B2B */
 }
 
 .vertIcon {
@@ -609,11 +524,7 @@ a:focus {
 }
 
 /*Gives items a list style, bullets*/
-.prod-desc-list-style ul {
-  list-style-type: disc;
-  margin-left: 25px;
-}
-
+.prod-desc-list-style ul,
 .contactListStyle ul li {
   list-style-type: disc;
   margin-left: 25px;
@@ -645,10 +556,9 @@ a:focus {
   background-color: #dedede;
 }
 
-.thPPTimeline {
-  border: 2px;
-  border-style: solid;
-  border-color: #0b3648;
+.thPPTimeline,
+.tdPPTimeline {
+  border: 2px solid #0b3648;
   border-collapse: collapse;
   padding: 5px;
   text-align: center;
@@ -658,12 +568,6 @@ a:focus {
   font-family: arial, helvetica, sans-serif;
   font-size: 14px;
   font-weight: bold;
-  border: 2px;
-  border-style: solid;
-  border-color: #0b3648;
-  border-collapse: collapse;
-  padding: 5px;
-  text-align: center;
 }
 
 #fontProduct {
@@ -688,7 +592,6 @@ a:focus {
 }
 
 #mainbkg {
-  /*background-color: #e9e9e9;*/
   margin-top: 0px;
   margin-right: 20px;
   margin-bottom: 0px;
@@ -700,7 +603,6 @@ a:focus {
 }
 
 #mainnav {
-  /*background-color: #136ca8;*/
   margin-right: 5px;
   margin-left: 0em;
   margin-top: 0em;
@@ -710,10 +612,6 @@ a:focus {
   padding-right: 0em;
   padding-bottom: 0em;
   padding-left: 0em;
-  /*background-image: ;
-    border-top-width: 4px;
-    border-top-style: solid;
-    border-top-color: #73a2c7;*/
 }
 
 .dropup .caret,
@@ -735,8 +633,6 @@ a:focus {
   vertical-align: baseline;
   white-space: nowrap;
   text-align: center;
-  /* Change Shopping Cart Indicator Background - $ak */
-  background-color: undefined;
   border-radius: 10px;
 }
 
@@ -774,11 +670,6 @@ a:focus {
 
 /* Adjust Navbar Margin and Border*/
 .navbar {
-  /*position: relative;
-  min-height: 60px;
-  margin-left: 0;
-  margin-right: 0;
-  margin-bottom: 0;*/
   border: none;
 }
 
@@ -790,10 +681,10 @@ a:focus {
   border-radius: 4px;
 }
 
-.pagination>li>a:hover,
-.pagination>li>span:hover,
-.pagination>li>a:focus,
-.pagination>li>span:focus {
+.pagination > li > a:hover,
+.pagination > li > span:hover,
+.pagination > li > a:focus,
+.pagination > li > span:focus {
   color: #2b2b2b;
   background-color: #eeeeee;
   border-color: #dddddd;
@@ -808,73 +699,27 @@ a:focus {
 
 .btn-primary {
   background-color: #0b3648;
-}
-
-.btn-primary,
-.btn-primary:hover {
   color: #ffffff;
-}
-
-.btn-primary {
   border-color: #081b24;
 }
 
 .btn-primary:hover {
   background-color: #051118;
+  color: #ffffff;
 }
 
 .btn-default {
   background-color: #ffffff;
-}
-
-.btn-default,
-.btn-default:hover {
   color: #333333;
-}
-
-.btn-default {
   border-color: #cccccc;
 }
 
 .btn-default:hover {
   background-color: #ebebeb;
-}
-
-.btn-checkout {
-  background-color: #ffffff;
-}
-
-.btn-checkout,
-.btn-checkout:hover {
   color: #333333;
-}
-
-.btn-checkout {
-  border-color: #cccccc;
-}
-
-.btn-checkout:hover {
-  background-color: #ebebeb;
 }
 
 /*Checkout Payment Selection Buttons */
-.btn-checkout {
-  background-color: #ffffff;
-}
-
-.btn-checkout,
-.btn-checkout:hover {
-  color: #333333;
-}
-
-.btn-checkout {
-  border-color: #cccccc;
-}
-
-.btn-checkout:hover {
-  background-color: #ebebeb;
-}
-
 .btn-checkout {
   color: #333333;
   background-color: #ffffff;
@@ -924,108 +769,149 @@ fieldset[disabled] .btn-checkout.active {
 /*end checkout payment buttons*/
 .btn-info {
   background-color: #5bc0de;
-}
-
-.btn-info,
-.btn-info:hover {
   color: #ffffff;
-}
-
-.btn-info {
   border-color: #46b8da;
 }
 
 .btn-info:hover {
   background-color: #39b3d7;
-}
-
-.btn-success {
-  background-color: #5cb85c;
-}
-
-.btn-success,
-.btn-success:hover {
   color: #ffffff;
 }
 
 .btn-success {
+  background-color: #5cb85c;
+  color: #ffffff;
   border-color: #4cae4c;
 }
 
 .btn-success:hover {
   background-color: #00ab41;
-}
-
-.btn-warning {
-  background-color: #f0ad4e;
-}
-
-.btn-warning,
-.btn-warning:hover {
   color: #ffffff;
 }
 
 .btn-warning {
+  background-color: #f0ad4e;
+  color: #ffffff;
   border-color: #eea236;
 }
 
 .btn-warning:hover {
   background-color: #ed9c28;
-}
-
-.btn-danger {
-  background-color: #e04f4f;
-  /*D9534F*/
-}
-
-.btn-danger,
-.btn-danger:hover {
   color: #ffffff;
 }
 
 .btn-danger {
+  background-color: #e04f4f;
+  color: #ffffff;
   border-color: #d43f3a;
 }
 
 .btn-danger:hover {
   background-color: #d2322d;
+  color: #ffffff;
 }
 
-/* Below code was in Four51 bootstrap.css file but not NSG Base's. Copied here in case I have to remove it from NSG's file. */
-/* .nav-tabs > li > a {
-  margin-right: 2px;
-  line-height: 1.42857143;
-  border: 1px solid transparent;
-  border-radius: 4px 4px 0 0;
-  padding: 0;
+/* Login Logo */
+.loginLogo {
+  max-width: 100%;
+  max-height: var(--logo-login-height);
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 15px;
 }
-.nav-tabs > li > a > tab-heading {
-  display: block;
-padding: 20px 15px;
-} */
+
+/* Navbar Logo */
+.navLogo,
+.navLogoMain,
+.navLogoStacked {
+  max-width: 100%;
+  max-height: var(--logo-nav-height);
+}
+
+/*Changes size of images on category page*/
+.thumbnail img {
+  max-height: var(--thumbnail-height);
+  max-width: 100%;
+  margin: 0 auto 15px;
+}
+
+/* Alters image size on main product page - overrides same class in bootstrap-451.css */
+.product-image-large {
+  margin: 0 auto;
+  max-height: var(--product-image-height);
+  max-width: 100%;
+}
+
+/* Home message text bullets */
+.homeMessageBullets ul li {
+  list-style-type: disc;
+}
+
+/* Theme CSS Edits */
+/* Navbar Color - Update This */
+.navbar-default {
+  background-color: var(--brand-primary);
+}
+
+/* Highlight Colors - Update These */
+.container .navbar-nav li.active a:hover,
+.container .navbar-nav li.active a:focus,
+.navbar-default .navbar-nav .open > a,
+.navbar-default .navbar-nav .open > a:hover,
+.navbar-default .navbar-nav .open > a:focus,
+.navbar-nav li.dropdown li > a:hover,
+.navbar-nav li.dropdown li > a:focus,
+.container .navbar-nav li.active > a {
+  background-color: var(--brand-hover);
+}
+
+.navbar .container .navbar-nav li.active .fa-caret-down {
+  color: var(--brand-hover);
+}
+
+.container .navbar-nav li a,
+.navbar-nav li.dropdown li > a {
+  color: var(--nav-link-color);
+}
+
+.container .navbar-nav li.active > a,
+.container .navbar-nav li.active a:hover,
+.container .navbar-nav li.active a:focus,
+.navbar-default .navbar-nav .open > a,
+.navbar-default .navbar-nav .open > a:hover,
+.navbar-default .navbar-nav .open > a:focus,
+.container .navbar-nav li a:hover,
+.container .navbar-nav li a:focus,
+.navbar-nav li.dropdown li > a:hover,
+.navbar-nav li.dropdown li > a:focus {
+  color: var(--nav-link-hover);
+}
+
+/* Change Back Left Arrow Color */
+.navbar .container .navbar-nav.pull-left li.fadeInLeft a i,
+.navbar .container-view .navbar-nav.pull-left li.fadeInLeft a i {
+  color: var(--nav-left-arrow);
+}
+
+/* Change Panel Heading Color */
+.panel-primary .panel-heading .panel-title {
+  background-color: var(--panel-title-bg);
+  color: var(--panel-title-text);
+}
 
 @media (min-width: 768px) {
-  .nav-tabs.nav-justified>li>a {
+  .nav-tabs.nav-justified > li > a,
+  .nav-tabs-justified > li > a {
     border-bottom: 1px solid #dddddd;
     border-radius: 4px 4px 0 0;
   }
 
-  .nav-tabs.nav-justified>.active>a,
-  .nav-tabs.nav-justified>.active>a:hover,
-  .nav-tabs.nav-justified>.active>a:focus {
-    border-bottom-color: #f7f7f7;
-  }
-}
-
-@media (min-width: 768px) {
-  .nav-tabs-justified>li>a {
-    border-bottom: 1px solid #dddddd;
-    border-radius: 4px 4px 0 0;
-  }
-
-  .nav-tabs-justified>.active>a,
-  .nav-tabs-justified>.active>a:hover,
-  .nav-tabs-justified>.active>a:focus {
+  .nav-tabs.nav-justified > .active > a,
+  .nav-tabs.nav-justified > .active > a:hover,
+  .nav-tabs.nav-justified > .active > a:focus,
+  .nav-tabs-justified > .active > a,
+  .nav-tabs-justified > .active > a:hover,
+  .nav-tabs-justified > .active > a:focus {
     border-bottom-color: #f7f7f7;
   }
 }
@@ -1071,77 +957,4 @@ padding: 20px 15px;
   td.visible-xs {
     display: table-cell !important;
   }
-}
-
-.loginLogo {
-  max-width: 100%;
-  max-height: var(--logo-login-height);
-  margin-right: auto;
-  margin-left: auto;
-  padding-top: 15px;
-}
-
-.navLogo {
-  max-width: 100%;
-  max-height: var(--logo-nav-height);
-}
-
-.thumbnail img {
-  max-height: var(--thumbnail-height);
-  max-width: 100%;
-  margin: 0 auto 15px;
-}
-
-.product-image-large {
-  margin: 0 auto;
-  max-height: var(--product-image-height);
-  max-width: 100%;
-}
-
-.homeMessageBullets ul li {
-  list-style-type: disc;
-}
-
-.navbar-default {
-  background-color: var(--brand-primary);
-}
-
-.container .navbar-nav li.active a:hover,
-.container .navbar-nav li.active a:focus,
-.navbar-default .navbar-nav .open > a,
-.navbar-default .navbar-nav .open > a:hover,
-.navbar-default .navbar-nav .open > a:focus,
-.navbar-nav li.dropdown li > a:hover,
-.navbar-nav li.dropdown li > a:focus,
-.container .navbar-nav li.active > a {
-  background-color: var(--brand-hover);
-}
-
-.navbar .container .navbar-nav li.active .fa-caret-down {
-  color: var(--brand-hover);
-}
-
-.navbar-nav li.dropdown li > a {
-  color: var(--nav-link-color);
-}
-
-.navbar-nav li.dropdown li > a:hover {
-  color: var(--nav-link-hover);
-}
-
-.navbar .container .navbar-nav.pull-left li.fadeInLeft a i,
-.navbar .container-view .navbar-nav.pull-left li.fadeInLeft a i {
-  color: var(--nav-left-arrow);
-}
-
-.panel-primary .panel-heading .panel-title {
-  background-color: var(--panel-title-bg);
-  color: var(--panel-title-text);
-}
-
-/* Fixes left/right scroll bar */
-html,
-body {
-  max-width: 100%;
-  overflow-x: hidden;
 }
