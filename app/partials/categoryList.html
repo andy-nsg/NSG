@@ -4,11 +4,11 @@
           <i class="fa fa-bullhorn" aria-hidden="true"></i> Important: Shipping Update
         </h4>
         <p style="margin-bottom: 0; color: #333; font-size: 1.05em;">
-          To our valued customers: We are hard at work updating our internal systems to provide you with a faster, more efficient shopping experience. Orders for <strong>stock items</strong> entered <strong>today not ship until we resume operations on April 20</strong>. Please note that timelines for <strong>Made-To-Order (MTO)</strong> items remain unchanged. We apologize for any inconvenience and thank you for your continued support!
+          To our valued customers: We are hard at work updating our internal systems to provide you with a faster, more efficient shopping experience. Orders for <em>stock items</em> entered <em>today will not ship until we resume operations on April 20</em>. Please note that timelines for <em>Made-To-Order (MTO)</em> items remain unchanged. We apologize for any inconvenience and thank you for your continued support!
         </p>
     </div>
 
-    <div class="panel-category-list no-panels" ng-show="currentCategory.SubCategories.length > 0">
+    <div class="panel-category-list no-panels" ng-show="currentCategory.SubCategories.length > 0 || (user.Company.InteropID === 'NSG' && currentCategory.Name === {{'Categories' | r | xlat}})">
         <loadingindicator ng-show="categoryLoadingIndicator" title="{{'Please wait while we fetch all categories' | r | xlat}}" />
 
         <nav class="nav 451_lbl_subcatlist">
