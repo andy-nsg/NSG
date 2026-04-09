@@ -1,3 +1,14 @@
+:root {
+  --brand-primary: #112542;
+  --brand-hover: #b82128;
+  --brand-text: #ffffff;
+  --logo-login-height: 175px;
+  --logo-nav-height: 30px;
+  --thumbnail-height: 200px;
+  --panel-title-bg: #b82128;
+  --nav-left-arrow: #ffffff;
+}
+
 body {
   font-family: "Raleway", sans-serif;
   font-size: 14px;
@@ -1055,4 +1066,77 @@ padding: 20px 15px;
   td.visible-xs {
     display: table-cell !important;
   }
+}
+
+.loginLogo {
+  max-width: 100%;
+  max-height: var(--logo-login-height);
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 15px;
+}
+
+.navLogo {
+  max-width: 100%;
+  max-height: var(--logo-nav-height);
+}
+
+.thumbnail img {
+  max-height: var(--thumbnail-height);
+  max-width: 100%;
+  margin: 0 auto 15px;
+}
+
+.product-image-large {
+  margin: 0 auto;
+  max-height: var(--product-image-height);
+  max-width: 100%;
+}
+
+.homeMessageBullets ul li {
+  list-style-type: disc;
+}
+
+.navbar-default {
+  background-color: var(--brand-primary);
+}
+
+.container .navbar-nav li.active a:hover,
+.container .navbar-nav li.active a:focus,
+.navbar-default .navbar-nav .open > a,
+.navbar-default .navbar-nav .open > a:hover,
+.navbar-default .navbar-nav .open > a:focus,
+.navbar-nav li.dropdown li > a:hover,
+.navbar-nav li.dropdown li > a:focus,
+.container .navbar-nav li.active > a {
+  background-color: var(--brand-hover);
+}
+
+.navbar .container .navbar-nav li.active .fa-caret-down {
+  color: var(--brand-hover);
+}
+
+.navbar-nav li.dropdown li > a {
+  color: var(--nav-link-color);
+}
+
+.navbar-nav li.dropdown li > a:hover {
+  color: var(--nav-link-hover);
+}
+
+.navbar .container .navbar-nav.pull-left li.fadeInLeft a i,
+.navbar .container-view .navbar-nav.pull-left li.fadeInLeft a i {
+  color: var(--nav-left-arrow);
+}
+
+.panel-primary .panel-heading .panel-title {
+  background-color: var(--panel-title-bg);
+  color: var(--panel-title-text);
+}
+
+/* Fixes left/right scroll bar */
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
 }
