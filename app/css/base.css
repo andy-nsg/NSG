@@ -1,14 +1,17 @@
 :root {
-  --brand-primary: #112542;
-  --brand-hover: #b82128;
+  --brand-primary: #102c52;
+  --brand-hover: #102c52;
   --brand-text: #ffffff;
   --logo-login-height: 175px;
-  --logo-nav-height: 30px;
+  --logo-nav-height: 47px;
   --thumbnail-height: 200px;
-  --panel-title-bg: #b82128;
+  --product-image-height: 360px;
+  --panel-title-bg: #102c52;
+  --panel-title-text: #ffffff;
+  --nav-link-color: #333333;
+  --nav-link-hover: #ffffff;
   --nav-left-arrow: #ffffff;
 }
-
 body {
   font-family: "Raleway", sans-serif;
   font-size: 14px;
