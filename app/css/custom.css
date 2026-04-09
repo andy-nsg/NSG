@@ -8,6 +8,8 @@
   --product-image-height: 360px;
   --panel-title-bg: #102c52;
   --nav-left-arrow: #ffffff;
+  --nav-link-color: white;
+  --nav-link-hover: white;
 }
 
 .NSGCategoryTitle {
