@@ -853,37 +853,39 @@ fieldset[disabled] .btn-checkout.active {
   background-color: var(--brand-primary);
 }
 
-/* Highlight Colors - Update These */
-.container .navbar-nav li.active a:hover,
-.container .navbar-nav li.active a:focus,
-.navbar-default .navbar-nav .open > a,
-.navbar-default .navbar-nav .open > a:hover,
-.navbar-default .navbar-nav .open > a:focus,
-.navbar-nav li.dropdown li > a:hover,
-.navbar-nav li.dropdown li > a:focus,
-.container .navbar-nav li.active > a {
-  background-color: var(--brand-hover);
-}
-
-.navbar .container .navbar-nav li.active .fa-caret-down {
-  color: var(--brand-hover);
-}
-
-.container .navbar-nav li a,
-.navbar-nav li.dropdown li > a {
+/* Navigation Link Colors & Transitions */
+.container .navbar-nav li a {
   color: var(--nav-link-color);
 }
 
+/* Primary Hover/Active States for Navbar Items */
 .container .navbar-nav li.active > a,
 .container .navbar-nav li.active a:hover,
 .container .navbar-nav li.active a:focus,
-.navbar-default .navbar-nav .open > a,
-.navbar-default .navbar-nav .open > a:hover,
-.navbar-default .navbar-nav .open > a:focus,
 .container .navbar-nav li a:hover,
 .container .navbar-nav li a:focus,
-.navbar-nav li.dropdown li > a:hover,
-.navbar-nav li.dropdown li > a:focus {
+.navbar-default .navbar-nav .open > a,
+.navbar-default .navbar-nav .open > a:hover,
+.navbar-default .navbar-nav .open > a:focus {
+  color: var(--nav-link-hover);
+  background-color: var(--brand-hover) !important;
+}
+
+/* Dropdown Menu Specifics - Forces dark text on light backgrounds */
+.navbar-nav li.dropdown .dropdown-menu li > a {
+  color: #333333 !important; /* Standard dark text for the light dropdown box */
+  background-color: transparent;
+}
+
+.navbar-nav li.dropdown .dropdown-menu li > a:hover,
+.navbar-nav li.dropdown .dropdown-menu li > a:focus {
+  color: #ffffff !important;
+  background-color: var(--brand-hover) !important;
+}
+
+/* Caret Color Sync */
+.navbar .container .navbar-nav li.active .fa-caret-down,
+.navbar .container .navbar-nav li a:hover .fa-caret-down {
   color: var(--nav-link-hover);
 }
 
