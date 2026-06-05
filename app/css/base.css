@@ -314,9 +314,22 @@ a:focus {
   color: #ffffff;
 }
 
-/* Fixed Product Image */
-.fixedProductImage {
-  position: fixed !important;
+/* Accessible Sticky Product Image Panel */
+/* Only triggers sticky floating behavior on large screen viewports where there is ample side-by-side real estate */
+@media (min-width: 992px) {
+  .fixedProductImage {
+    position: -webkit-sticky !important;
+    position: sticky !important;
+    top: 20px; /* Space from top of screen when scrolling */
+    z-index: 10;
+  }
+}
+
+/* Fallback: Automatically drops back to an un-floated fluid stack on mobile or when heavily zoomed */
+@media (max-width: 991px) {
+  .fixedProductImage {
+    position: static !important;
+  }
 }
 
 /* Lightbox Scroll Bar */
