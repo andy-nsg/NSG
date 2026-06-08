@@ -833,10 +833,6 @@ fieldset[disabled] .btn-checkout.active {
   padding-top: 15px;
 }
 
-/* ====================================================================== */
-/* STREAMLINED BRANDING UTILITIES                                         */
-/* ====================================================================== */
-
 /* Hero Banner Layout: Maintains natural proportions up to height cap */
 .bannerLogo {
   display: block;
