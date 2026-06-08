@@ -846,8 +846,7 @@ fieldset[disabled] .btn-checkout.active {
   max-width: 100%;
   max-height: var(--logo-nav-height);
   height: auto;
-  vertical-align:middle;
-  margin-top: 5px; /* Tiny micro-shove down to hit dead center */
+  vertical-align: middle;
 }
 
 .navbar-nav > li > a.navLogoWrapper {
