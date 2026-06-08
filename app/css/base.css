@@ -131,10 +131,12 @@ a:focus {
 }
 
 /* Main Home Page Banner */
-/*Edit Jumbrotron width - $ak */
 .jumbotron {
   margin: 45px 0px -45px;
   padding: 0px;
+  width: 100% !important;
+  max-width: 100% !important;
+  background: transparent; /* Prevents default gray background block from bleeding when scaling */
 }
 
 #vertAlignJumbo {
