@@ -4,7 +4,7 @@
   --brand-hover: #102c52;
   --brand-text: #ffffff;
   --logo-login-height: 175px;
-  --logo-nav-height: 50px;
+  --logo-nav-height: 40px;
   --thumbnail-height: 200px;
   --product-image-height: 360px;
   --panel-title-bg: #102c52;
@@ -682,6 +682,7 @@ a:focus {
 
 /* Adjust Navbar Margin and Border*/
 .navbar {
+  min-height: 50px;
   border: none;
 }
 
@@ -855,7 +856,7 @@ fieldset[disabled] .btn-checkout.active {
   display: flex;
   align-items: center;
   height: 100%;
-  padding: 0 15px;
+  padding: 5px 15px;
 }
 
 /*Changes size of images on category page*/
@@ -887,7 +888,14 @@ fieldset[disabled] .btn-checkout.active {
 .container .navbar-nav li a {
   color: var(--nav-link-color);
   background-color: transparent; /* Ensures it resets when not hovered */
+  padding-top: 15px;
+  padding-bottom: 15px;
   transition: background-color 0.2s ease;
+}
+
+/* Prevent layout shift inside list elements */
+.navbar-nav > li {
+  line-height: normal;
 }
 
 /* Hover State Only - This will disappear when the mouse leaves */
@@ -1025,4 +1033,9 @@ fieldset[disabled] .btn-checkout.active {
 /* Layout helpers */
 .bento-row {
   margin-bottom: 20px;
+}
+
+/* Scoped Header Clearances for Bento Modules */
+.navbar .bento-row {
+  margin-bottom: 0;
 }
