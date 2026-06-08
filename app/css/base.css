@@ -853,10 +853,9 @@ fieldset[disabled] .btn-checkout.active {
 }
 
 .navbar-nav > li > a.navLogoWrapper {
-  display: flex;
-  align-items: center;
-  height: 100%;
-  padding: 5px 15px;
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
+  line-height: var(--logo-nav-height);
 }
 
 /*Changes size of images on category page*/
