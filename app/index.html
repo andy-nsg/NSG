@@ -16,7 +16,7 @@
       display: none !important;
     }
   </style>
-  <script type="text/javascript">
+  <script>
     if (self === top) {
       var antiClickjack = document.getElementById("antiClickjack");
       antiClickjack.parentNode.removeChild(antiClickjack);
@@ -28,9 +28,10 @@
   <title>National Service Gear</title>
   <!-- Meta tags -->
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <!-- Modern viewport: Removed maximum-scale and user-scalable restrictions per WCAG 1.4.4 (zoom compliance) -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!-- Meta links for SEO -->
-  <meta name="description" content="Official uniform provider for the AmeriCorps. Free UPS Ground Shipping on all order to contiguous 48 states." />
+  <meta name="description" content="Official uniform provider for the AmeriCorps." />
   <meta name="robots" content="index,follow" />
   <link rel="alternate" href="https://www.nationalservicegear.org" hreflang="en-us" />
   <!-- OG Properties -->
@@ -47,9 +48,10 @@
   <link rel="stylesheet" href="css/theme.css" data-group="source" />
   <link rel="stylesheet" href="css/base.css" data-group="source" />
   <link rel="stylesheet" href="css/custom.css" data-group="source" />
-  <link href='//fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css' />
-  <link href='//fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css' />
-  <link href='//fonts.googleapis.com/css?family=Raleway:400,600,300,700' rel='stylesheet' type='text/css'>
+  <!-- Modern font loading: Removed type attribute, using double quotes -->
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400,700" />
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Raleway:400,600,300,700" />
   <link rel="stylesheet" href="css/animate.min.css" />
   <!--[if lt IE 9]>
     <div style="position:absolute; top:0; left:0; right:0; bottom:0; background-position:center center; background-size:cover; background-repeat:no-repeat;"></div>
@@ -83,27 +85,37 @@
 <!--[if (gte IE 9)|!(IE)]><!-->
 
 <body ng-cloak ng-class="ng-cloak">
-  <section>
-    <section ng-hide="Four51User.isAuthenticated() || (isAnon && Four51User.isAuthenticated())" class="container">
-      <login />
-    </section>
-    <section ng-if="Four51User.isAuthenticated()" id="content">
-      <section class="hidden-print">
-        <navigation />
-      </section>
-      <section class="hidden-print">
-        <branding />
-      </section>
-      <section class="container-view">
-        <ng-view autoscroll />
-      </section>
-      <section class="hidden-print">
-        <fixedfooter />
-      </section>
-    </section>
+  <!-- Section 508 Keyboard Bypass Requirement: First focusable element provides skip navigation to main content per WCAG 2.1 Level AA -->
+  <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
+  
+  <!-- Login Application Shell: Displayed when user is not authenticated (includes anonymous user check) -->
+  <section ng-hide="Four51User.isAuthenticated() || (isAnon && Four51User.isAuthenticated())" class="container" aria-label="Login Application Shell">
+    <login />
   </section>
+  
+  <!-- Main Content Landmark: Primary application container for authenticated users -->
+  <!-- Note: id="content" serves as skip link target and main role defines primary content area for assistive technology -->
+  <main ng-if="Four51User.isAuthenticated()" id="content" role="main">
+    <!-- Banner Landmark: Site navigation and branding header region -->
+    <header class="hidden-print" role="banner">
+      <navigation />
+      <branding />
+    </header>
+    
+    <!-- Primary Content View: Angular router outlet with autoscroll functionality -->
+    <section class="container-view" aria-label="Primary Application Content View">
+      <ng-view autoscroll />
+    </section>
+    
+    <!-- Contentinfo Landmark: Footer region containing site information and links -->
+    <footer class="hidden-print" role="contentinfo">
+      <fixedfooter />
+    </footer>
+  </main>
+  
   <!-- Add for Back to Top icon -->
   <backtotop offsetbottom="30" offsetright="30" duration="200"></backtotop>
+  
   <!--<script type="text/javascript" src="//dl1d2m8ri9v3j.cloudfront.net/releases/1.2.4/tracker.js" data-customer="bfec7bded14d43a7ace2697594e1369d"></script>-->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js" data-group="cdn"></script>
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js" data-group="cdn"></script>
@@ -246,20 +258,25 @@
   <script src="js/directives/orderbuttons.js" data-group="source"></script>
 
   <!-- Custom Solutions-->
+  <!-- Inactive feature toggles: Product matrix and related tools (preserve for future activation) -->
   <!-- <script src="lib/oc/productMatrix.js" data-group="resources"></script>
   <script src="lib/oc/categoryCollapse.js" data-group="resources"></script>
   <script src="lib/oc/ProductSearchInput.js" data-group="resources"></script>
   <script src="lib/oc/contentModal.js" data-group="resources"></script> -->
   <script src="lib/oc/carousel.js" data-group="resources"></script>
+  <!-- Inactive feature toggles: Product display enhancements (preserve for future activation) -->
   <!-- <script src="lib/oc/addToCartPreview.js" data-group="resources"></script>
   <script src="lib/oc/productZoom.js" data-group="resources"></script>
   <script src="lib/oc/productLightbox.js" data-group="resources"></script> -->
   <script src="lib/oc/backToTop.js" data-group="resources"></script>
+  <!-- Inactive feature toggles: Checkout utilities (preserve for future activation) -->
   <!-- <script src="lib/oc/sameAsShippingCheckbox.js" data-group="resources"></script>
   <script src="lib/oc/minicart.js" data-group="resources"></script> -->
   <script src="lib/oc/fixedFooter.js" data-group="resources"></script>
   <!-- <script src="lib/oc/checkoutItemSummary.js" data-group="resources"></script> -->
+  
+  <!-- IE Conditional Close: End wrapper for IE9+ and modern browsers (legacy support retained for .gov compliance) -->
+  <!-- <![endif]-->
 </body>
-<!-- <![endif]-->
 
 </html>

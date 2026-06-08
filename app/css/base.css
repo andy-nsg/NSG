@@ -841,6 +841,20 @@ fieldset[disabled] .btn-checkout.active {
   max-height: var(--logo-nav-height);
 }
 
+/* ====================================================================== */
+/* GLOBAL BRANDING: BANNER LOGO STYLING                                    */
+/* Preserves explicit responsive resizing across all portal storefronts    */
+/* ====================================================================== */
+
+.bannerLogo {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /*Changes size of images on category page*/
 .thumbnail img {
   max-height: var(--thumbnail-height);
