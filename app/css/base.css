@@ -5,7 +5,6 @@
   --brand-text: #ffffff;
   --logo-login-height: 175px;
   --logo-nav-height: 50px;
-  --logo-banner-max-height: 300px;
   --thumbnail-height: 200px;
   --product-image-height: 360px;
   --panel-title-bg: #102c52;
@@ -835,13 +834,6 @@ fieldset[disabled] .btn-checkout.active {
 }
 
 /* ====================================================================== */
-/* SYSTEM BRANDING VARIABLES                                              */
-/* ====================================================================== */
-:root {
-  
-}
-
-/* ====================================================================== */
 /* STREAMLINED BRANDING UTILITIES                                         */
 /* ====================================================================== */
 
@@ -850,7 +842,6 @@ fieldset[disabled] .btn-checkout.active {
   display: block;
   max-width: 100%;
   height: auto;
-  max-height: var(--logo-banner-max-height);
 }
 
 /* Navigation Element: Constrained height boundary */
