@@ -4,7 +4,8 @@
   --brand-hover: #102c52;
   --brand-text: #ffffff;
   --logo-login-height: 175px;
-  --logo-nav-height: 47px;
+  --logo-nav-height: 50px;
+  --logo-banner-max-height: 300px;
   --thumbnail-height: 200px;
   --product-image-height: 360px;
   --panel-title-bg: #102c52;
@@ -833,26 +834,30 @@ fieldset[disabled] .btn-checkout.active {
   padding-top: 15px;
 }
 
-/* Navbar Logo */
-.navLogo,
-.navLogoMain,
-.navLogoStacked {
-  max-width: 100%;
-  max-height: var(--logo-nav-height);
+/* ====================================================================== */
+/* SYSTEM BRANDING VARIABLES                                              */
+/* ====================================================================== */
+:root {
+  
 }
 
 /* ====================================================================== */
-/* GLOBAL BRANDING: BANNER LOGO STYLING                                    */
-/* Preserves explicit responsive resizing across all portal storefronts    */
+/* STREAMLINED BRANDING UTILITIES                                         */
 /* ====================================================================== */
 
+/* Hero Banner Layout: Maintains natural proportions up to height cap */
 .bannerLogo {
   display: block;
-  width: 100%;
   max-width: 100%;
   height: auto;
-  margin-left: auto;
-  margin-right: auto;
+  max-height: var(--logo-banner-max-height);
+}
+
+/* Navigation Element: Constrained height boundary */
+.navLogo {
+  max-width: 100%;
+  max-height: var(--logo-nav-height);
+  height: auto;
 }
 
 /*Changes size of images on category page*/
