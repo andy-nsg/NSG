@@ -8,12 +8,13 @@ four51.app.controller('ProductInventoryCtrl', ['$scope', function($scope) {
         
         // No variants - check product level inventory
         if (!product.Variants || product.Variants.length === 0) {
-            return product.QuantityAvailable > 0;
+            return parseInt(product.QuantityAvailable || 0) > 0;
         }
         
         // Has variants - check all are in stock
         return product.Variants.every(function(v) {
-            return v.QuantityAvailable > 0;
+            var qty = parseInt(v.QuantityAvailable || 0);
+            return qty > 0;
         });
     };
 
@@ -25,13 +26,27 @@ four51.app.controller('ProductInventoryCtrl', ['$scope', function($scope) {
         
         // No variants - check product level inventory
         if (!product.Variants || product.Variants.length === 0) {
-            return product.QuantityAvailable > 0;
+            return parseInt(product.QuantityAvailable || 0) > 0;
         }
         
         // Has variants - check if at least one is in stock
         return product.Variants.some(function(v) {
-            return v.QuantityAvailable > 0;
+            var qty = parseInt(v.QuantityAvailable || 0);
+            return qty > 0;
         });
     };
+    
+    // Debug - check what values are coming through
+    $scope.$watch('LineItem.Product.Variants', function(variants) {
+        if (variants) {
+            console.log('Variants inventory:', variants.map(function(v) {
+                return { 
+                    id: v.ExternalID, 
+                    qty: v.QuantityAvailable, 
+                    type: typeof v.QuantityAvailable 
+                };
+            }));
+        }
+    });
     
 }]);
