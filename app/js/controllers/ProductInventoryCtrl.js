@@ -6,8 +6,9 @@ four51.app.controller('ProductInventoryCtrl', ['$scope', function($scope) {
         
         var product = $scope.LineItem.Product;
         
-        // No variants - check product level inventory
+        // No variants loaded yet - return false (don't show "all in stock")
         if (!product.Variants || product.Variants.length === 0) {
+            // Check product level inventory instead
             return parseInt(product.QuantityAvailable || 0) > 0;
         }
         
@@ -24,7 +25,7 @@ four51.app.controller('ProductInventoryCtrl', ['$scope', function($scope) {
         
         var product = $scope.LineItem.Product;
         
-        // No variants - check product level inventory
+        // No variants loaded yet
         if (!product.Variants || product.Variants.length === 0) {
             return parseInt(product.QuantityAvailable || 0) > 0;
         }
@@ -36,17 +37,25 @@ four51.app.controller('ProductInventoryCtrl', ['$scope', function($scope) {
         });
     };
     
-    // Debug - check what values are coming through
-    $scope.$watch('LineItem.Product.Variants', function(variants) {
-        if (variants) {
-            console.log('Variants inventory:', variants.map(function(v) {
-                return { 
-                    id: v.ExternalID, 
-                    qty: v.QuantityAvailable, 
-                    type: typeof v.QuantityAvailable 
-                };
-            }));
+// Debug - check matrix data structure
+$scope.$watch('comboVariants', function(variants) {
+    if (variants) {
+        console.log('Matrix variants:', variants);
+        console.log('Is array?', Array.isArray(variants));
+        if (Array.isArray(variants) && variants.length > 0) {
+            console.log('First variant:', variants[0]);
+            console.log('Has QuantityAvailable?', 'QuantityAvailable' in variants[0]);
         }
-    });
+    }
+});
+
+// Also watch standard variants
+$scope.$watch('LineItem.Product.Variants', function(variants) {
+    if (variants && variants.length > 0) {
+        console.log('Standard variants:', variants);
+    } else {
+        console.log('No standard variants found');
+    }
+});
     
 }]);
