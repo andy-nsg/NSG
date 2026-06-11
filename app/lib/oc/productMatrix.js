@@ -19,7 +19,7 @@ function productmatrix() {
 
   function template() {
     return [
-      '<style>.matrix-grid > div {padding: 0;} .matrix-grid > div > div {text-align: center; height: 50px; padding: 10px 5px;} .matrix-grid > div > div:nth-of-type(even) {background-color: #f5f5f5;} .matrix-grid > div:last-of-type > div {padding: 5px;} .matrix-grid > div:last-of-type > div input {text-align: center;} .qty-invalid{border-color: #d9534f; box-shadow: inset 0 1px 1px rgba(0,0,0,0.075); color: #ccc;}</style>',
+      '<style>.matrix-grid > div {padding: 0;}.matrix-grid > div > div {text-align: center;height: 50px;padding: 10px 5px;}.matrix-grid > div > div:nth-of-type(even) {background-color: #f5f5f5;}.matrix-grid > div:last-of-type > div {padding: 5px;}.matrix-grid > div:last-of-type > div input {text-align: center;}.qty-invalid{border-color: #d9534f;-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);color: #ccc;}</style>',
       '<form name="matrixSpecForm" novalidate="" aria-label="Product Matrix Ordering Grid">',
       '<div class="form-group" ng-repeat="s in product.Specs | definesvariant | onproperty:[{Property: \'CanSetForLineItem\', Value: true}]">',
       '<customfilefield customfield="s" ng-if="s.ControlType == \'File\'"></customfilefield>',
@@ -28,45 +28,51 @@ function productmatrix() {
       '</div>',
       '<div>',
       '<loadingindicator ng-show="matrixLoadingIndicator" />',
+
+      /* ===================== 2-SPEC GRID ===================== */
       '<div ng-repeat="group in comboVariants" ng-show="specCount == 2 && (group | filter:{Show: true}).length > 0">',
       '<h3>{{group.DisplayName}}</h3>',
       '<div class="row matrix-grid" role="group" aria-label="{{\'Variants for \' + group.DisplayName}}">',
-      '<div class="col-xs-3" aria-hidden="true"><div>{{spec2Name}}</div><div ng-repeat="item in group | orderobjectby:\'ListOrder\':false | filter:{Show: true}"><b>{{item.DisplayName[1]}}</b></div></div>',
-      '<div class="col-xs-2" ng-show="product.DisplayInventory" aria-hidden="true"><div>{{\'Quantity Available\' | r}}</div><div ng-repeat="item in group | orderobjectby:\'ListOrder\':false | filter:{Show: true}">{{item.QuantityAvailable}}</div></div>',
-      '<div class="col-xs-1" ng-show="displayOnOrder" aria-hidden="true"><div>{{\'On Order\' | r}}</div><div ng-repeat="item in group | orderobjectby:\'ListOrder\':false | filter:{Show: true}">{{item.OrderQuantity}}</div></div>',
-      '<div class="col-xs-3" aria-hidden="true"><div>{{\'Price\' | r}}</div><div ng-repeat="item in group | orderobjectby:\'ListOrder\':false | filter:{Show: true}">{{(product.UnitPrice || product.StandardPriceSchedule.PriceBreaks[0].Price) + item.Markup | currency}}</div></div>',
+      '<div class="col-xs-3"><div>{{spec2Name}}</div><div ng-repeat="item in group | orderobjectby:\'ListOrder\':false | filter:{Show: true}"><b>{{item.DisplayName[1]}}</b></div></div>',
+      '<div class="col-xs-2" ng-show="product.DisplayInventory"><div>{{\'Quantity Available\' | r}}</div><div ng-repeat="item in group | orderobjectby:\'ListOrder\':false | filter:{Show: true}">{{item.QuantityAvailable}}</div></div>',
+      '<div class="col-xs-1" ng-show="displayOnOrder"><div>{{\'On Order\' | r}}</div><div ng-repeat="item in group | orderobjectby:\'ListOrder\':false | filter:{Show: true}">{{item.OrderQuantity}}</div></div>',
+      '<div class="col-xs-3"><div>{{\'Price\' | r}}</div><div ng-repeat="item in group | orderobjectby:\'ListOrder\':false | filter:{Show: true}">{{(product.UnitPrice || product.StandardPriceSchedule.PriceBreaks[0].Price) + item.Markup | currency}}</div></div>',
       '<div ng-class="{\'col-xs-3\':(product.DisplayInventory && displayOnOrder),\'col-xs-5\':(!product.DisplayInventory && displayOnOrder),\'col-xs-4\':(product.DisplayInventory && !displayOnOrder),\'col-xs-6\':(!product.DisplayInventory && !displayOnOrder)}">',
-      '<div aria-hidden="true">{{\'Quantity\' | r}}</div>',
+      '<div>{{\'Quantity\' | r}}</div>',
       '<div ng-repeat="item in group | orderobjectby:\'ListOrder\':false | filter:{Show: true}">',
       '<div>',
       '<select id="451qa_input_qty_{{$parent.$index}}_{{$index}}" aria-label="{{\'Quantity for \' + group.DisplayName + \' \' + item.DisplayName[1]}}" class="form-control" ng-change="qtyChanged()" ng-if="product.PriceSchedule.RestrictedQuantity" ng-model="item.Quantity" ng-options="pb.Quantity as getRestrictedQtyText(pb, product.QuantityMultiplier) for pb in product.PriceSchedule.PriceBreaks"><option value=""></option></select>',
-      '<input id="451qa_input_qty_{{$parent.$index}}_{{$index}}" aria-label="{{\'Quantity for \' + group.DisplayName + \' \' + item.DisplayName[1]}}" placeholder="0" autocomplete="off" class="form-control" ng-class="{\'qty-invalid\':item.QtyError}" ng-change="qtyChanged()" ng-if="!product.PriceSchedule.RestrictedQuantity" type="text" name="qtyInput" ng-model="item.Quantity"/>',
+      '<input id="451qa_input_qty_{{$parent.$index}}_{{$index}}" aria-label="{{\'Quantity for \' + group.DisplayName + \' \' + item.DisplayName[1]}}" placeholder="0" autocomplete="off" class="form-control" ng-class="{\'qty-invalid\':item.QtyError}" ng-change="qtyChanged()" ng-if="!product.PriceSchedule.RestrictedQuantity" type="text" name="qtyInput_{{$parent.$index}}_{{$index}}" ng-model="item.Quantity"/>',
       '</div>',
       '</div>',
       '</div>',
       '</div>',
       '</div>',
+
+      /* ===================== 1-SPEC GRID ===================== */
       '<div ng-show="specCount == 1">',
       '<div class="row matrix-grid" role="group" aria-label="Product Variants">',
-      '<div class="col-xs-3" aria-hidden="true"><div>{{spec1Name}}</div><div ng-repeat="group in comboVariants | orderobjectby:\'ListOrder\':false | filter:{Show: true}"><b>{{group.DisplayName}}</b></div></div>',
-      '<div class="col-xs-2" ng-show="product.DisplayInventory" aria-hidden="true"><div>{{\'Quantity Available\' | r}}</div><div ng-repeat="group in comboVariants | orderobjectby:\'ListOrder\':false | filter:{Show: true}">{{group.QuantityAvailable}}</div></div>',
-      '<div class="col-xs-1" ng-show="displayOnOrder" aria-hidden="true"><div>{{\'On Order\' | r}}</div><div ng-repeat="group in comboVariants | orderobjectby:\'ListOrder\':false | filter:{Show: true}">{{group.OrderQuantity}}</div></div>',
-      '<div class="col-xs-3" aria-hidden="true"><div>{{\'Price\' | r}}</div><div ng-repeat="group in comboVariants | orderobjectby:\'ListOrder\':false | filter:{Show: true}">{{(product.UnitPrice || product.StandardPriceSchedule.PriceBreaks[0].Price) + group.Markup | currency}}</div></div>',
+      '<div class="col-xs-3"><div>{{spec1Name}}</div><div ng-repeat="group in comboVariants | orderobjectby:\'ListOrder\':false | filter:{Show: true}"><b>{{group.DisplayName}}</b></div></div>',
+      '<div class="col-xs-2" ng-show="product.DisplayInventory"><div>{{\'Quantity Available\' | r}}</div><div ng-repeat="group in comboVariants | orderobjectby:\'ListOrder\':false | filter:{Show: true}">{{group.QuantityAvailable}}</div></div>',
+      '<div class="col-xs-1" ng-show="displayOnOrder"><div>{{\'On Order\' | r}}</div><div ng-repeat="group in comboVariants | orderobjectby:\'ListOrder\':false | filter:{Show: true}">{{group.OrderQuantity}}</div></div>',
+      '<div class="col-xs-3"><div>{{\'Price\' | r}}</div><div ng-repeat="group in comboVariants | orderobjectby:\'ListOrder\':false | filter:{Show: true}">{{(product.UnitPrice || product.StandardPriceSchedule.PriceBreaks[0].Price) + group.Markup | currency}}</div></div>',
       '<div ng-class="{\'col-xs-3\':(product.DisplayInventory && displayOnOrder),\'col-xs-5\':(!product.DisplayInventory && displayOnOrder),\'col-xs-4\':(product.DisplayInventory && !displayOnOrder),\'col-xs-6\':(!product.DisplayInventory && !displayOnOrder)}">',
-      '<div aria-hidden="true">{{\'Quantity\' | r}}</div>',
+      '<div>{{\'Quantity\' | r}}</div>',
       '<div ng-repeat="group in comboVariants | orderobjectby:\'ListOrder\':false | filter:{Show: true}">',
       '<div>',
       '<select id="451qa_input_qty_{{$index}}" aria-label="{{\'Quantity for \' + group.DisplayName}}" class="form-control" ng-change="qtyChanged()" ng-if="product.PriceSchedule.RestrictedQuantity" ng-model="group[0].Quantity" ng-options="pb.Quantity as getRestrictedQtyText(pb, product.QuantityMultiplier) for pb in product.PriceSchedule.PriceBreaks"><option value=""></option></select>',
-      '<input id="451qa_input_qty_{{$index}}" aria-label="{{\'Quantity for \' + group.DisplayName}}" placeholder="0" autocomplete="off" class="form-control" ng-class="{\'qty-invalid\':item.QtyError}" ng-change="qtyChanged()" ng-if="!product.PriceSchedule.RestrictedQuantity" type="text" name="qtyInput" ng-model="group[0].Quantity"/>',
+      '<input id="451qa_input_qty_{{$index}}" aria-label="{{\'Quantity for \' + group.DisplayName}}" placeholder="0" autocomplete="off" class="form-control" ng-class="{\'qty-invalid\':group[0].QtyError}" ng-change="qtyChanged()" ng-if="!product.PriceSchedule.RestrictedQuantity" type="text" name="qtyInput_{{$index}}" ng-model="group[0].Quantity"/>',
       '</div>',
       '</div>',
       '</div>',
       '</div>',
       '</div>',
+
+      /* ===================== ERRORS + BUTTON ===================== */
       '<div class="alert alert-danger" style="margin-top:20px;" role="alert" aria-live="assertive" ng-show="qtyError" ng-bind-html="qtyError"></div>',
       '<button class="btn btn-success btn-block btn-lg" type="button" id="451_btn_orderadd" ng-disabled="qtyError || matrixSpecForm.$invalid" ng-click="addVariantsToOrder()">',
       '<loadingindicator ng-show="addToOrderIndicator" />',
-      '<i ng-show="qtyError" class="fa fa-warning" aria-hidden="true"></i> {{addToOrderText | r}}',
+      '<i ng-show="qtyError" class="fa fa-warning"></i> {{addToOrderText | r}} <!-- <span class="badge" ng-if="!(user.Permissions.contains(\'HidePricing\')) && (product.LineTotal + group.Markup)">{{(product.LineTotal + group.Markup) | culturecurrency}}-->',
       '</button>',
       '</div>',
       '</form>'
@@ -353,7 +359,7 @@ function ProductMatrix($451, Variant) {
         
         var qtyAvail = variant.QuantityAvailable;
         if (qtyAvail < qty && product.AllowExceedInventory == false) {
-          qtyError = "<p>Quantity cannot exceed the Quantity Available of " + qtyAvail + " for " + variant.DisplayName[0] + " " + (variant.DisplayName[1] ? variant.DisplayName[1] : "") + "</p>";
+          qtyError += "<p>Quantity cannot exceed the Quantity Available of " + qtyAvail + " for " + variant.DisplayName[0] + " " + (variant.DisplayName[1] ? variant.DisplayName[1] : "") + "</p>";
           variant.QtyError = true;
         }
       });

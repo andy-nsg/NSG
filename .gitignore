@@ -12,3 +12,4 @@ node_modules/*
 *source.css
 localcdn
 .DS_Store
+**/CLAUDE.md
