@@ -33,9 +33,9 @@ function fixedfooter() {
       '</div>',
       '<div class="footRight">',
       '<p>Contact Customer Service</p>',
-      '<p><i class="fa fa-clock-o"></i>  M-F 8a-4:30p ET</p>',
-      '<p><i class="fa fa-phone"></i>  1.855.444.0847</p>',
-      '<p><i class="fa fa-envelope"></i>  <a href="mailto:service@nationalservicegear.org?subject=NSG%20Contact">service@nationalservicegear.org</a></p>',
+      '<p><i class="fa-regular fa-clock"></i>  M-F 8a-4:30p ET</p>',
+      '<p><i class="fa-solid fa-phone"></i>  1.855.444.0847</p>',
+      '<p><i class="fa-solid fa-envelope"></i>  <a href="mailto:service@nationalservicegear.org?subject=NSG%20Contact">service@nationalservicegear.org</a></p>',
       '</div>', 
       '</div>',
       '<div class="NSGxsFooter visible-xs">',
@@ -45,16 +45,16 @@ function fixedfooter() {
       '</div>',
       '<div class="xsFootRight">',
       '<p>Contact Customer Service</p>',
-      '<p><i class="fa fa-clock-o"></i>  M-F 8a-4:30p ET</p>',
-      '<p><i class="fa fa-phone"></i>  1.855.444.0847</p>',
-      '<p><i class="fa fa-envelope"></i>  <a href="mailto:service@nationalservicegear.org?subject=NSG%20Contact">service@nationalservicegear.org</a></p>',
+      '<p><i class="fa-regular fa-clock"></i>  M-F 8a-4:30p ET</p>',
+      '<p><i class="fa-solid fa-phone"></i>  1.855.444.0847</p>',
+      '<p><i class="fa-solid fa-envelope"></i>  <a href="mailto:service@nationalservicegear.org?subject=NSG%20Contact">service@nationalservicegear.org</a></p>',
       '</div>',
       '</div>',
       '<div class="socialFooter">',
       '<p class="text-left">',
-      '<a class="vertIcon iconTrans iconTwitter" target="_blank" href="https://twitter.com/servicegear"><i class="fa fa-twitter-square fa-3x"></i></a>',
-      '<a class="vertIcon iconTrans iconFacebook" target="_blank" href="https://www.facebook.com/NationalServiceGear"><i class="fa fa-facebook-square fa-3x"></i></a>',
-      '<a class="vertIcon iconTrans iconInstagram" target="_blank" href="https://www.instagram.com/nationalservicegear"><i class="fa fa-instagram fa-3x"></i></a>',
+      '<a class="vertIcon iconTrans iconTwitter" target="_blank" href="https://x.com/servicegear"><i class="fa-brands fa-twitter-square fa-3x"></i></a>',
+      '<a class="vertIcon iconTrans iconFacebook" target="_blank" href="https://www.facebook.com/NationalServiceGear"><i class="fa-brands fa-facebook-square fa-3x"></i></a>',
+      '<a class="vertIcon iconTrans iconInstagram" target="_blank" href="https://www.instagram.com/nationalservicegear"><i class="fa-brands fa-instagram fa-3x"></i></a>',
       '</p>',
       '</div>',
       '</div>',
@@ -62,51 +62,6 @@ function fixedfooter() {
     ].join('');
   }
 }
-
-// function orderbuttons() {
-//     var directive = {
-//         restrict: 'E',
-//         template: template,
-//         link: function(scope, element, attrs) {
-//             attrs.$observe('continue', function(val) {
-//                 scope.continue = val == 'true' ? true : false;
-//             });
-//
-//             attrs.$observe('view', function(val) {
-//                 if (val) {
-//                     var view;
-//                     switch (val) {
-//                         case 'cart':
-//                             view = 'cart'
-//                             break;
-//                         case 'checkout':
-//                             view = 'checkout';
-//                             break;
-//                         default:
-//                             break;
-//                     }
-//                     scope.view = 'partials/controls/' + (view == 'cart' ? 'cartButtons.html' : 'checkoutButtons.html');
-//                 }
-//             });
-//         }
-//     };
-//     return directive;
-//
-//     function template() {
-//         return [
-//             '<style>',
-//             'orderbuttons {width:100%; margin:0 auto;}',
-//             '.navbar-fixed-bottom {position:relative;}',
-//             'orderbuttons li {width:25%;float:left; padding-right:10px; }',
-//             'orderbuttons .btn {border-radius:0; width:100%; margin:0 5px;}',
-//             'orderbuttons btn:nth-of-type(4) {margin-right:0; }',
-//             '@media (max-width:767px) { orderbuttons li {width:100%;} }',
-//             '@media (max-width:767px) { orderbuttons .btn {border-radius:0;width:100%; margin:5px 0;} }',
-//             '</style>',
-//             '<ul ng-include='view'></ul>'
-//         ].join('');
-//     }
-// }
 
 FixedFooterCtrl.$inject = ['$scope', '$location'];
 
