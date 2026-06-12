@@ -52,7 +52,7 @@ function fixedfooter() {
       '</div>',
       '<div class="socialFooter">',
       '<p class="text-left">',
-      '<a class="vertIcon iconTrans iconTwitter" target="_blank" href="https://x.com/servicegear"><i class="fa-brands fa-x-twitter fa-3x"></i></a>',
+      '<a class="vertIcon iconTrans iconTwitter" target="_blank" href="https://x.com/servicegear"><i class="fa-brands fa-square-x-twitter fa-3x"></i></a>',
       '<a class="vertIcon iconTrans iconFacebook" target="_blank" href="https://www.facebook.com/NationalServiceGear"><i class="fa-brands fa-facebook-square fa-3x"></i></a>',
       '<a class="vertIcon iconTrans iconInstagram" target="_blank" href="https://www.instagram.com/nationalservicegear"><i class="fa-brands fa-instagram fa-3x"></i></a>',
       '</p>',
