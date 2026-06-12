@@ -1061,10 +1061,9 @@ fieldset[disabled] .btn-checkout.active {
 
 /* Right column nested grid - now single column since specs moved here */
 .bento-right-grid {
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-direction: column;
   gap: 20px;
-  align-content: start;
 }
 
 /* Standard bento cell styling */
@@ -1091,7 +1090,8 @@ fieldset[disabled] .btn-checkout.active {
 /* Cell-specific padding */
 .bento-header { padding: 28px; }
 .bento-alert { padding: 24px; }
-.bento-specs { padding: 24px; }
+.bento-specs { padding: 24px; flex: 1; min-height: 0; }
+.bento-price-badge { padding: 20px 24px; }
 .bento-description { padding: 24px; }
 .bento-sizechart { padding: 24px; }
 .bento-pricing { padding: 24px; }
@@ -1480,7 +1480,11 @@ fieldset[disabled] .btn-checkout.active {
   .bento-right-grid {
     grid-column: 1 / -1;
   }
-  
+
+  .bento-specs {
+    flex: none;
+  }
+
   .bento-full-width {
     grid-column: 1 / -1;
   }
