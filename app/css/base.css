@@ -1037,3 +1037,491 @@ fieldset[disabled] .btn-checkout.active {
 .navbar .bento-row {
   margin-bottom: 0;
 }
+
+/* ============================================
+   BENTO BOX LAYOUT - Product Detail Grid
+   ============================================ */
+
+.bento-container {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 24px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Left column sticky image cell */
+.bento-image {
+  position: sticky;
+  top: 20px;
+  height: fit-content;
+  align-self: start;
+}
+
+/* Right column nested grid - now single column since specs moved here */
+.bento-right-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  align-content: start;
+}
+
+/* Standard bento cell styling */
+.bento-cell {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  border: 1px solid #e8e8e8;
+  overflow: hidden;
+}
+
+/* Full-width cells (right column only) */
+.bento-header,
+.bento-alert,
+.bento-specs {
+  grid-column: 1 / -1;
+}
+
+/* Explicit full-width cells spanning both columns */
+.bento-full-width {
+  grid-column: 1 / -1;
+}
+
+/* Cell-specific padding */
+.bento-header { padding: 28px; }
+.bento-alert { padding: 24px; }
+.bento-specs { padding: 24px; }
+.bento-description { padding: 24px; }
+.bento-sizechart { padding: 24px; }
+.bento-pricing { padding: 24px; }
+.bento-order { padding: 28px; }
+
+/* Alert/Disclosure cell - warm gradient */
+.bento-alert {
+  background: linear-gradient(135deg, #fff9e6 0%, #fff3cd 100%);
+  border-color: #f0d878;
+}
+
+/* Specs cell - subtle gray background */
+.bento-specs {
+  background: #f8f9fa;
+}
+
+/* Size chart cell - same background as other cells */
+.bento-sizechart {
+  background: #ffffff;
+  border-color: #e8e8e8;
+}
+
+/* Panel reset inside bento cells */
+.bento-cell .panel {
+  margin: 0;
+  border: none;
+  box-shadow: none;
+}
+
+.bento-cell .panel-body {
+  padding: 0;
+}
+
+/* ============================================
+   COLLAPSIBLE BOX STYLES
+   ============================================ */
+
+/* Collapsible header layout - matches other section headers */
+.collapsible-header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.collapsible-header-content .section-header {
+  margin-bottom: 0;
+  flex: 1;
+}
+
+.collapsible-meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Hover hint */
+.hover-hint {
+  font-size: 12px;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+  color: #6b5b95;
+  opacity: 0;
+  transition: opacity 0.2s;
+  background: rgba(107, 91, 149, 0.1);
+  padding: 6px 12px;
+  border-radius: 12px;
+  white-space: nowrap;
+}
+
+.collapsible-box:hover .hover-hint {
+  opacity: 1;
+}
+
+/* Chevron icon */
+.toggle-icon {
+  font-size: 14px;
+  color: #666;
+  transition: transform 0.2s;
+}
+
+/* Box styling */
+.collapsible-box {
+  cursor: pointer;
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.collapsible-box:hover {
+  box-shadow: 0 4px 12px rgba(107, 91, 149, 0.15);
+  border-color: #6b5b95;
+}
+
+/* Content area */
+.collapsible-content {
+  margin-top: 20px;
+  cursor: default;
+}
+
+/* Prevent text selection on header, allow in content */
+.collapsible-box {
+  user-select: none;
+}
+
+.collapsible-content {
+  user-select: text;
+}
+
+/* ============================================
+   SECTION HEADERS (Colored accent bars + Icons)
+   ============================================ */
+
+.section-header {
+  margin: 0 0 16px 0;
+  font-weight: 700;
+  color: #1a1a1a;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.section-header::before {
+  content: '';
+  display: inline-block;
+  width: 4px;
+  height: 16px;
+  border-radius: 2px;
+}
+
+/* Color variants */
+.section-header.blue::before { background: #31708f; }
+.section-header.green::before { background: #5cb85c; }
+.section-header.orange::before { background: #f0ad4e; }
+.section-header.purple::before { background: #6b5b95; }
+.section-header.red::before { background: #d9534f; }
+
+/* Icon spacing in section headers */
+.section-header i.fa,
+.section-header i.fas,
+.section-header i.far {
+  margin-right: 4px;
+}
+
+/* ============================================
+   ALERT ICON (MTO Disclosure)
+   ============================================ */
+
+.alert-icon {
+  background: #f0ad4e;
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* ============================================
+   PRICING GRID
+   ============================================ */
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 12px;
+}
+
+.price-tier {
+  background: #f0f7fa;
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+  border: 2px solid transparent;
+  transition: all 0.2s;
+}
+
+.price-tier:hover {
+  border-color: #31708f;
+  transform: translateY(-2px);
+}
+
+/* ============================================
+   VARIANT GRID
+   ============================================ */
+
+.variants-bento {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.variant-card {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 20px;
+  border: 2px solid transparent;
+  transition: all 0.2s;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.variant-card:hover {
+  border-color: #ddd;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Selected state */
+.variant-card.selected,
+.variant-card[data-selected="true"] {
+  border-color: #5cb85c;
+  background: #f0f9f0;
+}
+
+/* Variant card internal layout */
+.variant-card h4 {
+  margin: 0;
+  font-weight: 700;
+  color: #1a1a1a;
+  font-size: 16px;
+}
+
+.variant-card .variant-description {
+  color: #666;
+  font-size: 13px;
+  line-height: 1.4;
+  margin-bottom: 12px;
+}
+
+.variant-card .variant-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+/* Availability badge */
+.availability-badge {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+.availability-badge.in-stock {
+  background: #d4edda;
+  color: #155724;
+}
+
+.availability-badge.out-of-stock {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+/* Variant total price */
+.variant-total {
+  text-align: right;
+}
+
+.variant-total .label {
+  font-size: 11px;
+  color: #666;
+  text-transform: uppercase;
+}
+
+.variant-total .amount {
+  font-weight: 700;
+  color: #3c763d;
+  font-size: 16px;
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+
+/* Lead time display box */
+.lead-time-box {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 20px;
+  align-items: center;
+  background: rgba(255,255,255,0.6);
+  border-radius: 12px;
+  padding: 16px;
+  border: 1px solid rgba(240, 173, 78, 0.3);
+}
+
+.lead-time-box .time-highlight {
+  text-align: center;
+  padding-right: 20px;
+  border-right: 2px solid #f0ad4e;
+}
+
+.lead-time-box .time-label {
+  margin: 0 0 4px 0;
+  font-size: 12px;
+  color: #856404;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+.lead-time-box .time-value {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 800;
+  color: #1a1a1a;
+}
+
+/* Product meta (SKU) */
+.product-meta {
+  margin: 0;
+  color: #666;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* Description container */
+.prod-desc-container {
+  color: #444;
+  line-height: 1.7;
+  font-size: 14px;
+}
+
+.prod-desc-container .variant-description {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #eee;
+}
+
+/* Search input styling */
+.variant-search .input-group {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.variant-search .form-control {
+  border: none;
+  padding: 14px;
+}
+
+.variant-search .input-group-addon {
+  background: white;
+  border: none;
+  padding-right: 16px;
+}
+
+.variant-search .btn {
+  border: none;
+  background: #f8f9fa;
+  padding: 14px 20px;
+  font-weight: 600;
+}
+
+/* Error message styling */
+.error-panel {
+  padding: 20px;
+  margin: 0;
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.15);
+  border-radius: 16px 16px 0 0;
+}
+
+/* ============================================
+   RESPONSIVE BREAKPOINTS
+   ============================================ */
+
+@media (max-width: 992px) {
+  .bento-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .bento-image {
+    position: relative;
+    top: auto;
+    height: auto;
+    grid-column: 1 / -1;
+  }
+  
+  .bento-right-grid {
+    grid-column: 1 / -1;
+  }
+  
+  .bento-full-width {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 768px) {
+  .bento-container {
+    padding: 12px;
+    gap: 16px;
+  }
+  
+  .bento-header,
+  .bento-alert,
+  .bento-description,
+  .bento-sizechart,
+  .bento-specs,
+  .bento-pricing,
+  .bento-order {
+    padding: 20px;
+  }
+  
+  .lead-time-box {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .lead-time-box .time-highlight {
+    border-right: none;
+    border-bottom: 2px solid #f0ad4e;
+    padding-right: 0;
+    padding-bottom: 12px;
+  }
+  
+  .variants-bento {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Mobile: always show hover hint */
+  .hover-hint {
+    opacity: 1;
+    font-size: 11px;
+    padding: 4px 8px;
+  }
+}
