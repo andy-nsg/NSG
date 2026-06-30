@@ -1,0 +1,36 @@
+<!-- ============================================================
+     SITE-WIDE HEADER ALERT
+     Appears at the top of every page (holiday notices, store
+     closures, shipping delays, technical-issue alerts, etc.).
+
+     TO TURN OFF: wrap the <div class="header-alert"> block below
+       in an HTML comment. Nothing will render. (When there is
+       nothing to announce, leave it commented out.)
+     TO TURN ON:  un-comment the block, then edit the title text
+       and the message text.
+
+     PICK A STYLE: change the SECOND class on the wrapper div to
+       set the color/tone:
+         info      = blue   (general notice)
+         holiday   = gold   (holiday / office closed)
+         warning   = amber  (heads up / delays)
+         critical  = red    (urgent / technical issues)
+
+     CHANGE THE ICON: swap the Font Awesome class on the <i> tag.
+       Examples: fa-bullhorn, fa-calendar, fa-truck, fa-tools,
+       fa-exclamation-triangle, fa-info-circle.
+     ============================================================ -->
+
+<div class="header-alert holiday" role="region" aria-label="Site announcement">
+  <div class="header-alert-card">
+    <div class="header-alert-icon">
+      <i class="fa fa-calendar" aria-hidden="true"></i>
+    </div>
+    <div class="header-alert-body">
+      <p class="header-alert-title">Holiday Notice</p>
+      <p class="header-alert-text">
+        Our office will be closed Friday, July 4th in observance of Independence Day. Orders placed during the closure will begin processing the next business day. Thank you for your service!
+      </p>
+    </div>
+  </div>
+</div>

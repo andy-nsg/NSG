@@ -1167,6 +1167,187 @@ fieldset[disabled] .btn-checkout.active {
   border-color: #f0d878;
 }
 
+/* ============================================
+   SITE-WIDE HEADER ALERT
+   Banner partial: partials/Messages/headerAlert.html
+   Rendered in the global header on every page.
+   ============================================ */
+.header-alert {
+  max-width: 1400px;
+  margin: 20px auto 0;
+  padding: 0 20px;
+}
+
+.header-alert .header-alert-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 22px;
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e8e8e8;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.header-alert .header-alert-icon {
+  flex: 0 0 auto;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 20px;
+}
+
+.header-alert .header-alert-body {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.header-alert .header-alert-title {
+  margin: 0 0 2px 0;
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.header-alert .header-alert-text {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #444444;
+}
+
+/* Severity tones - set by the second class in headerAlert.html */
+.header-alert.info .header-alert-card {
+  background: linear-gradient(135deg, #eef6fb 0%, #dcecf7 100%);
+  border-color: #b6d8ea;
+}
+.header-alert.info .header-alert-icon { background: #31708f; }
+.header-alert.info .header-alert-title { color: #245a73; }
+
+.header-alert.holiday .header-alert-card {
+  background: linear-gradient(135deg, #fff8ec 0%, #fdeccf 100%);
+  border-color: #f0d27a;
+}
+.header-alert.holiday .header-alert-icon { background: #d39a2e; }
+.header-alert.holiday .header-alert-title { color: #8a6111; }
+
+.header-alert.warning .header-alert-card {
+  background: linear-gradient(135deg, #fff9e6 0%, #fff3cd 100%);
+  border-color: #f0d878;
+}
+.header-alert.warning .header-alert-icon { background: #e0a800; }
+.header-alert.warning .header-alert-title { color: #856404; }
+
+.header-alert.critical .header-alert-card {
+  background: linear-gradient(135deg, #fdecea 0%, #f9d6d3 100%);
+  border-color: #e4b9b5;
+}
+.header-alert.critical .header-alert-icon { background: #d9534f; }
+.header-alert.critical .header-alert-title { color: #a94442; }
+
+@media (max-width: 768px) {
+  .header-alert {
+    padding: 0 12px;
+    margin-top: 12px;
+  }
+  .header-alert .header-alert-card {
+    padding: 14px 16px;
+    gap: 12px;
+  }
+}
+
+/* ============================================
+   BENTO PRODUCT LIST (category browse grid)
+   Template: partials/ProductListViews/productListDefault.html
+   ============================================ */
+.bento-product-list {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.bento-product-list .product-list-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.bento-product-list .product-list-title {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 800;
+  color: #1a1a1a;
+  letter-spacing: 0.3px;
+}
+
+.bento-product-list .bento-sort {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.bento-product-list .bento-sort label {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #666;
+}
+
+.bento-product-list .bento-sort select {
+  border-radius: 10px;
+  min-width: 180px;
+}
+
+.bento-product-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  gap: 20px;
+}
+
+.bento-product-card {
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e8e8e8;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  padding: 16px;
+  height: 100%;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.bento-product-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+}
+
+.bento-product-list .product-list-footer {
+  margin-top: 24px;
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .bento-product-list {
+    padding: 12px;
+  }
+  .bento-product-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+}
+
 /* Specs cell - subtle gray background */
 .bento-specs {
   background: #f8f9fa;
