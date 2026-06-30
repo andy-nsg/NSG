@@ -13,3 +13,5 @@ node_modules/*
 localcdn
 .DS_Store
 **/CLAUDE.md
+# Optimized output (local staging copies, not deployed)
+/optimized/

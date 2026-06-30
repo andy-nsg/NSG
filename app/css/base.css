@@ -1174,7 +1174,7 @@ fieldset[disabled] .btn-checkout.active {
    ============================================ */
 .header-alert {
   max-width: 1400px;
-  margin: 20px auto 0;
+  margin: 36px auto 18px;
   padding: 0 20px;
 }
 
