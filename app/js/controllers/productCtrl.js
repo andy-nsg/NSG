@@ -1,5 +1,5 @@
-four51.app.controller('ProductCtrl', ['$scope', '$routeParams', '$route', '$location', '$451', 'Product', 'ProductDisplayService', 'Order', 'Variant', 'User',
-  function ($scope, $routeParams, $route, $location, $451, Product, ProductDisplayService, Order, Variant, User) {
+four51.app.controller('ProductCtrl', ['$scope', '$routeParams', '$route', '$location', '$451', 'Product', 'ProductDisplayService', 'Order', 'Variant', 'User', 'SEO',
+  function ($scope, $routeParams, $route, $location, $451, Product, ProductDisplayService, Order, Variant, User, SEO) {
       $scope.isEditforApproval = $routeParams.orderID && $scope.user.Permissions.contains('EditApprovalOrder');
       if ($scope.isEditforApproval) {
           Order.get($routeParams.orderID, function(order) {
@@ -32,6 +32,7 @@ four51.app.controller('ProductCtrl', ['$scope', '$routeParams', '$route', '$loca
       ProductDisplayService.getProductAndVariant($routeParams.productInteropID, $routeParams.variantInteropID, function (data) {
         $scope.LineItem.Product = data.product;
         $scope.LineItem.Variant = data.variant;
+        SEO.setProduct(data.product, $scope.user && $scope.user.Company && $scope.user.Company.Name);
         ProductDisplayService.setNewLineItemScope($scope);
         ProductDisplayService.setProductViewScope($scope);
         setDefaultQty($scope.LineItem);
