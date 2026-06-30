@@ -1,0 +1,61 @@
+<div class="451qa_prod_item bento-product-tile" ng-swipe-left="showSwipe = true">
+
+  <!-- IMAGE -->
+  <a class="bento-tile-image" href="{{LineItem.Product.Type == 'Kit' ? 'kit' : 'product'}}/{{LineItem.Product.InteropID}}" aria-label="{{LineItem.Product.Name}}">
+    <figure ng-show="LineItem.Variant.SmallImageUrl || LineItem.Product.SmallImageUrl">
+      <img ng-src="{{LineItem.Variant.SmallImageUrl || LineItem.Product.SmallImageUrl}}" alt="{{LineItem.Product.Name}}" />
+    </figure>
+    <div class="empty" ng-hide="LineItem.Variant.SmallImageUrl || LineItem.Product.SmallImageUrl">
+      <span class="fa empty"><i class="fa fa-camera" aria-hidden="true"></i></span>
+    </div>
+  </a>
+
+  <!-- DETAILS -->
+  <div class="bento-tile-body">
+    <small class="text-info bento-tile-sku">{{LineItem.Product.ExternalID}}</small>
+    <h3 class="bento-tile-name">{{LineItem.Product.Name}}</h3>
+    <!-- <p class="hidden-xs hidden-sm searchViewBullets" ng-bind-html="trustedDescription(LineItem.Product)" ng-show="LineItem.Product.Description" /> -->
+    <!-- Shows large price on category page -->
+    <div class="bento-tile-price" ng-show="LineItem.PriceSchedule.PriceBreaks[0]" ng-if="!(user.Permissions.contains('HidePricing'))">
+      {{LineItem.PriceSchedule.PriceBreaks[0].Price | culturecurrency}}
+    </div>
+    <p class="bento-tile-meta" ng-show="LineItem.Product.UnitOfMeasure">
+      {{'Unit of Measure' | r | xlat}}: {{LineItem.Product.UnitOfMeasure}}
+    </p>
+    <p class="bento-tile-meta" ng-show="LineItem.Product.DisplayInventory && inventoryDisplay(LineItem.Product, LineItem.Variant) != undefined">
+      {{'Quantity Available' | r | xlat}}: {{inventoryDisplay(LineItem.Product, LineItem.Variant) }}
+    </p>
+    <!-- <section class="panel-body">
+        <p ng-show="LineItem.PriceSchedule.PriceBreaks[0]" ng-if="!(user.Permissions.contains('HidePricing'))">
+            {{LineItem.PriceSchedule.PriceBreaks[0].Quantity}}
+            <span ng-show="LineItem.Product.QuantityMultiplier > 1">(x {{LineItem.Product.QuantityMultiplier}})</span>
+            {{'for' | xlat}} {{LineItem.PriceSchedule.PriceBreaks[0].Price | culturecurrency}}
+        </p>
+    </section> -->
+  </div>
+
+  <!-- VIEW PRODUCT -->
+  <a class="btn btn-default bento-tile-btn" href="{{LineItem.Product.Type == 'Kit' ? 'kit' : 'product'}}/{{LineItem.Product.InteropID}}">
+    {{('View' | r) + ' ' + ('Product' | r) | xlat}}
+  </a>
+
+  <section class="hidden-lg hidden-md" ng-show="showSwipe" ng-swipe-right="showSwipe = false">
+    <div class="shortproduct-info panel-body text-center">
+      <!-- <p ng-show="LineItem.PriceSchedule.PriceBreaks[0]" ng-if="!(user.Permissions.contains('HidePricing'))">
+                {{LineItem.PriceSchedule.PriceBreaks[0].Quantity}}
+                <span ng-show="LineItem.Product.QuantityMultiplier > 1">(x {{LineItem.Product.QuantityMultiplier}})</span>
+                {{'for' | xlat}} {{LineItem.PriceSchedule.PriceBreaks[0].Price | culturecurrency}}
+            </p> -->
+      <p ng-show="LineItem.Product.UnitOfMeasure">
+        {{'Unit of Measure' | r | xlat}}: {{LineItem.Product.UnitOfMeasure}}
+      </p>
+      <p ng-show="inventoryDisplay(LineItem.Product, LineItem.Variant)">
+        {{'Quantity Available' | r | xlat}}: {{inventoryDisplay(LineItem.Product, LineItem.Variant) }}
+      </p>
+      <button class="btn btn-default" redirect="product/{{LineItem.Product.InteropID}}">
+        {{('View' | r) + ' ' + ('Product' | r) | xlat}}
+      </button>
+    </div>
+  </section>
+
+</div>
