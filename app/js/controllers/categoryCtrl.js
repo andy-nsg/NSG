@@ -1,5 +1,5 @@
-four51.app.controller('CategoryCtrl', ['$routeParams', '$sce', '$scope', '$451', 'Category', 'Product', 'Nav', 'SEO',
-  function ($routeParams, $sce, $scope, $451, Category, Product, Nav, SEO) {
+four51.app.controller('CategoryCtrl', ['$routeParams', '$sce', '$scope', '$451', 'Category', 'Product', 'Nav',
+  function ($routeParams, $sce, $scope, $451, Category, Product, Nav) {
     $scope.productLoadingIndicator = true;
     $scope.settings = {
       currentPage: 1,
@@ -29,7 +29,6 @@ four51.app.controller('CategoryCtrl', ['$routeParams', '$sce', '$scope', '$451',
           Category.get($routeParams.categoryInteropID, function(cat) {
               $scope.currentCategory = cat;
             $scope.categoryLoadingIndicator = false;
-            SEO.setCategory(cat, $scope.user && $scope.user.Company && $scope.user.Company.Name);
           });
       }
     else if($scope.tree){
