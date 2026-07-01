@@ -1358,6 +1358,27 @@ fieldset[disabled] .btn-checkout.active {
   height: 100%;
 }
 
+/* The legacy product-card rules near the top of this file (search
+   "451qa_prod_item") force height:480px !important + margin-top:auto on
+   .text-info, tuned for the OLD wide row-based product card. Since our new
+   tile keeps the same 451qa_prod_item/text-info classes (QA hooks - don't
+   remove), those old rules were leaking in here too, forcing every bento
+   tile into a tall, mostly-empty "skinny" box on the test store. Scoped
+   overrides below cancel just those effects for .bento-product-tile,
+   without touching the legacy rules (still needed elsewhere/base). */
+.bento-product-grid [class*="451qa_prod_item"].bento-product-tile {
+  height: auto !important;
+  min-height: 0 !important;
+}
+
+.bento-product-tile .text-info {
+  margin-top: 0 !important;
+}
+
+.bento-product-tile .bento-tile-name {
+  font-size: 16px !important;
+}
+
 .bento-tile-image {
   display: block;
   height: 220px;
