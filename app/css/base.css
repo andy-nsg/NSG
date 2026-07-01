@@ -1458,6 +1458,12 @@ fieldset[disabled] .btn-checkout.active {
   font-size: 20px;
   font-weight: 800;
   color: #3c763d;
+  /* Reserve room for 2 lines - MTO items prepend "Starting at " before the
+     price, which wraps to a second line at narrower column widths while a
+     plain price stays on one line. Without a fixed height here, that height
+     difference pushed the "View Product" button out of alignment between
+     neighboring tiles in the same row. */
+  min-height: 52px;
 }
 
 .bento-tile-meta {
