@@ -1253,7 +1253,10 @@ fieldset[disabled] .btn-checkout.active {
 @media (max-width: 768px) {
   .header-alert {
     padding: 0 12px;
-    margin-top: 12px;
+    /* Mobile nav wraps to a taller bar than desktop (icons/search/cart stack up),
+       so this needs MORE top clearance than desktop, not less - was 12px, which
+       let the alert crowd right up against the fixed navbar on phones. */
+    margin-top: 76px;
   }
   .header-alert .header-alert-card {
     padding: 14px 16px;
