@@ -1409,12 +1409,8 @@ fieldset[disabled] .btn-checkout.active {
   color: #1a1a1a;
 }
 
-.bento-tile-desc {
-  margin: 0 0 8px 0;
-  font-size: 12px;
-  line-height: 1.4;
-  color: #666;
-}
+/* .bento-tile-desc removed - full rich product descriptions (tables/lists)
+   don't fit a compact grid tile; see shortProductViewMinimal.html comment. */
 
 .bento-tile-price {
   margin-bottom: 6px;
