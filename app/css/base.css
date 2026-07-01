@@ -1358,6 +1358,20 @@ fieldset[disabled] .btn-checkout.active {
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
+/* <shortproductviewminimal> is a custom Angular directive tag with no CSS
+   of its own, so browsers default it to display:inline. It sits between
+   .bento-product-card (height:100%) and .bento-tile (height:100%) in the
+   DOM, and an inline element can't pass along a percentage-height chain -
+   so .bento-product-tile's height:100% was silently collapsing to its own
+   content height instead of filling the grid-stretched card. That's why
+   the "View Product" button only lined up when neighboring tiles happened
+   to have similarly-sized name/price text - flex-grow on .bento-tile-body
+   had nothing real to grow into. Forcing block + full height fixes the chain. */
+.bento-product-card shortproductviewminimal {
+  display: block;
+  height: 100%;
+}
+
 .bento-product-card:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 16px rgba(0,0,0,0.12);
