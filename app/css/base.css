@@ -1320,6 +1320,22 @@ fieldset[disabled] .btn-checkout.active {
   gap: 20px;
 }
 
+/* Bootstrap's old clearfix hack (bootstrap-451.css, search "ul:before,
+   ul:after") adds a content:" "; display:table; pseudo-element to EVERY
+   <ul> on the page - built for float-based layouts, long before this <ul>
+   became a CSS Grid container. A generated ::before with content set still
+   creates a real box, and inside a grid container that box becomes an
+   actual (empty) GRID ITEM occupying cell 1, row 1 - stretched to match the
+   row height like any other item - which is exactly what was shoving every
+   real product tile over by one column. Suppressing generation here (not
+   in the legacy rule, which other non-grid <ul>s may still depend on) fixes
+   it without touching anything else. */
+.bento-product-grid::before,
+.bento-product-grid::after {
+  content: none;
+  display: none;
+}
+
 /* Legacy Bootstrap rules (bootstrap-451.css, search "panel-product-list ul
    li.inline") force each product <li> to a PERCENTAGE width (100/50/33.33/25%
    depending on screen size) - built for the OLD pre-bento product list. Our
