@@ -1,33 +1,34 @@
 <!-- This file was edited by $ak -->
-<div class="451qa_prod_item row">
-  <div class="col-xs-12 text-center">
-    <a class="thumbnail" href="{{LineItem.Product.Type == 'Kit' ? 'kit' : 'product'}}/{{LineItem.Product.InteropID}}">
-      <figure ng-show="LineItem.Variant.SmallImageUrl || LineItem.Product.SmallImageUrl">
-        <img ng-src="{{LineItem.Variant.SmallImageUrl || LineItem.Product.SmallImageUrl}}" />
-      </figure>
-      <div class="empty" ng-hide="LineItem.Variant.SmallImageUrl || LineItem.Product.SmallImageUrl">
-        <span class="fa empty"><i class="fa fa-camera"></i></span>
-      </div>
-    </a>
-  </div>
-  <div class="col-xs-12 text-left">
-    <div class="panel-body">
-      <h4 class="text-center">
-        {{LineItem.Product.Name}}
-      </h4>
-      <div>
-        <p ng-bind-html="trustedDescription(LineItem.Product)" ng-show="LineItem.Product.Description" />
-        <h5 ng-show="LineItem.Product.ExternalID" class="text-info text-truncate">
-          {{'Item #' | r | xlat}}: {{LineItem.Product.ExternalID}}
-        </h5>
-        <!-- Shows price on category page -->
-        <h4 ng-if="!(user.Permissions.contains('HidePricing'))" ng-class="{'price-placeholder': LineItem.PriceSchedule.PriceBreaks[0].Price == 0}">
-          <span ng-if="LineItem.Product.ExternalID.endsWith('MTO') || LineItem.Product.Name.startsWith('Made-To-Order')">Starting at </span>
-          {{LineItem.PriceSchedule.PriceBreaks[0].Price | culturecurrency}}
-        </h4>
-      </div>
-    <br />
-    <a class="btn btn-default btn-block" href="product/{{LineItem.Product.InteropID}}">{{('View' | r) + ' ' + ('Product' | r) | xlat}}</a>
+<div class="451qa_prod_item bento-product-tile">
+
+  <!-- IMAGE -->
+  <a class="bento-tile-image" href="{{LineItem.Product.Type == 'Kit' ? 'kit' : 'product'}}/{{LineItem.Product.InteropID}}" aria-label="{{LineItem.Product.Name}}">
+    <figure ng-show="LineItem.Variant.SmallImageUrl || LineItem.Product.SmallImageUrl">
+      <img ng-src="{{LineItem.Variant.SmallImageUrl || LineItem.Product.SmallImageUrl}}" alt="{{LineItem.Product.Name}}" />
+    </figure>
+    <div class="empty" ng-hide="LineItem.Variant.SmallImageUrl || LineItem.Product.SmallImageUrl">
+      <span class="fa empty"><i class="fa fa-camera" aria-hidden="true"></i></span>
+    </div>
+  </a>
+
+  <!-- DETAILS -->
+  <div class="bento-tile-body">
+    <h3 class="bento-tile-name text-center">{{LineItem.Product.Name}}</h3>
+    <!-- Full rich description (bullet lists, decoration/measurement tables, MTO
+         disclosure) is intentionally NOT shown on the compact grid tile - it
+         blew out the narrow bento tile's height/layout on the test store.
+         Full details are one click away on the product page. -->
+    <h5 ng-show="LineItem.Product.ExternalID" class="bento-tile-sku text-info text-truncate">
+      {{'Item #' | r | xlat}}: {{LineItem.Product.ExternalID}}
+    </h5>
+    <!-- Shows price on category page -->
+    <div class="bento-tile-price" ng-if="!(user.Permissions.contains('HidePricing'))" ng-class="{'price-placeholder': LineItem.PriceSchedule.PriceBreaks[0].Price == 0}">
+      <span ng-if="LineItem.Product.ExternalID.endsWith('MTO') || LineItem.Product.Name.startsWith('Made-To-Order')">{{'Starting at' | r | xlat}} </span>
+      {{LineItem.PriceSchedule.PriceBreaks[0].Price | culturecurrency}}
     </div>
   </div>
+
+  <!-- VIEW PRODUCT -->
+  <a class="btn btn-default btn-block bento-tile-btn" href="product/{{LineItem.Product.InteropID}}">{{('View' | r) + ' ' + ('Product' | r) | xlat}}</a>
+
 </div>
