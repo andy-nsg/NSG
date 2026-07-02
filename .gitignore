@@ -15,3 +15,6 @@ localcdn
 **/CLAUDE.md
 # Optimized output (local staging copies, not deployed)
 /optimized/
+
+# Claude Code local/personal settings (machine-specific, not shared project config)
+.claude/settings.local.json

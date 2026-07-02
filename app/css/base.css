@@ -405,97 +405,56 @@ a:focus {
   list-style-type: disc;
 }
 
-.NSGfooter,
-.NSGxsFooter,
-.NSGxxsFooter {
-  margin-top: 0px;
-  clear: both;
-  background-color: #dedede;
-  height: 175px;
-  width: 100%;
-  bottom: 0px;
-}
-
+/* Single responsive footer block (replaces the old .NSGfooter/.NSGxsFooter/.NSGxxsFooter trio of
+   duplicate float-based markup gated by Bootstrap visible-* classes). Flexbox row on desktop,
+   column on mobile (see media query below) - logo stacks above the contact info instead of the
+   two squeezing side by side. */
 .NSGfooter {
-  padding: 30px 0px;
-}
-
-.NSGxsFooter {
-  padding: 45px 0px;
-}
-
-.NSGxxsFooter {
-  padding: 55px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px 40px;
+  min-height: 175px;
+  padding: 30px 55px;
+  background-color: #dedede;
+  width: 100%;
 }
 
 .footLeft {
-  margin-right: 0px;
-  margin-left: 0px;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  padding-top: 8px;
-  padding-right: 3px;
-  padding-bottom: 0px;
-  padding-left: 55px;
-  float: left;
-}
-
-.xsFootLeft {
-  margin-right: 0px;
-  margin-left: 0px;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  padding-top: 10px;
-  padding-right: 3px;
-  padding-bottom: 0px;
-  padding-left: 25px;
-  float: left;
-  max-width: 280px;
-  max-height: 100%;
-}
-
-.xxsFootLeft {
-  margin-right: 0px;
-  margin-left: 0px;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  padding-top: 0px;
-  padding-right: 3px;
-  padding-bottom: 0px;
-  padding-left: 20px;
-  float: left;
-  width: 100%;
-  max-width: 180px;
+  flex: 0 1 auto;
+  max-width: 320px;
 }
 
 .footRight {
+  flex: 1 1 auto;
   font-size: 11pt;
-  margin-right: 0px;
-  margin-left: 0px;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  padding-right: 25px;
-  float: right;
+  text-align: right;
 }
 
-.xsFootRight {
-  margin-right: 0px;
-  margin-left: 0px;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  padding-right: 10px;
-  float: right;
-  font-size: 2vw;
+.footRight p {
+  margin: 0 0 4px;
 }
 
-.xxsFootRight {
-  margin-right: 0px;
-  margin-left: 0px;
-  margin-top: 0px;
-  margin-bottom: 0px;
-  padding-right: 10px;
-  float: right;
-  font-size: 1.8vw;
+@media (max-width: 767px) {
+  .NSGfooter {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    padding: 24px 20px;
+    min-height: 0;
+  }
+
+  .footLeft {
+    max-width: 220px;
+  }
+
+  .footRight {
+    /* Fixed size, not the old 2vw/1.8vw viewport-relative sizing - that shrank to an illegible
+       ~6px on narrow phones. 14px stays readable at every mobile width. */
+    text-align: center;
+    font-size: 14px;
+  }
 }
 
 .socialFooter {
