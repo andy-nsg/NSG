@@ -423,7 +423,9 @@ a:focus {
 
 .footLeft {
   flex: 0 1 auto;
-  max-width: 320px;
+  /* Matches the source logo's actual native width (539x100) - caps it from upscaling past its
+     own resolution (which would blur) without artificially shrinking it below that either. */
+  max-width: 539px;
 }
 
 .footRight {
@@ -439,6 +441,10 @@ a:focus {
 @media (max-width: 767px) {
   .NSGfooter {
     flex-direction: column;
+    /* align-items:center is required here (not just text-align) - in a column flex container the
+       default cross-axis alignment is stretch, which would leave a max-width-constrained .footLeft
+       flush left instead of centered under .footRight. */
+    align-items: center;
     justify-content: center;
     text-align: center;
     padding: 24px 20px;
@@ -446,7 +452,11 @@ a:focus {
   }
 
   .footLeft {
-    max-width: 220px;
+    /* Stacked layout frees up the full viewport width the old side-by-side layout never had
+       (previously capped at 280px even on mobile) - sized up accordingly, still well under the
+       539px native width so it never has to upscale. */
+    width: 100%;
+    max-width: 360px;
   }
 
   .footRight {
