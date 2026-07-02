@@ -1409,7 +1409,15 @@ fieldset[disabled] .btn-checkout.active {
    overrides below cancel just those effects for .bento-product-tile,
    without touching the legacy rules (still needed elsewhere/base). */
 .bento-product-grid [class*="451qa_prod_item"].bento-product-tile {
-  height: auto !important;
+  /* height:100% (not auto) - this !important rule was originally added to
+     kill the OLD legacy 480px fixed-height bug, but !important always wins
+     over the plain "height: 100%" declared on .bento-product-tile above,
+     so it was ALSO silently blocking the tile from stretching to fill its
+     grid-row height - each tile just sized to its own content instead
+     (confirmed live: 148px vs 174px for a plain-price vs "Starting at"
+     tile in the same row). That's what was breaking "View Product" button
+     alignment. 100% still fully cancels the old 480px bug either way. */
+  height: 100% !important;
   min-height: 0 !important;
 }
 
@@ -1434,7 +1442,6 @@ fieldset[disabled] .btn-checkout.active {
   margin-bottom: 12px;
   border-radius: 12px;
   overflow: hidden;
-  background: #f6f7f8;
 }
 
 .bento-tile-image figure {
