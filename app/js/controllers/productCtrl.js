@@ -24,6 +24,16 @@ four51.app.controller('ProductCtrl', ['$scope', '$routeParams', '$route', '$loca
         $scope.variantLineItemsOrderTotal += item.LineTotal || 0;
       })
     };
+    // Toggles the bento Specs and Sizing collapsible. Bound to both ng-click and ng-keydown so
+    // the div (role="button" tabindex="0") is operable from the keyboard, not just the mouse -
+    // keydown events only toggle on Enter/Space, matching native button activation keys.
+    $scope.toggleSpecsSizing = function($event) {
+      if ($event && $event.type === 'keydown') {
+        if ($event.keyCode !== 13 && $event.keyCode !== 32) return;
+        $event.preventDefault();
+      }
+      $scope.showSpecsSizing = !$scope.showSpecsSizing;
+    };
     function setDefaultQty(lineitem) {
       if (lineitem.PriceSchedule && lineitem.PriceSchedule.DefaultQuantity != 0)
         $scope.LineItem.Quantity = lineitem.PriceSchedule.DefaultQuantity;
