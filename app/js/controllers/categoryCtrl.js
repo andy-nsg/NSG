@@ -22,6 +22,18 @@ four51.app.controller('CategoryCtrl', ['$routeParams', '$sce', '$scope', '$451',
     $scope.$watch('settings.currentPage', function(n, o) {
       if (n != o || (n == 1 && o == 1))
         _search();
+      // Pagination re-fetches products in place (no route change), so ng-view's autoscroll
+      // never fires and the browser stays at whatever scroll position the user clicked from -
+      // often mid-page or at the bottom. Scroll the product list header (Products / Sort by row)
+      // back into view, offset by the fixed navbar's actual rendered height so it isn't hidden
+      // underneath it. Skip on the watch's initial firing (n == o) so page load doesn't jump.
+      if (n != o) {
+        var $header = $('.product-list-header');
+        if ($header.length) {
+          var navHeight = $('.navbar-fixed-top').outerHeight() || 0;
+          $('html, body').animate({ scrollTop: $header.offset().top - navHeight - 10 }, 400);
+        }
+      }
     });
   
     if ($routeParams.categoryInteropID) {
