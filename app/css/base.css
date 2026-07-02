@@ -1061,10 +1061,12 @@ fieldset[disabled] .btn-checkout.active {
   padding: 20px;
 }
 
-/* Left column sticky image cell */
+/* Left column image cell - static (not sticky): the image sits at its normal position in the
+   grid and scrolls away with the page, rather than following the viewport as the user scrolls
+   down the right column. height:fit-content + align-self:start still stop it from stretching to
+   match the taller right column's height. */
 .bento-image {
-  position: sticky;
-  top: 20px;
+  position: static;
   height: fit-content;
   align-self: start;
 }
