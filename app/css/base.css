@@ -14,20 +14,22 @@
   --nav-left-arrow: #ffffff;
 }
 
-/* Fixes left/right scroll bar */
-/* Scoped to the top-level content wrappers (#content / the login shell), NOT html or body.
-   Setting overflow-x on html and/or body - on either or both - forces the browser to compute the
-   other axis (overflow-y) as 'auto' per the CSS Overflow spec, AND for the root element that value
-   can get propagated to the viewport as a second, independent scroll container (double scrollbar,
-   inconsistent across browsers - moving the rule from "both" to "body only" did not fix it, it just
-   changed which element the browser propagated). #content/.container here have no fixed or
-   percentage height, so the same auto-computed overflow-y never has anything to scroll - it only
-   clips horizontal bleed, which was the actual original intent of this rule. */
-body > section,
-body > main {
-  max-width: 100%;
-  overflow-x: hidden;
-}
+/* REMOVED: "Fixes left/right scroll bar" (was `html, body { overflow-x: hidden }`, then tried on
+   body only, then on body > section/main - all three caused the SAME double-scrollbar bug.
+   Root cause: html/body/#content share an unidentified ~viewport-height ceiling from somewhere
+   outside this stylesheet (not set by any rule in base.css/theme.css/bootstrap-451.css/editor.css -
+   confirmed live via DevTools, source still unknown). With overflow left at the default 'visible',
+   that ceiling is harmless - content just flows past the box and html scrolls over all of it
+   normally. The moment overflow-x is set to anything but 'visible' on ANY element in that chain,
+   the CSS Overflow spec forces the other axis (overflow-y) to compute as 'auto' on that same
+   element, which makes the browser start ENFORCING the height ceiling as a real clip boundary -
+   trapping the rest of the page's content inside a box shorter than its own content (the scrollbar
+   that "disappears behind the navbar"). Do not reintroduce overflow-x:hidden on html, body, or
+   #content/main without first tracking down and removing that height ceiling - otherwise this
+   comes right back, just on whichever element the rule lands on next.
+   If a genuine horizontal-bleed problem shows up again, diagnose and fix the SPECIFIC element
+   that's bleeding (e.g. a fixed-width child wider than its container) rather than re-adding a
+   blanket clip here. */
 
 body {
   font-family: "Raleway", sans-serif;
