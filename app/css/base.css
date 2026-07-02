@@ -15,7 +15,10 @@
 }
 
 /* Fixes left/right scroll bar */
-html,
+/* Note: overflow-x must only be set on one of html/body - setting it on both forces the browser to
+   compute the other axis (overflow-y) as 'auto' on each per the CSS Overflow spec, which silently
+   creates two independent vertical scroll containers (double scrollbar) once content on either grows
+   taller than its box. Keeping it on body only leaves html as the single scroll root. */
 body {
   max-width: 100%;
   overflow-x: hidden;
