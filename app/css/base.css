@@ -1553,6 +1553,11 @@ fieldset[disabled] .btn-checkout.active {
   border-radius: 16px;
   border: 1px solid #e8e8e8;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  /* Padding matches .bento-product-card - keeps the image inset from the card's own rounded
+     corners instead of sitting flush against them. Flush + overflow:hidden was clipping a fixed
+     16px bite out of every corner regardless of tile size, which got proportionally worse (visibly
+     cutting into circular/logo artwork top and bottom) as tiles shrank at narrower grid widths. */
+  padding: 16px;
   overflow: hidden;
   text-decoration: none;
   transition: transform 0.15s ease, box-shadow 0.15s ease;
@@ -1567,9 +1572,13 @@ fieldset[disabled] .btn-checkout.active {
 
 .bento-category-image {
   /* Matches the source images' native 500x500 ratio - keeps the grid uniform regardless of
-     column width, and never crops/distorts the baked-in artwork's own aspect ratio. */
+     column width, and never crops/distorts the baked-in artwork's own aspect ratio. Own
+     border-radius (matches .bento-tile-image) instead of relying on the card's outer clip, now
+     that the card's own padding keeps this box away from that outer edge. */
   aspect-ratio: 1 / 1;
   overflow: hidden;
+  border-radius: 12px;
+  margin-bottom: 12px;
 }
 
 .bento-category-image figure {
@@ -1597,9 +1606,8 @@ fieldset[disabled] .btn-checkout.active {
 
 .bento-category-name {
   margin: 0;
-  padding: 14px 12px;
   text-align: center;
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 600;
   color: #1a1a1a;
   line-height: 1.3;
@@ -1611,8 +1619,7 @@ fieldset[disabled] .btn-checkout.active {
     gap: 14px;
   }
   .bento-category-name {
-    font-size: 13px;
-    padding: 10px 8px;
+    font-size: 14px;
   }
 }
 
