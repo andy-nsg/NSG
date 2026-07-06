@@ -1529,10 +1529,18 @@ fieldset[disabled] .btn-checkout.active {
 /* Legacy .panel-category-list.no-panels carries a -10px left/right margin (bootstrap-451.css)
    meant to offset the old col-xs-*/col-sm-* gutter padding. The bento grid replaces that column
    layout, so without this reset the container bleeds 10px past its edges and the last column
-   of tiles crowds the right edge. */
+   of tiles crowds the right edge. Padding matches .bento-product-list so the category grid gets
+   the same breathing room as the product grid instead of sitting flush against the page edge. */
 .panel-category-list.no-panels.bento-category-list {
   margin-left: 0;
   margin-right: 0;
+  padding: 20px;
+}
+
+@media (max-width: 768px) {
+  .panel-category-list.no-panels.bento-category-list {
+    padding: 12px;
+  }
 }
 
 .bento-category-tile {
