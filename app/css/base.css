@@ -1515,6 +1515,17 @@ fieldset[disabled] .btn-checkout.active {
   padding: 0;
 }
 
+/* Same phantom-grid-item bug as .bento-product-grid above: bootstrap-451.css's global
+   "ul:before, ul:after { content:" "; display:table; }" clearfix generates a real box on
+   EVERY <ul>, which a grid container treats as an actual grid item in cell 1 - shoving every
+   real category tile over by one column. Suppressing it here only (not in the legacy rule,
+   which other non-grid <ul>s may still depend on) restores correct alignment. */
+.bento-category-grid::before,
+.bento-category-grid::after {
+  content: none;
+  display: none;
+}
+
 /* Legacy .panel-category-list.no-panels carries a -10px left/right margin (bootstrap-451.css)
    meant to offset the old col-xs-*/col-sm-* gutter padding. The bento grid replaces that column
    layout, so without this reset the container bleeds 10px past its edges and the last column
