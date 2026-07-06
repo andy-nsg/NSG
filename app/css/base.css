@@ -1508,7 +1508,13 @@ fieldset[disabled] .btn-checkout.active {
    ============================================ */
 .bento-category-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  /* auto-fit (not auto-fill): categories are usually a handful of items, far fewer than a
+     typical product catalog. auto-fill still generates a track for every column-width that
+     fits the container even with nothing to put in it, so past a certain width the real tiles
+     stayed pinned near the 200px minimum and the rest of the row sat empty. auto-fit collapses
+     those empty tracks and lets 1fr redistribute their space into the tiles that actually exist,
+     so the grid keeps filling out edge-to-edge the same way the (much longer) product grid does. */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px;
   list-style: none;
   margin: 0;
@@ -1615,7 +1621,7 @@ fieldset[disabled] .btn-checkout.active {
 
 @media (max-width: 768px) {
   .bento-category-grid {
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
     gap: 14px;
   }
   .bento-category-name {
