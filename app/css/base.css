@@ -1580,19 +1580,30 @@ fieldset[disabled] .btn-checkout.active {
   /* Matches the source images' native 500x500 ratio - keeps the grid uniform regardless of
      column width, and never crops/distorts the baked-in artwork's own aspect ratio. Own
      border-radius (matches .bento-tile-image) instead of relying on the card's outer clip, now
-     that the card's own padding keeps this box away from that outer edge. */
+     that the card's own padding keeps this box away from that outer edge. position:relative makes
+     this the positioning context for the figure/img/empty-state below. */
+  position: relative;
   aspect-ratio: 1 / 1;
   overflow: hidden;
   border-radius: 12px;
   margin-bottom: 12px;
 }
 
+/* Absolutely positioned to the container's edges (inset:0) instead of height:100% - a plain
+   height:100% here silently failed to resolve against the parent's aspect-ratio-derived height
+   (confirmed live: box was 232.5x232.5 but the <img> rendered 232.5x185 despite a genuinely 1:1
+   source file), a known rough edge in percentage-height resolution through a nested block chain
+   when the ancestor's height comes from aspect-ratio rather than an explicit value. Sizing an
+   absolutely-positioned element against its containing block doesn't hit that limitation. */
 .bento-category-image figure {
   margin: 0;
-  height: 100%;
+  position: absolute;
+  inset: 0;
 }
 
 .bento-category-image img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -1600,8 +1611,8 @@ fieldset[disabled] .btn-checkout.active {
 }
 
 .bento-category-empty {
-  width: 100%;
-  height: 100%;
+  position: absolute;
+  inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
