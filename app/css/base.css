@@ -1555,6 +1555,14 @@ fieldset[disabled] .btn-checkout.active {
 
 .bento-category-card {
   display: block;
+  /* max-width + centering margin - auto-fit (see .bento-category-grid) lets tiles grow to fill
+     leftover row space when there are fewer categories than columns, which is what fixes the
+     grid from leaving blank space on the right. But a store with only 1-3 categories on a wide
+     screen has a LOT of leftover space, and without a cap each tile balloons to match it. The
+     grid track itself can still stretch; capping the visible card keeps its size sane and centers
+     it in whatever track width auto-fit gives it. */
+  max-width: 320px;
+  margin: 0 auto;
   background: #ffffff;
   border-radius: 16px;
   border: 1px solid #e8e8e8;
