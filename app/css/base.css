@@ -1589,23 +1589,30 @@ fieldset[disabled] .btn-checkout.active {
   margin-bottom: 12px;
 }
 
-/* Absolutely positioned to the container's edges (inset:0) instead of height:100% - a plain
-   height:100% here silently failed to resolve against the parent's aspect-ratio-derived height
-   (confirmed live: box was 232.5x232.5 but the <img> rendered 232.5x185 despite a genuinely 1:1
-   source file), a known rough edge in percentage-height resolution through a nested block chain
-   when the ancestor's height comes from aspect-ratio rather than an explicit value. Sizing an
-   absolutely-positioned element against its containing block doesn't hit that limitation. */
+/* Absolutely positioned to the container's edges (inset:0) rather than height:100%, so sizing is
+   resolved directly against the containing block instead of through a nested percentage-height
+   chain. */
 .bento-category-image figure {
   margin: 0;
   position: absolute;
   inset: 0;
 }
 
+/* max-height:none !important - bootstrap-451.css:7187-7189 has a leftover rule from the OLD
+   pre-bento category layout, ".panel-category-list ul li a img { max-height: 185px; }", with no
+   :not(.no-panels) guard. Its selector (1 class + 4 type selectors) matches straight through the
+   <nav>/<figure> in between and outweighs this rule's specificity (1 class + 1 type selector), so
+   it was silently clamping every category image to a flat 185px tall regardless of the square
+   container's actual size (confirmed live: 258x258 box, but the <img> rendered 258x185 - same
+   185px cap at a completely different container size, on a genuinely 1:1 source file). The
+   inset:0 positioning above was necessary but not sufficient on its own; this is what was actually
+   binding. */
 .bento-category-image img {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
+  max-height: none !important;
   object-fit: cover;
   display: block;
 }
