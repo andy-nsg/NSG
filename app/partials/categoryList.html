@@ -18,78 +18,85 @@
           </a>
         </li>
 
-        <!-- NSG landing-page cross-store promo tiles - condition repeated per <li> (rather than
-             wrapping them in a <div>) since <div> is not a valid direct child of <ul>, and a
-             wrapping <div> here would also pull these tiles out of the grid's direct-child list,
-             breaking their gap/row-height as actual grid items. Filter chain uses the plain
-             expression form ('Categories' | r | xlat) rather than an embedded {{ }} interpolation,
-             which is the safer form for a directive-consumed expression like ng-if. -->
-        <li class="bento-category-tile" ng-if="currentCategory.Name === ('Categories' | r | xlat) && user.Company.InteropID === 'NSG'">
-          <a ng-href="https://www.nsgcustom.org/" href="https://www.nsgcustom.org/" class="bento-category-card">
-            <div class="bento-category-image">
-              <figure>
-                <img ng-src="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/NSG/images/NSG-Custom-2020-500.jpg" src="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/NSG/images/NSG-Custom-2020-500.jpg" alt="" />
-              </figure>
-            </div>
-            <h5 class="bento-category-name">{{'National Service Gear Custom Catalog Webstore' | r | xlat}}</h5>
-          </a>
-        </li>
-        <li class="bento-category-tile" ng-if="currentCategory.Name === ('Categories' | r | xlat) && user.Company.InteropID === 'NSG'">
-          <a ng-href="https://americorps.nationalservicegear.org/store/catalog" href="https://americorps.nationalservicegear.org/store/catalog" class="bento-category-card">
-            <div class="bento-category-image">
-              <figure>
-                <img ng-src="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/AmeriCorps/images/AmeriCorps-2020-500.jpg" src="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/AmeriCorps/images/AmeriCorps-2020-500.jpg" alt="" />
-              </figure>
-            </div>
-            <h5 class="bento-category-name">{{'Official AmeriCorps Gear Webstore' | r | xlat}}</h5>
-          </a>
-        </li>
-        <li class="bento-category-tile" ng-if="currentCategory.Name === ('Categories' | r | xlat) && user.Company.InteropID === 'NSG'">
-          <a ng-href="https://nps.nationalservicegear.org/store/catalog" href="https://nps.nationalservicegear.org/store/catalog" class="bento-category-card">
-            <div class="bento-category-image">
-              <figure>
-                <img ng-src="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/NationalParkService/images/NPS-2000-500.jpg" src="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/NationalParkService/images/NPS-2000-500.jpg" alt="" />
-              </figure>
-            </div>
-            <h5 class="bento-category-name">{{'National Park Service Webstore' | r | xlat}}</h5>
-          </a>
-        </li>
-        <li class="bento-category-tile" ng-if="currentCategory.Name === ('Categories' | r | xlat) && user.Company.InteropID === 'NSG'">
-          <a ng-href="https://blm.nationalservicegear.org/store/catalog" href="https://blm.nationalservicegear.org/store/catalog" class="bento-category-card">
-            <div class="bento-category-image">
-              <figure>
-                <img ng-src="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/BLM/images/BLM-500.jpg" src="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/BLM/images/BLM-500.jpg" alt="" />
-              </figure>
-            </div>
-            <h5 class="bento-category-name">{{'Bureau of Land Management Webstore' | r | xlat}}</h5>
-          </a>
-        </li>
-        <li class="bento-category-tile" ng-if="currentCategory.Name === ('Categories' | r | xlat) && user.Company.InteropID === 'NSG'">
-          <a ng-href="https://youthconservationcorps.nationalservicegear.org/store/catalog" href="https://youthconservationcorps.nationalservicegear.org/store/catalog" class="bento-category-card">
-            <div class="bento-category-image">
-              <figure>
-                <img ng-src="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/YCC/images/YCC-2020-500.jpg" src="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/YCC/images/YCC-2020-500.jpg" alt="" />
-              </figure>
-            </div>
-            <h5 class="bento-category-name">{{'Youth Conservation Corps Webstore' | r | xlat}}</h5>
-          </a>
-        </li>
+        <!-- NSG landing-page cross-store promo tiles - nested ng-show/ng-if (one condition per
+             level) is confirmed by direct A/B test to be REQUIRED for these to render on the NSG
+             Landing Page's build (a flat per-<li> ng-if, tried twice with two different filter
+             syntaxes, silently failed to render them there both times). display:contents on both
+             wrapper divs (see .bento-category-promo-wrap in base.css) keeps that required nesting
+             while making the wrapper's own box disappear from layout, so the <li>s inside are
+             still recognized as direct grid items of .bento-category-grid (gap, row-height
+             stretch) instead of falling out of the grid entirely. -->
+        <div class="bento-category-promo-wrap" ng-show="currentCategory.Name === {{'Categories' | r | xlat}}">
+          <div class="bento-category-promo-wrap" ng-if="user.Company.InteropID === 'NSG'">
+            <li class="bento-category-tile">
+              <a ng-href="https://www.nsgcustom.org/" href="https://www.nsgcustom.org/" class="bento-category-card">
+                <div class="bento-category-image">
+                  <figure>
+                    <img ng-src="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/NSG/images/NSG-Custom-2020-500.jpg" src="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/NSG/images/NSG-Custom-2020-500.jpg" alt="" />
+                  </figure>
+                </div>
+                <h5 class="bento-category-name">{{'National Service Gear Custom Catalog Webstore' | r | xlat}}</h5>
+              </a>
+            </li>
+            <li class="bento-category-tile">
+              <a ng-href="https://americorps.nationalservicegear.org/store/catalog" href="https://americorps.nationalservicegear.org/store/catalog" class="bento-category-card">
+                <div class="bento-category-image">
+                  <figure>
+                    <img ng-src="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/AmeriCorps/images/AmeriCorps-2020-500.jpg" src="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/AmeriCorps/images/AmeriCorps-2020-500.jpg" alt="" />
+                  </figure>
+                </div>
+                <h5 class="bento-category-name">{{'Official AmeriCorps Gear Webstore' | r | xlat}}</h5>
+              </a>
+            </li>
+            <li class="bento-category-tile">
+              <a ng-href="https://nps.nationalservicegear.org/store/catalog" href="https://nps.nationalservicegear.org/store/catalog" class="bento-category-card">
+                <div class="bento-category-image">
+                  <figure>
+                    <img ng-src="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/NationalParkService/images/NPS-2000-500.jpg" src="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/NationalParkService/images/NPS-2000-500.jpg" alt="" />
+                  </figure>
+                </div>
+                <h5 class="bento-category-name">{{'National Park Service Webstore' | r | xlat}}</h5>
+              </a>
+            </li>
+            <li class="bento-category-tile">
+              <a ng-href="https://blm.nationalservicegear.org/store/catalog" href="https://blm.nationalservicegear.org/store/catalog" class="bento-category-card">
+                <div class="bento-category-image">
+                  <figure>
+                    <img ng-src="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/BLM/images/BLM-500.jpg" src="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/BLM/images/BLM-500.jpg" alt="" />
+                  </figure>
+                </div>
+                <h5 class="bento-category-name">{{'Bureau of Land Management Webstore' | r | xlat}}</h5>
+              </a>
+            </li>
+            <li class="bento-category-tile">
+              <a ng-href="https://youthconservationcorps.nationalservicegear.org/store/catalog" href="https://youthconservationcorps.nationalservicegear.org/store/catalog" class="bento-category-card">
+                <div class="bento-category-image">
+                  <figure>
+                    <img ng-src="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/YCC/images/YCC-2020-500.jpg" src="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/YCC/images/YCC-2020-500.jpg" alt="" />
+                  </figure>
+                </div>
+                <h5 class="bento-category-name">{{'Youth Conservation Corps Webstore' | r | xlat}}</h5>
+              </a>
+            </li>
+          </div>
 
-        <!-- NPS-only promo tile linking out to YCC -->
-        <li class="bento-category-tile" ng-if="currentCategory.Name === ('Categories' | r | xlat) && user.Company.InteropID === 'NPS'">
-          <a ng-href="https://youthconservationcorps.nationalservicegear.org/"
-            href="https://youthconservationcorps.nationalservicegear.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="bento-category-card">
-            <div class="bento-category-image">
-              <figure>
-                <img ng-src="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/YCC/images/YCC-400.jpg" alt="" />
-              </figure>
-            </div>
-            <h5 class="bento-category-name">{{'Youth Conservation Corps Webstore' | r | xlat}}<span class="sr-only"> (opens in a new window)</span></h5>
-          </a>
-        </li>
+          <div class="bento-category-promo-wrap" ng-if="user.Company.InteropID === 'NPS'">
+            <li class="bento-category-tile">
+              <a ng-href="https://youthconservationcorps.nationalservicegear.org/"
+                href="https://youthconservationcorps.nationalservicegear.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="bento-category-card">
+                <div class="bento-category-image">
+                  <figure>
+                    <img ng-src="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/YCC/images/YCC-400.jpg" alt="" />
+                  </figure>
+                </div>
+                <h5 class="bento-category-name">{{'Youth Conservation Corps Webstore' | r | xlat}}<span class="sr-only"> (opens in a new window)</span></h5>
+              </a>
+            </li>
+          </div>
+        </div>
       </ul>
     </nav>
   </div>

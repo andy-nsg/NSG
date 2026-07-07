@@ -1553,6 +1553,16 @@ fieldset[disabled] .btn-checkout.active {
   list-style: none;
 }
 
+/* Makes the NSG landing-page promo-tile wrapper divs (categoryList.html) disappear from layout
+   entirely, so the <li class="bento-category-tile"> elements nested inside them are still
+   recognized as direct grid items of .bento-category-grid - gap and row-height stretch - instead
+   of falling out of the grid because of the intervening wrapper div. The nesting itself is
+   required (confirmed by direct A/B test) for these tiles to render on the NSG Landing Page's
+   build; this keeps that structure while avoiding its layout side-effect. */
+.bento-category-promo-wrap {
+  display: contents;
+}
+
 .bento-category-card {
   display: block;
   /* max-width + centering margin - auto-fit (see .bento-category-grid) lets tiles grow to fill
@@ -1560,12 +1570,12 @@ fieldset[disabled] .btn-checkout.active {
      grid from leaving blank space on the right. But a store with only 1-3 categories on a wide
      screen has a LOT of leftover space, and without a cap each tile balloons to match it. The
      grid track itself can still stretch; capping the visible card keeps its size sane and centers
-     it in whatever track width auto-fit gives it. Any fixed cap is a tradeoff: too low and a
-     5-6-category store (e.g. AmeriCorps) stops filling the row on a wide screen; too high and a
-     1-3-category store still balloons. 400px is sized so ~5 tiles fill a typical wide laptop
-     screen's content width without hitting the cap - if a specific store still falls short on an
-     unusually wide/high-res display, raise this further. */
-  max-width: 400px;
+     it in whatever track width auto-fit gives it. 369px = 335px target image size (the largest
+     .bento-category-image naturally reaches on a 5-6-category store like AmeriCorps/NPS at wide
+     screen widths, without ever hitting this cap) + 32px card padding (16px each side) + 2px
+     border (1px each side) - keeps low-count stores (YCC, BLM) visually matched to that ceiling
+     instead of ballooning further. */
+  max-width: 369px;
   margin: 0 auto;
   background: #ffffff;
   border-radius: 16px;
