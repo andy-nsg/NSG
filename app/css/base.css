@@ -1564,7 +1564,17 @@ fieldset[disabled] .btn-checkout.active {
 }
 
 .bento-category-card {
-  display: block;
+  /* flex column + height:100% (matches .bento-product-card's pattern for the same problem: the
+     "View Product" button alignment issue) - CSS Grid's default align-items:stretch makes every
+     .bento-category-tile in a row match the tallest tile's height (e.g. one 2-line category name
+     wrapping while its neighbors stay 1 line), but a plain display:block card doesn't inherit that
+     stretched height itself, so it just sits at its own shorter natural height - the "extra white
+     space below the text" is really the gap between a shorter card's bottom and the taller row's
+     actual bottom. Filling the card's own height and flex-growing the name below lets that
+     reserved space live INSIDE the name area, where it can be centered instead of dead space. */
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   /* max-width + centering margin - auto-fit (see .bento-category-grid) lets tiles grow to fill
      leftover row space when there are fewer categories than columns, which is what fixes the
      grid from leaving blank space on the right. But a store with only 1-3 categories on a wide
@@ -1651,6 +1661,13 @@ fieldset[disabled] .btn-checkout.active {
 }
 
 .bento-category-name {
+  /* flex-grow + centered content - absorbs whatever leftover height the row-stretch (see
+     .bento-category-card comment above) adds beyond this tile's own natural content, and centers
+     the text within it instead of leaving it top-aligned with blank space below. */
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin: 0;
   text-align: center;
   font-size: 17px;
@@ -1667,6 +1684,97 @@ fieldset[disabled] .btn-checkout.active {
   .bento-category-name {
     font-size: 14px;
   }
+}
+
+/* ============================================
+   BENTO SIDEBAR NAV (left-column "Category List" panel)
+   Template: NSG-Overrides/<store>/categoryView.html - the <aside class="col-md-3"> that sits
+   beside categorylistview/productlistview when navStatus.visible is true. Scoped to
+   .bento-sidebar-nav (added alongside the existing .panel.panel-default.panel-nav classes, not
+   replacing them) rather than restyling .panel-nav globally, since several other stores render
+   their own separate categoryView.html with this same .panel-nav structure - this only reskins
+   stores that opt in by adding the class. Visual only: no directive/behavior changes, so
+   toggleNav()/categorycollapse's expand-collapse still works exactly as before.
+   ============================================ */
+.bento-sidebar-nav.panel-nav {
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e8e8e8;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  overflow: hidden;
+  font-size: 14px;
+}
+
+.bento-sidebar-nav.panel-nav .panel-heading {
+  background: #f0f7fa;
+  border-bottom: 1px solid #e8e8e8;
+  padding: 14px 18px;
+}
+
+.bento-sidebar-nav.panel-nav .panel-title {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #31708f;
+}
+
+.bento-sidebar-nav.panel-nav .panel-body {
+  padding: 8px 0;
+}
+
+/* Overrides bootstrap-451.css's .panel-nav ul li (border-top divider, float:left) - a flat list
+   instead of divided/floated rows matches the bento card language used elsewhere on this page. */
+.bento-sidebar-nav.panel-nav ul li {
+  border-top: none;
+  float: none;
+  width: auto;
+  padding: 0 10px;
+}
+
+.bento-sidebar-nav.panel-nav ul li a {
+  display: block;
+  width: auto;
+  padding: 10px 8px;
+  font-weight: 600;
+  font-size: 14px;
+  color: #333333;
+  border-radius: 8px;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.bento-sidebar-nav.panel-nav ul li a:hover,
+.bento-sidebar-nav.panel-nav ul li a:focus {
+  background-color: #f0f7fa;
+  color: #112542;
+  text-decoration: none;
+}
+
+.bento-sidebar-nav.panel-nav ul li.active > a {
+  background-color: #f0f7fa;
+  color: #112542;
+  font-weight: 700;
+}
+
+.bento-sidebar-nav.panel-nav ul li ul {
+  margin: 0;
+  padding-left: 10px;
+}
+
+.bento-sidebar-nav.panel-nav ul li ul li {
+  padding: 0 0 0 8px;
+}
+
+.bento-sidebar-nav.panel-nav ul li ul li a {
+  font-weight: 500;
+  font-size: 13px;
+  padding: 8px;
+}
+
+.bento-sidebar-nav.panel-nav .fa-caret-down {
+  margin-left: 6px;
+  color: #999;
 }
 
 /* Specs cell - subtle gray background */
