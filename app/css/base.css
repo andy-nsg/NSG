@@ -1374,11 +1374,24 @@ fieldset[disabled] .btn-checkout.active {
   }
 }
 
-/* Product card (shortProductView) rendered as a vertical bento tile */
+/* Product card (shortProductView) rendered as a vertical bento tile. Now the single whole-card
+   <a> (previously a plain <div> with two separate nested links for the image and "View Product"
+   button - collapsed into one link so the whole card is clickable and screen reader/keyboard
+   users don't tab through the same destination twice). text-decoration:none and color:inherit
+   neutralize the browser's default link underline/blue, matching .bento-category-card's pattern -
+   the name/sku/price already set their own explicit colors so they're unaffected either way. */
 .bento-product-tile {
   display: flex;
   flex-direction: column;
   height: 100%;
+  text-decoration: none;
+  color: inherit;
+}
+
+.bento-product-tile:hover,
+.bento-product-tile:focus {
+  text-decoration: none;
+  color: inherit;
 }
 
 /* The legacy product-card rules near the top of this file (search
@@ -1756,14 +1769,18 @@ fieldset[disabled] .btn-checkout.active {
   font-size: 14px;
   color: #333333;
   border-radius: 8px;
-  transition: background-color 0.15s ease, color 0.15s ease;
+  transition: background-color 0.15s ease, color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
 }
 
+/* Same lift-on-hover treatment as .bento-category-card/.bento-product-card, scaled down for a
+   compact nav row instead of a full tile. */
 .bento-sidebar-nav.panel-nav ul li a:hover,
 .bento-sidebar-nav.panel-nav ul li a:focus {
   background-color: #f0f7fa;
   color: #112542;
   text-decoration: none;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
 }
 
 .bento-sidebar-nav.panel-nav ul li.active > a {

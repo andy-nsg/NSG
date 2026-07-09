@@ -57,6 +57,14 @@ four51.app.controller('CategoryCtrl', ['$routeParams', '$sce', '$scope', '$451',
       // panel-nav
       $scope.navStatus = Nav.status;
       $scope.toggleNav = Nav.toggle;
+      // Keyboard handler for the toggleNav() <span> (categoryView.html) - Space's default
+      // scroll action needs suppressing since that span isn't a real <button>.
+      $scope.handleNavToggleKey = function($event) {
+        if ($event.key === 'Enter' || $event.key === ' ') {
+          $event.preventDefault();
+          $scope.toggleNav();
+        }
+      };
     $scope.$watch('sort', function(s) {
       if (!s) return;
       (s.indexOf('Price') > -1) ?

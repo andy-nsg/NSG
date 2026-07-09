@@ -1,15 +1,15 @@
 <!-- This file was edited by $ak -->
-<div class="451qa_prod_item bento-product-tile">
+<a class="451qa_prod_item bento-product-tile" ng-href="{{LineItem.Product.Type == 'Kit' ? 'kit' : 'product'}}/{{LineItem.Product.InteropID}}" aria-label="{{LineItem.Product.Name}}">
 
   <!-- IMAGE -->
-  <a class="bento-tile-image" href="{{LineItem.Product.Type == 'Kit' ? 'kit' : 'product'}}/{{LineItem.Product.InteropID}}" aria-label="{{LineItem.Product.Name}}">
+  <div class="bento-tile-image">
     <figure ng-show="LineItem.Variant.SmallImageUrl || LineItem.Product.SmallImageUrl">
-      <img ng-src="{{LineItem.Variant.SmallImageUrl || LineItem.Product.SmallImageUrl}}" alt="{{LineItem.Product.Name}}" />
+      <img ng-src="{{LineItem.Variant.SmallImageUrl || LineItem.Product.SmallImageUrl}}" alt="" />
     </figure>
     <div class="empty" ng-hide="LineItem.Variant.SmallImageUrl || LineItem.Product.SmallImageUrl">
       <span class="fa empty"><i class="fa fa-camera" aria-hidden="true"></i></span>
     </div>
-  </a>
+  </div>
 
   <!-- DETAILS -->
   <div class="bento-tile-body">
@@ -29,6 +29,6 @@
   </div>
 
   <!-- VIEW PRODUCT -->
-  <a class="btn btn-default btn-block bento-tile-btn" href="product/{{LineItem.Product.InteropID}}">{{('View' | r) + ' ' + ('Product' | r) | xlat}}</a>
+  <span class="btn btn-default btn-block bento-tile-btn" aria-hidden="true">{{('View' | r) + ' ' + ('Product' | r) | xlat}}</span>
 
-</div>
+</a>
