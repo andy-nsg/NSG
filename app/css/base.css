@@ -1724,6 +1724,15 @@ fieldset[disabled] .btn-checkout.active {
   padding: 8px 0;
 }
 
+/* Neutralizes a pre-existing Four51 platform rule (bootstrap-451.css, compiled from
+   less/fourfiveone/navs.less:46-53): ".panel-nav .panel-body { padding: 0 0 15px 0; } .panel-nav
+   .panel-body > ul { border-bottom: 1px solid #dddddd; }" - a thin divider line below the last
+   category plus 15px of dead space before the panel's true bottom edge, baked into the base
+   platform and predating this redesign. */
+.bento-sidebar-nav.panel-nav .panel-body > ul {
+  border-bottom: none;
+}
+
 /* Overrides bootstrap-451.css's .panel-nav ul li (border-top divider, float:left) - a flat list
    instead of divided/floated rows matches the bento card language used elsewhere on this page. */
 .bento-sidebar-nav.panel-nav ul li {
