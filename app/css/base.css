@@ -1707,6 +1707,12 @@ fieldset[disabled] .btn-checkout.active {
 
 .bento-sidebar-nav.panel-nav .panel-heading {
   background: #f0f7fa;
+  /* border-top:none - neutralizes a pre-existing Four51 platform rule (bootstrap-451.css:6548-6551,
+     ".panel .panel-heading { border-top: 2px solid #ffffff; padding: 0; }") - a 2px white top
+     border, invisible against a plain white panel but visible as a thin gap/sliver against this
+     light-blue heading background. Never declared here before, so that rule had nothing competing
+     with it for border-top specifically. */
+  border-top: none;
   border-bottom: 1px solid #e8e8e8;
   padding: 14px 18px;
 }
