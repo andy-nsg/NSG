@@ -1,14 +1,140 @@
 <section>
   <!-- Custom Program Stores -->
-  <div class="categoryPanel" ng-hide="(currentCategory.Name === 'MLK Day' || currentCategory.Name === '9/11 Day of Service')">
+  <div class="categoryPanel" ng-if="user.Company.InteropID === 'NSG'" ng-hide="(currentCategory.Name === 'MLK Day' || currentCategory.Name === '9/11 Day of Service')">
     <h1 class="text-center"><strong>Welcome to the National Service Gear Webstore</strong></h1>
     <h4 class="text-center">To order gear, please select from the listed programs below. If you need something that's not on the webstore or would like to customize any of the available items, please contact Customer Service at 1.855.444.0847 or email us at <a href="mailto:service@nationalservicegear.org?subject=NSG%20Custom%20Quote%20Request">service@nationalservicegear.org</a>.</h4>
     <br>
   </div>
+
+  <!-- AmeriCorps -->
+  <div class="categoryPanel" ng-if="user.Company.InteropID === 'AMC'" ng-hide="(currentCategory.Name === 'MLK Day' || currentCategory.Name === '9/11 Day of Service' || currentCategory.Name === 'AmeriCorps Program Custom Gear')">
+    <h1 class="text-center"><strong>Welcome to the Official AmeriCorps Gear Webstore</strong></h1>
+    <h4 class="text-center">If you need something that's not on the webstore or would like to customize any of the available items, please contact Customer Service at 1.855.444.0847 or email us at <a href="mailto:service@nationalservicegear.org?subject=NSG%20AmeriCorps%20Custom%20Quote%20Request">service@nationalservicegear.org</a>.</h4>
+    <br>
+  </div>
+
+  <!-- NPS -->
+  <div class="categoryPanel" ng-if="user.Company.InteropID === 'NPS'">
+    <h1 class="text-center"><strong>Welcome to the National Park Service Webstore</strong></h1>
+    <h3 class="text-center"><strong><i class="fa fa-exclamation-circle" aria-hidden="true"></i>This site is meant for OFFICIAL USE ONLY</strong></h3>
+    <h4 class="text-center">If you need something that's not on the webstore or would like to customize any of the available items, please contact Customer Service at 1.855.444.0847 or email us at <a href="mailto:service@nationalservicegear.org?subject=NPS%20BLM%20Custom%20Quote%20Request">service@nationalservicegear.org</a>.</h4>
+    <br>
+  </div>
+
+  <!-- BLM -->
+  <div class="categoryPanel" ng-if="user.Company.InteropID === 'BLM'">
+    <h1 class="text-center"><strong>Welcome to the Bureau of Land Management Webstore</strong></h1>
+    <h3 class="text-center"><strong><i class="fa fa-exclamation-circle" aria-hidden="true"></i>This site is meant for OFFICIAL USE ONLY</strong></h3>
+    <h4 class="text-center">If you need something that's not on the webstore or would like to customize any of the available items, please contact Customer Service at 1.855.444.0847 or email us at <a href="mailto:service@nationalservicegear.org?subject=NSG%20BLM%20Custom%20Quote%20Request">service@nationalservicegear.org</a>.</h4>
+    <br>
+  </div>
+
+  <!-- YCC -->
+  <div class="categoryPanel" ng-if="user.Company.InteropID === 'YCC'">
+    <h1 class="text-center"><strong>Welcome to the Youth Conservation Corps Webstore</strong></h1>
+    <h3 class="text-center"><strong><i class="fa fa-exclamation-circle" aria-hidden="true"></i>This site is meant for OFFICIAL USE ONLY</strong></h3>
+    <h4 class="text-center">If you need something that's not on the webstore or would like to customize any of the available items, please contact Customer Service at 1.855.444.0847 or email us at <a href="mailto:service@nationalservicegear.org?subject=YCC%20BLM%20Custom%20Quote%20Request">service@nationalservicegear.org</a>.</h4>
+    <br>
+  </div>
+
   <!-- END Category Header for Special Categories -->
+
+  <!-- Custom Program Stores -->
+  <!-- 9/11 Day of Service (AmeriCorps only) -->
+  <div class="categoryPanel" ng-show="(currentCategory.Name === '9/11 Day of Service') && user.Company.InteropID === 'AMC'">
+    <h1 class="text-center"><strong>9/11 Day of Service Gear</strong></h1>
+  </div>
+  <br>
+  <div class="panel panel-primary" ng-show="(currentCategory.Name === '9/11 Day of Service') && user.Company.InteropID === 'AMC'">
+    <div class="alert-message">
+      <h2 class="panel-title panel-primary">
+        {{'9/11 Day of Service' | r | xlat}}
+      </h2>
+    </div>
+    <div class="panel-body">
+      <ul>
+        <li>
+          <h4 class="text-justify">The purchase period to submit orders for the 2021 9/11 Day of Service gear has closed. We can still produce 9/11 Day of Service gear by special request however we cannot promise it will arrive in time for the event. To discuss that, please <a href="mailto:service@nationalservicegear.org?subject=9/11%20Day%20Of%20Service%20Gear%20Request">send us an email by clicking here</a>. We do have very limited stock of the Classic Sept. 11th National Day of Service and Remembrance gear and you can shop that inventory by <a href="catalog/sept-11-classic">clicking here</a>.</h4>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <br>
+  <!-- MLK Day (AmeriCorps only) -->
+  <div class="categoryPanel" ng-show="(currentCategory.Name === 'MLK Day') && user.Company.InteropID === 'AMC'">
+    <h1 class="text-center"><strong>MLK Day Gear</strong></h1>
+    <ul>
+      <li>
+        <h4 class="text-justify">For more information on MLK Day and to find out how to get involved, please visit the AmeriCorps' MLK Day event website by <a href="https://americorps.gov/newsroom/events/mlk-day" target="_blank" rel="noopener noreferrer">clicking here<span class="sr-only"> (opens in a new window)</span></a>.</h4>
+      </li>
+      <li>
+        <h4 class="text-justify">We also have very limited stock of the Classic MLK Day gear and you can shop that inventory by<a href="catalog/mlk-day-classic"> clicking here</a>.</h4>
+      </li>
+    </ul>
+    <br>
+  </div>
+  <!-- AmeriCorps Program's Custom Gear (AmeriCorps only) -->
+  <div class="categoryPanel" ng-show="(currentCategory.Name === 'AmeriCorps Program Custom Gear') && user.Company.InteropID === 'AMC'">
+    <h1 class="text-center"><strong>Welcome to the AmeriCorps Program's Custom Uniform Gear Category</strong></h1>
+    <ul>
+      <li>
+        <h4 class="text-justify">If you were given instructions by Customer Service to visit this category to order/reorder your organization's custom gear and you don't see your gear below, please try clearing your cookies/cache, logging out and back in, first. If that does not work, please let us know by <a href="mailto:service@nationalservicegear.org?subject=AmeriCorps%20Program%20Custom%20Gear%20Category%20Question">sending us an email by clicking here</a>.</h4>
+      </li>
+      <li>
+        <h4 class="text-justify">If you haven't asked us to quote your custom uniform gear project yet and would like the convenience of having your uniform gear readily available to order directly from the webstore, here, email us now to get a quote and get started: <a href="mailto:service@nationalservicegear.org?subject=AmeriCorps%20Program%Custom%20Gear%20Category%20Request">service@nationalservicegear.org</a>.</h4>
+      </li>
+    </ul>
+    <br>
+  </div>
+
+  <!-- Made-To-Order Program (IBVI and IBVI Custom only) -->
+  <div class="categoryPanel" ng-show="(currentCategory.Name === 'Made-To-Order Program') && (user.Company.InteropID === 'IBVI' || user.Company.InteropID === 'IBC')">
+    <h1 class="text-center"><strong>Welcome to the Made-To-Order Program</strong></h1>
+    <ul>
+      <li>
+        <h4 class="text-justify">If you were given instructions by Customer Service to visit this category to reorder your organization's custom gear and you don't see your program below please try clearing your cookies/cache first. If that does not work, please let us know by <a href="mailto:service@nationalservicegear.org?subject=NSG%20Made-To-Order%20Program%20Question">sending us an email by clicking here</a>.</h4>
+      </li>
+      <li>
+        <h4 class="text-justify">If you just happened to come across this category you will notice that there are no options below. This category is intended for our customers that make reorders of their organization's set uniform items. We create a category for your volunteer organization and in that category we add items that you need to reorder. We then assign that category to the respective customers so only the people that need the items can purchase and see the items. So, instead of contacting us for a quote each time we'll just let you log in, go to your program's category, select your gear and voilà, your custom gear will arrive in 10-15 business days. If this sounds like something you and your organization would like to take advantage of, please let us know by <a href="mailto:service@nationalservicegear.org?subject=NSG%20Made-To-Order%20Program%20Question">clicking here and sending us an email</a> with your questions.</h4>
+      </li>
+    </ul>
+    <br>
+  </div>
+  <!-- END Category Header for Special Categories -->
+
+  <nav id="451qa_nav_hdr" class="nav">
+    <ul>
+      <li class="hidden-sm hidden-xs">
+        <span ng-click="toggleNav()" ng-keydown="handleNavToggleKey($event)" role="button" tabindex="0" aria-pressed="{{navStatus.visible}}" aria-label="{{'Toggle category list' | r | xlat}}"><i class="fa fa-bars" aria-hidden="true" ng-class="{ 'text-info': navStatus.visible }"></i></span>
+      </li>
+      <li>
+        <span id="451_lbl_curcat" class="text-primary" ng-bind-html="currentCategory.Name || '  {{'Categories' | r | xlat}}'"></span>
+      </li>
+      <li class="customSearchBar">
+        <productsearchinput></productsearchinput>
+      </li>
+    </ul>
+  </nav>
   <div class="row">
-    <categorylistview></categorylistview>
-    <loadingindicator ng-show="productLoadingIndicator" title="{{'Please wait while we fetch all products' | r | xlat}}" />
-    <productlistview></productlistview>
+    <aside class="col-md-3 visible-md visible-lg" ng-if="navStatus.visible">
+      <div class="panel panel-default panel-nav bento-sidebar-nav">
+        <div class="panel-heading">
+          <h3 class="panel-title">
+            {{'Category List' | r | xlat}}
+          </h3>
+        </div>
+        <nav class="nav 451qa_sidenav panel-body">
+          <ul>
+            <categorycollapse tree='tree' current='currentCategory'></categorycollapse>
+          </ul>
+        </nav>
+      </div>
+    </aside>
+    <div ng-class="{ 'col-md-9': navStatus.visible, 'col-md-12': !navStatus.visible }">
+      <categorylistview></categorylistview>
+
+      <loadingindicator ng-show="productLoadingIndicator" title="{{'Please wait while we fetch all products' | r | xlat}}" />
+      <productlistview></productlistview>
+    </div>
   </div>
 </section>
