@@ -1,88 +1,99 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <title>NSG Down for Scheduled Maintenance</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Site Down for Scheduled Maintenance</title>
   <style>
-  video#bgvid {
-    position: fixed;
-    right: 0;
-    bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: -100;
-    background: url(https://raw.githubusercontent.com/Four51/Four51StorefrontWiki/master/app_offline/blank.png) no-repeat;
-    background-size: cover;
-    opacity: 0.50;
-    filter: alpha(opacity=50); /* For IE8 and earlier */
-  }
-  body {
-    margin: 25px 0px 180px 0px;
-  }
-  video {
-    display: block;
-  }
-  h1 {
-    font-family: "Raleway", sans-serif;
-    text-align: center;
-    color: #2b334a;
-    font-weight: 900;
-    text-shadow: 0 0 10px #ffffff;
-  }
-  p {
-    font-family: "Raleway", sans-serif;
-    text-align: justify;
-    font-weight: 500;
-    text-shadow: 0 0 10px #ffffff;
-    font-size: 21px;
-    color: #242B3F;
-    max-width: 75%;
-    margin-right: auto;
-    margin-left: auto;
-  }
-  h3 {
-    font-family: "Raleway", sans-serif;
-    text-align: center;
-    font-style: italic;
-    color: #2b334a;
-    font-weight: 600;
-    text-shadow: 0 0 10px #ffffff;
-    max-width: 75%;
-    margin-right: auto;
-    margin-left: auto;
-  }
-  .maintenanceScheduleText {
-    font-style: normal;
-    font-weight: 800;
-    font-size: 22px;
-  }
-  .center-Splash-block {
-    display: block;
-    max-width: 150px;
-    max-height: 100%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .center-Splash-block-2 {
-    display: block;
-    max-width: 70%;
-    max-height: 80px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .center-Splash-block-3 {
-    display: block;
-    max-width: 500px;
-    max-height: 100%;
-    margin-left: auto;
-    margin-right: auto;
-  }
+    video#bgvid {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      z-index: -100;
+      background: url(https://raw.githubusercontent.com/Four51/Four51StorefrontWiki/master/app_offline/blank.png) no-repeat;
+      background-size: cover;
+      opacity: 0.50;
+      filter: alpha(opacity=50);
+      /* For IE8 and earlier */
+    }
+
+    body {
+      margin: 25px 0px 180px 0px;
+    }
+
+    video {
+      display: block;
+    }
+
+    h1 {
+      font-family: "Raleway", sans-serif;
+      text-align: center;
+      color: #2b334a;
+      font-weight: 900;
+      text-shadow: 0 0 10px #ffffff;
+    }
+
+    p {
+      font-family: "Raleway", sans-serif;
+      text-align: justify;
+      font-weight: 500;
+      text-shadow: 0 0 10px #ffffff;
+      font-size: 21px;
+      color: #242B3F;
+      max-width: 75%;
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    h3 {
+      font-family: "Raleway", sans-serif;
+      text-align: center;
+      font-style: italic;
+      color: #2b334a;
+      font-weight: 600;
+      text-shadow: 0 0 10px #ffffff;
+      max-width: 75%;
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    .maintenanceScheduleText {
+      font-style: normal;
+      font-weight: 800;
+      font-size: 22px;
+    }
+
+    .splash-logos {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      max-width: 90%;
+      margin: 0 auto;
+    }
+
+    .splash-logo {
+      display: block;
+      max-width: 320px;
+      max-height: 140px;
+      width: auto;
+      height: auto;
+    }
+
+    .splash-logo-nsg {
+      max-width: 220px;
+      max-height: 100px;
+    }
   </style>
   <!--[if lt IE 9]>
   <script>
-  document.createElement("video");
+    document.createElement("video");
   </script>
   <![endif]-->
   <!-- Favicon -->
@@ -91,25 +102,65 @@
 </head>
 
 <body>
-  <video id="bgvid" loop autoplay poster="blank.png">
+  <video id="bgvid" loop autoplay poster="blank.png" aria-hidden="true">
     <source src="https://raw.githubusercontent.com/Four51/Four51StorefrontWiki/master/app_offline/saddayrainyday.ogv" type="video/ogv" />
     <source src="https://raw.githubusercontent.com/Four51/Four51StorefrontWiki/master/app_offline/saddayrainyday.webm" type="video/webm" />
     <source src="https://raw.githubusercontent.com/Four51/Four51StorefrontWiki/master/app_offline/saddayrainyday.mp4" type="video/mp4" />
   </video>
   <br>
-  <!-- <img class="image-responsive center-Splash-block" ng-src="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/NSG/images/NSG-byIBVI-500.png" src="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/NSG/images/NSG-byIBVI-500.png"> -->
-  <br>
-  <img class="image-responsive center-Splash-block-2" ng-src="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/NSG/images/splashPageProgramLogos-500.png" src="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/NSG/images/splashPageProgramLogos-500.png">
-  <h1>Scheduled Maintenance</h1>
-  <p>We wanted to inform our customers that our system upgrade is complete however we are experiencing some delays with shipping and fulfillment that we are aware of and we greatly apologize. We hope to have the issue resolved very soon. If you got your order in by Monday, December 17th, Noon CT, we are doing our best to ship every order Next Day Air to have all orders in-hands by Friday, 12/21, or Monday, 12/24. If your order came in on 12/18 and after, we may not able to ship until the 27th as we are closed for Christmas. If you have any questions or concerns about us meeting your in-hands dates, please call Customer Service between the hours of 8a CT to 5p CT, Monday – Friday. You can also email us at <a href="mailto:service@nationalservicegear.org?subject=NSG%20Webstore%20Shipping%20Delay%20Question">service@nationalservicegear.org</a>. We want to thank you again for all your support and patience during our transition. NSG and IBVI apologize for any inconveniences that this might cause.</p>
-  <!--<h3>Maintenance Schedule: <div class="maintenanceScheduleText">Noon CT, Wednesday, November 28th to Noon CT, Monday, December 3rd</div>
-  </h3>-->
-  <h3>Projected to be back online: <div class="maintenanceScheduleText">Noon CT, Wednesday, December 12th</div></h3>
-  <h3>Contact Customer Service - 8a CT to 5p CT, Monday – Friday</h3>
-  <h3><i class="fa fa-phone"></i>ph 1.855.444.0847</h3>
-  <h3><i class="fa fa-envelope"></i>e <a href="mailto:service@nationalservicegear.org?subject=NSG%20Webstore%20Maintenance%20Question">service@nationalservicegear.org</a></h3>
-  <br>
-  <img class="image-responsive center-Splash-block-3" ng-src="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/NSG/images/NSG-byIBVI-500.png" src="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/NSG/images/NSG-byIBVI-500.png">
+  <div class="splash-logos">
+    <img id="splashStoreLogo" class="splash-logo" src="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/NSG/images/splashPageProgramLogos-500.png" alt="" />
+    <img class="splash-logo splash-logo-nsg" src="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/NSG/images/NSG-byIBVI-500.png" alt="National Service Gear by Industries for the Blind and Visually Impaired" />
+  </div>
+  <h1 id="splashTitle">Scheduled Maintenance</h1>
+  <p id="splashMessage">This site is temporarily down for scheduled maintenance. We apologize for the inconvenience and will be back online shortly.</p>
+  <h3 id="splashEtaRow" style="display: none;">Projected to be back online: <span id="splashEta" class="maintenanceScheduleText"></span></h3>
+
+  <script type="text/javascript">
+    // Reads a per-store, per-incident config written to sessionStorage by the activating store's
+    // index.html (see the commented-out "sitedownConfig" block there) just before redirecting here.
+    // This page is a plain static file (loaded via a full-page redirect, never through the Angular
+    // app), so it can't use ng-include/scope bindings - config has to travel through sessionStorage
+    // instead. STORE_LOGOS only needs the store's own logo (rarely changes); title/message/eta are
+    // expected to change every time a store goes down, so those always come from the config object
+    // rather than being hardcoded per store here.
+    var STORE_LOGOS = {
+      NSG: 'https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/NSG/images/splashPageProgramLogos-500.png',
+      NPS: 'https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/NationalParkService/images/US-NationalParkService-Logo.png',
+      'USDA-FSIS': 'https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/FSIS/images/FSIS-Banner-2000x600.jpg',
+      YCC: 'https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/YCC/images/YCC-Logo.png'
+      // Add more "STORE_CODE: 'logo url'" entries here as needed (AMC, BLM, IBC, IBVI, USCB, etc.).
+    };
+
+    var config = {};
+    try {
+      config = JSON.parse(sessionStorage.getItem('sitedownConfig')) || {};
+    } catch (e) {
+      config = {};
+    }
+
+    var storeLogoEl = document.getElementById('splashStoreLogo');
+    if (config.store && STORE_LOGOS[config.store]) {
+      storeLogoEl.src = STORE_LOGOS[config.store];
+      storeLogoEl.alt = config.store + ' logo';
+    }
+
+    if (config.title) {
+      document.getElementById('splashTitle').textContent = config.title;
+    }
+
+    if (config.message) {
+      // innerHTML (not textContent) so a mailto link can be included in the message, matching every
+      // store's existing splash text - config.message only ever comes from sessionStorage set by
+      // this project's own index.html files (never from a URL/query param or third-party input).
+      document.getElementById('splashMessage').innerHTML = config.message;
+    }
+
+    if (config.eta) {
+      document.getElementById('splashEta').textContent = config.eta;
+      document.getElementById('splashEtaRow').style.display = '';
+    }
+  </script>
 </body>
 
 </html>
