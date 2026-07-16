@@ -830,6 +830,25 @@ fieldset[disabled] .btn-checkout.active {
   vertical-align: middle;
 }
 
+.nav-home-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 10px 0;
+  text-align: center;
+  line-height: var(--logo-nav-height);
+}
+
+.nav-contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.nav-contact-link .fa {
+  font-size: 16px;
+}
+
 .navbar-nav > li > a.navLogoWrapper {
   padding-top: 5px !important;
   padding-bottom: 5px !important;

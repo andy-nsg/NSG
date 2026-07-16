@@ -1,43 +1,34 @@
-<header class="header navbar navbar-inner">
-  <nav tolerance='0' offset='75' class="navbar navbar-default navbar-fixed-top" role="navigation" headroom>
-    <!-- tolerance='20'  -->
-    <section>
+<header class="header navbar navbar-inner" role="banner">
+  <nav tolerance='0' offset='75' class="navbar navbar-default navbar-fixed-top" role="navigation" aria-label="Primary navigation" headroom>
+    <!-- tolerance='20' -->
+    <section aria-label="Site navigation">
       <div class="container">
         <ul class="nav navbar-nav pull-left">
           <!-- Left Arrow/Back Icon -->
           <li class="back animated fadeInLeft" ng-class="{'ng-hide': isActive('catalog')}">
-            <a href back-step class="back">
-              <i class="fa fa-arrow-left"></i>
+            <a href back-step class="back" aria-label="Go back">
+              <i class="fa fa-arrow-left" aria-hidden="true"></i>
             </a>
           </li>
-          <!-- Navbar Menu Icon -->
-          <!-- This icon is for the wider screen -->
-          <li id="" class="back animated fadeInLeft hidden-xs">
-            <a id="451qa_home_link" class="" style="padding: 6px 10px 0px 10px; text-align: center;" href="catalog" ng-show="Four51User.isAuthenticated()">
-              <img class="image-responsive navLogo" ng-src="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/NSG/images/NSG_primary_nav.png" src="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/NSG/images/NSG_primary_nav.png" alt="National Service Gear primary logo" />
-            </a>
-          </li>
-          <!-- This icon is for the slimmer screen -->
-          <li id="" class="back animated fadeInLeft hidden-sm hidden-md hidden-lg">
-            <a id="451qa_home_link" class="" style="padding: 6px 10px 0px 10px; text-align: center;" href="catalog" ng-show="Four51User.isAuthenticated()">
-              <img class="image-responsive navLogo" ng-src="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/NSG/images/NSG_circle_nav.png" src="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/NSG/images/NSG_circle_nav.png" alt="National Service Gear circle logo" />
+
+          <li class="back animated fadeInLeft">
+            <a id="451qa_home_link" class="nav-home-link" href="catalog" ng-show="Four51User.isAuthenticated()" aria-label="Go to the catalog">
+              <img class="image-responsive navLogo hidden-xs" ng-src="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/NSG/images/NSG_primary_nav.png" src="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/NSG/images/NSG_primary_nav.png" alt="National Service Gear primary logo" />
+              <img class="image-responsive navLogo hidden-sm hidden-md hidden-lg" ng-src="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/NSG/images/NSG_circle_nav.png" src="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/NSG/images/NSG_circle_nav.png" alt="National Service Gear circle logo" />
             </a>
           </li>
         </ul>
+
         <ul class="nav navbar-nav pull-right">
-          <li class="contactus" ng-if="user.Permissions.contains('ViewContactUs')" ng-hide="user.Type == 'Customer'" ng-class="{'active': isActive('contactus')}">
-            <a id="451qa_mesg_link" href="contactus">
-              <i class="fa fa-question-circle"></i>
-              <span class="hidden-xs">{{'About Us/Help' | r | xlat}}</span>
-            </a>
-          </li>
-          <li class="contactus" ng-if="user.Permissions.contains('ViewContactUs')" ng-show="user.Type == 'Customer'" ng-class="{'active': isActive('contactus')}">
-            <a id="451qa_mesg_link" href="contactus">
-              <i class="fa fa-question-circle"></i>
+          <!-- Keep the contact link in one place so the same permission logic applies cleanly. -->
+          <li class="contactus" ng-if="user.Permissions.contains('ViewContactUs')" ng-class="{'active': isActive('contactus')}">
+            <a id="451qa_mesg_link" class="nav-contact-link" href="contactus">
+              <i class="fa fa-question-circle" aria-hidden="true"></i>
               <span class="hidden-xs">{{'About Us/Help' | r | xlat}}</span>
             </a>
           </li>
         </ul>
+      </div>
     </section>
   </nav>
   <!-- Category mega-menu dropdown removed per request - categories are reachable from the catalog/Home page. Uncomment the block below to restore it. -->
