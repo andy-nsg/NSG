@@ -831,14 +831,12 @@ fieldset[disabled] .btn-checkout.active {
 }
 
 .navbar .container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  position: relative;
+  display: block;
   width: 100%;
 }
 
 .navbar .container > .navbar-nav {
-  flex: 1 1 0;
   display: flex;
   align-items: center;
 }
@@ -848,11 +846,14 @@ fieldset[disabled] .btn-checkout.active {
 }
 
 .navbar-center-brand {
-  flex: 0 0 auto;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 12px;
+  pointer-events: none;
 }
 
 .nav-home-link {
@@ -862,6 +863,7 @@ fieldset[disabled] .btn-checkout.active {
   padding: 6px 10px 0;
   text-align: center;
   line-height: var(--logo-nav-height);
+  pointer-events: auto;
 }
 
 .nav-contact-link {
