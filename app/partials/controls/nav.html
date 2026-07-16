@@ -10,14 +10,15 @@
               <i class="fa fa-arrow-left" aria-hidden="true"></i>
             </a>
           </li>
-
-          <li class="back animated fadeInLeft">
-            <a id="451qa_home_link" class="nav-home-link" href="catalog" ng-show="Four51User.isAuthenticated()" aria-label="Go to the catalog">
-              <img class="image-responsive navLogo hidden-xs" ng-src="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/NSG/images/NSG_primary_nav.png" src="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/NSG/images/NSG_primary_nav.png" alt="National Service Gear primary logo" />
-              <img class="image-responsive navLogo hidden-sm hidden-md hidden-lg" ng-src="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/NSG/images/NSG_circle_nav.png" src="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/NSG/images/NSG_circle_nav.png" alt="National Service Gear circle logo" />
-            </a>
-          </li>
         </ul>
+
+        <!-- Keep the home logo centered between the left and right navigation groups. -->
+        <div class="navbar-center-brand">
+          <a id="451qa_home_link" class="nav-home-link" href="catalog" ng-show="Four51User.isAuthenticated()" aria-label="Go to the catalog">
+            <img class="image-responsive navLogo hidden-xs" ng-src="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/NSG/images/NSG_primary_nav.png" src="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/NSG/images/NSG_primary_nav.png" alt="National Service Gear primary logo" />
+            <img class="image-responsive navLogo hidden-sm hidden-md hidden-lg" ng-src="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/NSG/images/NSG_circle_nav.png" src="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/NSG/images/NSG_circle_nav.png" alt="National Service Gear circle logo" />
+          </a>
+        </div>
 
         <ul class="nav navbar-nav pull-right">
           <!-- Keep the contact link in one place so the same permission logic applies cleanly. -->
