@@ -834,9 +834,10 @@ fieldset[disabled] .btn-checkout.active {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 6px 10px 0;
+  padding: 0 10px;
+  min-height: 50px;
   text-align: center;
-  line-height: var(--logo-nav-height);
+  line-height: 1;
 }
 
 .nav-contact-link {
