@@ -830,32 +830,6 @@ fieldset[disabled] .btn-checkout.active {
   vertical-align: middle;
 }
 
-.navbar .container {
-  position: relative;
-  display: block;
-  width: 100%;
-}
-
-.navbar .container > .navbar-nav {
-  display: flex;
-  align-items: center;
-}
-
-.navbar .container > .navbar-nav.pull-right {
-  justify-content: flex-end;
-}
-
-.navbar-center-brand {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  pointer-events: none;
-}
-
 .nav-home-link {
   display: inline-flex;
   align-items: center;
@@ -863,7 +837,6 @@ fieldset[disabled] .btn-checkout.active {
   padding: 6px 10px 0;
   text-align: center;
   line-height: var(--logo-nav-height);
-  pointer-events: auto;
 }
 
 .nav-contact-link {
