@@ -102,7 +102,7 @@
   </div>
   <!-- END Category Header for Special Categories -->
 
-  <nav id="451qa_nav_hdr" class="nav">
+  <nav id="451qa_nav_hdr" class="nav" ng-if="user.Company.InteropID !== 'NSG'">
     <ul>
       <li class="hidden-sm hidden-xs">
         <span ng-click="toggleNav()" ng-keydown="handleNavToggleKey($event)" role="button" tabindex="0" aria-pressed="{{navStatus.visible}}" aria-label="{{'Toggle category list' | r | xlat}}"><i class="fa fa-bars" aria-hidden="true" ng-class="{ 'text-info': navStatus.visible }"></i></span>
