@@ -102,23 +102,21 @@
   </div>
   <!-- END Category Header for Special Categories -->
 
-  <div ng-if="user.Company.InteropID !== 'NSG'">
-    <nav id="451qa_nav_hdr" class="nav">
-      <ul>
-        <li class="hidden-sm hidden-xs">
-          <span ng-click="toggleNav()" ng-keydown="handleNavToggleKey($event)" role="button" tabindex="0" aria-pressed="{{navStatus.visible}}" aria-label="{{'Toggle category list' | r | xlat}}"><i class="fa fa-bars" aria-hidden="true" ng-class="{ 'text-info': navStatus.visible }"></i></span>
-        </li>
-        <li>
-          <span id="451_lbl_curcat" class="text-primary" ng-bind-html="currentCategory.Name || '  {{'Categories' | r | xlat}}'"></span>
-        </li>
-        <li class="customSearchBar">
-          <productsearchinput></productsearchinput>
-        </li>
-      </ul>
-    </nav>
-  </div>
+  <nav id="451qa_nav_hdr" class="nav">
+    <ul>
+      <li class="hidden-sm hidden-xs">
+        <span ng-click="toggleNav()" ng-keydown="handleNavToggleKey($event)" role="button" tabindex="0" aria-pressed="{{navStatus.visible}}" aria-label="{{'Toggle category list' | r | xlat}}"><i class="fa fa-bars" aria-hidden="true" ng-class="{ 'text-info': navStatus.visible }"></i></span>
+      </li>
+      <li>
+        <span id="451_lbl_curcat" class="text-primary" ng-bind-html="currentCategory.Name || '  {{'Categories' | r | xlat}}'"></span>
+      </li>
+      <li class="customSearchBar">
+        <productsearchinput></productsearchinput>
+      </li>
+    </ul>
+  </nav>
   <div class="row">
-    <aside class="col-md-3 visible-md visible-lg" ng-if="navStatus.visible user.Company.InteropID !== 'NSG">
+    <aside class="col-md-3 visible-md visible-lg" ng-if="navStatus.visible && user.Company.InteropID !== 'NSG'">
       <div class="panel panel-default panel-nav bento-sidebar-nav">
         <div class="panel-heading">
           <h3 class="panel-title">
