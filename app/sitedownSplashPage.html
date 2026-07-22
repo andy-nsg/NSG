@@ -15,7 +15,7 @@
       width: auto;
       height: auto;
       z-index: -100;
-      background: url(https://raw.githubusercontent.com/Four51/Four51StorefrontWiki/master/app_offline/blank.png) no-repeat;
+      background: url(https://raw.githubusercontent.com/Four51/Four51StorefrontWiki/master/app_offline/blank.png) no-repeat center center;
       background-size: cover;
       opacity: 0.50;
       filter: alpha(opacity=50);
@@ -23,31 +23,34 @@
     }
 
     body {
-      margin: 25px 0px 180px 0px;
+      margin: 25px 0 180px 0;
+      min-height: 100vh;
     }
 
-    video {
-      display: block;
+    main {
+      position: relative;
+      z-index: 1;
+      padding: 40px 16px 0;
+      text-align: center;
     }
 
     h1 {
       font-family: "Raleway", sans-serif;
-      text-align: center;
       color: #2b334a;
       font-weight: 900;
       text-shadow: 0 0 10px #ffffff;
+      margin-top: 32px;
     }
 
     p {
       font-family: "Raleway", sans-serif;
-      text-align: justify;
+      text-align: center;
       font-weight: 500;
       text-shadow: 0 0 10px #ffffff;
       font-size: 21px;
       color: #242B3F;
       max-width: 75%;
-      margin-right: auto;
-      margin-left: auto;
+      margin: 24px auto 0;
     }
 
     h3 {
@@ -58,8 +61,7 @@
       font-weight: 600;
       text-shadow: 0 0 10px #ffffff;
       max-width: 75%;
-      margin-right: auto;
-      margin-left: auto;
+      margin: 24px auto 0;
     }
 
     .maintenanceScheduleText {
@@ -70,12 +72,13 @@
 
     .splash-logos {
       display: flex;
-      flex-wrap: wrap;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       gap: 24px;
       max-width: 90%;
       margin: 0 auto;
+      margin-bottom: 24px;
     }
 
     .splash-logo {
@@ -84,6 +87,7 @@
       max-height: 140px;
       width: auto;
       height: auto;
+      margin: 0 auto;
     }
 
     .splash-logo-nsg {
@@ -102,19 +106,20 @@
 </head>
 
 <body>
-  <video id="bgvid" loop autoplay poster="blank.png" aria-hidden="true">
+  <video id="bgvid" loop autoplay muted playsinline poster="blank.png" aria-hidden="true">
     <source src="https://raw.githubusercontent.com/Four51/Four51StorefrontWiki/master/app_offline/saddayrainyday.ogv" type="video/ogv" />
     <source src="https://raw.githubusercontent.com/Four51/Four51StorefrontWiki/master/app_offline/saddayrainyday.webm" type="video/webm" />
     <source src="https://raw.githubusercontent.com/Four51/Four51StorefrontWiki/master/app_offline/saddayrainyday.mp4" type="video/mp4" />
   </video>
-  <br>
-  <div class="splash-logos">
-    <img id="splashStoreLogo" class="splash-logo" src="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/NSG/images/splashPageProgramLogos-500.png" alt="" />
-    <img class="splash-logo splash-logo-nsg" src="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/NSG/images/NSG-byIBVI-500.png" alt="National Service Gear by Industries for the Blind and Visually Impaired" />
-  </div>
-  <h1 id="splashTitle">Scheduled Maintenance</h1>
-  <p id="splashMessage">This site is temporarily down for scheduled maintenance. We apologize for the inconvenience and will be back online shortly.</p>
-  <h3 id="splashEtaRow" style="display: none;">Projected to be back online: <span id="splashEta" class="maintenanceScheduleText"></span></h3>
+  <main role="main">
+    <div class="splash-logos" aria-label="Store branding">
+      <img id="splashStoreLogo" class="splash-logo" src="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/NSG/images/splashPageProgramLogos-500.png" alt="Store logo" />
+      <img class="splash-logo splash-logo-nsg" src="https://www.four51.com/Themes/Custom/bf16eda1-bed2-459f-93f6-26f079f9c976/NSG/images/NSG-byIBVI-500.png" alt="National Service Gear by Industries for the Blind and Visually Impaired" />
+    </div>
+    <h1 id="splashTitle">Scheduled Maintenance</h1>
+    <p id="splashMessage">This site is temporarily down for scheduled maintenance. We apologize for the inconvenience and will be back online shortly.</p>
+    <h3 id="splashEtaRow" style="display: none;">Projected to be back online: <span id="splashEta" class="maintenanceScheduleText"></span></h3>
+  </main>
 
   <script type="text/javascript">
     // Reads a per-store, per-incident config written to sessionStorage by the activating store's
