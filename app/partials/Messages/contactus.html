@@ -42,7 +42,7 @@
     <p style="margin: 0; color: #333; font-size: 14px;">Items in this store are a combination of Made-To-Order (MTO) gear and Customer-Owned Inventory managed specifically for NPS parks and centers.</p>
   </div>
 
-  <div ng-show="user.Company.InteropID == 'BLM' || user.Company.InteropID == 'IBC' || user.Company.InteropID == 'YCC'" style="background-color: #f0f8f0; padding: 16px 20px; border-left: 4px solid #28a745; border-radius: 4px; margin-bottom: 20px;">
+  <div ng-show="user.Company.InteropID == 'BLM' || user.Company.InteropID == 'IBC' || user.Company.InteropID == 'USACE' || user.Company.InteropID == 'YCC'" style="background-color: #f0f8f0; padding: 16px 20px; border-left: 4px solid #28a745; border-radius: 4px; margin-bottom: 20px;">
     <h4 style="margin: 0 0 8px 0; color: #1a6b2a; font-weight: 700; font-size: 15px;">
       <i class="fa fa-tag" aria-hidden="true"></i> Made-To-Order Program
     </h4>
@@ -58,7 +58,7 @@
     <p ng-show="user.Company.InteropID == 'AMC' || user.Company.InteropID == 'NSG' || user.Company.InteropID == 'NPS'">
       <em>Stock Items:</em> In-stock items ship within 2-3 business days. If unavailable, they will be placed on backorder.
     </p>
-    <p ng-show="user.Company.InteropID == 'AMC' || user.Company.InteropID == 'NPS' || user.Company.InteropID == 'BLM' || user.Company.InteropID == 'IBC' || user.Company.InteropID == 'YCC'">
+    <p ng-show="user.Company.InteropID == 'AMC' || user.Company.InteropID == 'NPS' || user.Company.InteropID == 'BLM' || user.Company.InteropID == 'IBC' || user.Company.InteropID == 'USACE' || user.Company.InteropID == 'YCC'">
       <em>Production Timeline:</em> MTO and Custom items ship based on the lead time listed in the product description.
     </p>
   </section>
@@ -79,7 +79,7 @@
   <div style="border-top: 1px solid #e0e0e0; margin: 24px 0;" role="separator" aria-hidden="true"></div>
 
   <!-- CUSTOM & MTO WORKFLOW (conditional) -->
-  <section ng-show="user.Company.InteropID == 'AMC' || user.Company.InteropID == 'NPS' || user.Company.InteropID == 'BLM' || user.Company.InteropID == 'IBC' || user.Company.InteropID == 'YCC'" aria-labelledby="mto-heading">
+  <section ng-show="user.Company.InteropID == 'AMC' || user.Company.InteropID == 'NPS' || user.Company.InteropID == 'BLM' || user.Company.InteropID == 'IBC' || user.Company.InteropID == 'USACE' || user.Company.InteropID == 'YCC'" aria-labelledby="mto-heading">
     <h3 id="mto-heading" style="font-size: 17px; font-weight: 700; color: #333; margin: 0 0 10px 0;">Custom &amp; Made-To-Order (MTO) Workflow</h3>
     <ol style="padding-left: 20px; line-height: 1.9; margin-bottom: 12px;">
       <li><em>Order Placement:</em> Place your order via the webstore.</li>
@@ -107,7 +107,7 @@
       <p style="margin: 0;"><em>Tax-Exempt? Email your certificate to <a href="mailto:service@nationalservicegear.org?subject=Tax Exempt Certificate Submission">service@nationalservicegear.org</a> before ordering.</em></p>
     </div>
 
-    <div ng-show="user.Company.InteropID == 'NPS' || user.Company.InteropID == 'BLM' || user.Company.InteropID == 'YCC'">
+    <div ng-show="user.Company.InteropID == 'NPS' || user.Company.InteropID == 'BLM' || user.Company.InteropID == 'USACE' || user.Company.InteropID == 'YCC'">
       <p style="margin-top: 16px;"><em>Sales Tax:</em> This storefront is configured for tax-exempt government transactions.</p>
     </div>
   </section>
