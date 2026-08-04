@@ -2116,6 +2116,17 @@ fieldset[disabled] .btn-checkout.active {
   border-right: 2px solid #f0ad4e;
 }
 
+.lead-time-box.stock-lead-time-box {
+  grid-template-columns: 1fr;
+  justify-items: center;
+}
+
+.lead-time-box.stock-lead-time-box .time-highlight {
+  width: 100%;
+  padding-right: 0;
+  border-right: none;
+}
+
 .lead-time-box .time-label {
   margin: 0 0 4px 0;
   font-size: 12px;
