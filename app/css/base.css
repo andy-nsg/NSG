@@ -2127,6 +2127,20 @@ fieldset[disabled] .btn-checkout.active {
   border-right: none;
 }
 
+.lead-time-box.processing-time-box {
+  background: rgba(92, 184, 92, 0.1);
+  border-color: rgba(92, 184, 92, 0.3);
+}
+
+.lead-time-box.processing-time-box .time-label {
+  color: #666;
+}
+
+.lead-time-box.processing-time-box .time-value {
+  font-size: 16px;
+  color: #3c763d;
+}
+
 .lead-time-box .time-label {
   margin: 0 0 4px 0;
   font-size: 12px;
