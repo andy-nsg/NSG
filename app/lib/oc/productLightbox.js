@@ -66,17 +66,26 @@ function productlightbox() {
 LightboxCtrl.$inject = ['$scope', 'Lightbox'];
 function LightboxCtrl($scope, Lightbox) {
 	function LightboxImageScope($scope) {
-		if ($scope.LineItem.Specs && $scope.LineItem.Specs.Color) {
-            var varSpecName = "Color";
-		}
+		var varSpecName = $scope.LineItem.Specs && $scope.LineItem.Specs.Color ? "Color" : null;
         var specGroupName = "LightboxImages";
 
-        if ($scope.LineItem.Specs || $scope.LineItem.Product && $scope.LineItem.Product.StaticSpecGroups) {
+		if ($scope.LineItem.Specs || $scope.LineItem.Product && $scope.LineItem.Product.StaticSpecGroups || $scope.LineItem.Variant) {
 
 			$scope.LineItem.images = [];
 			var count = 0;
+			var variantImageUrl = $scope.LineItem.Variant && ($scope.LineItem.Variant.PreviewUrl || $scope.LineItem.Variant.LargeImageUrl);
 
-			if ($scope.LineItem.Product.StaticSpecGroups[specGroupName]) {
+			if (variantImageUrl) {
+				$scope.LineItem.images.push({
+					Number: count,
+					url: variantImageUrl,
+					Selected: true,
+					Name: $scope.LineItem.Variant.ExternalID || $scope.LineItem.Product.Name
+				});
+				count++;
+			}
+
+			if (!variantImageUrl && $scope.LineItem.Product.StaticSpecGroups && $scope.LineItem.Product.StaticSpecGroups[specGroupName]) {
 				if (varSpecName) {
 					var specOption = $scope.LineItem.Specs[varSpecName].Value;
 				}
@@ -113,14 +122,21 @@ function LightboxCtrl($scope, Lightbox) {
 		}
 	});
 
-    $scope.$watch('LineItem.Specs.Color.Value', function(n,o){
+	$scope.$watchGroup([
+		'LineItem.Specs.Color.Value',
+		'LineItem.Variant.PreviewUrl',
+		'LineItem.Variant.LargeImageUrl'
+	], function(n,o){
         if ( n!= o) {
 			LightboxImageScope($scope);
-            angular.forEach ($scope.LineItem.images, function(img) {
-				if (img.Selected) {
-					$scope.index = img.Number;
-				}
-			});
+			$scope.index = 0;
+			if (!$scope.LineItem.Variant || !$scope.LineItem.Variant.PreviewUrl && !$scope.LineItem.Variant.LargeImageUrl) {
+				angular.forEach ($scope.LineItem.images, function(img) {
+					if (img.Selected) {
+						$scope.index = img.Number;
+					}
+				});
+			}
 		}
 	});
 }
