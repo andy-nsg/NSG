@@ -80,7 +80,9 @@ function LightboxCtrl($scope, Lightbox) {
 					Number: count,
 					url: variantImageUrl,
 					Selected: true,
-					Name: $scope.LineItem.Variant.ExternalID || $scope.LineItem.Product.Name
+					Name: ($scope.LineItem.Specs && $scope.LineItem.Specs.Color && $scope.LineItem.Specs.Color.Value) ||
+						($scope.LineItem.Variant.Name || $scope.LineItem.Variant.ExternalID) ||
+						$scope.LineItem.Product.Name
 				});
 				count++;
 			}
