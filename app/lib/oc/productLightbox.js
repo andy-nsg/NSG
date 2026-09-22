@@ -122,11 +122,7 @@ function LightboxCtrl($scope, Lightbox) {
 		}
 	});
 
-	$scope.$watchGroup([
-		'LineItem.Specs.Color.Value',
-		'LineItem.Variant.PreviewUrl',
-		'LineItem.Variant.LargeImageUrl'
-	], function(n,o){
+	function updateSelectedImage(n, o) {
         if ( n!= o) {
 			LightboxImageScope($scope);
 			$scope.index = 0;
@@ -138,7 +134,11 @@ function LightboxCtrl($scope, Lightbox) {
 				});
 			}
 		}
-	});
+	}
+
+	$scope.$watch('LineItem.Specs.Color.Value', updateSelectedImage);
+	$scope.$watch('LineItem.Variant.PreviewUrl', updateSelectedImage);
+	$scope.$watch('LineItem.Variant.LargeImageUrl', updateSelectedImage);
 }
 
 function Lightbox() {
