@@ -23,8 +23,8 @@
     </h5>
     <!-- Shows price on category page -->
     <div class="bento-tile-price" ng-if="!(user.Permissions.contains('HidePricing'))" ng-class="{'price-placeholder': LineItem.PriceSchedule.PriceBreaks[0].Price == 0}">
-      <span ng-if="LineItem.Product.ExternalID.endsWith('MTO') || LineItem.Product.Name.startsWith('Made-To-Order')">{{'Starting at' | r | xlat}} </span>
-      {{LineItem.PriceSchedule.PriceBreaks[0].Price | culturecurrency}}
+      <span ng-if="LineItem.Product.ExternalID.endsWith('MTO') || LineItem.Product.Name.startsWith('Made-To-Order')">{{'Starting at' | r | xlat}} {{LineItem.PriceSchedule.PriceBreaks[0].Price | culturecurrency}}</span>
+      <span ng-if="!(LineItem.Product.ExternalID.endsWith('MTO') || LineItem.Product.Name.startsWith('Made-To-Order'))">{{'As low as' | r | xlat}} {{(LineItem.PriceSchedule.PriceBreaks | orderBy:'Price')[0].Price | culturecurrency}}</span>
     </div>
   </div>
 
